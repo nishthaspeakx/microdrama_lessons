@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import type { Episode } from '../content'
-import { suspenseTone } from '../speech'
+import { playClip, suspenseTone } from '../speech'
 
 // The question card that follows the episode: the boy, his glowing eyes and chest mark,
 // two lines of text timed to the voice-over, then an automatic hand-off to Sia.
@@ -14,14 +14,12 @@ export function Cliffhanger({ ep, voiceOn, onDone }: { ep: Episode; voiceOn: boo
     const finish = () => { if (!finished) { finished = true; onDone() } }
     const lead = 650 // let the picture land before the voice starts
     const stopTone = suspenseTone(c.holdMs / 1000)
-    const audio = c.audio && voiceOn ? new Audio(c.audio) : null
+    const withVoice = !!(c.audio && voiceOn)
+    let stopVoice = () => {}
     c.lines.forEach((l, i) => timers.push(window.setTimeout(() => setShown(i + 1), lead + l.at * 1000)))
-    if (audio) {
-      audio.onended = () => timers.push(window.setTimeout(finish, 1300))
-      timers.push(window.setTimeout(() => { audio.play().catch(() => { /* autoplay blocked: the timer below still moves on */ }) }, lead))
-    }
-    timers.push(window.setTimeout(finish, c.holdMs + (audio ? 1500 : 0)))
-    return () => { finished = true; timers.forEach(t => window.clearTimeout(t)); stopTone(); audio?.pause() }
+    if (withVoice) timers.push(window.setTimeout(() => { stopVoice = playClip(c.audio!, () => timers.push(window.setTimeout(finish, 1300))) }, lead))
+    timers.push(window.setTimeout(finish, c.holdMs + (withVoice ? 1500 : 0)))
+    return () => { finished = true; timers.forEach(t => window.clearTimeout(t)); stopTone(); stopVoice() }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 

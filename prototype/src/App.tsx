@@ -8,7 +8,7 @@ import { Sia } from './screens/Sia'
 import { Practice } from './screens/Practice'
 import { Reward } from './screens/Reward'
 import { Next } from './screens/Next'
-import { setVoiceClips } from './speech'
+import { setVoiceClips, unlockAudio } from './speech'
 
 export default function App() {
   const ep = episodes[0]
@@ -37,7 +37,7 @@ export default function App() {
     <div className="stage">
       <div className={`phone ${['sia', 'practice'].includes(state.screen) ? 'light' : 'dark'}`}>
         <div key={state.screen} className="screen">
-          {state.screen === 'start' && <Start ep={ep} coins={state.coins} questionCount={ep.exercises.length} maxCoins={maxCoins} onStart={() => dispatch({ type: 'START' })} />}
+          {state.screen === 'start' && <Start ep={ep} coins={state.coins} questionCount={ep.exercises.length} maxCoins={maxCoins} onStart={() => { unlockAudio(); dispatch({ type: 'START' }) }} />}
           {state.screen === 'episode' && <Player ep={ep} onEnded={() => dispatch({ type: 'EPISODE_ENDED' })} onExit={() => jump('start')} />}
           {state.screen === 'cliffhanger' && <Cliffhanger ep={ep} voiceOn={state.siaVoice} onDone={() => dispatch({ type: 'CLIFFHANGER_DONE' })} />}
           {state.screen === 'sia' && <Sia ep={ep} voiceOn={state.siaVoice} optional={optional} onDone={() => dispatch({ type: 'SIA_DONE' })} onSkip={() => dispatch({ type: 'SKIP_PRACTICE' })} />}

@@ -1,5 +1,7 @@
 # Learn English Through Stories · prototype
 
+**Try it:** https://nishthaspeakx.github.io/microdrama_lessons/ (best on a phone, with sound on)
+
 A mobile-web prototype for SpeakX: watch a short episode of a microdrama, then practise the English from it with Sia, and unlock the next episode.
 
 Built with React, TypeScript and Vite. Everything runs in the browser; there is no backend.
@@ -13,7 +15,11 @@ Built with React, TypeScript and Vite. Everything runs in the browser; there is 
 5. **Six practice questions** in the SpeakX lesson style: multiple choice with a still from the film, fill in the blank, and read-along speaking.
 6. **Reward screen**: "Well done!", coins earned, sentences learnt and the Episode 2 thumbnail marked unlocked. This is the last screen; Episode 2 is not produced yet, so "Watch next episode" shows a short "coming soon" note.
 
-## Run it
+## Publishing
+
+Every push to `main` that changes `prototype/` rebuilds the site and publishes it to the link above (see `.github/workflows/pages.yml`). It takes about a minute.
+
+## Run it locally
 
 ```bash
 npm install

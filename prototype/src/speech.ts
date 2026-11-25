@@ -21,7 +21,33 @@ function pickVoice(lang: string): SpeechSynthesisVoice | undefined {
 // Recorded lines in Sia's voice, keyed by the exact text passed to speak().
 // Anything without a recording falls back to the browser's voice.
 const clips = new Map<string, string>()
-let playing: HTMLAudioElement | null = null
+
+// iPhones only let an audio element play sound once a tap has started it. One shared
+// element is unlocked on the first tap ("Watch Episode 1") and reused for every recorded line.
+let shared: HTMLAudioElement | null = null
+const SILENCE = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA='
+export function sharedAudio(): HTMLAudioElement {
+  if (!shared) { shared = new Audio(); shared.preload = 'auto' }
+  return shared
+}
+export function unlockAudio() {
+  const a = sharedAudio()
+  a.src = SILENCE
+  a.play().catch(() => { /* nothing to unlock on this browser */ })
+}
+/** Play a recorded file on the shared element. Returns a stop function. */
+export function playClip(src: string, onEnd?: () => void): () => void {
+  const a = sharedAudio()
+  let done = false
+  const finish = () => { if (!done) { done = true; onEnd?.() } }
+  a.pause()
+  a.onended = finish
+  a.onerror = finish
+  a.src = src
+  a.currentTime = 0
+  a.play().catch(finish)
+  return () => { done = true; a.onended = null; a.onerror = null; a.pause() }
+}
 export function setVoiceClips(map: Record<string, string>) {
   clips.clear()
   Object.entries(map).forEach(([text, src]) => clips.set(text, src))
@@ -34,17 +60,11 @@ export function speak(text: string, lang: string, onEnd?: () => void, rate = 0.9
   let done = false
   const finish = () => { if (!done) { done = true; onEnd?.() } }
   const estimate = Math.max(1400, text.length * 85)
-  playing?.pause()
-  playing = null
   const clip = clips.get(text)
   if (clip) {
     window.speechSynthesis?.cancel()
-    const a = new Audio(clip)
-    playing = a
-    a.onended = finish
-    a.onerror = finish
-    a.play().catch(finish)
-    return () => { a.pause(); done = true }
+    const stop = playClip(clip, finish)
+    return () => { done = true; stop() }
   }
   if (!ttsSupported()) {
     const t = window.setTimeout(finish, estimate)
