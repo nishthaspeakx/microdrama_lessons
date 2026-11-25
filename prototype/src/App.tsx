@@ -6,6 +6,7 @@ import { Player } from './screens/Player'
 import { Cliffhanger } from './screens/Cliffhanger'
 import { Sia } from './screens/Sia'
 import { Practice } from './screens/Practice'
+import { StoryPractice } from './screens/StoryPractice'
 import { Reward } from './screens/Reward'
 import { Next } from './screens/Next'
 import { setVoiceClips, unlockAudio } from './speech'
@@ -36,7 +37,7 @@ export default function App() {
   return (
     <div className="stage">
       <div className={`phone ${['sia', 'practice'].includes(state.screen) ? 'light' : 'dark'}`}>
-        <div key={state.screen} className="screen">
+        <div key={state.screen} className={`screen ${state.screen === 'cliffhanger' ? 'cut' : ''}`}>
           {state.screen === 'start' && <Start ep={ep} coins={state.coins} questionCount={ep.exercises.length} maxCoins={maxCoins} onStart={() => { unlockAudio(); dispatch({ type: 'START' }) }} />}
           {state.screen === 'episode' && <Player ep={ep} onEnded={() => dispatch({ type: 'EPISODE_ENDED' })} onExit={() => jump('start')} />}
           {state.screen === 'cliffhanger' && <Cliffhanger ep={ep} voiceOn={state.siaVoice} onDone={() => dispatch({ type: 'CLIFFHANGER_DONE' })} />}
@@ -54,14 +55,16 @@ export default function App() {
                 footer={optional && <button className="link" onClick={() => dispatch({ type: 'SKIP_PRACTICE' })}>Skip practice · Watch Episode {ep.next.number}</button>}
               />)}
           {state.screen === 'episode-en' && <Player ep={ep} src={ep.englishVideo} english onEnded={() => dispatch({ type: 'ENGLISH_ENDED' })} onExit={() => dispatch({ type: 'ENGLISH_ENDED' })} />}
-          {state.screen === 'practice' && (
-            <Practice
-              ep={ep} index={state.exIndex} lessonCoins={state.lessonCoins} optional={optional}
-              onAnswered={(correct, coins) => dispatch({ type: 'ANSWERED', correct, coins })}
-              onNext={() => dispatch({ type: 'NEXT_EXERCISE', total: ep.exercises.length })}
-              onExit={() => jump('start')} onSkipAll={() => dispatch({ type: 'SKIP_PRACTICE' })} track={track}
-            />
-          )}
+          {state.screen === 'practice' && (() => {
+            const props = {
+              ep, index: state.exIndex, lessonCoins: state.lessonCoins, optional,
+              onAnswered: (correct: boolean, coins: number) => dispatch({ type: 'ANSWERED', correct, coins }),
+              onNext: () => dispatch({ type: 'NEXT_EXERCISE', total: ep.exercises.length }),
+              onExit: () => jump('start'), onSkipAll: () => dispatch({ type: 'SKIP_PRACTICE' }), track,
+            }
+            // Prototype 2 practises inside the story's scenes; prototype 1 keeps the original question screens.
+            return PROTOTYPE === 2 ? <StoryPractice {...props} /> : <Practice {...props} />
+          })()}
           {state.screen === 'reward' && <Reward ep={ep} lessonCoins={state.lessonCoins} totalCoins={state.coins} onContinue={() => (ep.next.available ? dispatch({ type: 'CONTINUE_STORY' }) : track('next_episode_tapped', { episode: ep.next.number }))} onClose={() => jump('start')} />}
           {state.screen === 'next' && (
             <Next ep={ep} unlocked={optional || state.practiceDone} onReplay={() => jump('episode')} onPractise={() => jump('sia')} onHome={() => jump('start')} />
@@ -77,6 +80,8 @@ export default function App() {
             </div>
             <label>Jump to screen</label>
             <div className="demo-row">{SCREENS.map(s => <button key={s} className={s === state.screen ? 'on' : ''} onClick={() => jump(s)}>{s}</button>)}</div>
+            <label>Jump to question</label>
+            <div className="demo-row">{ep.exercises.map((e, i) => <button key={e.id} className={state.screen === 'practice' && state.exIndex === i ? 'on' : ''} onClick={() => { window.speechSynthesis?.cancel(); dispatch({ type: 'JUMP_QUESTION', index: i }) }}>{i + 1} · {e.type}</button>)}</div>
             <label>Learning before Episode 2</label>
             <div className="demo-row">
               {(['mandatory', 'optional'] as const).map(v => <button key={v} className={v === state.variant ? 'on' : ''} onClick={() => dispatch({ type: 'SET_VARIANT', variant: v })}>{v}</button>)}

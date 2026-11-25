@@ -27,7 +27,19 @@ Every push to `main` that changes `prototype/` rebuilds the site and publishes i
 Same journey, but at Sia's screen she says, in Hindi, that the learner can watch this same episode in English or practise. Two buttons:
 
 - **Video in English** plays Episode 1 with the dialogue dubbed into English (same voices) and English subtitles, then returns to Sia.
-- **Practice** starts the same six questions, then the reward screen.
+- **Practice** starts six questions played inside the story, then the reward screen.
+
+### Practice inside the story (prototype 2 only)
+
+Each question happens in a moment of the episode:
+
+1. The scene plays with the character's Hindi line, then freezes.
+2. Sia asks about the moment in her voice; her words light up as she speaks.
+3. The answers appear as dialogue bubbles. For a fill-in-the-blank, the blank sits in the character's line on the scene.
+4. On a correct answer, the bubble flies into the scene as the English subtitle and the scene replays with the character saying it in English. On a wrong one, Sia encourages and the scene replays with the right line.
+5. Speaking questions are "Be Suman": the scene pauses on her, you say her line, and she says it in English.
+
+The scene clips are in `public/media/scenes/` (cut from the episode without subtitles, Hindi and English versions). Animations use the Motion library. The demo panel can jump straight to any question.
 
 Each prototype keeps its own coins and progress on the device. The demo panel can switch between them.
 

@@ -12,6 +12,24 @@ export function Player({ ep, src, english, onEnded, onExit }: { ep: Episode; src
   const [chrome, setChrome] = useState(true)
   const hideTimer = useRef<number | undefined>(undefined)
   const ambient = useRef<HTMLCanvasElement>(null)
+  const finished = useRef(false)
+  const end = ep.videoEnd
+  const finish = () => { if (!finished.current) { finished.current = true; onEnded() } }
+
+  // Stop just before the black tail and cut straight to the next screen (checked every frame, so no black shows).
+  useEffect(() => {
+    let raf = 0
+    const tick = () => {
+      const v = ref.current
+      if (v && !v.paused && v.currentTime >= end) { v.pause(); finish(); return }
+      raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    // Warm up the next screen's picture so it is ready at the cut.
+    if (!src) { const img = new Image(); img.src = ep.cliffhanger.image }
+    return () => cancelAnimationFrame(raf)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const wake = () => {
     setChrome(true)
@@ -42,7 +60,7 @@ export function Player({ ep, src, english, onEnded, onExit }: { ep: Episode; src
   const seek = (e: React.MouseEvent<HTMLDivElement>) => {
     const v = ref.current; if (!v || !dur) return
     const r = e.currentTarget.getBoundingClientRect()
-    v.currentTime = Math.min(dur - 0.2, Math.max(0, ((e.clientX - r.left) / r.width) * dur)); wake()
+    v.currentTime = Math.min(dur - 0.3, Math.max(0, ((e.clientX - r.left) / r.width) * dur)); wake()
   }
 
   return (
@@ -51,9 +69,9 @@ export function Player({ ep, src, english, onEnded, onExit }: { ep: Episode; src
       <video
         ref={ref} src={src ?? ep.video} playsInline preload="auto"
         onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}
-        onTimeUpdate={e => setTime(e.currentTarget.currentTime)}
-        onLoadedMetadata={e => setDur(e.currentTarget.duration)}
-        onEnded={onEnded}
+        onTimeUpdate={e => setTime(Math.min(e.currentTarget.currentTime, end))}
+        onLoadedMetadata={e => setDur(Math.min(e.currentTarget.duration, end))}
+        onEnded={finish}
         onClick={e => { e.stopPropagation(); toggle() }}
       />
       <div className={`player-chrome ${chrome || !playing ? 'on' : ''}`}>

@@ -37,6 +37,7 @@ export type Action =
   | { type: 'SKIP_PRACTICE' }
   | { type: 'CONTINUE_STORY' }
   | { type: 'JUMP'; screen: Screen }
+  | { type: 'JUMP_QUESTION'; index: number }
   | { type: 'SET_VARIANT'; variant: Variant }
   | { type: 'SET_SIA_VOICE'; on: boolean }
   | { type: 'RESET' }
@@ -81,6 +82,8 @@ function reducer(s: State, a: Action): State {
       return { ...s, screen: 'next', events: ev(s, 'next_episode_started') }
     case 'JUMP':
       return { ...s, screen: a.screen, exIndex: a.screen === 'practice' ? 0 : s.exIndex, lessonCoins: a.screen === 'practice' ? 0 : s.lessonCoins, events: ev(s, 'demo_jump', { to: a.screen }) }
+    case 'JUMP_QUESTION':
+      return { ...s, screen: 'practice', exIndex: a.index, events: ev(s, 'demo_jump', { to: 'question', index: a.index }) }
     case 'SET_VARIANT':
       return { ...s, variant: a.variant, events: ev(s, 'variant_changed', { variant: a.variant }) }
     case 'SET_SIA_VOICE':
