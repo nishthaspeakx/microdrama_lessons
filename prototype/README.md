@@ -1,0 +1,48 @@
+# Learn English Through Stories · prototype
+
+A mobile-web prototype for SpeakX: watch a short episode of a microdrama, then practise the English from it with Sia, and unlock the next episode.
+
+Built with React, TypeScript and Vite. Everything runs in the browser; there is no backend.
+
+## The journey
+
+1. **Start screen** with the series and episode title and a "Watch Episode 1" button.
+2. **Episode 1** of मधोपुर का राज़ (The Secret of Madhopur) plays full screen.
+3. **Question card**: the boy with glowing eyes and the chest mark, with a voice-over asking who he is.
+4. **Sia** appears in a lip-synced clip and invites the learner to practise. The learner taps "Let's Practise".
+5. **Six practice questions** in the SpeakX lesson style: multiple choice with a still from the film, fill in the blank, and read-along speaking.
+6. **Reward screen** with sentences learnt and coins earned, then the Episode 2 screen (a placeholder, Episode 2 is not produced yet).
+
+## Run it
+
+```bash
+npm install
+npm run dev
+```
+
+Open the address Vite prints, ideally at a phone-sized window.
+
+## Where things live
+
+| What | Where |
+|---|---|
+| All copy, media paths, timings and questions | `src/content.ts` |
+| The journey state machine, coins and saved progress | `src/journey.ts` |
+| One file per screen | `src/screens/` |
+| Recorded voice playback, browser speech fallback and speech checking | `src/speech.ts` |
+| Video, stills and audio used by the app | `public/media/` |
+| Full-size originals of Sia's clip and voice lines | `source-media/` |
+
+To add an episode, copy the episode object in `src/content.ts` and change its media, lines and questions. No screen code needs to change.
+
+## Demo panel
+
+Press `D`, add `?demo` to the address, or tap the top-left corner four times. It can jump to any screen, switch between mandatory and optional practice, mute Sia, reset progress and show the event log.
+
+## What is real and what is simulated
+
+- Sia's voice is an ElevenLabs voice. Her talking clip was made from a still photo and that voice with a lip-sync model.
+- The speaker buttons play recorded clips. A line without a recording is read by the browser's voice.
+- The speaking questions use the browser's speech recognition and check which words were said. They do not score pronunciation, and they need a browser that supports speech recognition (Chrome works).
+- Coins and progress are stored in the browser only.
+- Questions 5 and 6 are suggested additions and still need review.

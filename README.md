@@ -40,4 +40,15 @@ A second cut made from a written edit prompt, kept beside the first in `madhopur
 
 The revised film is `revised/final/ep1-revised-edited-subtitled-1080x1920.mp4` (1 min 30 s). It cost about 200 credits on top of the first cut.
 
+### Series name, thumbnail and prototype
+
+The series is titled **मधोपुर का राज़ (The Secret of Madhopur)**. "Madhopur" was the working title, so older files and folder names still use it.
+
+| What | Where |
+|---|---|
+| Episode 1 thumbnail, 1080 x 1920, with its HTML source | `madhopur/episode-1/thumbnail/` |
+| "Learn English Through Stories" mobile-web prototype (React, TypeScript, Vite) | `prototype/` |
+
+The prototype plays the revised Episode 1, asks who the boy is, hands over to Sia (SpeakX's English coach) in a lip-synced clip, and runs six practice questions before a reward screen. See [prototype/README.md](prototype/README.md) for how to run it and what is simulated.
+
 See [LESSONS.md](LESSONS.md) for what was learned along the way.
