@@ -1,0 +1,126 @@
+{
+  "requests": [
+    {
+      "index": 0,
+      "params": {
+        "model": "soul_2",
+        "prompt": "A top-down flat-lay photograph of one complete men's outfit for a broad man, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is three pieces: a shirt, trousers and one pair of sandals, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Hard-wearing and plain, made for a farmer's working day in central India. At the top, a faded red-and-navy checked cotton shirt with the sleeves rolled to the elbow, laid flat with its rolled sleeves slightly spread: a pointed collar, a buttoned front, a single chest pocket, softened creases. Below the shirt, dusty khaki cotton trousers at full length, laid flat with soft natural folds, both legs reaching down to their hems. At the bottom, directly below the trouser hems, one pair of worn brown leather sandals, the two sandals side by side and touching, toes pointing down. A muted palette of faded red, navy, khaki and brown. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: sun-faded checked cotton, dusty cotton drill, scuffed leather, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    },
+    {
+      "index": 1,
+      "params": {
+        "model": "soul_2",
+        "prompt": "front-view shot, face close up of a stunningly beautiful 32 years old central Indian woman, with model facial features, warm brown skin, dark brown eyes, natural skin texture, and long, straight black hair in a single low plait over one shoulder. She has a sweet, wholesome, radiant beauty and a tender, open-hearted, serene expression with lips gently closed, wearing a simple neckline outfit. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of her face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    },
+    {
+      "index": 2,
+      "params": {
+        "model": "soul_2",
+        "prompt": "A top-down flat-lay photograph of one complete women's outfit, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is four pieces: a kameez, a salwar, a dupatta and one pair of sandals, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Everyday and modest, made for a farm wife's day in a central Indian town. At the top, a sage-green cotton kameez with small white block print, laid flat with its three-quarter sleeves slightly spread: a round neck with a short placket, side slits, a straight hem at the knee; the pale sage cotton dupatta laid folded across the shoulders of the kameez with its ends hanging down either side. Below the kameez, an oatmeal cotton salwar at full length, laid flat with soft natural folds, both legs reaching down to their hems. At the bottom, directly below the salwar hems, one pair of flat brown leather sandals, the two sandals side by side and touching, toes pointing down. A soft palette of sage green, oatmeal and brown. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: block-printed cotton, plain soft cotton, fine cotton voile, worn leather, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    },
+    {
+      "index": 3,
+      "params": {
+        "model": "soul_2",
+        "prompt": "front-view shot, face close up of a small central Indian boy, with soft rounded features and large eyes, light brown skin, dark brown eyes, natural skin texture, and short, straight black hair in a soft tousled crop. He has a natural, everyday look and a calm, open expression, wearing a plain crew-neck top, shoulders covered. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of his face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    },
+    {
+      "index": 4,
+      "params": {
+        "model": "soul_2",
+        "prompt": "A top-down flat-lay photograph of one complete small boy's outfit, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is three pieces: a kurta, pyjama trousers and one pair of chappals, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Plain and simple, made for a small boy in rural central India. At the top, a pale cream cotton kurta, laid flat with its long sleeves slightly spread: a round neck with a short placket and two small buttons, plain hems. Below the kurta, soft grey cotton pyjama trousers at full length, laid flat with soft natural folds, both legs reaching down to their hems. At the bottom, directly below the pyjama hems, one pair of plain brown rubber chappals, the two chappals side by side and touching, toes pointing down. A soft palette of cream, grey and brown. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: soft washed cotton, plain cotton, matte rubber, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    },
+    {
+      "index": 5,
+      "params": {
+        "model": "seedream_v5_pro",
+        "prompt": "电影剧照，印度乡村剧情片的现实主义风格，画面明亮，午后阳光从左上方斜照而下，约四分之一的画面落在店铺遮阳棚下的阴影里，主光是温暖的金色日光，空气里悬着细微的尘土，色调自然，略带暖意。2014年印度中部一个小农业集镇的集市街道，街道约八米宽、向远处延伸三十米；左侧是一排低矮的水泥店铺，刷着褪色的淡黄和浅绿墙面，挂着手绘的印地语招牌和蓝色帆布遮阳棚，其中一家店有一面大玻璃橱窗映着天光，店门口放着铁皮卷帘门；右侧是一排木架子摊位，摆着蔬菜、塑料桶和成卷的布匹，一辆黑色自行车靠在摊位边；远处街道尽头是一棵大榕树和一座白色小庙的尖顶，天空开阔明亮；近处是压实的土路和零散的碎石，街道中间的路面空旷可走。镜头是站立视高的广角定场镜头，从街道近端向远端望去，店铺在左、摊位在右。店铺里亮着零星的日光灯管。画面中没有任何人，没有人影。",
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "is_inpaint": false,
+        "remove_bg": false,
+        "count": 1
+      }
+    },
+    {
+      "index": 6,
+      "params": {
+        "model": "seedream_v5_pro",
+        "prompt": "电影剧照，印度乡村剧情片的现实主义风格，画面明亮，傍晚前的阳光从画面右后方低角度照来，金色的逆光勾出玉米叶的边缘，约三分之一的画面落在玉米行之间的阴影里，主光是温暖的金色日光，空气里悬着被风吹起的细尘，玉米的绿色饱和而真实。2014年印度中部农田里的一片成熟玉米地，玉米秆高约两米，成行排列，行距约七十厘米，行间是干燥的红褐色土壤；近处一条踩出来的窄土道从镜头前方直直通向远处，约三米宽的空地可供行走；中景偏左，一根风化的旧木桩竖在一小片空地上，木桩高约两米二，有明显的节疤和几道旧刻痕，顶端有一根短横木；右侧玉米行一直延伸到远处的田埂和一排低矮的树；远处天空开阔，几缕薄云。镜头是站立视高的广角定场镜头，从土道近端向木桩和远处望去。没有人工灯光，只有日光。画面中没有任何人，没有人影。",
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "is_inpaint": false,
+        "remove_bg": false,
+        "count": 1
+      }
+    },
+    {
+      "index": 7,
+      "params": {
+        "model": "seedream_v5_pro",
+        "prompt": "电影剧照，印度乡村剧情片的现实主义风格，画面明亮，午后阳光从画面左前方照来，路面被晒得发白，约四分之一的画面落在路边树影和沟渠里，主光是温暖的金色日光，空气里有被车轮扬起的薄尘，色调自然略暖。2014年印度中部一条通往农场的乡间土路，路面约五米宽，压实的红褐色泥土，有两道清晰的车辙，向远处笔直延伸约五十米；路的右侧是一条干涸的灌溉沟，深约一米、宽约两米，沟边是干草和碎石，沟那边是高高的玉米地边缘；路的左侧是一排电线杆和几棵稀疏的印楝树，树后是开阔的田野；远处路边有一座白色的小里程碑和一道土坡。中景的路面空旷可走，没有车辆。镜头是站立视高的广角定场镜头，从路的近端沿着车辙向远处望去，沟渠在画面右侧。没有人工灯光，只有日光。画面中没有任何人，没有人影。",
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "is_inpaint": false,
+        "remove_bg": false,
+        "count": 1
+      }
+    },
+    {
+      "index": 8,
+      "params": {
+        "model": "seedream_v5_pro",
+        "prompt": "a cinematic live-action photograph of a brown kraft paper bag, the kind a small-town grocer hands over, its top folded down twice, standing upright on a seamless neutral gray surface in three-quarter view, resting in the stable position it takes on its own. Its outline is a tall rectangle about one and a half times as tall as it is wide, the paper about as thick as a postcard, with soft creases at the corners and a faint grease mark near the base. The bag sits in about the central third of the frame. Matte brown kraft paper with visible fibre texture. A single soft key light from the upper left, a soft contact shadow pooling to the right along the surface. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows. no people, no other objects, no brand logos",
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "is_inpaint": false,
+        "remove_bg": false,
+        "count": 1
+      }
+    },
+    {
+      "index": 9,
+      "params": {
+        "model": "seedream_v5_pro",
+        "prompt": "a cinematic live-action photograph of an old single-cab pickup truck from the 1990s, pale faded blue paint over dented steel, a flat wooden-planked cargo bed with low steel sides, round headlamps and a plain painted grille, standing on a seamless neutral gray surface in three-quarter front view from the passenger side, resting on its four worn tyres in the stable position it takes on its own. Its outline is a long low box about three times as long as it is tall, the cab about one third of its length and the bed the rest; the steel panels are about as thick as a coin. The truck fills most of the frame. Dusty matte paint with rust at the wheel arches and clear glass in every window. A single soft key light from the upper left, a soft contact shadow under the body pooling to the right. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows. no people, no other objects, no brand logos",
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "is_inpaint": false,
+        "remove_bg": false,
+        "count": 1
+      }
+    },
+    {
+      "index": 10,
+      "params": {
+        "model": "seedream_v5_pro",
+        "prompt": "a cinematic live-action photograph of a small dark metal spacecraft, a smooth elongated oval hull about the size of a small car, its surface dull charcoal metal with fine panel seams and a few scorched streaks, one low oval hatch on its near side standing open outward like a lid, the opening just large enough for a small child to climb through, resting on a seamless neutral gray surface in three-quarter view, in the stable position it takes on its own. Its outline is a smooth egg about twice as long as it is high, the hull plates about as thick as a thumb, with no fins, windows or lights. The craft fills most of the frame. Cool neutral metal with a dull brushed finish. A single soft key light from the upper left, a soft contact shadow pooling to the right. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows. no people, no other objects, no brand logos",
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "is_inpaint": false,
+        "remove_bg": false,
+        "count": 1
+      }
+    }
+  ]
+}

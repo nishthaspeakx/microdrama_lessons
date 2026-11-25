@@ -1,0 +1,102 @@
+{
+  "file": "clip-2.json",
+  "sha256": "dfd9e4c0c27eee7c1534dd17a68abbe0bc705bf43889d0e30169321427dbf2f9",
+  "jobs": [
+    "588043d8-eac1-43af-bfb1-40b7328cc011"
+  ],
+  "slots": [
+    "clips.2.job"
+  ],
+  "credits": 27.0,
+  "frozen": {
+    "2": {
+      "job": "588043d8-eac1-43af-bfb1-40b7328cc011",
+      "shots": [
+        {
+          "s": 1,
+          "from": 0,
+          "to": 2,
+          "size": "medium_wide",
+          "subject": "meera",
+          "camera": "from behind Meera over her shoulder, eye level, slow push-in",
+          "action": "Meera's back near centre, her hand down at her side, the dust thinning across the street ahead, the stall frames emerging empty, a shutter half down on the left rattling",
+          "actions": [
+            "Meera's back near centre, her hand down at her side, the dust thinning across the street ahead, the stall frames emerging empty, a shutter half down on the left rattling"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        },
+        {
+          "s": 2,
+          "from": 2,
+          "to": 3.8,
+          "size": "close",
+          "subject": "meera",
+          "camera": "from the front, cut at the collarbones, slightly high, slow push-in",
+          "action": "Meera's voice begins at 2.2s, her look going right of the lens into the dust",
+          "actions": [
+            "Meera's voice begins at 2.2s, her look going right of the lens into the dust"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        },
+        {
+          "s": 3,
+          "from": 3.8,
+          "to": 5,
+          "size": "extreme_close",
+          "subject": null,
+          "camera": "insert on the loose shop shutter, eye level, static",
+          "action": "the loose shop shutter on the left of the street, half down, rattles against its frame with dust drifting past it",
+          "actions": [
+            "the loose shop shutter on the left of the street, half down, rattles against its frame with dust drifting past it"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 4,
+          "from": 5,
+          "to": 7.2,
+          "size": "close",
+          "subject": "meera",
+          "camera": "three-quarter from the stalls side, cut at the collarbones, eye level, handheld",
+          "action": "Meera takes one step forward into the thinning dust, her eyes fixed on the empty stalls off left of the lens",
+          "actions": [
+            "Meera takes one step forward into the thinning dust, her eyes fixed on the empty stalls off left of the lens"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        },
+        {
+          "s": 5,
+          "from": 7.2,
+          "to": 9,
+          "size": "extreme_close",
+          "subject": "meera",
+          "camera": "brows to lips, from the front, eye level, slow push-in",
+          "action": "her eyes stay on the empty place off left of the lens, her lips closed, dust settling on her hair",
+          "actions": [
+            "her eyes stay on the empty place off left of the lens, her lips closed, dust settling on her hair"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        }
+      ],
+      "extends": 1
+    }
+  }
+}

@@ -1,0 +1,114 @@
+{
+  "requests": [
+    {
+      "index": 0,
+      "params": {
+        "model": "soul_2",
+        "prompt": "front-view shot, face close up of a young central Indian girl, with soft rounded features, warm brown skin, dark brown eyes, natural skin texture, and long, straight black hair in two plaits tied with red ribbons. She has a natural, everyday look and a calm, open expression, wearing a plain crew-neck top, shoulders covered. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of her face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    },
+    {
+      "index": 1,
+      "params": {
+        "model": "soul_2",
+        "prompt": "A top-down flat-lay photograph of one complete girl's outfit, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is three pieces: a frock, leggings and one pair of shoes, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Simple, everyday and practical, made for a small-town market morning in central India. At the top, a powder-blue cotton frock with small white flowers and a round collar, laid flat with its short puffed sleeves slightly spread: a gathered skirt, a row of small white buttons down the front, a narrow fabric belt. Below the frock, white cotton leggings at full length, laid flat with soft natural folds, both legs reaching down to their hems. At the bottom, directly below the legging hems, one pair of red canvas shoes, the two shoes side by side and touching, toes pointing down. A soft palette of powder blue, white and muted red. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: lightly worn printed cotton, soft cotton jersey, washed canvas with rubber soles, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    },
+    {
+      "index": 2,
+      "params": {
+        "model": "soul_2",
+        "prompt": "front-view shot, face close up of an adult woman, central Indian, with model facial features, medium brown skin, dark brown eyes, natural skin texture, and long, wavy black hair in a low bun at the nape. She has a glamorous appearance and a natural, self-assured expression, wearing a simple neckline outfit. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of her face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    },
+    {
+      "index": 3,
+      "params": {
+        "model": "soul_2",
+        "prompt": "A top-down flat-lay photograph of one complete women's outfit, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is three pieces: a saree, a blouse and one pair of sandals, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Everyday and modest, made for a market morning in a central Indian farming town. At the top, a cream cotton blouse with short sleeves, laid flat with its sleeves slightly spread: a round neck, small hook closures at the front, plain hems. Below the blouse, a maroon cotton saree with a thin gold border, folded and pleated at full length as it would be draped, laid flat with soft natural folds, the pleats reaching down to the hem. At the bottom, directly below the saree hem, one pair of flat tan leather sandals, the two sandals side by side and touching, toes pointing down. A warm palette of maroon, cream and tan. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: handloom cotton with a woven border, plain cotton, worn leather, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    },
+    {
+      "index": 4,
+      "params": {
+        "model": "soul_2",
+        "prompt": "front-view shot, face close up of an adult man, central Indian, with a realistic, unpolished, everyday look, medium brown skin, dark brown eyes, a thick black moustache, natural skin texture, and short, straight black hair side-parted and combed flat. He has a realistic, unpolished, everyday look true to his place in life and a natural, neutral expression, wearing a simple neckline outfit. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of his face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    },
+    {
+      "index": 5,
+      "params": {
+        "model": "soul_2",
+        "prompt": "A top-down flat-lay photograph of one complete men's outfit, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is three pieces: a kurta, trousers and one pair of sandals, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Everyday and plain, made for a market morning in a central Indian farming town. At the top, a white cotton kurta, laid flat with its long sleeves slightly spread: a band collar, a short buttoned placket, side slits at the hem. Below the kurta, grey cotton trousers at full length, laid flat with soft natural folds, both legs reaching down to their hems. At the bottom, directly below the trouser hems, one pair of brown leather sandals, the two sandals side by side and touching, toes pointing down. A muted palette of white, grey and brown. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: lightly creased cotton, plain cotton twill, worn leather, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    },
+    {
+      "index": 6,
+      "params": {
+        "model": "soul_2",
+        "prompt": "front-view shot, face close up of a young central Indian boy, with soft rounded features, medium brown skin, dark brown eyes, natural skin texture, and short, wavy black hair cropped close and brushed forward. He has a natural, everyday look and a calm, open expression, wearing a plain crew-neck top, shoulders covered. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of his face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    },
+    {
+      "index": 7,
+      "params": {
+        "model": "soul_2",
+        "prompt": "A top-down flat-lay photograph of one complete boy's outfit, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is three pieces: a t-shirt, shorts and one pair of shoes, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Simple and practical, made for running through farm fields in central India. At the top, a faded grey cotton t-shirt with a crew neck, laid flat with its short sleeves slightly spread: a ribbed collar, plain hems, a small worn patch at one shoulder. Below the t-shirt, navy cotton shorts at full length, laid flat with soft natural folds, both legs reaching down to their hems. At the bottom, directly below the short hems, one pair of dusty white canvas shoes, the two shoes side by side and touching, toes pointing down. A muted palette of grey, navy and off-white. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: washed cotton jersey, plain cotton drill, scuffed canvas with rubber soles, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    },
+    {
+      "index": 8,
+      "params": {
+        "model": "soul_2",
+        "prompt": "front-view shot, face close up of a teenage central Indian boy, with lean features, medium brown skin, dark brown eyes, natural skin texture, and short, straight black hair with a longer fringe falling over the forehead. He has a natural, everyday look and a calm, open expression, wearing a plain crew-neck top, shoulders covered. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of his face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    },
+    {
+      "index": 9,
+      "params": {
+        "model": "soul_2",
+        "prompt": "A top-down flat-lay photograph of one complete boy's outfit, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is three pieces: a shirt, trousers and one pair of slippers, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Plain and worn, made for a teenager in a central Indian farming town. At the top, an off-white cotton shirt with a large red letter S painted across the chest in rough brush strokes of red paint, laid flat with its long sleeves slightly spread: a pointed collar, a buttoned front, plain cuffs, dust at the hem. Below the shirt, dark brown cotton trousers at full length, laid flat with soft natural folds, both legs reaching down to their hems. At the bottom, directly below the trouser hems, one pair of black rubber slippers, the two slippers side by side and touching, toes pointing down. A muted palette of off-white, dark brown and a single dull red mark. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: worn cotton poplin, plain cotton twill, matte rubber, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    },
+    {
+      "index": 10,
+      "params": {
+        "model": "soul_2",
+        "prompt": "front-view shot, face close up of a strikingly handsome 36 years old central Indian man, with model facial features, warm brown skin, dark brown eyes, a short neat black moustache and a day of stubble, natural skin texture, and short, straight black hair worn naturally and brushed back from the face with a little grey at the temples. He has a realistic, unpolished, everyday look true to his place in life and a natural, neutral expression, wearing a simple neckline outfit. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of his face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "3:4",
+        "quality": "2k",
+        "count": 1
+      }
+    }
+  ]
+}

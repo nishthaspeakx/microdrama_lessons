@@ -1,0 +1,10 @@
+{
+  "params": {
+    "model": "soul_2",
+    "prompt": "front-view shot, face close up of a young central Indian girl, with soft rounded features, warm brown skin, dark brown eyes, natural skin texture, and long, straight black hair in two plaits tied with red ribbons. She has a natural, everyday look and a calm, open expression, wearing a plain crew-neck top, shoulders covered. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of her face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+    "aspect_ratio": "3:4",
+    "quality": "2k",
+    "count": 1,
+    "get_cost": true
+  }
+}

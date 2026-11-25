@@ -1,0 +1,189 @@
+{
+  "file": "clip-5.json",
+  "sha256": "a0112df63e0a71b97005d3f31f890fd365049e8d3c4db11a677690d94ce60453",
+  "jobs": [
+    "0af23072-4a1f-4b4b-88c9-906b3436c589"
+  ],
+  "slots": [
+    "clips.5.job"
+  ],
+  "credits": 45.0,
+  "frozen": {
+    "5": {
+      "job": "0af23072-4a1f-4b4b-88c9-906b3436c589",
+      "shots": [
+        {
+          "s": 1,
+          "from": 0,
+          "to": 1.5,
+          "size": "medium",
+          "subject": "devendra",
+          "camera": "from the ditch bank outside the passenger door, slightly low, static",
+          "action": "the pickup's cab nose down in the ditch, the cracked passenger window in the centre, Suman's shape slumped forward inside it, Devendra beyond her pushing back from the wheel; dust settling on the bonnet",
+          "actions": [
+            "the pickup's cab nose down in the ditch, the cracked passenger window in the centre, Suman's shape slumped forward inside it, Devendra beyond her pushing back from the wheel; dust settling on the bonnet"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra",
+            "suman"
+          ]
+        },
+        {
+          "s": 2,
+          "from": 1.5,
+          "to": 3.5,
+          "size": "close",
+          "subject": "suman",
+          "camera": "from the driver's side, cut at the collarbones, slightly high, slow push-in",
+          "action": "Suman lifts her head off the dashboard, her hand going to her brow, her eyes opening toward the cracked window off right of the lens",
+          "actions": [
+            "Suman lifts her head off the dashboard, her hand going to her brow, her eyes opening toward the cracked window off right of the lens"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman"
+          ]
+        },
+        {
+          "s": 3,
+          "from": 3.5,
+          "to": 5.5,
+          "size": "close",
+          "subject": "boy",
+          "camera": "through the cracked glass from Suman's seat, cut at the collarbones, eye level, static",
+          "action": "the boy's face level with the window outside, his two hands flat on the cracked glass, his look passing left of the lens at Suman",
+          "actions": [
+            "the boy's face level with the window outside, his two hands flat on the cracked glass, his look passing left of the lens at Suman"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "boy"
+          ]
+        },
+        {
+          "s": 4,
+          "from": 5.5,
+          "to": 6.5,
+          "size": "extreme_close",
+          "subject": "suman",
+          "camera": "brows to lips, from the front, eye level, static",
+          "action": "her eyes hold on the boy off right of the lens",
+          "actions": [
+            "her eyes hold on the boy off right of the lens"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman"
+          ]
+        },
+        {
+          "s": 5,
+          "from": 6.5,
+          "to": 8,
+          "size": "medium",
+          "subject": "suman",
+          "camera": "from the ditch bank, slightly low, handheld",
+          "action": "the passenger door swings open and Suman steps down onto the ditch bank, the boy stepping back one pace to the maize edge",
+          "actions": [
+            "the passenger door swings open and Suman steps down onto the ditch bank, the boy stepping back one pace to the maize edge"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman",
+            "boy"
+          ]
+        },
+        {
+          "s": 6,
+          "from": 8,
+          "to": 11,
+          "size": "close",
+          "subject": "suman",
+          "camera": "three-quarter from the maize side, cut at the collarbones, slightly high, handheld",
+          "action": "Suman goes down on one knee on the bank and holds her open hand out low, palm up, toward the boy off left of the lens; her voice begins at 8.2s",
+          "actions": [
+            "Suman goes down on one knee on the bank and holds her open hand out low, palm up, toward the boy off left of the lens; her voice begins at 8.2s"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman"
+          ]
+        },
+        {
+          "s": 7,
+          "from": 11,
+          "to": 12.3,
+          "size": "extreme_close",
+          "subject": "boy",
+          "camera": "insert on the two hands from the side, static",
+          "action": "the boy's small hand comes in from the left and settles in Suman's open palm, her fingers closing gently around it",
+          "actions": [
+            "the boy's small hand comes in from the left and settles in Suman's open palm, her fingers closing gently around it"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "boy",
+            "suman"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        },
+        {
+          "s": 8,
+          "from": 12.3,
+          "to": 13.6,
+          "size": "close",
+          "subject": "boy",
+          "camera": "from Suman's side, cut at the collarbones, slightly high, static",
+          "action": "the boy's look passing right of the lens up at Suman, his hand in hers at the bottom of the frame",
+          "actions": [
+            "the boy's look passing right of the lens up at Suman, his hand in hers at the bottom of the frame"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "boy"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        },
+        {
+          "s": 9,
+          "from": 13.6,
+          "to": 15,
+          "size": "medium",
+          "subject": "devendra",
+          "camera": "from the ditch bank, slightly low, static",
+          "action": "Devendra climbs out of the driver's door and comes round the raised tail of the pickup onto the road side behind Suman, one hand on the bonnet; Suman kneeling near centre with the boy before her, hand in hand",
+          "actions": [
+            "Devendra climbs out of the driver's door and comes round the raised tail of the pickup onto the road side behind Suman, one hand on the bonnet; Suman kneeling near centre with the boy before her, hand in hand"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "devendra",
+            "suman",
+            "boy"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        }
+      ],
+      "extends": 4
+    }
+  }
+}

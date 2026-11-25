@@ -1,0 +1,42 @@
+{
+  "params": {
+    "model": "seedance_2_5",
+    "mode": "video_extension",
+    "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the low golden sun behind right, backlighting the maize leaves and rimming the hair, the spaces between the rows in soft shadow; warm natural colour with saturated, believable greens; dust drifting in the air.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Maize field): the Maize field 100% as in the reference.\nImage reference 2 (character Devendra): Devendra, face, hair, body and clothes 100% as in the reference.\nImage reference 3 (character Suman): Suman, face, hair, body and clothes 100% as in the reference.\nImage reference 4 (character The boy): The boy, face, hair, body and clothes 100% as in the reference.\nImage reference 5 (prop Spacecraft): the Spacecraft 100% as in the reference.\nContinuity: Devendra is clean and unchanged from the reference, with no stain, mark or damage; Suman is clean and unchanged from the reference, with no stain, mark or damage; The boy is clean and unchanged from the reference, with no stain, mark or damage.\nIn frame only: Devendra, Suman and the boy. The edge of the maize field, the rows running away from the lens, the craft half-buried thirty steps in at the end of the flattened trail, far. Devendra stands one step ahead of Suman toward the field, screen left, middle; Suman kneels at the field's edge, screen centre, near; the boy stands before her at arm's length with his back to the trail. Eyelines never at the camera.\nOpening: Devendra standing one step ahead of Suman with his eyes on the craft; Suman kneeling with her eyes along the trail; the boy standing before her with his hand in hers.\nDevendra speaks aloud 1 time between 1.8s and 2.6s and never again; silent before 1.8s and from 2.6s to the end.\nSuman and the boy never speak in this clip.\nDevendra is out to make Suman see the craft; once she looks he holds his ground before it, with resilience.\nSuman is out to take in what Devendra sees; once she has seen the hatch she looks back down to the child, with perseverance.\nThe boy is out to keep hold of Suman; once her eyes come down to him he holds her hand with both of his, with persistence.\nPace: slow and hushed, one beat where his line lands; every shot opens in motion and the last one pushes in slowly.\nS1 0.0-1.6s · medium, from the craft side at waist height looking back at the three, slightly low, static · Devendra stands near centre with his eyes down and left of the lens on the hatch, his hands open at his sides; Suman kneeling with the boy standing before her in the middle distance behind him, hand in hand; maize around them.\nS2 1.6-4.2s · close, cut at the collarbones, three-quarter from Suman's side, slightly low, slow push-in · his eyes hold on the craft off right of the lens, his throat moving as his voice begins at 1.8s and ends at 2.6s, his hands still at his sides; the dark hull soft behind him.\nS3 4.2-6.0s · close, cut at the collarbones, from the front, slightly high, handheld · Suman's eyes rest on the open hatch off left of the lens, dust drifting between them; the boy's hair at the bottom edge of the frame, pale maize behind her.\nS4 6.0-7.4s · insert, the hands from above, static · the boy's second hand comes in from the left and closes over Suman's hand so both his small hands wrap around hers; the dry earth below.\nS5 7.4-9.0s · close, cut at the collarbones, three-quarter from the craft side, slightly high, static · Suman's eyes drop from the hatch down to the boy below the bottom edge of the frame, her plait over her shoulder; maize soft behind her.\nS6 9.0-10.4s · close, cut at the collarbones, from Suman's side, slightly high, static · the boy's look passing right of the lens up at Suman, his two hands around hers at the bottom of the frame; the craft's dark shape soft in the field behind him.\nS7 10.4-13.0s · extreme_close, brows to lips, from the front, eye level, slow push-in · her eyes on the boy low and right of the lens, her lips closed, dust drifting past her face, a single soft metallic tick from the cooling hull at 12.2s; only pale maize behind her.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nS2 (1.8-2.6s) Devendra to Suman, a man's voice of about 36, a dry quiet baritone, a central Indian Hindi accent, steady and low, barely above a whisper: \"सुमन…\"\nNo speech in S1, S3, S4, S5, S6, S7.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- No added sound effects: no whoosh, no boom, no impact hit, no riser.\n- Only diegetic sound: the characters' voices and the natural sounds of this place.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+    "duration": 13,
+    "aspect_ratio": "9:16",
+    "resolution": "480p",
+    "draft": true,
+    "generate_audio": true,
+    "bitrate_mode": "high",
+    "medias": [
+      {
+        "value": "8e3e1fa8-6717-4652-93c8-98e72217aebf",
+        "role": "image_references"
+      },
+      {
+        "value": "5f1b39b6-c85d-4de3-946b-6c6bb1801537",
+        "role": "image_references"
+      },
+      {
+        "value": "f947a93a-a190-427f-91eb-9ac0f55ebcea",
+        "role": "image_references"
+      },
+      {
+        "value": "f0d3202d-0feb-43e1-9797-aa54d1211533",
+        "role": "image_references"
+      },
+      {
+        "value": "b1034a3e-417b-4dba-97ec-ea3865b29bf2",
+        "role": "image_references"
+      },
+      {
+        "value": "fc996522-049c-4bba-b35e-efa480d6a597",
+        "role": "video_references"
+      }
+    ],
+    "count": 1,
+    "extension_mode": "forward",
+    "get_cost": true
+  }
+}

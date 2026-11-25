@@ -1,0 +1,70 @@
+{
+  "requests": [
+    {
+      "index": 0,
+      "params": {
+        "model": "seedance_2_5",
+        "mode": "omni_reference",
+        "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds; no one speaks.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the afternoon sun high on the left, falling hard across the street and onto the faces, the shopfronts under their awnings in shade; dusty gold highlights, warm natural colour; fine dust hanging in the air.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Madhopur bazaar): the Madhopur bazaar 100% as in the reference.\nImage reference 2 (character Young Meera): Young Meera, face, hair, body and clothes 100% as in the reference.\nImage reference 3 (character Meera's mother): Meera's mother, face, hair, body and clothes 100% as in the reference.\nImage reference 4 (character Meera's father): Meera's father, face, hair, body and clothes 100% as in the reference.\nImage reference 5 (prop Paper bag): the Paper bag 100% as in the reference.\nContinuity: Young Meera is clean and unchanged from the reference, with no stain, mark or damage; Meera's mother is clean and unchanged from the reference, with no stain, mark or damage; Meera's father is clean and unchanged from the reference, with no stain, mark or damage.\nIn frame only: Young Meera, Meera's mother, Meera's father and the market crowd. The street runs away from the lens, the shopfronts on the left, the wooden stalls on the right. Meera stands alone in the open middle of the street, near, the glass shopfront behind her; her mother and father stand across the road by the stalls, far, the width of the street between them. Eyelines never at the camera.\nOpening: Meera standing in the middle of the street, her face tipping up; her mother standing by the stalls with the paper bag in her right hand, her father standing a step behind her; shoppers walking.\nNobody speaks in this clip: Meera, her mother, her father and the crowd never speak.\nMeera is out to see what is crossing the sky; once the dust hides her parents she keeps her eyes on the place they stood, with persistence.\nMeera's mother is out to catch Meera's eye across the road; once she has it she waves the bag higher, with zeal.\nPace: ordinary and bright until 8.9s, then one hard turn into dust and noise; every shot opens in motion.\nS1 0.0-1.2s · full, from the near end of the street looking down it, standing eye level, static · market shoppers and vendors move between the stalls and the shopfronts, a bicycle rolls past with its bell going, dust in the sunlight; nobody we know in frame.\nS2 1.2-2.6s · close, cut at the collarbones, from the front, slightly low, slow push-in · Meera in the middle of the street tips her face up to the sky, her look going up past the top edge of the frame; the glass shopfront soft behind her, shoppers passing far back.\nS3 2.6-4.2s · full, a tilt up from the awning tops to the open sky, then static · a fireball with a white-orange tail crosses the sky from upper left to lower right trailing grey smoke, its roar rising at 3.0s; only sky and the awning tops in frame.\nS4 4.2-5.4s · insert, the glass shopfront pane, eye level, static · the shopfront glass rattles in its frame at 4.3s, the sky's reflection shaking in it, a tin signboard buzzing above; only the glass and the painted signboard.\nS5 5.4-7.2s · medium, from across the road on Meera's side, eye level, static · Meera's mother lifts the paper bag high in her right hand and waves it, her look passing right of the lens, level; Meera's father a step behind her on the left, hands at his sides; the wooden stalls behind them.\nS6 7.2-8.8s · close, cut at the collarbones, three-quarter from the shopfront side, eye level, handheld · Meera's right hand rises beside her face to wave, her look passing left of the lens toward the stalls; shoppers soft behind her.\nS7 8.8-10.2s · full, from the shopfront side looking across the road, eye level, static · a wall of pale dust rolls in from the right with a deep thud at 8.9s and swallows the stalls and the two figures by them; shoppers in the middle distance turn and run from it.\nS8 10.2-11.6s · close, cut at the collarbones, from the front, slightly high, handheld · dust rolls over Meera from the right, her raised hand still up, her plaits lifting in the gust, her eyes on the place off left of the lens where the stalls stood; only dust and the shopfront behind her.\nS9 11.6-13.0s · extreme_close, brows to lips, from the front, eye level, slow push-in · her eyes search the dust off left of the lens, her raised hand lowering out of the bottom of the frame, a loose shutter rattling somewhere behind her; only pale dust behind her.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nNo speech in S1, S2, S3, S4, S5, S6, S7, S8, S9.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- No added sound effects: no whoosh, no boom, no impact hit, no riser.\n- Only diegetic sound: the characters' voices and the natural sounds of this place.\n- Background people never copy the face or hair of any image reference; each referenced character appears once, as themselves.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+        "duration": 13,
+        "aspect_ratio": "9:16",
+        "resolution": "480p",
+        "draft": true,
+        "generate_audio": true,
+        "bitrate_mode": "high",
+        "medias": [
+          {
+            "value": "f14c9928-fb0a-4696-90b9-de8b00b203f2",
+            "role": "image_references"
+          },
+          {
+            "value": "32dc90ca-b3dc-4355-8e4d-ac57536a2f60",
+            "role": "image_references"
+          },
+          {
+            "value": "860462ac-492c-4410-843b-697870d9d7e8",
+            "role": "image_references"
+          },
+          {
+            "value": "f83e6134-1cc7-421b-aba9-a2aea9f836e0",
+            "role": "image_references"
+          },
+          {
+            "value": "1edf045e-59f1-45c1-9654-97650c5d614a",
+            "role": "image_references"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "index": 1,
+      "params": {
+        "model": "seedance_2_5",
+        "mode": "omni_reference",
+        "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the low golden sun behind right, backlighting the maize leaves and rimming the hair, the spaces between the rows in soft shadow; warm natural colour with saturated, believable greens; dust drifting in the air.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Maize field): the Maize field 100% as in the reference.\nImage reference 2 (character Young Yash): Young Yash, face, hair, body and clothes 100% as in the reference.\nImage reference 3 (character The teenage boy): The teenage boy, face, hair, body and clothes 100% as in the reference; now with coarse rope wound around his chest and arms, binding him upright to the wooden post from S4 on.\nContinuity: Young Yash is clean and unchanged from the reference, with no stain, mark or damage; The teenage boy has coarse rope wound around his chest and arms, binding him upright to the wooden post from S4 on.\nIn frame only: Young Yash and the teenage boy. The trodden path runs from the lens into the rows; the wooden post stands in a small clearing a dozen steps in, screen centre, middle depth. Yash is between the rows, near; the teenage boy stands bound to the post, middle, an arm's length from nobody. Eyelines never at the camera.\nOpening: Yash walking between the rows with the leaves closing over his shoulders; the teenage boy standing upright against the post with coarse rope around his chest and arms, his head down, a dozen steps ahead.\nThe teenage boy speaks aloud 1 time between 7.2s and 9.9s and never again; silent before 7.2s and from 9.9s to the end.\nYash never speaks in this clip.\nYash is out to reach the boy at the post; once the boy calls to him he goes toward him, with grit.\nThe teenage boy is out to get the rope off; once he sees Yash he calls him over, with tenacity.\nPace: pressing and then sudden; every shot opens in motion, a beat only where his line lands.\nS1 0.0-1.5s · full, from the near end of the trodden path looking into the rows, standing eye level, static · the maize leaves move in a light wind with a dry rustle, the trodden path leading in, the wooden post in its clearing ahead; nobody in frame yet.\nS2 1.5-3.5s · medium, camera ahead of Yash travelling backward at his shoulder height · Yash pushes through the maize toward the lens, leaves slapping his shoulders, his hands parting the stalks, his look passing right of the lens; only green maize behind him.\nS3 3.5-5.0s · close, cut at the collarbones, three-quarter from the post side, slightly high, handheld · Yash stops at a gap in the rows, his hands holding two stalks apart, his look passing left of the lens, level; maize soft behind him.\nS4 5.0-7.0s · medium, from the gap at Yash's eye height, slow push-in · the teenage boy stands bound upright to the wooden post in the clearing, coarse rope around his chest and arms, the red S on his shirt facing the lens, his head turning toward the gap; maize rows behind him.\nS5 7.0-10.0s · close, cut at the collarbones, three-quarter from the gap side, slightly low, handheld · he strains forward against the rope, the post creaking, his look passing right of the lens, level; his voice begins at 7.2s and ends at 9.9s; only maize behind him.\nS6 10.0-11.0s · close, cut at the collarbones, from the front, slightly low, static · Yash's hands drop from the stalks, his look going right past the lens toward the post, level; maize behind him.\nS7 11.0-12.8s · medium, camera behind Yash at his shoulder height travelling with him · Yash steps out of the gap into the clearing and takes three steps toward the post; the teenage boy at the post in the middle distance ahead, his face toward Yash; maize either side.\nS8 12.8-14.4s · full, from behind Yash at the edge of the clearing, standing eye level, static · the maize behind the post bends away in one wave from left to right across the whole field with a rising rush of wind at 12.9s, the post and the bound boy at the centre, Yash in the near foreground with his back to the lens.\nS9 14.4-16.0s · close, cut at the collarbones, from the front, slightly low, handheld · Yash's right forearm comes up across his eyes, his hair blown flat by the gust, leaves flying past him; the bending maize behind him.\nS10 16.0-18.0s · close, cut at the collarbones, three-quarter from the post side, slightly high, slow push-in · white light floods in from the right across his raised forearm and face and the picture washes toward white, the roar peaking at 17.0s; the maize behind him flattening.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nS5 (7.2-9.9s) The teenage boy to Yash, a boy's voice, hoarse, strained and urgent, pleading and raw: \"रुको! मेरी रस्सी खोल दो!\"\nNo speech in S1, S2, S3, S4, S6, S7, S8, S9, S10.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- No added sound effects: no whoosh, no boom, no impact hit, no riser.\n- Only diegetic sound: the characters' voices and the natural sounds of this place.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+        "duration": 18,
+        "aspect_ratio": "9:16",
+        "resolution": "480p",
+        "draft": true,
+        "generate_audio": true,
+        "bitrate_mode": "high",
+        "medias": [
+          {
+            "value": "8e3e1fa8-6717-4652-93c8-98e72217aebf",
+            "role": "image_references"
+          },
+          {
+            "value": "ba178ecf-7107-4421-a14c-d68a64e54e18",
+            "role": "image_references"
+          },
+          {
+            "value": "af4bcfe9-8ac1-4ced-b2e1-8026a961ad71",
+            "role": "image_references"
+          }
+        ],
+        "count": 1
+      }
+    }
+  ]
+}

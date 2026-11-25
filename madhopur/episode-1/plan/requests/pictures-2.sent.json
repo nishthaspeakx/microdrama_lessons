@@ -1,0 +1,31 @@
+{
+  "file": "pictures-2.json",
+  "sha256": "fbed48e3d0c026878c2a1e85b7d6352b742b0d2a591952a5d5791175e2d7223f",
+  "jobs": [
+    "b78b6fc6-9fbd-4bff-b87b-54c81489164a",
+    "33c7343d-82ed-48d4-8457-d5948b8ca299",
+    "2dd95f7b-b053-4fe3-bbb5-a39a11dc33b6",
+    "42326eea-1c37-4fa1-b34d-01117a8e9c84",
+    "de431748-e497-42ae-b016-fcd9ba9a58fd",
+    "f14c9928-fb0a-4696-90b9-de8b00b203f2",
+    "8e3e1fa8-6717-4652-93c8-98e72217aebf",
+    "c4f76180-c300-4723-9d09-18ec0f71933e",
+    "1edf045e-59f1-45c1-9654-97650c5d614a",
+    "200acb4a-6271-4447-8c51-b78cc10da8e5",
+    "b1034a3e-417b-4dba-97ec-ea3865b29bf2"
+  ],
+  "slots": [
+    "characters.devendra.outfit",
+    "characters.suman.face",
+    "characters.suman.outfit",
+    "characters.boy.face",
+    "characters.boy.outfit",
+    "locations.bazaar.job",
+    "locations.maize_field.job",
+    "locations.farm_road.job",
+    "props.paper_bag.job",
+    "props.pickup.job",
+    "props.spacecraft.job"
+  ],
+  "credits": 15.6
+}

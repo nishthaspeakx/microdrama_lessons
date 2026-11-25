@@ -1,0 +1,74 @@
+{
+  "requests": [
+    {
+      "index": 0,
+      "params": {
+        "model": "seedance_2_5",
+        "mode": "omni_reference",
+        "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds; no one speaks.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the afternoon sun front left, bleaching the dirt road pale and lighting the faces through the windscreen, the ditch and the tree line in shade; warm natural colour; dust hanging over the road.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Farm road): the Farm road 100% as in the reference.\nImage reference 2 (character Devendra): Devendra, face, hair, body and clothes 100% as in the reference.\nImage reference 3 (character Suman): Suman, face, hair, body and clothes 100% as in the reference.\nImage reference 4 (prop Pickup): the Pickup 100% as in the reference; now with its nose down in the ditch and its tail up on the road, the passenger-side window cracked in a web from S7 on.\nContinuity: Devendra is clean and unchanged from the reference, with no stain, mark or damage; Suman is clean and unchanged from the reference, with no stain, mark or damage.\nIn frame only: Devendra and Suman. The dirt road runs away from the lens with the ditch along its right side and the maize beyond it. The pickup rolls along the ruts, Devendra in the driver's seat on the left of the cab, Suman in the passenger seat on the right, the ditch side, an arm's length apart. Eyelines never at the camera.\nOpening: Devendra seated at the wheel with both hands on it; Suman seated beside him with her hands in her lap; the pickup moving along the road.\nNobody speaks in this clip: Devendra and Suman never speak.\nDevendra is out to get them home; once the streak crosses the road he stands on the brake and holds the wheel, with grit.\nSuman is out to sit easy on the ride home; once the truck drops she braces against the dashboard, with resilience.\nPace: steady until 4.9s, then quick cuts through the brake and the drop, then slow as the dust settles; every shot opens in motion.\nS1 0.0-1.5s · full, from the near end of the road looking down the ruts, standing eye level, static · the pickup comes toward the lens along the ruts in the middle distance with its engine ticking over, dust rolling behind it, the ditch on the right; nobody on foot.\nS2 1.5-3.5s · close, cut at the collarbones, through the windscreen from the bonnet, eye level, static · Devendra at the wheel with both hands on it, his look passing left of the lens down the road; Suman soft in the passenger seat to the right of him, her hands in her lap; the rear window behind them.\nS3 3.5-4.8s · close, cut at the collarbones, three-quarter from the driver's side, eye level, handheld · Suman's hands rest in her lap, her look passing right of the lens through the windscreen; the side window and the maize beyond it behind her.\nS4 4.8-6.3s · full, from inside the cab over the dashboard looking down the road, static · a streak of fire crosses low over the road ahead from upper right to lower left with a tearing roar at 4.9s, smoke behind it, the maize tops lighting up; the bonnet at the bottom of the frame, nobody in it.\nS5 6.3-7.3s · extreme_close, brows to lips, from the passenger side, eye level, handheld · his eyes track the streak off left of the lens, his jaw set; the driver's window behind him.\nS6 7.3-8.3s · insert, the pedals from the footwell, static · Devendra's sandal stamps the brake pedal to the floor at 7.4s; only the pedals and the floor mat.\nS7 8.3-10.0s · full, from the ditch side at road level, static · the pickup's front wheels lock and slide in the dust with a long skid at 8.4s, the truck slews toward the ditch, its right front wheel drops over the edge and the nose pitches down into the ditch with a crunch at 9.5s, dust rolling; the cab's shapes inside.\nS8 10.0-11.3s · medium, from behind the seats inside the cab, slightly high, handheld · both bodies are thrown forward, Devendra's hands braced on the wheel, Suman's forehead going down onto the dashboard, the passenger-side window cracking in a web at 10.2s; the maize beyond the glass.\nS9 11.3-12.8s · close, cut at the collarbones, three-quarter from the passenger side, slightly high, handheld · Devendra pushes himself back off the wheel, dust settling in the light inside the cab, his look going right of the lens toward Suman's seat; only the driver's window behind him.\nS10 12.8-15.0s · close, cut at the collarbones, from the driver's side, slightly high, slow push-in · Suman lies forward against the dashboard with her eyes closed, her plait fallen over her shoulder, dust drifting in the light, the engine ticking as it cools; the cracked passenger window behind her.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nNo speech in S1, S2, S3, S4, S5, S6, S7, S8, S9, S10.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- No added sound effects: no whoosh, no boom, no impact hit, no riser.\n- Only diegetic sound: the characters' voices and the natural sounds of this place.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+        "duration": 15,
+        "aspect_ratio": "9:16",
+        "resolution": "480p",
+        "draft": true,
+        "generate_audio": true,
+        "bitrate_mode": "high",
+        "medias": [
+          {
+            "value": "c4f76180-c300-4723-9d09-18ec0f71933e",
+            "role": "image_references"
+          },
+          {
+            "value": "5f1b39b6-c85d-4de3-946b-6c6bb1801537",
+            "role": "image_references"
+          },
+          {
+            "value": "f947a93a-a190-427f-91eb-9ac0f55ebcea",
+            "role": "image_references"
+          },
+          {
+            "value": "200acb4a-6271-4447-8c51-b78cc10da8e5",
+            "role": "image_references"
+          }
+        ],
+        "count": 1
+      }
+    },
+    {
+      "index": 1,
+      "params": {
+        "model": "seedance_2_5",
+        "mode": "omni_reference",
+        "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds; no one speaks.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the low golden sun behind right, backlighting the maize leaves and rimming the hair, the spaces between the rows in soft shadow; warm natural colour with saturated, believable greens; dust drifting in the air.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Maize field): the Maize field 100% as in the reference.\nImage reference 2 (character Devendra): Devendra, face, hair, body and clothes 100% as in the reference.\nImage reference 3 (character Suman): Suman, face, hair, body and clothes 100% as in the reference.\nImage reference 4 (character The boy): The boy, face, hair, body and clothes 100% as in the reference.\nImage reference 5 (prop Spacecraft): the Spacecraft 100% as in the reference.\nContinuity: Devendra is clean and unchanged from the reference, with no stain, mark or damage; Suman is clean and unchanged from the reference, with no stain, mark or damage; The boy is clean and unchanged from the reference, with no stain, mark or damage.\nIn frame only: Devendra, Suman and the boy. The edge of the maize field, the rows running away from the lens. Suman kneels at the field's edge, screen centre, near; the boy stands before her at arm's length with his back to the field, the trail of flattened maize running from behind him into the rows; Devendra stands a step behind Suman, screen left, near; the craft lies thirty steps into the field at the end of the trail, far. Eyelines never at the camera.\nOpening: Suman kneeling with the boy's hand in hers; the boy standing before her; Devendra standing a step behind her, his eyes on the boy.\nNobody speaks in this clip: Devendra, Suman and the boy never speak.\nDevendra is out to understand where the child came from; once he sees the trail he follows it with his eyes to its end, with resilience.\nSuman is out to keep the child's hand in hers; once Devendra moves she looks where he looks, with perseverance.\nThe boy is out to stay beside Suman; once she holds his hand he keeps it there, with persistence.\nPace: slow and still, one long locked shot on the craft; every shot opens in motion.\nS1 0.0-1.8s · close, cut at the collarbones, three-quarter from the field side, slightly low, slow push-in · Devendra's eyes lift from the boy and travel past him, his look going off right of the lens and up along the field; Suman's plait and shoulder soft in the right foreground.\nS2 1.8-3.6s · medium, from behind Devendra over his shoulder, slightly high, static · a trail of flattened maize runs from the boy's back straight into the field; Suman kneeling and the boy standing near centre with their hands joined, Devendra's shoulder soft in the left foreground; the open field beyond.\nS3 3.6-6.6s · full, child-eye level from the start of the trail looking along it, locked camera · the trail of flattened maize leads to the dark metal craft half-buried in the earth thirty steps in, its open hatch facing the lens, fine dust drifting slowly past the opening, the hull completely still; nobody in frame.\nS4 6.6-8.6s · close, cut at the collarbones, from the front, slightly low, handheld · Devendra takes one slow step forward past Suman, his eyes fixed on the craft off right of the lens, his hands open at his sides; only the maize behind him.\nS5 8.6-10.0s · insert, the open hatch from low in the flattened maize, static · the dark opening of the hatch just big enough for a small child, a thin line of heat shimmer at its edge, earth heaped against the dark hull; nobody in frame.\nS6 10.0-12.0s · close, cut at the collarbones, three-quarter from Devendra's side, slightly high, slow push-in · Suman's eyes come up from the boy's hand in hers to Devendra's face off left of the lens, then along the trail to the right; the boy's shoulder soft in the right foreground.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nNo speech in S1, S2, S3, S4, S5, S6.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- No added sound effects: no whoosh, no boom, no impact hit, no riser.\n- Only diegetic sound: the characters' voices and the natural sounds of this place.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+        "duration": 12,
+        "aspect_ratio": "9:16",
+        "resolution": "480p",
+        "draft": true,
+        "generate_audio": true,
+        "bitrate_mode": "high",
+        "medias": [
+          {
+            "value": "8e3e1fa8-6717-4652-93c8-98e72217aebf",
+            "role": "image_references"
+          },
+          {
+            "value": "5f1b39b6-c85d-4de3-946b-6c6bb1801537",
+            "role": "image_references"
+          },
+          {
+            "value": "f947a93a-a190-427f-91eb-9ac0f55ebcea",
+            "role": "image_references"
+          },
+          {
+            "value": "f0d3202d-0feb-43e1-9797-aa54d1211533",
+            "role": "image_references"
+          },
+          {
+            "value": "b1034a3e-417b-4dba-97ec-ea3865b29bf2",
+            "role": "image_references"
+          }
+        ],
+        "count": 1
+      }
+    }
+  ]
+}

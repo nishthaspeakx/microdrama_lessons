@@ -1,0 +1,2972 @@
+{
+  "title": "Madhopur Episode 1: Aasman Se Kya Gira",
+  "aspect_ratio": "9:16",
+  "quality": "480p",
+  "edit_kinds": [
+    "montage",
+    "screen_text",
+    "subtitles"
+  ],
+  "style_id": "realism_cinematic",
+  "style": "live action",
+  "look": "Bright ordinary afternoon daylight over a dusty central Indian farming town in 2014, warm gold highlights, dust in the air, natural skin, saturated but believable maize greens, the spacecraft cool neutral metal against warm earth. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+  "script_file": "madhopur-ep1-script.txt",
+  "episode_lines": [
+    1,
+    39
+  ],
+  "hook": {
+    "scene": "s1",
+    "line": 1
+  },
+  "narrator_voice": null,
+  "not_people": [
+    "EXT",
+    "INT",
+    "MADHOPUR",
+    "BAZAAR",
+    "DAY",
+    "MAIZE",
+    "FIELD",
+    "SHARMAS",
+    "PICKUP",
+    "CONTINUOUS"
+  ],
+  "user_answers": [
+    {
+      "turn": 1,
+      "text": "Create a cinematic vertical microdrama pilot for Madhopur. Produce Episode 1 only.\n\nUse Madhopur_Episode_1_Production_Brief.md as the screenplay. Follow its four scenes in order: the bazaar, the maize field, the pickup crash, and the spacecraft reveal. Use Madhopur_Master_Production_Document.md for character continuity, visual style, colour, music, sound and editing direction.\n\nTarget format: 9:16 vertical, approximately 1 minute 35 seconds. Set the episode in Madhopur, a small Indian farming town in 2014. Preserve the Hinglish dialogue as written and keep the cast, costumes, props and locations consistent across shots.\n\nShow the first meteor within three seconds. Use warm, natural daylight and restrained performances. Break the meteor impact and pickup crash into short shots so the action stays clear. Follow the Episode 1 sound cues, especially the drop to near silence after the impact.\n\nEnd exactly here: Suman and Devendra see the spacecraft. Hold on their reaction as the boy grips Suman’s hand. Let the metallic tick land, then cut to black. The kitchen, adoption and time jump are outside the scope of this pilot.\n\nBefore generating anything, show me the scene and shot plan, the character and location references you need, the planned runtime and the estimated credit cost. Confirm that the plan contains exactly one episode and ends at the spacecraft reveal. Wait for my approval before generating."
+    },
+    {
+      "turn": 2,
+      "text": "Approve, 480p drafts"
+    },
+    {
+      "turn": 3,
+      "text": "I'll type their ages (a name and an age each)"
+    },
+    {
+      "turn": 3,
+      "text": "Yes: tighter cut, name cards, subtitles (free) (recommended)"
+    },
+    {
+      "turn": 4,
+      "text": "Suman 32, Devendra 36"
+    },
+    {
+      "turn": 5,
+      "text": "Meera's parents are adults (recommended)"
+    },
+    {
+      "turn": 6,
+      "text": "Meera's mother and Meera's father are adults (recommended)"
+    },
+    {
+      "turn": 7,
+      "text": "Meera's mother is an adult (recommended)"
+    },
+    {
+      "turn": 8,
+      "text": "Yes, make the pictures (recommended)"
+    },
+    {
+      "turn": 9,
+      "text": "Go: make the clips (about 285 credits) (recommended)"
+    },
+    {
+      "turn": 10,
+      "text": "Fix clips (tell me the numbers and what's wrong; about 27-54 credits a clip)"
+    },
+    {
+      "turn": 11,
+      "text": "Make clip 3 again"
+    },
+    {
+      "turn": 12,
+      "text": "All good, keep the draft (recommended)"
+    },
+    {
+      "turn": 13,
+      "text": "Keep the edit (recommended)"
+    }
+  ],
+  "characters": [
+    {
+      "id": "meera",
+      "name": "Young Meera",
+      "aliases": [
+        "Meera"
+      ],
+      "labels": [
+        "MEERA"
+      ],
+      "age": null,
+      "age_source": null,
+      "being": "human",
+      "speaks": true,
+      "picture": "sheet",
+      "lead": true,
+      "role": "pure_heart",
+      "profile": {
+        "sex": "girl",
+        "origin": "central Indian",
+        "skin": "warm brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "long",
+        "hair_texture": "straight",
+        "hair_styling": "two plaits tied with red ribbons",
+        "facial_hair": null,
+        "build": "slim"
+      },
+      "wardrobe": [
+        "powder-blue cotton frock with small white flowers and a round collar",
+        "white cotton leggings",
+        "red canvas shoes"
+      ],
+      "voice": "a girl's voice, small, light and uncertain",
+      "prompts": {
+        "face": "front-view shot, face close up of a young central Indian girl, with soft rounded features, warm brown skin, dark brown eyes, natural skin texture, and long, straight black hair in two plaits tied with red ribbons. She has a natural, everyday look and a calm, open expression, wearing a plain crew-neck top, shoulders covered. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of her face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "outfit": "A top-down flat-lay photograph of one complete girl's outfit, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is three pieces: a frock, leggings and one pair of shoes, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Simple, everyday and practical, made for a small-town market morning in central India. At the top, a powder-blue cotton frock with small white flowers and a round collar, laid flat with its short puffed sleeves slightly spread: a gathered skirt, a row of small white buttons down the front, a narrow fabric belt. Below the frock, white cotton leggings at full length, laid flat with soft natural folds, both legs reaching down to their hems. At the bottom, directly below the legging hems, one pair of red canvas shoes, the two shoes side by side and touching, toes pointing down. A soft palette of powder blue, white and muted red. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: lightly worn printed cotton, soft cotton jersey, washed canvas with rubber soles, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "sheet": "the first attached reference image is the single source of truth for this girl's face: the same facial structure, brows, eyes, nose, lips and skin tone, a full likeness match to the first attached reference image. the second attached reference image is the single source of truth for her clothes: the same garments, footwear and accessories as in the second attached reference image, with their cut, construction, materials and hardware, now worn on her body. With this exact girl in this exact outfit, create a horizontal three-panel photographic character appearance sheet on a plain neutral light-grey studio backdrop with thin white vertical separators, lit from the front by soft, even, diffused studio light, the same in all three panels and equal on both sides of the face and body: a wardrobe fitting of a real young actress in real clothes, cinematic live-action realism, natural skin texture with visible pores, subtle photographic grain. This young girl, a slim figure with natural proportions. Her hair keeps the same black colour and long length as in the first attached reference image, now styled in two neat plaits tied with red ribbons, falling forward over the shoulders. She wears a regular-fit POWDER-BLUE lightly worn printed cotton frock with small white flowers, a round collar, short puffed sleeves, a row of small white buttons down the front and a narrow fabric belt, worn over WHITE soft cotton-jersey leggings reaching the ankle, and MUTED RED washed canvas shoes with rubber soles. Every material reads as real printed cotton, cotton jersey and canvas with visible stitching and its matte finish. The outfit sits in soft tones of powder blue, white and muted red. She stands straight in a relaxed, neutral pose with natural proportions, the waist at the middle of the figure, arms loose at the sides; every hand is empty and relaxed. Left panel: the front of the outfit from the neck down to the footwear, natural proportions, the head above the crop, showing the buttoned front of the frock, the gathered skirt, the leggings and the canvas shoes. Centre panel: a full-length rear view from head to footwear, showing the back of the two plaits with their red ribbons, the back of the frock and the leggings down to the shoes. Right panel: one large head-and-shoulders portrait with the whole head inside the frame and clear space above it, the same face as the first attached reference image, the hair in two plaits with red ribbons, the round collar of the frock at the neck and the shoulders covered, calm and neutral, eyes to the camera. Exactly one visible face across the sheet, in the right panel only. The garments, materials, colours, hardware and footwear stay identical across all three views. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows."
+      },
+      "face": "604c493f-6e36-47e3-b8d5-0a8944822159",
+      "outfit": "57034b79-4070-4559-bb92-7ea7418e93ae",
+      "sheet": "32dc90ca-b3dc-4355-8e4d-ac57536a2f60"
+    },
+    {
+      "id": "meera_mother",
+      "name": "Meera's mother",
+      "aliases": [
+        "Meera’s mother",
+        "her mother",
+        "the mother"
+      ],
+      "labels": [],
+      "age": null,
+      "age_source": "user_adult",
+      "being": "human",
+      "speaks": false,
+      "picture": "sheet",
+      "role": "functional",
+      "profile": {
+        "sex": "woman",
+        "origin": "central Indian",
+        "skin": "medium brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "long",
+        "hair_texture": "wavy",
+        "hair_styling": "a low bun at the nape",
+        "facial_hair": null,
+        "build": "average"
+      },
+      "wardrobe": [
+        "maroon cotton saree with a thin gold border",
+        "cream cotton blouse with short sleeves",
+        "flat tan leather sandals"
+      ],
+      "voice": "a woman's voice, warm and bright",
+      "prompts": {
+        "face": "front-view shot, face close up of an adult woman, central Indian, with model facial features, medium brown skin, dark brown eyes, natural skin texture, and long, wavy black hair in a low bun at the nape. She has a glamorous appearance and a natural, self-assured expression, wearing a simple neckline outfit. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of her face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "outfit": "A top-down flat-lay photograph of one complete women's outfit, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is three pieces: a saree, a blouse and one pair of sandals, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Everyday and modest, made for a market morning in a central Indian farming town. At the top, a cream cotton blouse with short sleeves, laid flat with its sleeves slightly spread: a round neck, small hook closures at the front, plain hems. Below the blouse, a maroon cotton saree with a thin gold border, folded and pleated at full length as it would be draped, laid flat with soft natural folds, the pleats reaching down to the hem. At the bottom, directly below the saree hem, one pair of flat tan leather sandals, the two sandals side by side and touching, toes pointing down. A warm palette of maroon, cream and tan. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: handloom cotton with a woven border, plain cotton, worn leather, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "sheet": "the first attached reference image is the single source of truth for this woman's face: the same facial structure, brows, eyes, nose, lips and skin tone, a full likeness match to the first attached reference image. the second attached reference image is the single source of truth for her clothes: the same garments, footwear and accessories as in the second attached reference image, with their cut, construction, materials and hardware, now worn on her body. With this exact woman in this exact outfit, create a horizontal three-panel photographic character appearance sheet on a plain neutral light-grey studio backdrop with thin white vertical separators, lit from the front by soft, even, diffused studio light, the same in all three panels and equal on both sides of the face and body: a wardrobe fitting of a real actress in real clothes, cinematic live-action realism, natural skin texture with visible pores, subtle photographic grain. An adult woman, an average figure with natural, unemphasised proportions. Her hair keeps the same black colour and long length as in the first attached reference image, now styled in a low bun at the nape with a centre parting. She wears a regular-fit MAROON handloom cotton saree with a thin gold woven border, draped the everyday way with the pleats at the front and the pallu over the left shoulder, over a CREAM plain cotton blouse with short sleeves and a round neck, and flat TAN worn leather sandals. Every material reads as real handloom cotton, plain cotton and leather with visible stitching and its matte finish. The outfit sits in warm tones of maroon, cream and tan. She stands straight in a relaxed, neutral pose with natural adult proportions, the waist at the middle of the figure, arms loose at the sides; every hand is empty and relaxed. Left panel: the front of the outfit from the neck down to the footwear, natural proportions, the head above the crop, showing the front pleats of the saree, the blouse, the gold border and the sandals. Centre panel: a full-length rear view from head to footwear, showing the back of the low bun, the pallu over the shoulder and the back of the saree down to the sandals. Right panel: one large head-and-shoulders portrait with the whole head inside the frame and clear space above it, the same face as the first attached reference image, the hair in a low bun, the blouse neck and the pallu at the shoulder, calm and neutral, eyes to the camera. Exactly one visible face across the sheet, in the right panel only. The garments, materials, colours, hardware and footwear stay identical across all three views. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows."
+      },
+      "face": "5c62a650-5d55-4eb4-8957-2cad4b883857",
+      "outfit": "bd647fbc-b73e-44b7-8a30-9b7ce87c6e10",
+      "sheet": "860462ac-492c-4410-843b-697870d9d7e8",
+      "user_quote": "Meera's mother is an adult"
+    },
+    {
+      "id": "meera_father",
+      "name": "Meera's father",
+      "aliases": [
+        "Meera’s father",
+        "Her father",
+        "her father",
+        "the father"
+      ],
+      "labels": [],
+      "age": null,
+      "age_source": "user_adult",
+      "being": "human",
+      "speaks": false,
+      "picture": "sheet",
+      "role": "functional",
+      "profile": {
+        "sex": "man",
+        "origin": "central Indian",
+        "skin": "medium brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "short",
+        "hair_texture": "straight",
+        "hair_styling": "side-parted and combed flat",
+        "facial_hair": "a thick black moustache",
+        "build": "lean"
+      },
+      "wardrobe": [
+        "white cotton kurta",
+        "grey cotton trousers",
+        "brown leather sandals"
+      ],
+      "voice": "a man's voice, mild and even",
+      "prompts": {
+        "face": "front-view shot, face close up of an adult man, central Indian, with a realistic, unpolished, everyday look, medium brown skin, dark brown eyes, a thick black moustache, natural skin texture, and short, straight black hair side-parted and combed flat. He has a realistic, unpolished, everyday look true to his place in life and a natural, neutral expression, wearing a simple neckline outfit. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of his face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "outfit": "A top-down flat-lay photograph of one complete men's outfit, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is three pieces: a kurta, trousers and one pair of sandals, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Everyday and plain, made for a market morning in a central Indian farming town. At the top, a white cotton kurta, laid flat with its long sleeves slightly spread: a band collar, a short buttoned placket, side slits at the hem. Below the kurta, grey cotton trousers at full length, laid flat with soft natural folds, both legs reaching down to their hems. At the bottom, directly below the trouser hems, one pair of brown leather sandals, the two sandals side by side and touching, toes pointing down. A muted palette of white, grey and brown. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: lightly creased cotton, plain cotton twill, worn leather, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "sheet": "the first attached reference image is the single source of truth for this man's face: the same facial structure, brows, eyes, nose, lips and skin tone, a full likeness match to the first attached reference image. the second attached reference image is the single source of truth for his clothes: the same garments, footwear and accessories as in the second attached reference image, with their cut, construction, materials and hardware, now worn on his body. With this exact man in this exact outfit, create a horizontal three-panel photographic character appearance sheet on a plain neutral light-grey studio backdrop with thin white vertical separators, lit from the front by soft, even, diffused studio light, the same in all three panels and equal on both sides of the face and body: a wardrobe fitting of a real actor in real clothes, cinematic live-action realism, natural skin texture with visible pores, subtle photographic grain. An adult man, a lean figure with natural, unemphasised proportions. His hair keeps the same black colour and short length as in the first attached reference image, now styled side-parted and combed flat. He wears a regular-fit WHITE lightly creased cotton kurta with a band collar, a short buttoned placket and side slits, worn over GREY plain cotton-twill trousers, and BROWN worn leather sandals. Every material reads as real cotton, cotton twill and leather with visible stitching and its matte finish. The outfit sits in muted tones of white, grey and brown. He stands straight in a relaxed, neutral pose with natural adult proportions, the waist at the middle of the figure, arms loose at the sides; every hand is empty and relaxed. Left panel: the front of the outfit from the neck down to the footwear, natural proportions, the head above the crop, showing the kurta placket, the side slits, the trousers and the sandals. Centre panel: a full-length rear view from head to footwear, showing the back of the short hair, the back of the kurta and the trousers down to the sandals. Right panel: one large head-and-shoulders portrait with the whole head inside the frame and clear space above it, the same face as the first attached reference image, the hair side-parted and flat, the band collar of the kurta at the neck, calm and neutral, eyes to the camera. Exactly one visible face across the sheet, in the right panel only. The garments, materials, colours, hardware and footwear stay identical across all three views. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows."
+      },
+      "face": "9ef6b5b0-89e9-4495-95a4-839cc610dbdf",
+      "outfit": "beefe767-fc33-407c-8ba4-b3687c870835",
+      "sheet": "f83e6134-1cc7-421b-aba9-a2aea9f836e0",
+      "user_quote": "Meera's father are adults"
+    },
+    {
+      "id": "yash",
+      "name": "Young Yash",
+      "aliases": [
+        "Yash"
+      ],
+      "labels": [],
+      "age": null,
+      "age_source": null,
+      "being": "human",
+      "speaks": false,
+      "picture": "sheet",
+      "role": "witness",
+      "profile": {
+        "sex": "boy",
+        "origin": "central Indian",
+        "skin": "medium brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "short",
+        "hair_texture": "wavy",
+        "hair_styling": "cropped close and brushed forward",
+        "facial_hair": null,
+        "build": "slim"
+      },
+      "wardrobe": [
+        "faded grey cotton t-shirt with a crew neck",
+        "navy cotton shorts",
+        "dusty white canvas shoes"
+      ],
+      "voice": "a boy's voice, quick and breathless",
+      "prompts": {
+        "face": "front-view shot, face close up of a young central Indian boy, with soft rounded features, medium brown skin, dark brown eyes, natural skin texture, and short, wavy black hair cropped close and brushed forward. He has a natural, everyday look and a calm, open expression, wearing a plain crew-neck top, shoulders covered. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of his face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "outfit": "A top-down flat-lay photograph of one complete boy's outfit, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is three pieces: a t-shirt, shorts and one pair of shoes, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Simple and practical, made for running through farm fields in central India. At the top, a faded grey cotton t-shirt with a crew neck, laid flat with its short sleeves slightly spread: a ribbed collar, plain hems, a small worn patch at one shoulder. Below the t-shirt, navy cotton shorts at full length, laid flat with soft natural folds, both legs reaching down to their hems. At the bottom, directly below the short hems, one pair of dusty white canvas shoes, the two shoes side by side and touching, toes pointing down. A muted palette of grey, navy and off-white. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: washed cotton jersey, plain cotton drill, scuffed canvas with rubber soles, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "sheet": "the first attached reference image is the single source of truth for this boy's face: the same facial structure, brows, eyes, nose, lips and skin tone, a full likeness match to the first attached reference image. the second attached reference image is the single source of truth for his clothes: the same garments, footwear and accessories as in the second attached reference image, with their cut, construction, materials and hardware, now worn on his body. With this exact boy in this exact outfit, create a horizontal three-panel photographic character appearance sheet on a plain neutral light-grey studio backdrop with thin white vertical separators, lit from the front by soft, even, diffused studio light, the same in all three panels and equal on both sides of the face and body: a wardrobe fitting of a real young actor in real clothes, cinematic live-action realism, natural skin texture with visible pores, subtle photographic grain. This young boy, a slim figure with natural proportions. His hair keeps the same black colour and short length as in the first attached reference image, now styled cropped close and brushed forward. He wears a regular-fit faded GREY washed cotton-jersey t-shirt with a ribbed crew neck and a small worn patch at one shoulder, worn over NAVY plain cotton-drill shorts reaching the knee, and dusty OFF-WHITE scuffed canvas shoes with rubber soles. Every material reads as real cotton jersey, cotton drill and canvas with visible stitching and its matte finish. The outfit sits in muted tones of grey, navy and off-white. He stands straight in a relaxed, neutral pose with natural proportions, the waist at the middle of the figure, arms loose at the sides; every hand is empty and relaxed. Left panel: the front of the outfit from the neck down to the footwear, natural proportions, the head above the crop, showing the t-shirt, the shorts and the canvas shoes. Centre panel: a full-length rear view from head to footwear, showing the back of the cropped hair, the back of the t-shirt and the shorts down to the shoes. Right panel: one large head-and-shoulders portrait with the whole head inside the frame and clear space above it, the same face as the first attached reference image, the hair cropped close and brushed forward, the ribbed crew neck at the throat and the shoulders covered, calm and neutral, eyes to the camera. Exactly one visible face across the sheet, in the right panel only. The garments, materials, colours, hardware and footwear stay identical across all three views. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows."
+      },
+      "face": "ba88c333-5c0b-4b81-bbe7-893123090654",
+      "outfit": "148a9a4d-4ac2-4486-985c-2dc565a7ebdc",
+      "sheet": "ba178ecf-7107-4421-a14c-d68a64e54e18"
+    },
+    {
+      "id": "nikhil",
+      "name": "The teenage boy",
+      "aliases": [
+        "teenage boy",
+        "the boy at the post",
+        "Nikhil"
+      ],
+      "labels": [
+        "BOY"
+      ],
+      "age": null,
+      "age_source": null,
+      "being": "human",
+      "speaks": true,
+      "picture": "sheet",
+      "role": "witness",
+      "profile": {
+        "sex": "boy",
+        "origin": "central Indian",
+        "skin": "medium brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "short",
+        "hair_texture": "straight",
+        "hair_styling": "a longer fringe falling over the forehead",
+        "facial_hair": null,
+        "build": "lanky"
+      },
+      "wardrobe": [
+        "off-white cotton shirt with a large red letter S painted across the chest",
+        "dark brown cotton trousers",
+        "black rubber slippers"
+      ],
+      "voice": "a boy's voice, hoarse, strained and urgent",
+      "prompts": {
+        "face": "front-view shot, face close up of a teenage central Indian boy, with lean features, medium brown skin, dark brown eyes, natural skin texture, and short, straight black hair with a longer fringe falling over the forehead. He has a natural, everyday look and a calm, open expression, wearing a plain crew-neck top, shoulders covered. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of his face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "outfit": "A top-down flat-lay photograph of one complete boy's outfit, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is three pieces: a shirt, trousers and one pair of slippers, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Plain and worn, made for a teenager in a central Indian farming town. At the top, an off-white cotton shirt with a large red letter S painted across the chest in rough brush strokes of red paint, laid flat with its long sleeves slightly spread: a pointed collar, a buttoned front, plain cuffs, dust at the hem. Below the shirt, dark brown cotton trousers at full length, laid flat with soft natural folds, both legs reaching down to their hems. At the bottom, directly below the trouser hems, one pair of black rubber slippers, the two slippers side by side and touching, toes pointing down. A muted palette of off-white, dark brown and a single dull red mark. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: worn cotton poplin, plain cotton twill, matte rubber, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "sheet": "the first attached reference image is the single source of truth for this boy's face: the same facial structure, brows, eyes, nose, lips and skin tone, a full likeness match to the first attached reference image. the second attached reference image is the single source of truth for his clothes: the same garments, footwear and accessories as in the second attached reference image, with their cut, construction, materials and hardware, now worn on his body. With this exact boy in this exact outfit, create a horizontal three-panel photographic character appearance sheet on a plain neutral light-grey studio backdrop with thin white vertical separators, lit from the front by soft, even, diffused studio light, the same in all three panels and equal on both sides of the face and body: a wardrobe fitting of a real young actor in real clothes, cinematic live-action realism, natural skin texture with visible pores, subtle photographic grain. This teenage boy, a lanky figure with natural proportions. His hair keeps the same black colour and short length as in the first attached reference image, now styled with the longer fringe falling over the forehead. He wears a regular-fit OFF-WHITE worn cotton-poplin shirt with a pointed collar and a buttoned front, a large red letter S painted across the chest in rough brush strokes of red paint, dust at the hem, worn over DARK BROWN plain cotton-twill trousers, and BLACK matte rubber slippers. Every material reads as real cotton poplin, cotton twill and rubber with visible stitching and its matte finish. The outfit sits in muted tones of off-white and dark brown with one dull red mark. He stands straight in a relaxed, neutral pose with natural proportions, the waist at the middle of the figure, arms loose at the sides; every hand is empty and relaxed. Left panel: the front of the outfit from the neck down to the footwear, natural proportions, the head above the crop, showing the painted red letter S across the shirt front, the buttons, the trousers and the slippers. Centre panel: a full-length rear view from head to footwear, showing the back of the short hair, the plain back of the shirt and the trousers down to the slippers. Right panel: one large head-and-shoulders portrait with the whole head inside the frame and clear space above it, the same face as the first attached reference image, the fringe over the forehead, the shirt collar buttoned at the neck and the shoulders covered, calm and neutral, eyes to the camera. Exactly one visible face across the sheet, in the right panel only. The garments, materials, colours, hardware and footwear stay identical across all three views. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows."
+      },
+      "face": "ebbf56cc-28db-4b80-ab28-e9c0bf8f36f2",
+      "outfit": "5014d3a1-6fad-4ce2-afa2-6232d89adcf7",
+      "sheet": "af4bcfe9-8ac1-4ced-b2e1-8026a961ad71"
+    },
+    {
+      "id": "devendra",
+      "name": "Devendra",
+      "aliases": [
+        "Devendra Sharma"
+      ],
+      "labels": [
+        "DEVENDRA"
+      ],
+      "age": 36,
+      "age_source": "user",
+      "user_quote": "Devendra 36",
+      "being": "human",
+      "speaks": true,
+      "picture": "sheet",
+      "lead": true,
+      "role": "witness",
+      "profile": {
+        "sex": "man",
+        "origin": "central Indian",
+        "skin": "warm brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "short",
+        "hair_texture": "straight",
+        "hair_styling": "brushed back from the face with a little grey at the temples",
+        "facial_hair": "a short neat black moustache and a day of stubble",
+        "build": "broad"
+      },
+      "wardrobe": [
+        "faded red-and-navy checked cotton shirt with the sleeves rolled to the elbow",
+        "dusty khaki cotton trousers",
+        "worn brown leather sandals"
+      ],
+      "voice": "a man's voice of about 36, a dry quiet baritone, a central Indian Hindi accent, steady and low",
+      "prompts": {
+        "face": "front-view shot, face close up of a strikingly handsome 36 years old central Indian man, with model facial features, warm brown skin, dark brown eyes, a short neat black moustache and a day of stubble, natural skin texture, and short, straight black hair worn naturally and brushed back from the face with a little grey at the temples. He has a realistic, unpolished, everyday look true to his place in life and a natural, neutral expression, wearing a simple neckline outfit. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of his face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "outfit": "A top-down flat-lay photograph of one complete men's outfit for a broad man, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is three pieces: a shirt, trousers and one pair of sandals, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Hard-wearing and plain, made for a farmer's working day in central India. At the top, a faded red-and-navy checked cotton shirt with the sleeves rolled to the elbow, laid flat with its rolled sleeves slightly spread: a pointed collar, a buttoned front, a single chest pocket, softened creases. Below the shirt, dusty khaki cotton trousers at full length, laid flat with soft natural folds, both legs reaching down to their hems. At the bottom, directly below the trouser hems, one pair of worn brown leather sandals, the two sandals side by side and touching, toes pointing down. A muted palette of faded red, navy, khaki and brown. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: sun-faded checked cotton, dusty cotton drill, scuffed leather, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "sheet": "the first attached reference image is the single source of truth for this man's face: the same facial structure, brows, eyes, nose, lips and skin tone, a full likeness match to the first attached reference image. the second attached reference image is the single source of truth for his clothes: the same garments, footwear and accessories as in the second attached reference image, with their cut, construction, materials and hardware, now worn on his body. With this exact man in this exact outfit, create a horizontal three-panel photographic character appearance sheet on a plain neutral light-grey studio backdrop with thin white vertical separators, lit from the front by soft, even, diffused studio light, the same in all three panels and equal on both sides of the face and body: a wardrobe fitting of a real actor in real clothes, cinematic live-action realism, natural skin texture with visible pores, subtle photographic grain. A 36-year-old man, a broad figure with natural, unemphasised proportions. His hair keeps the same black colour and short length as in the first attached reference image, now styled brushed back from the face with a little grey at the temples. He wears a regular-fit faded RED-AND-NAVY sun-faded checked cotton shirt with a pointed collar, a buttoned front, a single chest pocket and the sleeves rolled to the elbow, softened at the collar and cuffs, worn over dusty KHAKI cotton-drill trousers, and worn BROWN scuffed leather sandals. Every material reads as real checked cotton, cotton drill and leather with visible stitching and its matte finish. The outfit sits in muted tones of faded red, navy, khaki and brown. He stands straight in a relaxed, neutral pose with natural adult proportions, the waist at the middle of the figure, arms loose at the sides; every hand is empty and relaxed. Left panel: the front of the outfit from the neck down to the footwear, natural proportions, the head above the crop, showing the checked shirt with its rolled sleeves and chest pocket, the trousers and the sandals. Centre panel: a full-length rear view from head to footwear, showing the back of the short hair with grey at the temples, the back of the checked shirt and the trousers down to the sandals. Right panel: one large head-and-shoulders portrait with the whole head inside the frame and clear space above it, the same face as the first attached reference image, the hair brushed back, the checked collar open at the neck, calm and neutral, eyes to the camera. Exactly one visible face across the sheet, in the right panel only. The garments, materials, colours, hardware and footwear stay identical across all three views. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows."
+      },
+      "face": "c07896ea-6f10-44ee-8ad1-d9eca4bf0ea7",
+      "outfit": "b78b6fc6-9fbd-4bff-b87b-54c81489164a",
+      "sheet": "5f1b39b6-c85d-4de3-946b-6c6bb1801537"
+    },
+    {
+      "id": "suman",
+      "name": "Suman",
+      "aliases": [
+        "Suman Sharma"
+      ],
+      "labels": [
+        "SUMAN"
+      ],
+      "age": 32,
+      "age_source": "user",
+      "user_quote": "Suman 32",
+      "being": "human",
+      "speaks": true,
+      "picture": "sheet",
+      "lead": true,
+      "role": "pure_heart",
+      "profile": {
+        "sex": "woman",
+        "origin": "central Indian",
+        "skin": "warm brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "long",
+        "hair_texture": "straight",
+        "hair_styling": "a single low plait over one shoulder",
+        "facial_hair": null,
+        "build": "slim"
+      },
+      "wardrobe": [
+        "sage-green cotton kameez with small white block print",
+        "oatmeal cotton salwar",
+        "pale sage cotton dupatta",
+        "flat brown leather sandals"
+      ],
+      "voice": "a woman's voice of about 32, warm and low, a soft central Indian Hindi accent, gentle and steady",
+      "prompts": {
+        "face": "front-view shot, face close up of a stunningly beautiful 32 years old central Indian woman, with model facial features, warm brown skin, dark brown eyes, natural skin texture, and long, straight black hair in a single low plait over one shoulder. She has a sweet, wholesome, radiant beauty and a tender, open-hearted, serene expression with lips gently closed, wearing a simple neckline outfit. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of her face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "outfit": "A top-down flat-lay photograph of one complete women's outfit, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is four pieces: a kameez, a salwar, a dupatta and one pair of sandals, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Everyday and modest, made for a farm wife's day in a central Indian town. At the top, a sage-green cotton kameez with small white block print, laid flat with its three-quarter sleeves slightly spread: a round neck with a short placket, side slits, a straight hem at the knee; the pale sage cotton dupatta laid folded across the shoulders of the kameez with its ends hanging down either side. Below the kameez, an oatmeal cotton salwar at full length, laid flat with soft natural folds, both legs reaching down to their hems. At the bottom, directly below the salwar hems, one pair of flat brown leather sandals, the two sandals side by side and touching, toes pointing down. A soft palette of sage green, oatmeal and brown. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: block-printed cotton, plain soft cotton, fine cotton voile, worn leather, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "sheet": "the first attached reference image is the single source of truth for this woman's face: the same facial structure, brows, eyes, nose, lips and skin tone, a full likeness match to the first attached reference image. the second attached reference image is the single source of truth for her clothes: the same garments, footwear and accessories as in the second attached reference image, with their cut, construction, materials and hardware, now worn on her body. With this exact woman in this exact outfit, create a horizontal three-panel photographic character appearance sheet on a plain neutral light-grey studio backdrop with thin white vertical separators, lit from the front by soft, even, diffused studio light, the same in all three panels and equal on both sides of the face and body: a wardrobe fitting of a real actress in real clothes, cinematic live-action realism, natural skin texture with visible pores, subtle photographic grain. A 32-year-old woman, a slim figure with natural, unemphasised proportions. Her hair keeps the same black colour and long length as in the first attached reference image, now styled in a single low plait falling over one shoulder. She wears a regular-fit SAGE-GREEN block-printed cotton kameez with small white print, a round neck with a short placket, three-quarter sleeves and side slits, softened at the hem, worn over an OATMEAL plain soft cotton salwar, with a PALE SAGE fine cotton-voile dupatta draped across the shoulders with its ends hanging down the front, and flat BROWN worn leather sandals. Every material reads as real block-printed cotton, soft cotton, cotton voile and leather with visible stitching and its matte finish. The outfit sits in soft tones of sage green, oatmeal and brown. She stands straight in a relaxed, neutral pose with natural adult proportions, the waist at the middle of the figure, arms loose at the sides; every hand is empty and relaxed. Left panel: the front of the outfit from the neck down to the footwear, natural proportions, the head above the crop, showing the printed kameez, the dupatta ends, the salwar and the sandals. Centre panel: a full-length rear view from head to footwear, showing the back of the plait, the dupatta across the back of the shoulders, the back of the kameez and the salwar down to the sandals. Right panel: one large head-and-shoulders portrait with the whole head inside the frame and clear space above it, the same face as the first attached reference image, the plait over one shoulder, the round neck of the kameez and the dupatta at the shoulders, calm and neutral, eyes to the camera. Exactly one visible face across the sheet, in the right panel only. The garments, materials, colours, hardware and footwear stay identical across all three views. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows."
+      },
+      "face": "33c7343d-82ed-48d4-8457-d5948b8ca299",
+      "outfit": "2dd95f7b-b053-4fe3-bbb5-a39a11dc33b6",
+      "sheet": "f947a93a-a190-427f-91eb-9ac0f55ebcea"
+    },
+    {
+      "id": "boy",
+      "name": "The boy",
+      "aliases": [
+        "the small boy",
+        "small boy",
+        "the little boy",
+        "the child",
+        "a small boy",
+        "Veer"
+      ],
+      "labels": [],
+      "age": null,
+      "age_source": null,
+      "being": "human",
+      "speaks": false,
+      "picture": "sheet",
+      "lead": true,
+      "role": "pure_heart",
+      "profile": {
+        "sex": "boy",
+        "origin": "central Indian",
+        "skin": "light brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "short",
+        "hair_texture": "straight",
+        "hair_styling": "a soft tousled crop",
+        "facial_hair": null,
+        "build": "small and slight"
+      },
+      "wardrobe": [
+        "pale cream cotton kurta",
+        "soft grey cotton pyjama trousers",
+        "plain brown rubber chappals"
+      ],
+      "voice": "a child's voice, small and quiet",
+      "prompts": {
+        "face": "front-view shot, face close up of a small central Indian boy, with soft rounded features and large eyes, light brown skin, dark brown eyes, natural skin texture, and short, straight black hair in a soft tousled crop. He has a natural, everyday look and a calm, open expression, wearing a plain crew-neck top, shoulders covered. Head-and-shoulders, whole head and hair visible, seamless bright white studio backdrop, soft even light on both sides of his face, neutral colour, true-to-life realism, gaze locked on the lens. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "outfit": "A top-down flat-lay photograph of one complete small boy's outfit, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is three pieces: a kurta, pyjama trousers and one pair of chappals, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Plain and simple, made for a small boy in rural central India. At the top, a pale cream cotton kurta, laid flat with its long sleeves slightly spread: a round neck with a short placket and two small buttons, plain hems. Below the kurta, soft grey cotton pyjama trousers at full length, laid flat with soft natural folds, both legs reaching down to their hems. At the bottom, directly below the pyjama hems, one pair of plain brown rubber chappals, the two chappals side by side and touching, toes pointing down. A soft palette of cream, grey and brown. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: soft washed cotton, plain cotton, matte rubber, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "sheet": "the first attached reference image is the single source of truth for this boy's face: the same facial structure, brows, eyes, nose, lips and skin tone, a full likeness match to the first attached reference image. the second attached reference image is the single source of truth for his clothes: the same garments, footwear and accessories as in the second attached reference image, with their cut, construction, materials and hardware, now worn on his body. With this exact boy in this exact outfit, create a horizontal three-panel photographic character appearance sheet on a plain neutral light-grey studio backdrop with thin white vertical separators, lit from the front by soft, even, diffused studio light, the same in all three panels and equal on both sides of the face and body: a wardrobe fitting of a real young actor in real clothes, cinematic live-action realism, natural skin texture with visible pores, subtle photographic grain. This small boy, a small and slight figure with natural proportions. His hair keeps the same black colour and short length as in the first attached reference image, now styled in a soft tousled crop. He wears a regular-fit PALE CREAM soft washed cotton kurta with a round neck, a short placket and two small buttons, worn over soft GREY plain cotton pyjama trousers, and plain BROWN matte rubber chappals. Every material reads as real washed cotton, plain cotton and rubber with visible stitching and its matte finish. The outfit sits in soft tones of cream, grey and brown. He stands straight in a relaxed, neutral pose with natural proportions, the waist at the middle of the figure, arms loose at the sides; every hand is empty and relaxed. Left panel: the front of the outfit from the neck down to the footwear, natural proportions, the head above the crop, showing the kurta placket, the pyjama trousers and the chappals. Centre panel: a full-length rear view from head to footwear, showing the back of the tousled hair, the back of the kurta and the trousers down to the chappals. Right panel: one large head-and-shoulders portrait with the whole head inside the frame and clear space above it, the same face as the first attached reference image, the hair in a soft tousled crop, the round neck of the kurta at the throat and the shoulders covered, calm and neutral, eyes to the camera. Exactly one visible face across the sheet, in the right panel only. The garments, materials, colours, hardware and footwear stay identical across all three views. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows."
+      },
+      "face": "42326eea-1c37-4fa1-b34d-01117a8e9c84",
+      "outfit": "de431748-e497-42ae-b016-fcd9ba9a58fd",
+      "sheet": "f0d3202d-0feb-43e1-9797-aa54d1211533"
+    }
+  ],
+  "locations": [
+    {
+      "id": "bazaar",
+      "name": "Madhopur bazaar",
+      "look": "a dusty small-town market street in central India in 2014, low concrete shopfronts with hand-painted Hindi signboards and canvas awnings, wooden stalls, a packed-earth road",
+      "hour": "afternoon",
+      "light": [
+        "bright afternoon sun from high left",
+        "fluorescent tube lights inside the shops"
+      ],
+      "map": {
+        "left": "a row of low shops with painted signboards and awnings, one with a glass shopfront",
+        "right": "wooden stalls with vegetables, plastic buckets and cloth, a black bicycle leaning on one",
+        "far": "a large banyan tree and the white spire of a small temple at the end of the street",
+        "near": "the packed-earth road with loose gravel, the open middle of the street"
+      },
+      "prompt": "电影剧照，印度乡村剧情片的现实主义风格，画面明亮，午后阳光从左上方斜照而下，约四分之一的画面落在店铺遮阳棚下的阴影里，主光是温暖的金色日光，空气里悬着细微的尘土，色调自然，略带暖意。2014年印度中部一个小农业集镇的集市街道，街道约八米宽、向远处延伸三十米；左侧是一排低矮的水泥店铺，刷着褪色的淡黄和浅绿墙面，挂着手绘的印地语招牌和蓝色帆布遮阳棚，其中一家店有一面大玻璃橱窗映着天光，店门口放着铁皮卷帘门；右侧是一排木架子摊位，摆着蔬菜、塑料桶和成卷的布匹，一辆黑色自行车靠在摊位边；远处街道尽头是一棵大榕树和一座白色小庙的尖顶，天空开阔明亮；近处是压实的土路和零散的碎石，街道中间的路面空旷可走。镜头是站立视高的广角定场镜头，从街道近端向远端望去，店铺在左、摊位在右。店铺里亮着零星的日光灯管。画面中没有任何人，没有人影。",
+      "job": "f14c9928-fb0a-4696-90b9-de8b00b203f2",
+      "reverse": null
+    },
+    {
+      "id": "maize_field",
+      "name": "Maize field",
+      "look": "a ripe maize field in central India, rows of tall maize two metres high, dry red-brown earth between the rows, a weathered wooden post in a small clearing, open sky",
+      "hour": "late afternoon",
+      "light": [
+        "low golden sun from behind right"
+      ],
+      "map": {
+        "left": "a weathered wooden post in a small clearing a little way into the rows",
+        "right": "maize rows running to a far field edge and a line of low trees",
+        "far": "the far edge of the field and open sky",
+        "near": "a narrow trodden earth path leading straight into the rows"
+      },
+      "prompt": "电影剧照，印度乡村剧情片的现实主义风格，画面明亮，傍晚前的阳光从画面右后方低角度照来，金色的逆光勾出玉米叶的边缘，约三分之一的画面落在玉米行之间的阴影里，主光是温暖的金色日光，空气里悬着被风吹起的细尘，玉米的绿色饱和而真实。2014年印度中部农田里的一片成熟玉米地，玉米秆高约两米，成行排列，行距约七十厘米，行间是干燥的红褐色土壤；近处一条踩出来的窄土道从镜头前方直直通向远处，约三米宽的空地可供行走；中景偏左，一根风化的旧木桩竖在一小片空地上，木桩高约两米二，有明显的节疤和几道旧刻痕，顶端有一根短横木；右侧玉米行一直延伸到远处的田埂和一排低矮的树；远处天空开阔，几缕薄云。镜头是站立视高的广角定场镜头，从土道近端向木桩和远处望去。没有人工灯光，只有日光。画面中没有任何人，没有人影。",
+      "job": "8e3e1fa8-6717-4652-93c8-98e72217aebf",
+      "reverse": null
+    },
+    {
+      "id": "farm_road",
+      "name": "Farm road",
+      "look": "a straight dirt farm road in central India with two wheel ruts, a dry irrigation ditch along its right side, the edge of a maize field beyond the ditch, neem trees and power poles on the left",
+      "hour": "afternoon",
+      "light": [
+        "bright afternoon sun from front left"
+      ],
+      "map": {
+        "left": "a line of power poles and sparse neem trees, open fields behind them",
+        "right": "a dry irrigation ditch about a metre deep, dry grass and stones along its edge, tall maize beyond it",
+        "far": "a small white milestone and a low earth bank where the road runs on",
+        "near": "the packed red-brown dirt road with two wheel ruts"
+      },
+      "prompt": "电影剧照，印度乡村剧情片的现实主义风格，画面明亮，午后阳光从画面左前方照来，路面被晒得发白，约四分之一的画面落在路边树影和沟渠里，主光是温暖的金色日光，空气里有被车轮扬起的薄尘，色调自然略暖。2014年印度中部一条通往农场的乡间土路，路面约五米宽，压实的红褐色泥土，有两道清晰的车辙，向远处笔直延伸约五十米；路的右侧是一条干涸的灌溉沟，深约一米、宽约两米，沟边是干草和碎石，沟那边是高高的玉米地边缘；路的左侧是一排电线杆和几棵稀疏的印楝树，树后是开阔的田野；远处路边有一座白色的小里程碑和一道土坡。中景的路面空旷可走，没有车辆。镜头是站立视高的广角定场镜头，从路的近端沿着车辙向远处望去，沟渠在画面右侧。没有人工灯光，只有日光。画面中没有任何人，没有人影。",
+      "job": "c4f76180-c300-4723-9d09-18ec0f71933e",
+      "reverse": null
+    }
+  ],
+  "props": [
+    {
+      "id": "paper_bag",
+      "name": "Paper bag",
+      "look": "a brown kraft paper grocer's bag with its top folded down twice",
+      "carried_by": "meera_mother",
+      "prompt": "a cinematic live-action photograph of a brown kraft paper bag, the kind a small-town grocer hands over, its top folded down twice, standing upright on a seamless neutral gray surface in three-quarter view, resting in the stable position it takes on its own. Its outline is a tall rectangle about one and a half times as tall as it is wide, the paper about as thick as a postcard, with soft creases at the corners and a faint grease mark near the base. The bag sits in about the central third of the frame. Matte brown kraft paper with visible fibre texture. A single soft key light from the upper left, a soft contact shadow pooling to the right along the surface. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows. no people, no other objects, no brand logos",
+      "job": "1edf045e-59f1-45c1-9654-97650c5d614a"
+    },
+    {
+      "id": "pickup",
+      "name": "Pickup",
+      "look": "an old 1990s single-cab pickup truck, pale faded blue, dented steel, a wooden-planked cargo bed with low steel sides",
+      "carried_by": null,
+      "prompt": "a cinematic live-action photograph of an old single-cab pickup truck from the 1990s, pale faded blue paint over dented steel, a flat wooden-planked cargo bed with low steel sides, round headlamps and a plain painted grille, standing on a seamless neutral gray surface in three-quarter front view from the passenger side, resting on its four worn tyres in the stable position it takes on its own. Its outline is a long low box about three times as long as it is tall, the cab about one third of its length and the bed the rest; the steel panels are about as thick as a coin. The truck fills most of the frame. Dusty matte paint with rust at the wheel arches and clear glass in every window. A single soft key light from the upper left, a soft contact shadow under the body pooling to the right. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows. no people, no other objects, no brand logos",
+      "job": "200acb4a-6271-4447-8c51-b78cc10da8e5"
+    },
+    {
+      "id": "spacecraft",
+      "name": "Spacecraft",
+      "look": "a small dark metal spacecraft, a smooth elongated oval hull the size of a small car, dull charcoal metal with fine panel seams and scorched streaks, one low oval hatch standing open",
+      "carried_by": null,
+      "prompt": "a cinematic live-action photograph of a small dark metal spacecraft, a smooth elongated oval hull about the size of a small car, its surface dull charcoal metal with fine panel seams and a few scorched streaks, one low oval hatch on its near side standing open outward like a lid, the opening just large enough for a small child to climb through, resting on a seamless neutral gray surface in three-quarter view, in the stable position it takes on its own. Its outline is a smooth egg about twice as long as it is high, the hull plates about as thick as a thumb, with no fins, windows or lights. The craft fills most of the frame. Cool neutral metal with a dull brushed finish. A single soft key light from the upper left, a soft contact shadow pooling to the right. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows. no people, no other objects, no brand logos",
+      "job": "b1034a3e-417b-4dba-97ec-ea3865b29bf2"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "s1",
+      "location": "bazaar",
+      "hour": "afternoon",
+      "continues": null,
+      "time_marker": "2014",
+      "crowd": "market shoppers and vendors in everyday cotton clothes",
+      "blocking": [
+        {
+          "who": "meera",
+          "enters": null,
+          "presence": "in_room",
+          "where": "in the middle of the street near the glass shopfront, screen centre, near",
+          "posture": "standing",
+          "holds": null
+        },
+        {
+          "who": "meera_mother",
+          "enters": null,
+          "presence": "in_room",
+          "where": "across the road by the stalls, screen right, far",
+          "posture": "standing",
+          "holds": "paper_bag"
+        },
+        {
+          "who": "meera_father",
+          "enters": null,
+          "presence": "in_room",
+          "where": "beside Meera's mother by the stalls, screen right, far, a step behind her",
+          "posture": "standing",
+          "holds": null
+        }
+      ],
+      "lines": [
+        {
+          "n": 1,
+          "who": null,
+          "kind": "action",
+          "text": "Opening shot. Tight on young Meera as she looks up. Tilt just enough to catch a fireball crossing the sky. By the third second, glass is rattling in the shopfront behind her.",
+          "touch": "none",
+          "revealing": false
+        },
+        {
+          "n": 2,
+          "who": null,
+          "kind": "action",
+          "text": "Across the road, Meera’s mother holds up a paper bag and waves. Her father stands beside her. Meera starts to wave back. An impact sends dust across the street. Keep the camera with Meera as she loses sight of them.",
+          "touch": "none",
+          "revealing": false
+        },
+        {
+          "n": 3,
+          "who": "meera",
+          "kind": "dialogue",
+          "delivery": "aloud",
+          "text": "मम्मी? … पापा?"
+        },
+        {
+          "n": 4,
+          "who": null,
+          "kind": "action",
+          "text": "Sound. Drop the market chatter at the impact. Bring back only Meera’s voice and the rattle of a loose shop shutter.",
+          "touch": "none",
+          "revealing": false
+        }
+      ],
+      "staging": [
+        {
+          "at": 0,
+          "text": "Meera stands alone in the open middle of the street with the glass shopfront behind her; her parents stand across the road by the stalls, the width of the street between them."
+        },
+        {
+          "at": 1,
+          "text": "Meera's face is tipped up to the sky, her feet planted; shoppers around her keep walking."
+        },
+        {
+          "at": 2,
+          "text": "Her mother's arm is up with the paper bag held high; her father's hands rest at his sides; Meera's hand is half raised when the dust rolls across the street between them and hides the stalls."
+        },
+        {
+          "at": 3,
+          "text": "Meera stands in the thinning dust, her raised hand still up, her eyes on the place where her parents stood."
+        }
+      ],
+      "moves": [],
+      "turn": "The sky falls on an ordinary market afternoon and Meera loses sight of her parents.",
+      "decisive_line": 2,
+      "silent_beat": {
+        "after": 3,
+        "who": "meera",
+        "action": "her raised hand lowers",
+        "seconds": 2
+      },
+      "hooks": [
+        {
+          "kind": "spectacle",
+          "who": "meera",
+          "from": 1,
+          "to": 2,
+          "beats": [
+            "a fireball crosses the sky above the street",
+            "the glass of the shopfront rattles",
+            "an impact throws dust across the street"
+          ],
+          "peak": "the impact throws a wall of dust across the street between Meera and her parents",
+          "slow": "none",
+          "seconds": 6
+        }
+      ],
+      "states": [
+        "dust hangs in the street"
+      ],
+      "end": [
+        {
+          "who": "meera",
+          "where": "in the middle of the street, screen centre, near",
+          "posture": "standing"
+        },
+        {
+          "who": "meera_mother",
+          "where": "hidden in the dust across the road",
+          "posture": "standing"
+        },
+        {
+          "who": "meera_father",
+          "where": "hidden in the dust across the road",
+          "posture": "standing"
+        }
+      ],
+      "seconds": 22
+    },
+    {
+      "id": "s2",
+      "location": "maize_field",
+      "hour": "late afternoon",
+      "continues": null,
+      "time_marker": null,
+      "crowd": null,
+      "blocking": [
+        {
+          "who": "yash",
+          "enters": "through the maize rows from the near path",
+          "presence": "in_room",
+          "where": "on the narrow path between the rows, screen centre, near",
+          "posture": "walking",
+          "holds": null
+        },
+        {
+          "who": "nikhil",
+          "enters": null,
+          "presence": "in_room",
+          "where": "at the wooden post in the small clearing, screen centre, middle",
+          "posture": "standing, bound to the post",
+          "holds": null
+        }
+      ],
+      "lines": [
+        {
+          "n": 1,
+          "who": null,
+          "kind": "action",
+          "text": "Young Yash pushes through the maize. Through a gap, he sees a teenage boy tied to a wooden post. A red S is painted on the boy’s shirt.",
+          "touch": "none",
+          "revealing": false
+        },
+        {
+          "n": 2,
+          "who": "nikhil",
+          "kind": "dialogue",
+          "delivery": "aloud",
+          "text": "रुको! मेरी रस्सी खोल दो!"
+        },
+        {
+          "n": 3,
+          "who": null,
+          "kind": "action",
+          "text": "Yash moves toward him. The maize bends in a wave. Yash throws up his arm as a flash wipes out the picture.",
+          "touch": "none",
+          "revealing": false
+        }
+      ],
+      "staging": [
+        {
+          "at": 0,
+          "text": "Yash is between the maize rows with the leaves closing over his shoulders; the post stands in its clearing a dozen steps ahead of him."
+        },
+        {
+          "at": 1,
+          "text": "The teenage boy stands upright against the post with coarse rope around his chest and arms, his head turned toward the gap where Yash stands."
+        },
+        {
+          "at": 2,
+          "text": "The boy's eyes are on Yash; Yash's feet are still at the edge of the gap, his hands at his sides."
+        },
+        {
+          "at": 3,
+          "text": "Yash is three steps into the clearing when the maize behind the post bends away from him in one wave and his forearm comes up across his eyes."
+        }
+      ],
+      "moves": [
+        {
+          "at": 3,
+          "who": "yash",
+          "move": "moves",
+          "to": "the edge of the clearing, three steps from the post"
+        }
+      ],
+      "turn": "A boy tied to a post begs for help, and the sky answers first.",
+      "decisive_line": 2,
+      "silent_beat": null,
+      "hooks": [
+        {
+          "kind": "spectacle",
+          "who": "yash",
+          "from": 3,
+          "to": 3,
+          "beats": [
+            "the maize bends in one wave away from Yash",
+            "a white flash fills the field"
+          ],
+          "peak": "the flash wipes out the picture as Yash's arm comes up",
+          "slow": "none",
+          "seconds": 4
+        }
+      ],
+      "states": [
+        "the teenage boy is bound to the post with coarse rope"
+      ],
+      "end": [
+        {
+          "who": "yash",
+          "where": "at the edge of the clearing, three steps from the post",
+          "posture": "standing, arm across his eyes"
+        },
+        {
+          "who": "nikhil",
+          "where": "at the post",
+          "posture": "standing, bound to the post"
+        }
+      ],
+      "seconds": 18
+    },
+    {
+      "id": "s3",
+      "location": "farm_road",
+      "hour": "afternoon",
+      "continues": null,
+      "time_marker": null,
+      "crowd": null,
+      "blocking": [
+        {
+          "who": "devendra",
+          "enters": null,
+          "presence": "in_room",
+          "where": "in the driver's seat of the pickup, screen left of the cab",
+          "posture": "seated",
+          "holds": null
+        },
+        {
+          "who": "suman",
+          "enters": null,
+          "presence": "in_room",
+          "where": "in the passenger seat of the pickup, screen right of the cab, beside the ditch side",
+          "posture": "seated",
+          "holds": null
+        },
+        {
+          "who": "boy",
+          "enters": "from the maize beyond the ditch",
+          "presence": "in_room",
+          "where": "outside the cracked passenger window, on the ditch edge, screen right, near",
+          "posture": "standing",
+          "holds": null
+        }
+      ],
+      "lines": [
+        {
+          "n": 1,
+          "who": null,
+          "kind": "action",
+          "text": "Devendra and Suman are driving home. Something streaks low across the road. Devendra hits the brakes. The pickup drops nose-first into a ditch.",
+          "touch": "none",
+          "revealing": false
+        },
+        {
+          "n": 2,
+          "who": null,
+          "kind": "action",
+          "text": "Hold inside the cab. Suman lifts her head. A small boy peers at her through the cracked window. He looks as startled as she is.",
+          "touch": "none",
+          "revealing": false
+        },
+        {
+          "n": 3,
+          "who": null,
+          "kind": "action",
+          "text": "Suman gets out, kneels and offers her hand.",
+          "touch": "none",
+          "revealing": false
+        },
+        {
+          "n": 4,
+          "who": "suman",
+          "kind": "dialogue",
+          "delivery": "aloud",
+          "text": "डरो मत। तुम्हें चोट लगी है?"
+        },
+        {
+          "n": 5,
+          "who": null,
+          "kind": "action",
+          "text": "He takes her hand. Devendra climbs out behind her.",
+          "touch": "hand",
+          "touch_who": [
+            "boy",
+            "suman"
+          ],
+          "revealing": false
+        }
+      ],
+      "staging": [
+        {
+          "at": 0,
+          "text": "The pickup rolls along the dirt road with the ditch on its right; Devendra's hands are on the wheel, Suman's hands rest in her lap, both facing the road ahead."
+        },
+        {
+          "at": 1,
+          "text": "Devendra's right foot is hard on the brake and both his hands grip the wheel; the pickup's nose is down in the ditch and its tail up on the road."
+        },
+        {
+          "at": 2,
+          "text": "Suman's forehead is against the dashboard, then up; the boy's face is level with the passenger window from the ditch side, his hands flat on the cracked glass."
+        },
+        {
+          "at": 3,
+          "text": "Suman is on one knee on the ditch edge at arm's length from the boy, her open hand held low between them, palm up; the boy stands with his back to the maize."
+        },
+        {
+          "at": 5,
+          "text": "The boy's hand rests in Suman's; Devendra stands behind her on the road side of the pickup, one hand on the bonnet."
+        }
+      ],
+      "moves": [
+        {
+          "at": 3,
+          "who": "suman",
+          "move": "exits",
+          "to": "the ditch edge beside the passenger door"
+        },
+        {
+          "at": 5,
+          "who": "devendra",
+          "move": "exits",
+          "to": "the road side of the pickup, behind Suman"
+        }
+      ],
+      "turn": "The crash leaves them with a small boy who should not be there, and he takes Suman's hand.",
+      "decisive_line": 5,
+      "silent_beat": {
+        "after": 2,
+        "who": "suman",
+        "action": "her hand stops on the door handle",
+        "seconds": 1
+      },
+      "hooks": [
+        {
+          "kind": "spectacle",
+          "who": "devendra",
+          "from": 1,
+          "to": 1,
+          "beats": [
+            "a streak of fire crosses low over the road ahead",
+            "the brakes lock and the pickup slews",
+            "the nose drops into the ditch and the cab jolts"
+          ],
+          "peak": "the pickup drops nose-first into the ditch",
+          "slow": "none",
+          "seconds": 5
+        }
+      ],
+      "states": [
+        "the pickup sits nose-down in the ditch with its passenger window cracked"
+      ],
+      "end": [
+        {
+          "who": "suman",
+          "where": "kneeling on the ditch edge beside the passenger door",
+          "posture": "kneeling"
+        },
+        {
+          "who": "boy",
+          "where": "on the ditch edge at arm's length from Suman",
+          "posture": "standing"
+        },
+        {
+          "who": "devendra",
+          "where": "on the road side of the pickup, behind Suman",
+          "posture": "standing"
+        }
+      ],
+      "seconds": 30
+    },
+    {
+      "id": "s4",
+      "location": "maize_field",
+      "hour": "late afternoon",
+      "continues": "s3",
+      "time_marker": null,
+      "crowd": null,
+      "blocking": [
+        {
+          "who": "devendra",
+          "enters": null,
+          "presence": "in_room",
+          "where": "at the edge of the maize by the road, screen left, near, a step behind Suman",
+          "posture": "standing",
+          "holds": null
+        },
+        {
+          "who": "suman",
+          "enters": null,
+          "presence": "in_room",
+          "where": "at the edge of the maize, screen centre, near",
+          "posture": "kneeling",
+          "holds": null
+        },
+        {
+          "who": "boy",
+          "enters": null,
+          "presence": "in_room",
+          "where": "in front of Suman at arm's length, screen centre, near, his back to the trail of flattened maize",
+          "posture": "standing",
+          "holds": null
+        }
+      ],
+      "lines": [
+        {
+          "n": 1,
+          "who": null,
+          "kind": "action",
+          "text": "Devendra looks past the boy. A trail of flattened maize ends at a dark metal craft, half-buried in the earth. The open hatch is low enough for the child to have climbed out.",
+          "touch": "hand",
+          "touch_who": [
+            "boy",
+            "suman"
+          ],
+          "revealing": false
+        },
+        {
+          "n": 2,
+          "who": "devendra",
+          "kind": "dialogue",
+          "delivery": "aloud",
+          "text": "सुमन…"
+        },
+        {
+          "n": 3,
+          "who": null,
+          "kind": "action",
+          "text": "Final shots. The spacecraft. Devendra’s face as he takes it in. Suman looks from the hatch to the boy, who wraps both hands around hers. Hold on their faces for two beats. A faint metallic tick comes from the cooling hull.",
+          "touch": "hand",
+          "touch_who": [
+            "boy",
+            "suman"
+          ],
+          "revealing": false
+        }
+      ],
+      "staging": [
+        {
+          "at": 0,
+          "text": "Suman kneels at the field's edge with the boy's hand in hers; Devendra stands a step behind her; a trail of flattened maize runs away from the boy's back into the field."
+        },
+        {
+          "at": 1,
+          "text": "Devendra's eyes follow the flattened trail to where the dark craft lies half-buried thirty steps into the field, its open hatch toward them."
+        },
+        {
+          "at": 2,
+          "text": "Devendra stands still with his eyes on the craft; Suman's eyes come up from the boy to Devendra's face, then along the trail."
+        },
+        {
+          "at": 3,
+          "text": "Suman's eyes rest on the open hatch, then drop to the boy; the boy's second hand closes over hers; dust drifts past the hatch."
+        }
+      ],
+      "moves": [],
+      "turn": "The Sharmas see where the boy came from.",
+      "decisive_line": 2,
+      "silent_beat": {
+        "after": 2,
+        "who": "suman",
+        "action": "her eyes come up from the boy to the craft",
+        "seconds": 2
+      },
+      "hooks": [
+        {
+          "kind": "spectacle",
+          "who": "devendra",
+          "from": 1,
+          "to": 1,
+          "beats": [
+            "the flattened trail runs into the field",
+            "the dark craft lies half-buried at its end, its hatch open"
+          ],
+          "peak": "the half-buried craft with its open hatch",
+          "slow": "none",
+          "seconds": 4
+        }
+      ],
+      "states": [
+        "the spacecraft lies half-buried at the end of a trail of flattened maize"
+      ],
+      "end": [
+        {
+          "who": "suman",
+          "where": "kneeling at the field's edge",
+          "posture": "kneeling"
+        },
+        {
+          "who": "boy",
+          "where": "in front of Suman, both hands around hers",
+          "posture": "standing"
+        },
+        {
+          "who": "devendra",
+          "where": "a step behind Suman",
+          "posture": "standing"
+        }
+      ],
+      "seconds": 25
+    }
+  ],
+  "states": [
+    {
+      "who": "nikhil",
+      "what": "his back against the wooden post and his arms held behind it",
+      "from": {
+        "clip": 3,
+        "shot": 4
+      },
+      "to": 3,
+      "quote": "a teenage boy tied to a wooden post"
+    },
+    {
+      "who": "pickup",
+      "what": "its nose down in the ditch and its tail up on the road, the passenger-side window cracked in a web",
+      "from": {
+        "clip": 4,
+        "shot": 7
+      },
+      "to": null,
+      "quote": "The pickup drops nose-first into a ditch."
+    }
+  ],
+  "left_out": [
+    {
+      "script_line": 1,
+      "reason": "a scene heading"
+    },
+    {
+      "script_line": 11,
+      "reason": "a scene heading"
+    },
+    {
+      "script_line": 19,
+      "reason": "a scene heading"
+    },
+    {
+      "script_line": 31,
+      "reason": "a scene heading"
+    },
+    {
+      "scene": "s1",
+      "line": 4,
+      "reason": "a sound-mix note for the edit, not an on-screen action"
+    },
+    {
+      "script_line": 39,
+      "reason": "a direction: the film cuts to black after the last clip"
+    }
+  ],
+  "reviews": [
+    {
+      "what": "picture",
+      "id": "boy:outfit",
+      "job": "de431748-e497-42ae-b016-fcd9ba9a58fd",
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "picture",
+      "id": "meera:outfit",
+      "job": "57034b79-4070-4559-bb92-7ea7418e93ae",
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "picture",
+      "id": "nikhil:outfit",
+      "job": "5014d3a1-6fad-4ce2-afa2-6232d89adcf7",
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "picture",
+      "id": "yash:outfit",
+      "job": "148a9a4d-4ac2-4486-985c-2dc565a7ebdc",
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "picture",
+      "id": "boy:face",
+      "job": "42326eea-1c37-4fa1-b34d-01117a8e9c84",
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "picture",
+      "id": "meera:face",
+      "job": "604c493f-6e36-47e3-b8d5-0a8944822159",
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "picture",
+      "id": "nikhil:face",
+      "job": "ebbf56cc-28db-4b80-ab28-e9c0bf8f36f2",
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "picture",
+      "id": "yash:face",
+      "job": "ba88c333-5c0b-4b81-bbe7-893123090654",
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "picture",
+      "id": "boy",
+      "job": "f0d3202d-0feb-43e1-9797-aa54d1211533",
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "picture",
+      "id": "meera",
+      "job": "32dc90ca-b3dc-4355-8e4d-ac57536a2f60",
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "picture",
+      "id": "nikhil",
+      "job": "af4bcfe9-8ac1-4ced-b2e1-8026a961ad71",
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "picture",
+      "id": "yash",
+      "job": "ba178ecf-7107-4421-a14c-d68a64e54e18",
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "clip",
+      "id": 6,
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "clip",
+      "id": 1,
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "clip",
+      "id": 2,
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "clip",
+      "id": 5,
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "clip",
+      "id": 7,
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    },
+    {
+      "what": "clip",
+      "id": 3,
+      "revealing": "no",
+      "intimate": "no",
+      "sexualised": "no"
+    }
+  ],
+  "clips": [
+    {
+      "n": 1,
+      "scene": "s1",
+      "seconds": 13,
+      "extends": null,
+      "standalone": null,
+      "job": "315b10a0-05fe-4e23-9ab4-ceaaa21675fe",
+      "references": [
+        "bazaar",
+        "meera",
+        "meera_mother",
+        "meera_father",
+        "paper_bag"
+      ],
+      "covers": [
+        {
+          "scene": "s1",
+          "line": 1
+        },
+        {
+          "scene": "s1",
+          "line": 2
+        }
+      ],
+      "holds": [
+        {
+          "who": "meera_mother",
+          "what": "paper_bag"
+        }
+      ],
+      "crowd": "market shoppers and vendors in everyday cotton clothes",
+      "shots": [
+        {
+          "s": 1,
+          "from": 0.0,
+          "to": 1.2,
+          "size": "full",
+          "subject": null,
+          "camera": "from the near end of the street looking down it, standing eye level, static",
+          "action": "market shoppers and vendors move between the stalls and the shopfronts, a bicycle rolls through, dust in the sunlight; no lead in frame",
+          "actions": [
+            "market shoppers and vendors move between the stalls and the shopfronts, a bicycle rolls through, dust in the sunlight; no lead in frame"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 2,
+          "from": 1.2,
+          "to": 2.6,
+          "size": "close",
+          "subject": "meera",
+          "camera": "from the front, cut at the collarbones, slightly low, slow push-in",
+          "action": "Meera in the middle of the street tips her face up to the sky, her look going up past the top of the frame",
+          "actions": [
+            "Meera in the middle of the street tips her face up to the sky, her look going up past the top of the frame"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        },
+        {
+          "s": 3,
+          "from": 2.6,
+          "to": 4.2,
+          "size": "full",
+          "subject": null,
+          "camera": "tilt up from the awning tops to the open sky, static after the tilt",
+          "action": "a fireball with a white-orange tail crosses the sky from upper left to lower right trailing grey smoke",
+          "actions": [
+            "a fireball with a white-orange tail crosses the sky from upper left to lower right trailing grey smoke"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 4,
+          "from": 4.2,
+          "to": 5.4,
+          "size": "extreme_close",
+          "subject": null,
+          "camera": "insert on the glass shopfront pane, eye level, static",
+          "action": "the shopfront glass rattles in its frame, the sky's reflection shaking in it",
+          "actions": [
+            "the shopfront glass rattles in its frame, the sky's reflection shaking in it"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 5,
+          "from": 5.4,
+          "to": 7.2,
+          "size": "medium",
+          "subject": "meera_mother",
+          "camera": "from across the road at Meera's side, eye level, static",
+          "action": "Meera's mother lifts the paper bag high in her right hand and waves it; Meera's father a step behind her on the left, hands at his sides",
+          "actions": [
+            "Meera's mother lifts the paper bag high in her right hand and waves it; Meera's father a step behind her on the left, hands at his sides"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera_mother",
+            "meera_father"
+          ]
+        },
+        {
+          "s": 6,
+          "from": 7.2,
+          "to": 8.8,
+          "size": "close",
+          "subject": "meera",
+          "camera": "three-quarter from the shopfront side, cut at the collarbones, eye level, handheld",
+          "action": "Meera's right hand rises to wave, her look passing left of the lens toward the stalls",
+          "actions": [
+            "Meera's right hand rises to wave, her look passing left of the lens toward the stalls"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        },
+        {
+          "s": 7,
+          "from": 8.8,
+          "to": 10.2,
+          "size": "full",
+          "subject": "meera_mother",
+          "camera": "from the shopfront side looking across the road, eye level, static",
+          "action": "a wall of pale dust rolls across the street from the right and swallows the stalls and the two figures by them; shoppers in the middle distance turn and run",
+          "actions": [
+            "a wall of pale dust rolls across the street from the right and swallows the stalls and the two figures by them; shoppers in the middle distance turn and run"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera_mother",
+            "meera_father"
+          ]
+        },
+        {
+          "s": 8,
+          "from": 10.2,
+          "to": 11.6,
+          "size": "close",
+          "subject": "meera",
+          "camera": "from the front, cut at the collarbones, slightly high, handheld",
+          "action": "dust rolls over Meera from the right, her raised hand still up, her hair lifting in the gust, her eyes on the place where the stalls stood",
+          "actions": [
+            "dust rolls over Meera from the right, her raised hand still up, her hair lifting in the gust, her eyes on the place where the stalls stood"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        },
+        {
+          "s": 9,
+          "from": 11.6,
+          "to": 13.0,
+          "size": "extreme_close",
+          "subject": "meera",
+          "camera": "brows to lips, from the front, eye level, slow push-in",
+          "action": "her eyes search the dust off left of the lens, her raised hand lowering out of the bottom of the frame",
+          "actions": [
+            "her eyes search the dust off left of the lens, her raised hand lowering out of the bottom of the frame"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        }
+      ],
+      "audio": [],
+      "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds; no one speaks.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the afternoon sun high on the left, falling hard across the street and onto the faces, the shopfronts under their awnings in shade; dusty gold highlights, warm natural colour; fine dust hanging in the air.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Madhopur bazaar): the Madhopur bazaar 100% as in the reference.\nImage reference 2 (character Young Meera): Young Meera, face, hair, body and clothes 100% as in the reference.\nImage reference 3 (character Meera's mother): Meera's mother, face, hair, body and clothes 100% as in the reference.\nImage reference 4 (character Meera's father): Meera's father, face, hair, body and clothes 100% as in the reference.\nImage reference 5 (prop Paper bag): the Paper bag 100% as in the reference.\nContinuity: Young Meera is clean and unchanged from the reference, with no stain, mark or damage; Meera's mother is clean and unchanged from the reference, with no stain, mark or damage; Meera's father is clean and unchanged from the reference, with no stain, mark or damage.\nIn frame only: Young Meera, Meera's mother, Meera's father and the market crowd. The street runs away from the lens, the shopfronts on the left, the wooden stalls on the right. Meera stands alone in the open middle of the street, near, the glass shopfront behind her; her mother and father stand across the road by the stalls, far, the width of the street between them. Eyelines never at the camera.\nOpening: Meera standing in the middle of the street, her face tipping up; her mother standing by the stalls with the paper bag in her right hand, her father standing a step behind her; shoppers walking.\nNobody speaks in this clip: Meera, her mother, her father and the crowd never speak.\nMeera is out to see what is crossing the sky; once the dust hides her parents she keeps her eyes on the place they stood, with persistence.\nMeera's mother is out to catch Meera's eye across the road; once she has it she waves the bag higher, with zeal.\nPace: ordinary and bright until 8.9s, then one hard turn into dust and noise; every shot opens in motion.\nS1 0.0-1.2s · full, from the near end of the street looking down it, standing eye level, static · market shoppers and vendors move between the stalls and the shopfronts, a bicycle rolls past with its bell going, dust in the sunlight; nobody we know in frame.\nS2 1.2-2.6s · close, cut at the collarbones, from the front, slightly low, slow push-in · Meera in the middle of the street tips her face up to the sky, her look going up past the top edge of the frame; the glass shopfront soft behind her, shoppers passing far back.\nS3 2.6-4.2s · full, a tilt up from the awning tops to the open sky, then static · a fireball with a white-orange tail crosses the sky from upper left to lower right trailing grey smoke, its roar rising at 3.0s; only sky and the awning tops in frame.\nS4 4.2-5.4s · insert, the glass shopfront pane, eye level, static · the shopfront glass rattles in its frame at 4.3s, the sky's reflection shaking in it, a tin signboard buzzing above; only the glass and the painted signboard.\nS5 5.4-7.2s · medium, from across the road on Meera's side, eye level, static · Meera's mother lifts the paper bag high in her right hand and waves it, her look passing right of the lens, level; Meera's father a step behind her on the left, hands at his sides; the wooden stalls behind them.\nS6 7.2-8.8s · close, cut at the collarbones, three-quarter from the shopfront side, eye level, handheld · Meera's right hand rises beside her face to wave, her look passing left of the lens toward the stalls; shoppers soft behind her.\nS7 8.8-10.2s · full, from the shopfront side looking across the road, eye level, static · a wall of pale dust rolls in from the right with a deep thud at 8.9s and swallows the stalls and the two figures by them; shoppers in the middle distance turn and run from it.\nS8 10.2-11.6s · close, cut at the collarbones, from the front, slightly high, handheld · dust rolls over Meera from the right, her raised hand still up, her plaits lifting in the gust, her eyes on the place off left of the lens where the stalls stood; only dust and the shopfront behind her.\nS9 11.6-13.0s · extreme_close, brows to lips, from the front, eye level, slow push-in · her eyes search the dust off left of the lens, her raised hand lowering out of the bottom of the frame, a loose shutter rattling somewhere behind her; only pale dust behind her.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nNo speech in S1, S2, S3, S4, S5, S6, S7, S8, S9.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- No added sound effects: no whoosh, no boom, no impact hit, no riser.\n- Only diegetic sound: the characters' voices and the natural sounds of this place.\n- Background people never copy the face or hair of any image reference; each referenced character appears once, as themselves.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+      "take": "01.mp4"
+    },
+    {
+      "n": 2,
+      "scene": "s1",
+      "seconds": 9,
+      "extends": 1,
+      "job": "588043d8-eac1-43af-bfb1-40b7328cc011",
+      "references": [
+        "bazaar",
+        "meera"
+      ],
+      "covers": [
+        {
+          "scene": "s1",
+          "line": 3
+        }
+      ],
+      "holds": [],
+      "crowd": "market shoppers and vendors in everyday cotton clothes",
+      "shots": [
+        {
+          "s": 1,
+          "from": 0.0,
+          "to": 2.0,
+          "size": "medium_wide",
+          "subject": "meera",
+          "camera": "from behind Meera over her shoulder, eye level, slow push-in",
+          "action": "Meera's back near centre, her hand down at her side, the dust thinning across the street ahead, the stall frames emerging empty, a shutter half down on the left rattling",
+          "actions": [
+            "Meera's back near centre, her hand down at her side, the dust thinning across the street ahead, the stall frames emerging empty, a shutter half down on the left rattling"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        },
+        {
+          "s": 2,
+          "from": 2.0,
+          "to": 3.8,
+          "size": "close",
+          "subject": "meera",
+          "camera": "from the front, cut at the collarbones, slightly high, slow push-in",
+          "action": "Meera's voice begins at 2.2s, her look going right of the lens into the dust",
+          "actions": [
+            "Meera's voice begins at 2.2s, her look going right of the lens into the dust"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        },
+        {
+          "s": 3,
+          "from": 3.8,
+          "to": 5.0,
+          "size": "extreme_close",
+          "subject": null,
+          "camera": "insert on the loose shop shutter, eye level, static",
+          "action": "the loose shop shutter on the left of the street, half down, rattles against its frame with dust drifting past it",
+          "actions": [
+            "the loose shop shutter on the left of the street, half down, rattles against its frame with dust drifting past it"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 4,
+          "from": 5.0,
+          "to": 7.2,
+          "size": "close",
+          "subject": "meera",
+          "camera": "three-quarter from the stalls side, cut at the collarbones, eye level, handheld",
+          "action": "Meera takes one step forward into the thinning dust, her eyes fixed on the empty stalls off left of the lens",
+          "actions": [
+            "Meera takes one step forward into the thinning dust, her eyes fixed on the empty stalls off left of the lens"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        },
+        {
+          "s": 5,
+          "from": 7.2,
+          "to": 9.0,
+          "size": "extreme_close",
+          "subject": "meera",
+          "camera": "brows to lips, from the front, eye level, slow push-in",
+          "action": "her eyes stay on the empty place off left of the lens, her lips closed, dust settling on her hair",
+          "actions": [
+            "her eyes stay on the empty place off left of the lens, her lips closed, dust settling on her hair"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        }
+      ],
+      "audio": [
+        {
+          "shot": 2,
+          "from": 2.2,
+          "to": 3.4,
+          "who": "meera",
+          "to_whom": "meera_mother",
+          "kind": "dialogue",
+          "delivery": "small and questioning",
+          "text": "मम्मी? … पापा?"
+        }
+      ],
+      "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the afternoon sun high on the left, falling hard across the street and onto the faces, the shopfronts under their awnings in shade; dusty gold highlights, warm natural colour; fine dust hanging in the air.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Madhopur bazaar): the Madhopur bazaar 100% as in the reference.\nImage reference 2 (character Young Meera): Young Meera, face, hair, body and clothes 100% as in the reference.\nContinuity: Young Meera is clean and unchanged from the reference, with no stain, mark or damage.\nIn frame only: Young Meera and the market crowd. The street runs away from the lens, the shopfronts on the left, the stalls on the right under thinning dust. Meera stands alone in the open middle of the street, near, the glass shopfront behind her; the stalls stand empty across the road, far. Eyelines never at the camera.\nOpening: Meera standing in the middle of the street in thinning dust, her hand lowered at her side, her eyes on the empty stalls across the road.\nMeera speaks aloud 1 time between 2.2s and 3.4s and never again; silent before 2.2s and from 3.4s to the end.\nThe crowd never speaks in this clip.\nMeera is out to find her parents in the dust; once the stalls show empty she keeps looking at the same place, with persistence.\nPace: quiet and slow after the noise; every shot opens in motion, one beat where her line lands.\nS1 0.0-2.0s · medium_wide, from behind Meera over her shoulder, eye level, slow push-in · Meera's back near centre, her hand down at her side; across the street the dust thins and the stall frames emerge empty, a shop shutter on the left half down and rattling; two shoppers far off stumbling out of the dust.\nS2 2.0-3.8s · close, cut at the collarbones, from the front, slightly high, slow push-in · Meera's voice begins at 2.2s and ends at 3.4s, her look passing right of the lens into the thinning dust, her hands loose at her sides; only pale dust behind her.\nS3 3.8-5.0s · insert, the loose shop shutter, eye level, static · the shutter hangs half down and rattles against its frame at 3.9s, dust drifting past it; only the shutter and the painted wall.\nS4 5.0-7.2s · close, cut at the collarbones, three-quarter from the stalls side, eye level, handheld · Meera takes one slow step forward into the thinning dust, her eyes fixed on the empty stalls off left of the lens; the glass shopfront soft behind her.\nS5 7.2-9.0s · extreme_close, brows to lips, from the front, eye level, slow push-in · her eyes stay on the empty place off left of the lens, her lips closed, dust settling on her plaits; only pale dust behind her.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nS2 (2.2-3.4s) Meera to her mother and father, a girl's voice, small, light and uncertain, small and questioning: \"मम्मी? … पापा?\"\nNo speech in S1, S3, S4, S5.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- No added sound effects: no whoosh, no boom, no impact hit, no riser.\n- Only diegetic sound: the characters' voices and the natural sounds of this place.\n- Background people never copy the face or hair of any image reference; each referenced character appears once, as themselves.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+      "take": "02.mp4"
+    },
+    {
+      "n": 3,
+      "scene": "s2",
+      "seconds": 18,
+      "extends": null,
+      "standalone": null,
+      "job": "a2687b91-ba0a-42d3-80ab-50535b4bf77e",
+      "references": [
+        "maize_field",
+        "yash",
+        "nikhil"
+      ],
+      "covers": [
+        {
+          "scene": "s2",
+          "line": 1
+        },
+        {
+          "scene": "s2",
+          "line": 2
+        },
+        {
+          "scene": "s2",
+          "line": 3
+        }
+      ],
+      "holds": [],
+      "shots": [
+        {
+          "s": 1,
+          "from": 0.0,
+          "to": 1.5,
+          "size": "full",
+          "subject": null,
+          "camera": "from the near end of the trodden path looking into the rows, standing eye level, static",
+          "action": "the maize field with its trodden path, the leaves moving in a light wind, the wooden post in its clearing ahead; nobody in frame",
+          "actions": [
+            "the maize field with its trodden path, the leaves moving in a light wind, the wooden post in its clearing ahead; nobody in frame"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 2,
+          "from": 1.5,
+          "to": 3.5,
+          "size": "medium",
+          "subject": "yash",
+          "camera": "ahead of Yash travelling backward at shoulder height",
+          "action": "Yash pushes through the maize toward the lens, leaves slapping his shoulders, his hands parting the stalks",
+          "actions": [
+            "Yash pushes through the maize toward the lens, leaves slapping his shoulders, his hands parting the stalks"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "yash"
+          ]
+        },
+        {
+          "s": 3,
+          "from": 3.5,
+          "to": 5.0,
+          "size": "close",
+          "subject": "yash",
+          "camera": "three-quarter from the post side, cut at the collarbones, slightly high, handheld",
+          "action": "Yash stops at a gap in the rows, his hands holding two stalks apart, his look passing left of the lens, level",
+          "actions": [
+            "Yash stops at a gap in the rows, his hands holding two stalks apart, his look passing left of the lens, level"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "yash"
+          ]
+        },
+        {
+          "s": 4,
+          "from": 5.0,
+          "to": 7.0,
+          "size": "medium",
+          "subject": "nikhil",
+          "camera": "from the gap at Yash's eye height, slow push-in",
+          "action": "the teenage boy stands with his back against the wooden post in the clearing, his arms held behind it, the red S on his shirt facing the lens, his head turning toward the gap",
+          "actions": [
+            "the teenage boy stands with his back against the wooden post in the clearing, his arms held behind it, the red S on his shirt facing the lens, his head turning toward the gap"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "nikhil"
+          ]
+        },
+        {
+          "s": 5,
+          "from": 7.0,
+          "to": 10.0,
+          "size": "close",
+          "subject": "nikhil",
+          "camera": "three-quarter from the gap side, cut at the collarbones, slightly low, handheld",
+          "action": "he leans his shoulders forward off the post, his look passing right of the lens, level, his voice begins at 7.2s",
+          "actions": [
+            "he leans his shoulders forward off the post, his look passing right of the lens, level, his voice begins at 7.2s"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "nikhil"
+          ]
+        },
+        {
+          "s": 6,
+          "from": 10.0,
+          "to": 11.0,
+          "size": "close",
+          "subject": "yash",
+          "camera": "from the front, cut at the collarbones, slightly low, static",
+          "action": "Yash's hands drop from the stalks, his look going right past the lens toward the post",
+          "actions": [
+            "Yash's hands drop from the stalks, his look going right past the lens toward the post"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "yash"
+          ]
+        },
+        {
+          "s": 7,
+          "from": 11.0,
+          "to": 12.8,
+          "size": "medium",
+          "subject": "yash",
+          "camera": "behind Yash at shoulder height travelling with him",
+          "action": "Yash steps out of the gap into the clearing and takes three steps toward the post; the teenage boy at the post in the middle distance ahead, his face toward Yash",
+          "actions": [
+            "Yash steps out of the gap into the clearing and takes three steps toward the post; the teenage boy at the post in the middle distance ahead, his face toward Yash"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "yash",
+            "nikhil"
+          ]
+        },
+        {
+          "s": 8,
+          "from": 12.8,
+          "to": 14.4,
+          "size": "full",
+          "subject": "yash",
+          "camera": "from behind Yash at the edge of the clearing, standing eye level, static",
+          "action": "the maize behind the post bends away in one wave from left to right across the field, the post and the boy at the centre, Yash small in the near foreground",
+          "actions": [
+            "the maize behind the post bends away in one wave from left to right across the field, the post and the boy at the centre, Yash small in the near foreground"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "yash",
+            "nikhil"
+          ]
+        },
+        {
+          "s": 9,
+          "from": 14.4,
+          "to": 16.0,
+          "size": "close",
+          "subject": "yash",
+          "camera": "from the front, cut at the collarbones, slightly low, handheld",
+          "action": "Yash's forearm comes up across his eyes, his hair blown flat by the gust",
+          "actions": [
+            "Yash's forearm comes up across his eyes, his hair blown flat by the gust"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "yash"
+          ]
+        },
+        {
+          "s": 10,
+          "from": 16.0,
+          "to": 18.0,
+          "size": "close",
+          "subject": "yash",
+          "camera": "three-quarter from the post side, cut at the collarbones, slightly high, slow push-in",
+          "action": "white light floods in from the right across his raised forearm and face, the picture washing toward white, the maize behind him flattening",
+          "actions": [
+            "white light floods in from the right across his raised forearm and face, the picture washing toward white, the maize behind him flattening"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "yash"
+          ]
+        }
+      ],
+      "audio": [
+        {
+          "shot": 5,
+          "from": 7.2,
+          "to": 9.9,
+          "who": "nikhil",
+          "to_whom": "yash",
+          "kind": "dialogue",
+          "delivery": "pleading and raw",
+          "text": "रुको! मेरी रस्सी खोल दो!"
+        }
+      ],
+      "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the low golden sun behind right, backlighting the maize leaves and rimming the hair, the spaces between the rows in soft shadow; warm natural colour with saturated, believable greens; dust drifting in the air.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Maize field): the Maize field 100% as in the reference.\nImage reference 2 (character Young Yash): Young Yash, face, hair, body and clothes 100% as in the reference.\nImage reference 3 (character The teenage boy): The teenage boy, face, hair, body and clothes 100% as in the reference; now with his back against the wooden post and his arms held behind it from S4 on.\nContinuity: Young Yash is clean and unchanged from the reference, with no stain, mark or damage; The teenage boy has his back against the wooden post and his arms held behind it from S4 on.\nIn frame only: Young Yash and the teenage boy. The trodden path runs from the lens into the rows; the wooden post stands in a small clearing a dozen steps in, screen centre, middle depth. Yash is between the rows, near; the teenage boy stands with his back to the post, middle, a dozen steps from Yash. Eyelines never at the camera.\nOpening: Yash walking between the rows with the leaves closing over his shoulders; the teenage boy standing with his back against the post, his arms behind it, his head down, a dozen steps ahead.\nThe teenage boy speaks aloud 1 time between 7.2s and 9.9s and never again; silent before 7.2s and from 9.9s to the end.\nYash never speaks in this clip.\nYash is out to reach the boy at the post; once the boy calls to him he goes toward him, with grit.\nThe teenage boy is out to get away from the post; once he sees Yash he calls him over, with tenacity.\nPace: pressing and then sudden; every shot opens in motion, a beat only where his line lands.\nS1 0.0-1.5s · full, from the near end of the trodden path looking into the rows, standing eye level, static · the maize leaves move in a light wind with a dry rustle, the trodden path leading in, the wooden post in its clearing ahead; nobody in frame yet.\nS2 1.5-3.5s · medium, camera ahead of Yash travelling backward at his shoulder height · Yash pushes through the maize toward the lens, leaves slapping his shoulders, his hands parting the stalks, his look passing right of the lens; only green maize behind him.\nS3 3.5-5.0s · close, cut at the collarbones, three-quarter from the post side, slightly high, handheld · Yash stops at a gap in the rows, his hands holding two stalks apart, his look passing left of the lens, level; maize soft behind him.\nS4 5.0-7.0s · medium, from the gap at Yash's eye height, slow push-in · the teenage boy stands with his back against the wooden post in the clearing, his arms held behind it, the red S on his shirt facing the lens, his head turning toward the gap; maize rows behind him.\nS5 7.0-10.0s · close, cut at the collarbones, three-quarter from the gap side, slightly low, handheld · he leans his shoulders forward off the post, the post creaking, his look passing right of the lens, level; his voice begins at 7.2s and ends at 9.9s; only maize behind him.\nS6 10.0-11.0s · close, cut at the collarbones, from the front, slightly low, static · Yash's hands drop from the stalks, his look going right past the lens toward the post, level; maize behind him.\nS7 11.0-12.8s · medium, camera behind Yash at his shoulder height travelling with him · Yash steps out of the gap into the clearing and takes three steps toward the post; the teenage boy at the post in the middle distance ahead, his face toward Yash; maize either side.\nS8 12.8-14.4s · full, from behind Yash at the edge of the clearing, standing eye level, static · the maize behind the post bends away in one wave from left to right across the whole field with a rising rush of wind at 12.9s, the post and the boy at the centre, Yash in the near foreground with his back to the lens.\nS9 14.4-16.0s · close, cut at the collarbones, from the front, slightly low, handheld · Yash's right forearm comes up across his eyes, his hair blown flat by the gust, leaves flying past him; the bending maize behind him.\nS10 16.0-18.0s · close, cut at the collarbones, three-quarter from the post side, slightly high, slow push-in · white light floods in from the right across his raised forearm and face and the picture washes toward white, the roar peaking at 17.0s; the maize behind him flattening.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nS5 (7.2-9.9s) The teenage boy to Yash, a boy's voice, hoarse, strained and urgent, pleading and raw: \"रुको! मेरी रस्सी खोल दो!\"\nNo speech in S1, S2, S3, S4, S6, S7, S8, S9, S10.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- No added sound effects: no whoosh, no boom, no impact hit, no riser.\n- Only diegetic sound: the characters' voices and the natural sounds of this place.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+      "take": "03.mp4"
+    },
+    {
+      "n": 4,
+      "scene": "s3",
+      "seconds": 15,
+      "extends": null,
+      "standalone": null,
+      "job": "76250727-b3f3-4874-9d1a-b07bbc85ab15",
+      "references": [
+        "farm_road",
+        "devendra",
+        "suman",
+        "pickup"
+      ],
+      "covers": [
+        {
+          "scene": "s3",
+          "line": 1
+        }
+      ],
+      "holds": [],
+      "shots": [
+        {
+          "s": 1,
+          "from": 0.0,
+          "to": 1.5,
+          "size": "full",
+          "subject": null,
+          "camera": "from the near end of the road looking down the ruts, standing eye level, static",
+          "action": "the farm road with the ditch on the right, the pickup coming toward the lens along the ruts in the middle distance, dust behind it",
+          "actions": [
+            "the farm road with the ditch on the right, the pickup coming toward the lens along the ruts in the middle distance, dust behind it"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 2,
+          "from": 1.5,
+          "to": 3.5,
+          "size": "close",
+          "subject": "devendra",
+          "camera": "through the windscreen from the bonnet, cut at the collarbones, eye level, static",
+          "action": "Devendra at the wheel with both hands on it, his look passing left of the lens down the road; Suman soft in the passenger seat right of him, her hands in her lap",
+          "actions": [
+            "Devendra at the wheel with both hands on it, his look passing left of the lens down the road; Suman soft in the passenger seat right of him, her hands in her lap"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra",
+            "suman"
+          ]
+        },
+        {
+          "s": 3,
+          "from": 3.5,
+          "to": 4.8,
+          "size": "close",
+          "subject": "suman",
+          "camera": "three-quarter from the driver's side, cut at the collarbones, eye level, handheld",
+          "action": "Suman's hands rest in her lap, her look passing right of the lens through the windscreen",
+          "actions": [
+            "Suman's hands rest in her lap, her look passing right of the lens through the windscreen"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman"
+          ]
+        },
+        {
+          "s": 4,
+          "from": 4.8,
+          "to": 6.3,
+          "size": "full",
+          "subject": null,
+          "camera": "from inside the cab over the dashboard looking down the road, static",
+          "action": "a streak of fire crosses low over the road ahead from upper right to lower left, smoke behind it, the maize tops lighting up; the bonnet at the bottom of the frame",
+          "actions": [
+            "a streak of fire crosses low over the road ahead from upper right to lower left, smoke behind it, the maize tops lighting up; the bonnet at the bottom of the frame"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 5,
+          "from": 6.3,
+          "to": 7.3,
+          "size": "extreme_close",
+          "subject": "devendra",
+          "camera": "brows to lips, from the passenger side, eye level, handheld",
+          "action": "his eyes track the streak off left of the lens, his jaw set",
+          "actions": [
+            "his eyes track the streak off left of the lens, his jaw set"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra"
+          ]
+        },
+        {
+          "s": 6,
+          "from": 7.3,
+          "to": 8.3,
+          "size": "extreme_close",
+          "subject": "devendra",
+          "camera": "insert on the pedals from the footwell, static",
+          "action": "Devendra's sandal stamps the brake pedal to the floor",
+          "actions": [
+            "Devendra's sandal stamps the brake pedal to the floor"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra"
+          ]
+        },
+        {
+          "s": 7,
+          "from": 8.3,
+          "to": 10.0,
+          "size": "full",
+          "subject": null,
+          "camera": "from the ditch side at road level, static",
+          "action": "the pickup's front wheels lock and slide in the dust, the truck slews toward the ditch, its right front wheel drops over the edge and the nose pitches down into the ditch",
+          "actions": [
+            "the pickup's front wheels lock and slide in the dust, the truck slews toward the ditch, its right front wheel drops over the edge and the nose pitches down into the ditch"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 8,
+          "from": 10.0,
+          "to": 11.3,
+          "size": "medium",
+          "subject": "suman",
+          "camera": "from behind the seats inside the cab, slightly high, handheld",
+          "action": "both bodies are thrown forward, Devendra's hands braced on the wheel, Suman's forehead going down toward the dashboard, the passenger-side window cracking in a web",
+          "actions": [
+            "both bodies are thrown forward, Devendra's hands braced on the wheel, Suman's forehead going down toward the dashboard, the passenger-side window cracking in a web"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman",
+            "devendra"
+          ]
+        },
+        {
+          "s": 9,
+          "from": 11.3,
+          "to": 12.8,
+          "size": "close",
+          "subject": "devendra",
+          "camera": "three-quarter from the passenger side, cut at the collarbones, slightly high, handheld",
+          "action": "Devendra pushes himself back off the wheel, dust settling inside the cab, his look going right toward Suman's seat",
+          "actions": [
+            "Devendra pushes himself back off the wheel, dust settling inside the cab, his look going right toward Suman's seat"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra"
+          ]
+        },
+        {
+          "s": 10,
+          "from": 12.8,
+          "to": 15.0,
+          "size": "close",
+          "subject": "suman",
+          "camera": "from the driver's side, cut at the collarbones, slightly high, slow push-in",
+          "action": "Suman lies forward against the dashboard with her eyes closed, her plait fallen over her shoulder, dust drifting in the light; the cracked passenger window behind her",
+          "actions": [
+            "Suman lies forward against the dashboard with her eyes closed, her plait fallen over her shoulder, dust drifting in the light; the cracked passenger window behind her"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman"
+          ]
+        }
+      ],
+      "audio": [],
+      "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds; no one speaks.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the afternoon sun front left, bleaching the dirt road pale and lighting the faces through the windscreen, the ditch and the tree line in shade; warm natural colour; dust hanging over the road.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Farm road): the Farm road 100% as in the reference.\nImage reference 2 (character Devendra): Devendra, face, hair, body and clothes 100% as in the reference.\nImage reference 3 (character Suman): Suman, face, hair, body and clothes 100% as in the reference.\nImage reference 4 (prop Pickup): the Pickup 100% as in the reference; now with its nose down in the ditch and its tail up on the road, the passenger-side window cracked in a web from S7 on.\nContinuity: Devendra is clean and unchanged from the reference, with no stain, mark or damage; Suman is clean and unchanged from the reference, with no stain, mark or damage.\nIn frame only: Devendra and Suman. The dirt road runs away from the lens with the ditch along its right side and the maize beyond it. The pickup rolls along the ruts, Devendra in the driver's seat on the left of the cab, Suman in the passenger seat on the right, the ditch side, an arm's length apart. Eyelines never at the camera.\nOpening: Devendra seated at the wheel with both hands on it; Suman seated beside him with her hands in her lap; the pickup moving along the road.\nNobody speaks in this clip: Devendra and Suman never speak.\nDevendra is out to get them home; once the streak crosses the road he stands on the brake and holds the wheel, with grit.\nSuman is out to sit easy on the ride home; once the truck drops she braces against the dashboard, with resilience.\nPace: steady until 4.9s, then quick cuts through the brake and the drop, then slow as the dust settles; every shot opens in motion.\nS1 0.0-1.5s · full, from the near end of the road looking down the ruts, standing eye level, static · the pickup comes toward the lens along the ruts in the middle distance with its engine ticking over, dust rolling behind it, the ditch on the right; nobody on foot.\nS2 1.5-3.5s · close, cut at the collarbones, through the windscreen from the bonnet, eye level, static · Devendra at the wheel with both hands on it, his look passing left of the lens down the road; Suman soft in the passenger seat to the right of him, her hands in her lap; the rear window behind them.\nS3 3.5-4.8s · close, cut at the collarbones, three-quarter from the driver's side, eye level, handheld · Suman's hands rest in her lap, her look passing right of the lens through the windscreen; the side window and the maize beyond it behind her.\nS4 4.8-6.3s · full, from inside the cab over the dashboard looking down the road, static · a streak of fire crosses low over the road ahead from upper right to lower left with a tearing roar at 4.9s, smoke behind it, the maize tops lighting up; the bonnet at the bottom of the frame, nobody in it.\nS5 6.3-7.3s · extreme_close, brows to lips, from the passenger side, eye level, handheld · his eyes track the streak off left of the lens, his jaw set; the driver's window behind him.\nS6 7.3-8.3s · insert, the pedals from the footwell, static · Devendra's sandal stamps the brake pedal to the floor at 7.4s; only the pedals and the floor mat.\nS7 8.3-10.0s · full, from the ditch side at road level, static · the pickup's front wheels lock and slide in the dust with a long skid at 8.4s, the truck slews toward the ditch, its right front wheel drops over the edge and the nose pitches down into the ditch with a crunch at 9.5s, dust rolling; the cab's shapes inside.\nS8 10.0-11.3s · medium, from behind the seats inside the cab, slightly high, handheld · both bodies are thrown forward, Devendra's hands braced on the wheel, Suman's forehead going down onto the dashboard, the passenger-side window cracking in a web at 10.2s; the maize beyond the glass.\nS9 11.3-12.8s · close, cut at the collarbones, three-quarter from the passenger side, slightly high, handheld · Devendra pushes himself back off the wheel, dust settling in the light inside the cab, his look going right of the lens toward Suman's seat; only the driver's window behind him.\nS10 12.8-15.0s · close, cut at the collarbones, from the driver's side, slightly high, slow push-in · Suman lies forward against the dashboard with her eyes closed, her plait fallen over her shoulder, dust drifting in the light, the engine ticking as it cools; the cracked passenger window behind her.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nNo speech in S1, S2, S3, S4, S5, S6, S7, S8, S9, S10.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- No added sound effects: no whoosh, no boom, no impact hit, no riser.\n- Only diegetic sound: the characters' voices and the natural sounds of this place.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+      "take": "04.mp4"
+    },
+    {
+      "n": 5,
+      "scene": "s3",
+      "seconds": 15,
+      "extends": 4,
+      "job": "0af23072-4a1f-4b4b-88c9-906b3436c589",
+      "references": [
+        "farm_road",
+        "suman",
+        "boy",
+        "devendra",
+        "pickup"
+      ],
+      "covers": [
+        {
+          "scene": "s3",
+          "line": 2
+        },
+        {
+          "scene": "s3",
+          "line": 3
+        },
+        {
+          "scene": "s3",
+          "line": 4
+        },
+        {
+          "scene": "s3",
+          "line": 5
+        }
+      ],
+      "holds": [],
+      "shots": [
+        {
+          "s": 1,
+          "from": 0.0,
+          "to": 1.5,
+          "size": "medium",
+          "subject": "devendra",
+          "camera": "from the ditch bank outside the passenger door, slightly low, static",
+          "action": "the pickup's cab nose down in the ditch, the cracked passenger window in the centre, Suman's shape slumped forward inside it, Devendra beyond her pushing back from the wheel; dust settling on the bonnet",
+          "actions": [
+            "the pickup's cab nose down in the ditch, the cracked passenger window in the centre, Suman's shape slumped forward inside it, Devendra beyond her pushing back from the wheel; dust settling on the bonnet"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra",
+            "suman"
+          ]
+        },
+        {
+          "s": 2,
+          "from": 1.5,
+          "to": 3.5,
+          "size": "close",
+          "subject": "suman",
+          "camera": "from the driver's side, cut at the collarbones, slightly high, slow push-in",
+          "action": "Suman lifts her head off the dashboard, her hand going to her brow, her eyes opening toward the cracked window off right of the lens",
+          "actions": [
+            "Suman lifts her head off the dashboard, her hand going to her brow, her eyes opening toward the cracked window off right of the lens"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman"
+          ]
+        },
+        {
+          "s": 3,
+          "from": 3.5,
+          "to": 5.5,
+          "size": "close",
+          "subject": "boy",
+          "camera": "through the cracked glass from Suman's seat, cut at the collarbones, eye level, static",
+          "action": "the boy's face level with the window outside, his two hands flat on the cracked glass, his look passing left of the lens at Suman",
+          "actions": [
+            "the boy's face level with the window outside, his two hands flat on the cracked glass, his look passing left of the lens at Suman"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "boy"
+          ]
+        },
+        {
+          "s": 4,
+          "from": 5.5,
+          "to": 6.5,
+          "size": "extreme_close",
+          "subject": "suman",
+          "camera": "brows to lips, from the front, eye level, static",
+          "action": "her eyes hold on the boy off right of the lens",
+          "actions": [
+            "her eyes hold on the boy off right of the lens"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman"
+          ]
+        },
+        {
+          "s": 5,
+          "from": 6.5,
+          "to": 8.0,
+          "size": "medium",
+          "subject": "suman",
+          "camera": "from the ditch bank, slightly low, handheld",
+          "action": "the passenger door swings open and Suman steps down onto the ditch bank, the boy stepping back one pace to the maize edge",
+          "actions": [
+            "the passenger door swings open and Suman steps down onto the ditch bank, the boy stepping back one pace to the maize edge"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman",
+            "boy"
+          ]
+        },
+        {
+          "s": 6,
+          "from": 8.0,
+          "to": 11.0,
+          "size": "close",
+          "subject": "suman",
+          "camera": "three-quarter from the maize side, cut at the collarbones, slightly high, handheld",
+          "action": "Suman goes down on one knee on the bank and holds her open hand out low, palm up, toward the boy off left of the lens; her voice begins at 8.2s",
+          "actions": [
+            "Suman goes down on one knee on the bank and holds her open hand out low, palm up, toward the boy off left of the lens; her voice begins at 8.2s"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman"
+          ]
+        },
+        {
+          "s": 7,
+          "from": 11.0,
+          "to": 12.3,
+          "size": "extreme_close",
+          "subject": "boy",
+          "camera": "insert on the two hands from the side, static",
+          "action": "the boy's small hand comes in from the left and settles in Suman's open palm, her fingers closing gently around it",
+          "actions": [
+            "the boy's small hand comes in from the left and settles in Suman's open palm, her fingers closing gently around it"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "boy",
+            "suman"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        },
+        {
+          "s": 8,
+          "from": 12.3,
+          "to": 13.6,
+          "size": "close",
+          "subject": "boy",
+          "camera": "from Suman's side, cut at the collarbones, slightly high, static",
+          "action": "the boy's look passing right of the lens up at Suman, his hand in hers at the bottom of the frame",
+          "actions": [
+            "the boy's look passing right of the lens up at Suman, his hand in hers at the bottom of the frame"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "boy"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        },
+        {
+          "s": 9,
+          "from": 13.6,
+          "to": 15.0,
+          "size": "medium",
+          "subject": "devendra",
+          "camera": "from the ditch bank, slightly low, static",
+          "action": "Devendra climbs out of the driver's door and comes round the raised tail of the pickup onto the road side behind Suman, one hand on the bonnet; Suman kneeling near centre with the boy before her, hand in hand",
+          "actions": [
+            "Devendra climbs out of the driver's door and comes round the raised tail of the pickup onto the road side behind Suman, one hand on the bonnet; Suman kneeling near centre with the boy before her, hand in hand"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "devendra",
+            "suman",
+            "boy"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        }
+      ],
+      "audio": [
+        {
+          "shot": 6,
+          "from": 8.2,
+          "to": 10.9,
+          "who": "suman",
+          "to_whom": "boy",
+          "kind": "dialogue",
+          "delivery": "soft and careful",
+          "text": "डरो मत। तुम्हें चोट लगी है?"
+        }
+      ],
+      "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the afternoon sun front left, bleaching the dirt road pale and lighting the faces through the windscreen, the ditch and the tree line in shade; warm natural colour; dust hanging over the road.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Farm road): the Farm road 100% as in the reference.\nImage reference 2 (character Suman): Suman, face, hair, body and clothes 100% as in the reference.\nImage reference 3 (character The boy): The boy, face, hair, body and clothes 100% as in the reference.\nImage reference 4 (character Devendra): Devendra, face, hair, body and clothes 100% as in the reference.\nImage reference 5 (prop Pickup): the Pickup 100% as in the reference; now with its nose down in the ditch and its tail up on the road, the passenger-side window cracked in a web.\nContinuity: Suman is clean and unchanged from the reference, with no stain, mark or damage; The boy is clean and unchanged from the reference, with no stain, mark or damage; Devendra is clean and unchanged from the reference, with no stain, mark or damage.\nIn frame only: Suman, the boy and Devendra. The pickup sits nose down in the ditch on the right of the road, its tail up on the road. Devendra is in the driver's seat on the road side, left; Suman is in the passenger seat on the ditch side, right; the boy stands outside the passenger window on the ditch bank, near, with the maize behind him, an arm's length from the glass. Eyelines never at the camera.\nOpening: Suman slumped forward against the dashboard with her eyes closed; Devendra seated, pushed back from the wheel; the boy standing outside the cracked passenger window; the pickup nose down in the ditch.\nSuman speaks aloud 1 time between 8.2s and 10.9s and never again; silent before 8.2s and from 10.9s to the end.\nThe boy and Devendra never speak in this clip.\nSuman is out to reach the child at the window; once she is out of the cab she kneels and offers her hand, with tenacity.\nThe boy is out to see the woman in the truck; once her hand is open he takes it, with perseverance.\nDevendra is out to get out of the wrecked cab; once he is out he comes round to Suman, with grit.\nPace: slow and quiet as the dust settles, one beat where her line lands; every shot opens in motion.\nS1 0.0-1.5s · medium, from the ditch bank outside the passenger door, slightly low, static · the cab sits nose down in the ditch with the cracked passenger window centre frame, Suman's shape slumped forward inside it, Devendra beyond her pushing back from the wheel; dust settling on the bonnet, the engine ticking.\nS2 1.5-3.5s · close, cut at the collarbones, from the driver's side, slightly high, slow push-in · Suman lifts her head off the dashboard, her hand going to her brow, her eyes opening toward the cracked window off right of the lens; the window behind her.\nS3 3.5-5.5s · close, cut at the collarbones, through the cracked glass from Suman's seat, eye level, static · the boy's face level with the window outside, his two small hands flat on the cracked glass, his look passing left of the lens at Suman; the ditch bank and the maize behind him.\nS4 5.5-6.5s · extreme_close, brows to lips, from the front, eye level, static · her eyes hold on the boy off right of the lens, her lips closed; the cracked glass soft behind her.\nS5 6.5-8.0s · medium, from the ditch bank, slightly low, handheld · the passenger door swings open with a creak at 6.6s and Suman steps down onto the ditch bank, the boy stepping back one pace to the maize edge at the right; the pickup's tail up on the road behind her.\nS6 8.0-11.0s · close, cut at the collarbones, three-quarter from the maize side, slightly high, handheld · Suman goes down on one knee on the bank and holds her open hand out low, palm up, toward the boy off left of the lens; her voice begins at 8.2s and ends at 10.9s; the pickup behind her.\nS7 11.0-12.3s · insert, the two hands from the side, static · the boy's small hand comes in from the left and settles in Suman's open palm, her fingers closing gently around it; dry grass and the ditch bank below.\nS8 12.3-13.6s · close, cut at the collarbones, from Suman's side, slightly high, static · the boy's look passing right of the lens up at Suman, his hand in hers at the bottom of the frame; the maize behind him.\nS9 13.6-15.0s · medium, from the ditch bank, slightly low, static · Devendra climbs out of the driver's door and comes round the raised tail of the pickup to stand behind Suman, one hand on the bonnet; Suman kneeling near centre with the boy standing before her, hand in hand; the road behind them.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nS6 (8.2-10.9s) Suman to the boy, a woman's voice of about 32, warm and low, a soft central Indian Hindi accent, gentle and steady, soft and careful: \"डरो मत। तुम्हें चोट लगी है?\"\nNo speech in S1, S2, S3, S4, S5, S7, S8, S9.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- No added sound effects: no whoosh, no boom, no impact hit, no riser.\n- Only diegetic sound: the characters' voices and the natural sounds of this place.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+      "take": "05.mp4"
+    },
+    {
+      "n": 6,
+      "scene": "s4",
+      "seconds": 12,
+      "extends": null,
+      "standalone": null,
+      "job": "fc996522-049c-4bba-b35e-efa480d6a597",
+      "references": [
+        "maize_field",
+        "devendra",
+        "suman",
+        "boy",
+        "spacecraft"
+      ],
+      "covers": [
+        {
+          "scene": "s4",
+          "line": 1
+        }
+      ],
+      "holds": [],
+      "shots": [
+        {
+          "s": 1,
+          "from": 0.0,
+          "to": 1.8,
+          "size": "close",
+          "subject": "devendra",
+          "camera": "three-quarter from the field side, cut at the collarbones, slightly low, slow push-in",
+          "action": "Devendra's eyes lift from the boy and travel past him, his look going off right of the lens and up along the field",
+          "actions": [
+            "Devendra's eyes lift from the boy and travel past him, his look going off right of the lens and up along the field"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra",
+            "suman"
+          ]
+        },
+        {
+          "s": 2,
+          "from": 1.8,
+          "to": 3.6,
+          "size": "medium",
+          "subject": "suman",
+          "camera": "from behind Devendra over his shoulder, slightly high, static",
+          "action": "a trail of flattened maize runs from the boy's back straight into the field; Suman kneeling and the boy standing near centre with their hands joined, Devendra's shoulder soft in the left foreground",
+          "actions": [
+            "a trail of flattened maize runs from the boy's back straight into the field; Suman kneeling and the boy standing near centre with their hands joined, Devendra's shoulder soft in the left foreground"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "suman",
+            "boy",
+            "devendra"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        },
+        {
+          "s": 3,
+          "from": 3.6,
+          "to": 6.6,
+          "size": "full",
+          "subject": null,
+          "camera": "child-eye level from the start of the trail looking along it, locked camera",
+          "action": "the trail of flattened maize leads to the dark metal craft half-buried in the earth thirty steps in, its open hatch facing the lens, fine dust drifting past the opening",
+          "actions": [
+            "the trail of flattened maize leads to the dark metal craft half-buried in the earth thirty steps in, its open hatch facing the lens, fine dust drifting past the opening"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 4,
+          "from": 6.6,
+          "to": 8.6,
+          "size": "close",
+          "subject": "devendra",
+          "camera": "from the front, cut at the collarbones, slightly low, handheld",
+          "action": "Devendra takes one step forward past Suman, his eyes fixed on the craft off right of the lens",
+          "actions": [
+            "Devendra takes one step forward past Suman, his eyes fixed on the craft off right of the lens"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra"
+          ]
+        },
+        {
+          "s": 5,
+          "from": 8.6,
+          "to": 10.0,
+          "size": "extreme_close",
+          "subject": null,
+          "camera": "insert on the open hatch from low in the flattened maize, static",
+          "action": "the open hatch of the craft, the dark opening just big enough for a small child, a thin line of heat shimmer at its edge, earth heaped against the hull",
+          "actions": [
+            "the open hatch of the craft, the dark opening just big enough for a small child, a thin line of heat shimmer at its edge, earth heaped against the hull"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 6,
+          "from": 10.0,
+          "to": 12.0,
+          "size": "close",
+          "subject": "suman",
+          "camera": "three-quarter from Devendra's side, cut at the collarbones, slightly high, slow push-in",
+          "action": "Suman's eyes come up from the boy's hand in hers to Devendra's face off left of the lens, then along the trail",
+          "actions": [
+            "Suman's eyes come up from the boy's hand in hers to Devendra's face off left of the lens, then along the trail"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "suman",
+            "boy"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        }
+      ],
+      "audio": [],
+      "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds; no one speaks.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the low golden sun behind right, backlighting the maize leaves and rimming the hair, the spaces between the rows in soft shadow; warm natural colour with saturated, believable greens; dust drifting in the air.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Maize field): the Maize field 100% as in the reference.\nImage reference 2 (character Devendra): Devendra, face, hair, body and clothes 100% as in the reference.\nImage reference 3 (character Suman): Suman, face, hair, body and clothes 100% as in the reference.\nImage reference 4 (character The boy): The boy, face, hair, body and clothes 100% as in the reference.\nImage reference 5 (prop Spacecraft): the Spacecraft 100% as in the reference.\nContinuity: Devendra is clean and unchanged from the reference, with no stain, mark or damage; Suman is clean and unchanged from the reference, with no stain, mark or damage; The boy is clean and unchanged from the reference, with no stain, mark or damage.\nIn frame only: Devendra, Suman and the boy. The edge of the maize field, the rows running away from the lens. Suman kneels at the field's edge, screen centre, near; the boy stands before her at arm's length with his back to the field, the trail of flattened maize running from behind him into the rows; Devendra stands a step behind Suman, screen left, near; the craft lies thirty steps into the field at the end of the trail, far. Eyelines never at the camera.\nOpening: Suman kneeling with the boy's hand in hers; the boy standing before her; Devendra standing a step behind her, his eyes on the boy.\nNobody speaks in this clip: Devendra, Suman and the boy never speak.\nDevendra is out to understand where the child came from; once he sees the trail he follows it with his eyes to its end, with resilience.\nSuman is out to keep the child's hand in hers; once Devendra moves she looks where he looks, with perseverance.\nThe boy is out to stay beside Suman; once she holds his hand he keeps it there, with persistence.\nPace: slow and still, one long locked shot on the craft; every shot opens in motion.\nS1 0.0-1.8s · close, cut at the collarbones, three-quarter from the field side, slightly low, slow push-in · Devendra's eyes lift from the boy and travel past him, his look going off right of the lens and up along the field; Suman's plait and shoulder soft in the right foreground.\nS2 1.8-3.6s · medium, from behind Devendra over his shoulder, slightly high, static · a trail of flattened maize runs from the boy's back straight into the field; Suman kneeling and the boy standing near centre with their hands joined, Devendra's shoulder soft in the left foreground; the open field beyond.\nS3 3.6-6.6s · full, child-eye level from the start of the trail looking along it, locked camera · the trail of flattened maize leads to the dark metal craft half-buried in the earth thirty steps in, its open hatch facing the lens, fine dust drifting slowly past the opening, the hull completely still; nobody in frame.\nS4 6.6-8.6s · close, cut at the collarbones, from the front, slightly low, handheld · Devendra takes one slow step forward past Suman, his eyes fixed on the craft off right of the lens, his hands open at his sides; only the maize behind him.\nS5 8.6-10.0s · insert, the open hatch from low in the flattened maize, static · the dark opening of the hatch just big enough for a small child, a thin line of heat shimmer at its edge, earth heaped against the dark hull; nobody in frame.\nS6 10.0-12.0s · close, cut at the collarbones, three-quarter from Devendra's side, slightly high, slow push-in · Suman's eyes come up from the boy's hand in hers to Devendra's face off left of the lens, then along the trail to the right; the boy's shoulder soft in the right foreground.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nNo speech in S1, S2, S3, S4, S5, S6.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- No added sound effects: no whoosh, no boom, no impact hit, no riser.\n- Only diegetic sound: the characters' voices and the natural sounds of this place.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+      "take": "06.mp4"
+    },
+    {
+      "n": 7,
+      "scene": "s4",
+      "seconds": 13,
+      "extends": 6,
+      "job": "a919bdf5-4517-43ef-8bf5-6ae6bf9479a0",
+      "references": [
+        "maize_field",
+        "devendra",
+        "suman",
+        "boy",
+        "spacecraft"
+      ],
+      "covers": [
+        {
+          "scene": "s4",
+          "line": 2
+        },
+        {
+          "scene": "s4",
+          "line": 3
+        }
+      ],
+      "holds": [],
+      "shots": [
+        {
+          "s": 1,
+          "from": 0.0,
+          "to": 1.6,
+          "size": "medium",
+          "subject": "devendra",
+          "camera": "from the craft side at waist height looking back, slightly low, static",
+          "action": "Devendra stands near centre with his eyes down and left of the lens on the hatch, his hands open at his sides; Suman kneeling with the boy in the middle distance behind him, hand in hand",
+          "actions": [
+            "Devendra stands near centre with his eyes down and left of the lens on the hatch, his hands open at his sides; Suman kneeling with the boy in the middle distance behind him, hand in hand"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "devendra",
+            "suman",
+            "boy"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        },
+        {
+          "s": 2,
+          "from": 1.6,
+          "to": 4.2,
+          "size": "close",
+          "subject": "devendra",
+          "camera": "three-quarter from Suman's side, cut at the collarbones, slightly low, slow push-in",
+          "action": "his eyes hold on the craft off right of the lens, his throat moving as his voice begins at 1.8s",
+          "actions": [
+            "his eyes hold on the craft off right of the lens, his throat moving as his voice begins at 1.8s"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra"
+          ]
+        },
+        {
+          "s": 3,
+          "from": 4.2,
+          "to": 6.0,
+          "size": "close",
+          "subject": "suman",
+          "camera": "from the front, cut at the collarbones, slightly high, handheld",
+          "action": "Suman's eyes rest on the open hatch off left of the lens, dust drifting between; the boy's hair at the bottom edge of the frame",
+          "actions": [
+            "Suman's eyes rest on the open hatch off left of the lens, dust drifting between; the boy's hair at the bottom edge of the frame"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "suman",
+            "boy"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        },
+        {
+          "s": 4,
+          "from": 6.0,
+          "to": 7.4,
+          "size": "extreme_close",
+          "subject": "boy",
+          "camera": "insert on the hands from above, static",
+          "action": "the boy's second hand comes in and closes over Suman's hand so both his hands wrap around hers",
+          "actions": [
+            "the boy's second hand comes in and closes over Suman's hand so both his hands wrap around hers"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "boy",
+            "suman"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        },
+        {
+          "s": 5,
+          "from": 7.4,
+          "to": 9.0,
+          "size": "close",
+          "subject": "suman",
+          "camera": "three-quarter from the craft side, cut at the collarbones, slightly high, static",
+          "action": "Suman's eyes drop from the hatch down to the boy below the bottom edge of the frame, her plait over her shoulder",
+          "actions": [
+            "Suman's eyes drop from the hatch down to the boy below the bottom edge of the frame, her plait over her shoulder"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman"
+          ]
+        },
+        {
+          "s": 6,
+          "from": 9.0,
+          "to": 10.4,
+          "size": "close",
+          "subject": "boy",
+          "camera": "from Suman's side, cut at the collarbones, slightly high, static",
+          "action": "the boy's look passing right of the lens up at Suman, his two hands around hers at the bottom of the frame",
+          "actions": [
+            "the boy's look passing right of the lens up at Suman, his two hands around hers at the bottom of the frame"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "boy"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        },
+        {
+          "s": 7,
+          "from": 10.4,
+          "to": 13.0,
+          "size": "extreme_close",
+          "subject": "suman",
+          "camera": "brows to lips, from the front, eye level, slow push-in",
+          "action": "her eyes on the boy low and right of the lens, her lips closed, a single metallic tick from the hull at 12.2s, dust drifting",
+          "actions": [
+            "her eyes on the boy low and right of the lens, her lips closed, a single metallic tick from the hull at 12.2s, dust drifting"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman"
+          ]
+        }
+      ],
+      "audio": [
+        {
+          "shot": 2,
+          "from": 1.8,
+          "to": 2.6,
+          "who": "devendra",
+          "to_whom": "suman",
+          "kind": "dialogue",
+          "delivery": "barely above a whisper",
+          "text": "सुमन…"
+        }
+      ],
+      "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the low golden sun behind right, backlighting the maize leaves and rimming the hair, the spaces between the rows in soft shadow; warm natural colour with saturated, believable greens; dust drifting in the air.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Maize field): the Maize field 100% as in the reference.\nImage reference 2 (character Devendra): Devendra, face, hair, body and clothes 100% as in the reference.\nImage reference 3 (character Suman): Suman, face, hair, body and clothes 100% as in the reference.\nImage reference 4 (character The boy): The boy, face, hair, body and clothes 100% as in the reference.\nImage reference 5 (prop Spacecraft): the Spacecraft 100% as in the reference.\nContinuity: Devendra is clean and unchanged from the reference, with no stain, mark or damage; Suman is clean and unchanged from the reference, with no stain, mark or damage; The boy is clean and unchanged from the reference, with no stain, mark or damage.\nIn frame only: Devendra, Suman and the boy. The edge of the maize field, the rows running away from the lens, the craft half-buried thirty steps in at the end of the flattened trail, far. Devendra stands one step ahead of Suman toward the field, screen left, middle; Suman kneels at the field's edge, screen centre, near; the boy stands before her at arm's length with his back to the trail. Eyelines never at the camera.\nOpening: Devendra standing one step ahead of Suman with his eyes on the craft; Suman kneeling with her eyes along the trail; the boy standing before her with his hand in hers.\nDevendra speaks aloud 1 time between 1.8s and 2.6s and never again; silent before 1.8s and from 2.6s to the end.\nSuman and the boy never speak in this clip.\nDevendra is out to make Suman see the craft; once she looks he holds his ground before it, with resilience.\nSuman is out to take in what Devendra sees; once she has seen the hatch she looks back down to the child, with perseverance.\nThe boy is out to keep hold of Suman; once her eyes come down to him he holds her hand with both of his, with persistence.\nPace: slow and hushed, one beat where his line lands; every shot opens in motion and the last one pushes in slowly.\nS1 0.0-1.6s · medium, from the craft side at waist height looking back at the three, slightly low, static · Devendra stands near centre with his eyes down and left of the lens on the hatch, his hands open at his sides; Suman kneeling with the boy standing before her in the middle distance behind him, hand in hand; maize around them.\nS2 1.6-4.2s · close, cut at the collarbones, three-quarter from Suman's side, slightly low, slow push-in · his eyes hold on the craft off right of the lens, his throat moving as his voice begins at 1.8s and ends at 2.6s, his hands still at his sides; the dark hull soft behind him.\nS3 4.2-6.0s · close, cut at the collarbones, from the front, slightly high, handheld · Suman's eyes rest on the open hatch off left of the lens, dust drifting between them; the boy's hair at the bottom edge of the frame, pale maize behind her.\nS4 6.0-7.4s · insert, the hands from above, static · the boy's second hand comes in from the left and closes over Suman's hand so both his small hands wrap around hers; the dry earth below.\nS5 7.4-9.0s · close, cut at the collarbones, three-quarter from the craft side, slightly high, static · Suman's eyes drop from the hatch down to the boy below the bottom edge of the frame, her plait over her shoulder; maize soft behind her.\nS6 9.0-10.4s · close, cut at the collarbones, from Suman's side, slightly high, static · the boy's look passing right of the lens up at Suman, his two hands around hers at the bottom of the frame; the craft's dark shape soft in the field behind him.\nS7 10.4-13.0s · extreme_close, brows to lips, from the front, eye level, slow push-in · her eyes on the boy low and right of the lens, her lips closed, dust drifting past her face, a single soft metallic tick from the cooling hull at 12.2s; only pale maize behind her.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nS2 (1.8-2.6s) Devendra to Suman, a man's voice of about 36, a dry quiet baritone, a central Indian Hindi accent, steady and low, barely above a whisper: \"सुमन…\"\nNo speech in S1, S3, S4, S5, S6, S7.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- No added sound effects: no whoosh, no boom, no impact hit, no riser.\n- Only diegetic sound: the characters' voices and the natural sounds of this place.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+      "take": "07.mp4"
+    }
+  ],
+  "rev": 72,
+  "plan_quotes": [
+    {
+      "what": "pictures",
+      "credits": 36.92
+    },
+    {
+      "what": "draft clips",
+      "credits": 285
+    }
+  ],
+  "plan_total": 321.92,
+  "cap": 321.92,
+  "cap_source": "plan",
+  "plan_shown": {
+    "sha": "8d2e0e5a2c7b",
+    "user_words": "Yes, make the pictures (recommended)"
+  },
+  "looks": {
+    "42326eea-1c37-4fa1-b34d-01117a8e9c84": {
+      "tag": "picture-boy-face",
+      "answers": {
+        "safety:revealing:boy": "no",
+        "safety:intimate:boy": "no",
+        "safety:sexualised:boy": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "boy": {
+          "visible_at": [
+            0
+          ],
+          "wearing": "a grey crew-neck top, shoulders covered"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:boy": "no",
+        "safety:intimate:boy": "no",
+        "safety:sexualised:boy": "no"
+      }
+    },
+    "de431748-e497-42ae-b016-fcd9ba9a58fd": {
+      "tag": "picture-boy-outfit",
+      "answers": {
+        "safety:revealing:boy": "no",
+        "safety:intimate:boy": "no",
+        "safety:sexualised:boy": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "boy": {
+          "laid_out": "a cream cotton kurta, grey cotton pyjama trousers, brown rubber chappals"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:boy": "no",
+        "safety:intimate:boy": "no",
+        "safety:sexualised:boy": "no"
+      }
+    },
+    "604c493f-6e36-47e3-b8d5-0a8944822159": {
+      "tag": "picture-meera-face",
+      "answers": {
+        "safety:revealing:meera": "no",
+        "safety:intimate:meera": "no",
+        "safety:sexualised:meera": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "meera": {
+          "visible_at": [
+            0
+          ],
+          "wearing": "a grey crew-neck top, shoulders covered"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:meera": "no",
+        "safety:intimate:meera": "no",
+        "safety:sexualised:meera": "no"
+      }
+    },
+    "57034b79-4070-4559-bb92-7ea7418e93ae": {
+      "tag": "picture-meera-outfit",
+      "answers": {
+        "safety:revealing:meera": "no",
+        "safety:intimate:meera": "no",
+        "safety:sexualised:meera": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "meera": {
+          "laid_out": "a powder-blue cotton frock with small white flowers, white leggings, red canvas shoes"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:meera": "no",
+        "safety:intimate:meera": "no",
+        "safety:sexualised:meera": "no"
+      }
+    },
+    "ebbf56cc-28db-4b80-ab28-e9c0bf8f36f2": {
+      "tag": "picture-nikhil-face",
+      "answers": {
+        "safety:revealing:nikhil": "no",
+        "safety:intimate:nikhil": "no",
+        "safety:sexualised:nikhil": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "nikhil": {
+          "visible_at": [
+            0
+          ],
+          "wearing": "a grey-blue crew-neck top, shoulders covered"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:nikhil": "no",
+        "safety:intimate:nikhil": "no",
+        "safety:sexualised:nikhil": "no"
+      }
+    },
+    "5014d3a1-6fad-4ce2-afa2-6232d89adcf7": {
+      "tag": "picture-nikhil-outfit",
+      "answers": {
+        "safety:revealing:nikhil": "no",
+        "safety:intimate:nikhil": "no",
+        "safety:sexualised:nikhil": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "nikhil": {
+          "laid_out": "an off-white cotton shirt with a large red letter S painted on the chest, dark brown trousers, black rubber slippers"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:nikhil": "no",
+        "safety:intimate:nikhil": "no",
+        "safety:sexualised:nikhil": "no"
+      }
+    },
+    "ba88c333-5c0b-4b81-bbe7-893123090654": {
+      "tag": "picture-yash-face",
+      "answers": {
+        "safety:revealing:yash": "no",
+        "safety:intimate:yash": "no",
+        "safety:sexualised:yash": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "yash": {
+          "visible_at": [
+            0
+          ],
+          "wearing": "a grey crew-neck top, shoulders covered"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:yash": "no",
+        "safety:intimate:yash": "no",
+        "safety:sexualised:yash": "no"
+      }
+    },
+    "148a9a4d-4ac2-4486-985c-2dc565a7ebdc": {
+      "tag": "picture-yash-outfit",
+      "answers": {
+        "safety:revealing:yash": "no",
+        "safety:intimate:yash": "no",
+        "safety:sexualised:yash": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "yash": {
+          "laid_out": "a grey cotton t-shirt, navy shorts, white canvas shoes"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:yash": "no",
+        "safety:intimate:yash": "no",
+        "safety:sexualised:yash": "no"
+      }
+    },
+    "f0d3202d-0feb-43e1-9797-aa54d1211533": {
+      "tag": "picture-boy-sheet",
+      "answers": {
+        "safety:revealing:boy": "no",
+        "safety:intimate:boy": "no",
+        "safety:sexualised:boy": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "boy": {
+          "visible_at": [
+            0
+          ],
+          "wearing": "a cream long-sleeved kurta buttoned at the neck, grey trousers, brown chappals"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:boy": "no",
+        "safety:intimate:boy": "no",
+        "safety:sexualised:boy": "no"
+      }
+    },
+    "32dc90ca-b3dc-4355-8e4d-ac57536a2f60": {
+      "tag": "picture-meera-sheet",
+      "answers": {
+        "safety:revealing:meera": "no",
+        "safety:intimate:meera": "no",
+        "safety:sexualised:meera": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "meera": {
+          "visible_at": [
+            0
+          ],
+          "wearing": "a powder-blue flowered frock with a round collar and puffed sleeves, white leggings, red canvas shoes"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:meera": "no",
+        "safety:intimate:meera": "no",
+        "safety:sexualised:meera": "no"
+      }
+    },
+    "af4bcfe9-8ac1-4ced-b2e1-8026a961ad71": {
+      "tag": "picture-nikhil-sheet",
+      "answers": {
+        "safety:revealing:nikhil": "no",
+        "safety:intimate:nikhil": "no",
+        "safety:sexualised:nikhil": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "nikhil": {
+          "visible_at": [
+            0
+          ],
+          "wearing": "an off-white long-sleeved shirt buttoned to the collar with a red painted S on the chest, dark brown trousers, black rubber slippers"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:nikhil": "no",
+        "safety:intimate:nikhil": "no",
+        "safety:sexualised:nikhil": "no"
+      }
+    },
+    "ba178ecf-7107-4421-a14c-d68a64e54e18": {
+      "tag": "picture-yash-sheet",
+      "answers": {
+        "safety:revealing:yash": "no",
+        "safety:intimate:yash": "no",
+        "safety:sexualised:yash": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "yash": {
+          "visible_at": [
+            0
+          ],
+          "wearing": "a grey crew-neck t-shirt, navy shorts to the knee, white canvas shoes"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:yash": "no",
+        "safety:intimate:yash": "no",
+        "safety:sexualised:yash": "no"
+      }
+    },
+    "315b10a0-05fe-4e23-9ab4-ceaaa21675fe": {
+      "tag": "clip-1",
+      "answers": {
+        "safety:revealing:meera": "no",
+        "safety:intimate:meera": "no",
+        "safety:sexualised:meera": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "meera": {
+          "visible_at": [
+            1,
+            2,
+            7,
+            10,
+            11,
+            12
+          ],
+          "wearing": "a light blue cotton dress with a round collar and short puffed sleeves, white leggings"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:meera": "no",
+        "safety:intimate:meera": "no",
+        "safety:sexualised:meera": "no"
+      }
+    },
+    "fc996522-049c-4bba-b35e-efa480d6a597": {
+      "tag": "clip-6",
+      "answers": {
+        "safety:revealing:boy": "no",
+        "safety:intimate:boy": "no",
+        "safety:sexualised:boy": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "boy": {
+          "visible_at": [
+            2,
+            3
+          ],
+          "wearing": "a cream long-sleeved kurta and grey trousers"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:boy": "no",
+        "safety:intimate:boy": "no",
+        "safety:sexualised:boy": "no"
+      }
+    },
+    "588043d8-eac1-43af-bfb1-40b7328cc011": {
+      "tag": "clip-2",
+      "answers": {
+        "safety:revealing:meera": "no",
+        "safety:intimate:meera": "no",
+        "safety:sexualised:meera": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "meera": {
+          "visible_at": [
+            0,
+            1,
+            2,
+            3,
+            5,
+            6,
+            7,
+            8
+          ],
+          "wearing": "a light blue cotton dress with a round collar and puffed sleeves, white leggings, red canvas shoes"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:meera": "no",
+        "safety:intimate:meera": "no",
+        "safety:sexualised:meera": "no"
+      }
+    },
+    "0af23072-4a1f-4b4b-88c9-906b3436c589": {
+      "tag": "clip-5",
+      "answers": {
+        "safety:revealing:boy": "no",
+        "safety:intimate:boy": "no",
+        "safety:sexualised:boy": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "boy": {
+          "visible_at": [
+            3,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            12,
+            13,
+            14
+          ],
+          "wearing": "a cream long-sleeved kurta and grey trousers"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:boy": "no",
+        "safety:intimate:boy": "no",
+        "safety:sexualised:boy": "no"
+      }
+    },
+    "a919bdf5-4517-43ef-8bf5-6ae6bf9479a0": {
+      "tag": "clip-7",
+      "answers": {
+        "safety:revealing:boy": "no",
+        "safety:intimate:boy": "no",
+        "safety:sexualised:boy": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "boy": {
+          "visible_at": [
+            0,
+            1,
+            6,
+            7,
+            9,
+            10
+          ],
+          "wearing": "a cream long-sleeved kurta"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:boy": "no",
+        "safety:intimate:boy": "no",
+        "safety:sexualised:boy": "no"
+      }
+    },
+    "a2687b91-ba0a-42d3-80ab-50535b4bf77e": {
+      "tag": "clip-3",
+      "answers": {
+        "safety:revealing:yash": "no",
+        "safety:intimate:yash": "no",
+        "safety:sexualised:yash": "no",
+        "safety:revealing:nikhil": "no",
+        "safety:intimate:nikhil": "no",
+        "safety:sexualised:nikhil": "no"
+      },
+      "verdict": "keep",
+      "observed": {
+        "nikhil": {
+          "visible_at": [
+            5,
+            6,
+            7,
+            8,
+            9,
+            12
+          ],
+          "wearing": "an off-white long-sleeved shirt with a red painted S on the chest and dark brown trousers"
+        },
+        "yash": {
+          "visible_at": [
+            2,
+            3,
+            4,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "wearing": "a grey crew-neck t-shirt and navy shorts"
+        }
+      },
+      "safety_locked": {
+        "safety:revealing:yash": "no",
+        "safety:intimate:yash": "no",
+        "safety:sexualised:yash": "no",
+        "safety:revealing:nikhil": "no",
+        "safety:intimate:nikhil": "no",
+        "safety:sexualised:nikhil": "no"
+      }
+    }
+  },
+  "redos": {
+    "clip-3": {
+      "job": "7f4c3606-0c37-40b8-95ed-4da8c2f4bea5",
+      "user_words": "Make clip 3 again",
+      "price": 54.0,
+      "approved": true
+    }
+  },
+  "close": {
+    "plain_url": "https://d2ol7oe51mr4n9.cloudfront.net/user_REDACTED/f7ee5a23-9f9e-4a95-a674-f5081830621a.mp4",
+    "edited_url": "https://d2ol7oe51mr4n9.cloudfront.net/user_REDACTED/e558f321-0a9c-434a-b6ba-6e894ebea351.mp4",
+    "register": {
+      "called": true,
+      "ok": true,
+      "error": null
+    }
+  }
+}

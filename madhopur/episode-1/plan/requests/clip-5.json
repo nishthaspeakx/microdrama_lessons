@@ -1,0 +1,46 @@
+{
+  "requests": [
+    {
+      "index": 0,
+      "params": {
+        "model": "seedance_2_5",
+        "mode": "video_extension",
+        "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the afternoon sun front left, bleaching the dirt road pale and lighting the faces through the windscreen, the ditch and the tree line in shade; warm natural colour; dust hanging over the road.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Farm road): the Farm road 100% as in the reference.\nImage reference 2 (character Suman): Suman, face, hair, body and clothes 100% as in the reference.\nImage reference 3 (character The boy): The boy, face, hair, body and clothes 100% as in the reference.\nImage reference 4 (character Devendra): Devendra, face, hair, body and clothes 100% as in the reference.\nImage reference 5 (prop Pickup): the Pickup 100% as in the reference; now with its nose down in the ditch and its tail up on the road, the passenger-side window cracked in a web.\nContinuity: Suman is clean and unchanged from the reference, with no stain, mark or damage; The boy is clean and unchanged from the reference, with no stain, mark or damage; Devendra is clean and unchanged from the reference, with no stain, mark or damage.\nIn frame only: Suman, the boy and Devendra. The pickup sits nose down in the ditch on the right of the road, its tail up on the road. Devendra is in the driver's seat on the road side, left; Suman is in the passenger seat on the ditch side, right; the boy stands outside the passenger window on the ditch bank, near, with the maize behind him, an arm's length from the glass. Eyelines never at the camera.\nOpening: Suman slumped forward against the dashboard with her eyes closed; Devendra seated, pushed back from the wheel; the boy standing outside the cracked passenger window; the pickup nose down in the ditch.\nSuman speaks aloud 1 time between 8.2s and 10.9s and never again; silent before 8.2s and from 10.9s to the end.\nThe boy and Devendra never speak in this clip.\nSuman is out to reach the child at the window; once she is out of the cab she kneels and offers her hand, with tenacity.\nThe boy is out to see the woman in the truck; once her hand is open he takes it, with perseverance.\nDevendra is out to get out of the wrecked cab; once he is out he comes round to Suman, with grit.\nPace: slow and quiet as the dust settles, one beat where her line lands; every shot opens in motion.\nS1 0.0-1.5s · medium, from the ditch bank outside the passenger door, slightly low, static · the cab sits nose down in the ditch with the cracked passenger window centre frame, Suman's shape slumped forward inside it, Devendra beyond her pushing back from the wheel; dust settling on the bonnet, the engine ticking.\nS2 1.5-3.5s · close, cut at the collarbones, from the driver's side, slightly high, slow push-in · Suman lifts her head off the dashboard, her hand going to her brow, her eyes opening toward the cracked window off right of the lens; the window behind her.\nS3 3.5-5.5s · close, cut at the collarbones, through the cracked glass from Suman's seat, eye level, static · the boy's face level with the window outside, his two small hands flat on the cracked glass, his look passing left of the lens at Suman; the ditch bank and the maize behind him.\nS4 5.5-6.5s · extreme_close, brows to lips, from the front, eye level, static · her eyes hold on the boy off right of the lens, her lips closed; the cracked glass soft behind her.\nS5 6.5-8.0s · medium, from the ditch bank, slightly low, handheld · the passenger door swings open with a creak at 6.6s and Suman steps down onto the ditch bank, the boy stepping back one pace to the maize edge at the right; the pickup's tail up on the road behind her.\nS6 8.0-11.0s · close, cut at the collarbones, three-quarter from the maize side, slightly high, handheld · Suman goes down on one knee on the bank and holds her open hand out low, palm up, toward the boy off left of the lens; her voice begins at 8.2s and ends at 10.9s; the pickup behind her.\nS7 11.0-12.3s · insert, the two hands from the side, static · the boy's small hand comes in from the left and settles in Suman's open palm, her fingers closing gently around it; dry grass and the ditch bank below.\nS8 12.3-13.6s · close, cut at the collarbones, from Suman's side, slightly high, static · the boy's look passing right of the lens up at Suman, his hand in hers at the bottom of the frame; the maize behind him.\nS9 13.6-15.0s · medium, from the ditch bank, slightly low, static · Devendra climbs out of the driver's door and comes round the raised tail of the pickup to stand behind Suman, one hand on the bonnet; Suman kneeling near centre with the boy standing before her, hand in hand; the road behind them.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nS6 (8.2-10.9s) Suman to the boy, a woman's voice of about 32, warm and low, a soft central Indian Hindi accent, gentle and steady, soft and careful: \"डरो मत। तुम्हें चोट लगी है?\"\nNo speech in S1, S2, S3, S4, S5, S7, S8, S9.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- No added sound effects: no whoosh, no boom, no impact hit, no riser.\n- Only diegetic sound: the characters' voices and the natural sounds of this place.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+        "duration": 15,
+        "aspect_ratio": "9:16",
+        "resolution": "480p",
+        "draft": true,
+        "generate_audio": true,
+        "bitrate_mode": "high",
+        "medias": [
+          {
+            "value": "c4f76180-c300-4723-9d09-18ec0f71933e",
+            "role": "image_references"
+          },
+          {
+            "value": "f947a93a-a190-427f-91eb-9ac0f55ebcea",
+            "role": "image_references"
+          },
+          {
+            "value": "f0d3202d-0feb-43e1-9797-aa54d1211533",
+            "role": "image_references"
+          },
+          {
+            "value": "5f1b39b6-c85d-4de3-946b-6c6bb1801537",
+            "role": "image_references"
+          },
+          {
+            "value": "200acb4a-6271-4447-8c51-b78cc10da8e5",
+            "role": "image_references"
+          },
+          {
+            "value": "76250727-b3f3-4874-9d1a-b07bbc85ab15",
+            "role": "video_references"
+          }
+        ],
+        "count": 1,
+        "extension_mode": "forward"
+      }
+    }
+  ]
+}

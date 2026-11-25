@@ -1,0 +1,31 @@
+{
+  "file": "pictures-1.json",
+  "sha256": "50c840d85f66a17c63705aa353d3f4d4e3a5a75526af713cea9f1b99d21228cf",
+  "jobs": [
+    "604c493f-6e36-47e3-b8d5-0a8944822159",
+    "57034b79-4070-4559-bb92-7ea7418e93ae",
+    "5c62a650-5d55-4eb4-8957-2cad4b883857",
+    "bd647fbc-b73e-44b7-8a30-9b7ce87c6e10",
+    "9ef6b5b0-89e9-4495-95a4-839cc610dbdf",
+    "beefe767-fc33-407c-8ba4-b3687c870835",
+    "ba88c333-5c0b-4b81-bbe7-893123090654",
+    "148a9a4d-4ac2-4486-985c-2dc565a7ebdc",
+    "ebbf56cc-28db-4b80-ab28-e9c0bf8f36f2",
+    "5014d3a1-6fad-4ce2-afa2-6232d89adcf7",
+    "c07896ea-6f10-44ee-8ad1-d9eca4bf0ea7"
+  ],
+  "slots": [
+    "characters.meera.face",
+    "characters.meera.outfit",
+    "characters.meera_mother.face",
+    "characters.meera_mother.outfit",
+    "characters.meera_father.face",
+    "characters.meera_father.outfit",
+    "characters.yash.face",
+    "characters.yash.outfit",
+    "characters.nikhil.face",
+    "characters.nikhil.outfit",
+    "characters.devendra.face"
+  ],
+  "credits": 1.32
+}

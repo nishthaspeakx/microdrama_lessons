@@ -1,0 +1,158 @@
+{
+  "file": "clip-7.json",
+  "sha256": "7c6d09dbfe5b31d1930fe0392b213556150047c49fab25214590e8268e5ecdab",
+  "jobs": [
+    "a919bdf5-4517-43ef-8bf5-6ae6bf9479a0"
+  ],
+  "slots": [
+    "clips.7.job"
+  ],
+  "credits": 39.0,
+  "frozen": {
+    "7": {
+      "job": "a919bdf5-4517-43ef-8bf5-6ae6bf9479a0",
+      "shots": [
+        {
+          "s": 1,
+          "from": 0,
+          "to": 1.6,
+          "size": "medium",
+          "subject": "devendra",
+          "camera": "from the craft side at waist height looking back, slightly low, static",
+          "action": "Devendra stands near centre with his eyes down and left of the lens on the hatch, his hands open at his sides; Suman kneeling with the boy in the middle distance behind him, hand in hand",
+          "actions": [
+            "Devendra stands near centre with his eyes down and left of the lens on the hatch, his hands open at his sides; Suman kneeling with the boy in the middle distance behind him, hand in hand"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "devendra",
+            "suman",
+            "boy"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        },
+        {
+          "s": 2,
+          "from": 1.6,
+          "to": 4.2,
+          "size": "close",
+          "subject": "devendra",
+          "camera": "three-quarter from Suman's side, cut at the collarbones, slightly low, slow push-in",
+          "action": "his eyes hold on the craft off right of the lens, his throat moving as his voice begins at 1.8s",
+          "actions": [
+            "his eyes hold on the craft off right of the lens, his throat moving as his voice begins at 1.8s"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra"
+          ]
+        },
+        {
+          "s": 3,
+          "from": 4.2,
+          "to": 6,
+          "size": "close",
+          "subject": "suman",
+          "camera": "from the front, cut at the collarbones, slightly high, handheld",
+          "action": "Suman's eyes rest on the open hatch off left of the lens, dust drifting between; the boy's hair at the bottom edge of the frame",
+          "actions": [
+            "Suman's eyes rest on the open hatch off left of the lens, dust drifting between; the boy's hair at the bottom edge of the frame"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "suman",
+            "boy"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        },
+        {
+          "s": 4,
+          "from": 6,
+          "to": 7.4,
+          "size": "extreme_close",
+          "subject": "boy",
+          "camera": "insert on the hands from above, static",
+          "action": "the boy's second hand comes in and closes over Suman's hand so both his hands wrap around hers",
+          "actions": [
+            "the boy's second hand comes in and closes over Suman's hand so both his hands wrap around hers"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "boy",
+            "suman"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        },
+        {
+          "s": 5,
+          "from": 7.4,
+          "to": 9,
+          "size": "close",
+          "subject": "suman",
+          "camera": "three-quarter from the craft side, cut at the collarbones, slightly high, static",
+          "action": "Suman's eyes drop from the hatch down to the boy below the bottom edge of the frame, her plait over her shoulder",
+          "actions": [
+            "Suman's eyes drop from the hatch down to the boy below the bottom edge of the frame, her plait over her shoulder"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman"
+          ]
+        },
+        {
+          "s": 6,
+          "from": 9,
+          "to": 10.4,
+          "size": "close",
+          "subject": "boy",
+          "camera": "from Suman's side, cut at the collarbones, slightly high, static",
+          "action": "the boy's look passing right of the lens up at Suman, his two hands around hers at the bottom of the frame",
+          "actions": [
+            "the boy's look passing right of the lens up at Suman, his two hands around hers at the bottom of the frame"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "boy"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        },
+        {
+          "s": 7,
+          "from": 10.4,
+          "to": 13,
+          "size": "extreme_close",
+          "subject": "suman",
+          "camera": "brows to lips, from the front, eye level, slow push-in",
+          "action": "her eyes on the boy low and right of the lens, her lips closed, a single metallic tick from the hull at 12.2s, dust drifting",
+          "actions": [
+            "her eyes on the boy low and right of the lens, her lips closed, a single metallic tick from the hull at 12.2s, dust drifting"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman"
+          ]
+        }
+      ],
+      "extends": 6
+    }
+  }
+}

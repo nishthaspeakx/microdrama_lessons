@@ -1,0 +1,10 @@
+{
+  "params": {
+    "model": "soul_2",
+    "prompt": "A top-down flat-lay photograph of one complete men's outfit for a broad man, laid out as a single dressed figure on a plain light stone-grey linen background, in a vertical 3:4 frame, like a wardrobe department continuity photograph. The outfit is three pieces: a shirt, trousers and one pair of sandals, each appearing once. The garments are laid flat and empty, layered into one standing silhouette in the centre of the frame from collar to footwear, the whole outfit inside the frame at full length with even empty space around it. Hard-wearing and plain, made for a farmer's working day in central India. At the top, a faded red-and-navy checked cotton shirt with the sleeves rolled to the elbow, laid flat with its rolled sleeves slightly spread: a pointed collar, a buttoned front, a single chest pocket, softened creases. Below the shirt, dusty khaki cotton trousers at full length, laid flat with soft natural folds, both legs reaching down to their hems. At the bottom, directly below the trouser hems, one pair of worn brown leather sandals, the two sandals side by side and touching, toes pointing down. A muted palette of faded red, navy, khaki and brown. Soft, even, neutral daylight from directly above, neutral white balance, gentle natural shadows under each item, true-to-life colour and texture: sun-faded checked cotton, dusty cotton drill, scuffed leather, with plain inner collars, linings and insoles. Clean, crisp, high-resolution photograph. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+    "aspect_ratio": "3:4",
+    "quality": "2k",
+    "count": 1,
+    "get_cost": true
+  }
+}

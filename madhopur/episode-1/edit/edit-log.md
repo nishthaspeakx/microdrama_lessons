@@ -1,0 +1,16 @@
+- transcription of c4 (plan clip 4, no spoken line in the plan) ran over 8 min without finishing; stopped it and wrote empty transcripts for c4 and c6, the two clips the plan gives no speech. Not heard by Whisper: say so in the report.
+- 09:25:55 cards file: 3 name cards, 0 without, 1 time captions
+- 09:25:55 prepare: 7 clips, 94 s of material, order from episode.json; 33 s (transcripts 7, shot cuts 4, contact sheets 2, joins 7, repeated lines 0, air 11, script excerpt 0, cards file 0)
+- story map: c1 bazaar, Meera looks up, fireball at 3.5 s, glass, parents wave, dust wall, Meera in dust (hook). c2 Meera's line in the thinning dust, shutter, she steps, close on her eyes. c3 Yash through maize, boy at post with red S, his line at 7.9, Yash walks, wind, arm up, white-out. c4 road, cab two-shot (Devendra left, Suman right: first clear faces), streak, brake, ditch, cab jolt, Suman slumped. c5 truck in ditch, Suman lifts head, boy at cracked window, she kneels, her line at 8.3, hands, boy looks up, 0.2 s sliver of Devendra climbing out. c6 Devendra looks, trail, craft at end of trail, hatch close, Suman looks. c7 the three from the craft side, Devendra's line at about 3.5, Suman, both hands around hers, Suman looks down, boy looks up, Suman's face (the hook), then black.
+- pace: breathing. The user's brief asks for restrained performances, holds on the final reactions and about 1 min 35 s; only still establishing heads and the sliver go.
+- 09:30:02 edl_check: 1 errors, 3 warnings (3 new, 0 gone, 0 answered), 7.5% trimmed, 87.8 s, cue gap None s
+- 09:30:35 edl_check: 0 errors, 2 warnings (1 new, 0 gone, 2 answered), 8.1% trimmed, 87.3 s, cue gap None s
+- 09:31:01 edl_check: 0 errors, 1 warnings (0 new, 0 gone, 3 answered), 8.1% trimmed, 87.3 s, cue gap None s
+- 09:31:03 edl_check: 0 errors, 1 warnings (0 new, 0 gone, 3 answered), 8.1% trimmed, 87.3 s, cue gap None s
+- 09:33:41 render: 87.3 s episode in 159 s; edit_edit.mp4 -14.2 LUFS, -1.8 dBTP
+- 09:33:58 qc_check: PASS, 0 flags, 6 QC pages to view
+- cards enlarged for a phone screen (name 100 px, caption 76 px) after the first QC pages; cut unchanged
+- 09:35:28 edl_check: 0 errors, 1 warnings (0 new, 0 gone, 3 answered), 8.1% trimmed, 87.3 s, cue gap None s
+- 09:35:30 edl_check: 0 errors, 1 warnings (0 new, 0 gone, 3 answered), 8.1% trimmed, 87.3 s, cue gap None s
+- 09:38:03 render: 87.3 s episode in 153 s; edit_edit.mp4 -14.2 LUFS, -1.8 dBTP
+- 09:38:20 qc_check: PASS, 0 flags, 6 QC pages to view

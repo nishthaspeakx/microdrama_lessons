@@ -1,0 +1,92 @@
+{
+  "requests": [
+    {
+      "index": 0,
+      "params": {
+        "model": "seedream_v5_pro",
+        "prompt": "the first attached reference image is the single source of truth for this girl's face: the same facial structure, brows, eyes, nose, lips and skin tone, a full likeness match to the first attached reference image. the second attached reference image is the single source of truth for her clothes: the same garments, footwear and accessories as in the second attached reference image, with their cut, construction, materials and hardware, now worn on her body. With this exact girl in this exact outfit, create a horizontal three-panel photographic character appearance sheet on a plain neutral light-grey studio backdrop with thin white vertical separators, lit from the front by soft, even, diffused studio light, the same in all three panels and equal on both sides of the face and body: a wardrobe fitting of a real young actress in real clothes, cinematic live-action realism, natural skin texture with visible pores, subtle photographic grain. This young girl, a slim figure with natural proportions. Her hair keeps the same black colour and long length as in the first attached reference image, now styled in two neat plaits tied with red ribbons, falling forward over the shoulders. She wears a regular-fit POWDER-BLUE lightly worn printed cotton frock with small white flowers, a round collar, short puffed sleeves, a row of small white buttons down the front and a narrow fabric belt, worn over WHITE soft cotton-jersey leggings reaching the ankle, and MUTED RED washed canvas shoes with rubber soles. Every material reads as real printed cotton, cotton jersey and canvas with visible stitching and its matte finish. The outfit sits in soft tones of powder blue, white and muted red. She stands straight in a relaxed, neutral pose with natural proportions, the waist at the middle of the figure, arms loose at the sides; every hand is empty and relaxed. Left panel: the front of the outfit from the neck down to the footwear, natural proportions, the head above the crop, showing the buttoned front of the frock, the gathered skirt, the leggings and the canvas shoes. Centre panel: a full-length rear view from head to footwear, showing the back of the two plaits with their red ribbons, the back of the frock and the leggings down to the shoes. Right panel: one large head-and-shoulders portrait with the whole head inside the frame and clear space above it, the same face as the first attached reference image, the hair in two plaits with red ribbons, the round collar of the frock at the neck and the shoulders covered, calm and neutral, eyes to the camera. Exactly one visible face across the sheet, in the right panel only. The garments, materials, colours, hardware and footwear stay identical across all three views. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "is_inpaint": false,
+        "remove_bg": false,
+        "count": 1,
+        "medias": [
+          {
+            "value": "604c493f-6e36-47e3-b8d5-0a8944822159",
+            "role": "image_references"
+          },
+          {
+            "value": "57034b79-4070-4559-bb92-7ea7418e93ae",
+            "role": "image_references"
+          }
+        ]
+      }
+    },
+    {
+      "index": 1,
+      "params": {
+        "model": "seedream_v5_pro",
+        "prompt": "the first attached reference image is the single source of truth for this woman's face: the same facial structure, brows, eyes, nose, lips and skin tone, a full likeness match to the first attached reference image. the second attached reference image is the single source of truth for her clothes: the same garments, footwear and accessories as in the second attached reference image, with their cut, construction, materials and hardware, now worn on her body. With this exact woman in this exact outfit, create a horizontal three-panel photographic character appearance sheet on a plain neutral light-grey studio backdrop with thin white vertical separators, lit from the front by soft, even, diffused studio light, the same in all three panels and equal on both sides of the face and body: a wardrobe fitting of a real actress in real clothes, cinematic live-action realism, natural skin texture with visible pores, subtle photographic grain. An adult woman, an average figure with natural, unemphasised proportions. Her hair keeps the same black colour and long length as in the first attached reference image, now styled in a low bun at the nape with a centre parting. She wears a regular-fit MAROON handloom cotton saree with a thin gold woven border, draped the everyday way with the pleats at the front and the pallu over the left shoulder, over a CREAM plain cotton blouse with short sleeves and a round neck, and flat TAN worn leather sandals. Every material reads as real handloom cotton, plain cotton and leather with visible stitching and its matte finish. The outfit sits in warm tones of maroon, cream and tan. She stands straight in a relaxed, neutral pose with natural adult proportions, the waist at the middle of the figure, arms loose at the sides; every hand is empty and relaxed. Left panel: the front of the outfit from the neck down to the footwear, natural proportions, the head above the crop, showing the front pleats of the saree, the blouse, the gold border and the sandals. Centre panel: a full-length rear view from head to footwear, showing the back of the low bun, the pallu over the shoulder and the back of the saree down to the sandals. Right panel: one large head-and-shoulders portrait with the whole head inside the frame and clear space above it, the same face as the first attached reference image, the hair in a low bun, the blouse neck and the pallu at the shoulder, calm and neutral, eyes to the camera. Exactly one visible face across the sheet, in the right panel only. The garments, materials, colours, hardware and footwear stay identical across all three views. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "is_inpaint": false,
+        "remove_bg": false,
+        "count": 1,
+        "medias": [
+          {
+            "value": "5c62a650-5d55-4eb4-8957-2cad4b883857",
+            "role": "image_references"
+          },
+          {
+            "value": "bd647fbc-b73e-44b7-8a30-9b7ce87c6e10",
+            "role": "image_references"
+          }
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "params": {
+        "model": "seedream_v5_pro",
+        "prompt": "the first attached reference image is the single source of truth for this man's face: the same facial structure, brows, eyes, nose, lips and skin tone, a full likeness match to the first attached reference image. the second attached reference image is the single source of truth for his clothes: the same garments, footwear and accessories as in the second attached reference image, with their cut, construction, materials and hardware, now worn on his body. With this exact man in this exact outfit, create a horizontal three-panel photographic character appearance sheet on a plain neutral light-grey studio backdrop with thin white vertical separators, lit from the front by soft, even, diffused studio light, the same in all three panels and equal on both sides of the face and body: a wardrobe fitting of a real actor in real clothes, cinematic live-action realism, natural skin texture with visible pores, subtle photographic grain. An adult man, a lean figure with natural, unemphasised proportions. His hair keeps the same black colour and short length as in the first attached reference image, now styled side-parted and combed flat. He wears a regular-fit WHITE lightly creased cotton kurta with a band collar, a short buttoned placket and side slits, worn over GREY plain cotton-twill trousers, and BROWN worn leather sandals. Every material reads as real cotton, cotton twill and leather with visible stitching and its matte finish. The outfit sits in muted tones of white, grey and brown. He stands straight in a relaxed, neutral pose with natural adult proportions, the waist at the middle of the figure, arms loose at the sides; every hand is empty and relaxed. Left panel: the front of the outfit from the neck down to the footwear, natural proportions, the head above the crop, showing the kurta placket, the side slits, the trousers and the sandals. Centre panel: a full-length rear view from head to footwear, showing the back of the short hair, the back of the kurta and the trousers down to the sandals. Right panel: one large head-and-shoulders portrait with the whole head inside the frame and clear space above it, the same face as the first attached reference image, the hair side-parted and flat, the band collar of the kurta at the neck, calm and neutral, eyes to the camera. Exactly one visible face across the sheet, in the right panel only. The garments, materials, colours, hardware and footwear stay identical across all three views. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "is_inpaint": false,
+        "remove_bg": false,
+        "count": 1,
+        "medias": [
+          {
+            "value": "9ef6b5b0-89e9-4495-95a4-839cc610dbdf",
+            "role": "image_references"
+          },
+          {
+            "value": "beefe767-fc33-407c-8ba4-b3687c870835",
+            "role": "image_references"
+          }
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "params": {
+        "model": "seedream_v5_pro",
+        "prompt": "the first attached reference image is the single source of truth for this boy's face: the same facial structure, brows, eyes, nose, lips and skin tone, a full likeness match to the first attached reference image. the second attached reference image is the single source of truth for his clothes: the same garments, footwear and accessories as in the second attached reference image, with their cut, construction, materials and hardware, now worn on his body. With this exact boy in this exact outfit, create a horizontal three-panel photographic character appearance sheet on a plain neutral light-grey studio backdrop with thin white vertical separators, lit from the front by soft, even, diffused studio light, the same in all three panels and equal on both sides of the face and body: a wardrobe fitting of a real young actor in real clothes, cinematic live-action realism, natural skin texture with visible pores, subtle photographic grain. This young boy, a slim figure with natural proportions. His hair keeps the same black colour and short length as in the first attached reference image, now styled cropped close and brushed forward. He wears a regular-fit faded GREY washed cotton-jersey t-shirt with a ribbed crew neck and a small worn patch at one shoulder, worn over NAVY plain cotton-drill shorts reaching the knee, and dusty OFF-WHITE scuffed canvas shoes with rubber soles. Every material reads as real cotton jersey, cotton drill and canvas with visible stitching and its matte finish. The outfit sits in muted tones of grey, navy and off-white. He stands straight in a relaxed, neutral pose with natural proportions, the waist at the middle of the figure, arms loose at the sides; every hand is empty and relaxed. Left panel: the front of the outfit from the neck down to the footwear, natural proportions, the head above the crop, showing the t-shirt, the shorts and the canvas shoes. Centre panel: a full-length rear view from head to footwear, showing the back of the cropped hair, the back of the t-shirt and the shorts down to the shoes. Right panel: one large head-and-shoulders portrait with the whole head inside the frame and clear space above it, the same face as the first attached reference image, the hair cropped close and brushed forward, the ribbed crew neck at the throat and the shoulders covered, calm and neutral, eyes to the camera. Exactly one visible face across the sheet, in the right panel only. The garments, materials, colours, hardware and footwear stay identical across all three views. Cinematic live action, natural skin and motivated lighting. Restrained warm practical lights and cool shadows.",
+        "aspect_ratio": "16:9",
+        "resolution": "2k",
+        "is_inpaint": false,
+        "remove_bg": false,
+        "count": 1,
+        "medias": [
+          {
+            "value": "ba88c333-5c0b-4b81-bbe7-893123090654",
+            "role": "image_references"
+          },
+          {
+            "value": "148a9a4d-4ac2-4486-985c-2dc565a7ebdc",
+            "role": "image_references"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,346 @@
+{
+  "file": "clips-1.json",
+  "sha256": "fb78b60edfd15509763eee05150e55a4f8194794b55fe64d26199286a4f13bf0",
+  "jobs": [
+    "315b10a0-05fe-4e23-9ab4-ceaaa21675fe",
+    "7f4c3606-0c37-40b8-95ed-4da8c2f4bea5"
+  ],
+  "slots": [
+    "clips.1.job",
+    "clips.3.job"
+  ],
+  "credits": 93.0,
+  "frozen": {
+    "1": {
+      "job": "315b10a0-05fe-4e23-9ab4-ceaaa21675fe",
+      "shots": [
+        {
+          "s": 1,
+          "from": 0,
+          "to": 1.2,
+          "size": "full",
+          "subject": null,
+          "camera": "from the near end of the street looking down it, standing eye level, static",
+          "action": "market shoppers and vendors move between the stalls and the shopfronts, a bicycle rolls through, dust in the sunlight; no lead in frame",
+          "actions": [
+            "market shoppers and vendors move between the stalls and the shopfronts, a bicycle rolls through, dust in the sunlight; no lead in frame"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 2,
+          "from": 1.2,
+          "to": 2.6,
+          "size": "close",
+          "subject": "meera",
+          "camera": "from the front, cut at the collarbones, slightly low, slow push-in",
+          "action": "Meera in the middle of the street tips her face up to the sky, her look going up past the top of the frame",
+          "actions": [
+            "Meera in the middle of the street tips her face up to the sky, her look going up past the top of the frame"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        },
+        {
+          "s": 3,
+          "from": 2.6,
+          "to": 4.2,
+          "size": "full",
+          "subject": null,
+          "camera": "tilt up from the awning tops to the open sky, static after the tilt",
+          "action": "a fireball with a white-orange tail crosses the sky from upper left to lower right trailing grey smoke",
+          "actions": [
+            "a fireball with a white-orange tail crosses the sky from upper left to lower right trailing grey smoke"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 4,
+          "from": 4.2,
+          "to": 5.4,
+          "size": "extreme_close",
+          "subject": null,
+          "camera": "insert on the glass shopfront pane, eye level, static",
+          "action": "the shopfront glass rattles in its frame, the sky's reflection shaking in it",
+          "actions": [
+            "the shopfront glass rattles in its frame, the sky's reflection shaking in it"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 5,
+          "from": 5.4,
+          "to": 7.2,
+          "size": "medium",
+          "subject": "meera_mother",
+          "camera": "from across the road at Meera's side, eye level, static",
+          "action": "Meera's mother lifts the paper bag high in her right hand and waves it; Meera's father a step behind her on the left, hands at his sides",
+          "actions": [
+            "Meera's mother lifts the paper bag high in her right hand and waves it; Meera's father a step behind her on the left, hands at his sides"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera_mother",
+            "meera_father"
+          ]
+        },
+        {
+          "s": 6,
+          "from": 7.2,
+          "to": 8.8,
+          "size": "close",
+          "subject": "meera",
+          "camera": "three-quarter from the shopfront side, cut at the collarbones, eye level, handheld",
+          "action": "Meera's right hand rises to wave, her look passing left of the lens toward the stalls",
+          "actions": [
+            "Meera's right hand rises to wave, her look passing left of the lens toward the stalls"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        },
+        {
+          "s": 7,
+          "from": 8.8,
+          "to": 10.2,
+          "size": "full",
+          "subject": "meera_mother",
+          "camera": "from the shopfront side looking across the road, eye level, static",
+          "action": "a wall of pale dust rolls across the street from the right and swallows the stalls and the two figures by them; shoppers in the middle distance turn and run",
+          "actions": [
+            "a wall of pale dust rolls across the street from the right and swallows the stalls and the two figures by them; shoppers in the middle distance turn and run"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera_mother",
+            "meera_father"
+          ]
+        },
+        {
+          "s": 8,
+          "from": 10.2,
+          "to": 11.6,
+          "size": "close",
+          "subject": "meera",
+          "camera": "from the front, cut at the collarbones, slightly high, handheld",
+          "action": "dust rolls over Meera from the right, her raised hand still up, her hair lifting in the gust, her eyes on the place where the stalls stood",
+          "actions": [
+            "dust rolls over Meera from the right, her raised hand still up, her hair lifting in the gust, her eyes on the place where the stalls stood"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        },
+        {
+          "s": 9,
+          "from": 11.6,
+          "to": 13,
+          "size": "extreme_close",
+          "subject": "meera",
+          "camera": "brows to lips, from the front, eye level, slow push-in",
+          "action": "her eyes search the dust off left of the lens, her raised hand lowering out of the bottom of the frame",
+          "actions": [
+            "her eyes search the dust off left of the lens, her raised hand lowering out of the bottom of the frame"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "meera"
+          ]
+        }
+      ],
+      "extends": null
+    },
+    "3": {
+      "job": "7f4c3606-0c37-40b8-95ed-4da8c2f4bea5",
+      "shots": [
+        {
+          "s": 1,
+          "from": 0,
+          "to": 1.5,
+          "size": "full",
+          "subject": null,
+          "camera": "from the near end of the trodden path looking into the rows, standing eye level, static",
+          "action": "the maize field with its trodden path, the leaves moving in a light wind, the wooden post in its clearing ahead; nobody in frame",
+          "actions": [
+            "the maize field with its trodden path, the leaves moving in a light wind, the wooden post in its clearing ahead; nobody in frame"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 2,
+          "from": 1.5,
+          "to": 3.5,
+          "size": "medium",
+          "subject": "yash",
+          "camera": "ahead of Yash travelling backward at shoulder height",
+          "action": "Yash pushes through the maize toward the lens, leaves slapping his shoulders, his hands parting the stalks",
+          "actions": [
+            "Yash pushes through the maize toward the lens, leaves slapping his shoulders, his hands parting the stalks"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "yash"
+          ]
+        },
+        {
+          "s": 3,
+          "from": 3.5,
+          "to": 5,
+          "size": "close",
+          "subject": "yash",
+          "camera": "three-quarter from the post side, cut at the collarbones, slightly high, handheld",
+          "action": "Yash stops at a gap in the rows, his hands holding two stalks apart, his look passing left of the lens, level",
+          "actions": [
+            "Yash stops at a gap in the rows, his hands holding two stalks apart, his look passing left of the lens, level"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "yash"
+          ]
+        },
+        {
+          "s": 4,
+          "from": 5,
+          "to": 7,
+          "size": "medium",
+          "subject": "nikhil",
+          "camera": "from the gap at Yash's eye height, slow push-in",
+          "action": "the teenage boy stands bound upright to the wooden post in the clearing, coarse rope around his chest and arms, the red S on his shirt facing the lens, his head turning toward the gap",
+          "actions": [
+            "the teenage boy stands bound upright to the wooden post in the clearing, coarse rope around his chest and arms, the red S on his shirt facing the lens, his head turning toward the gap"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "nikhil"
+          ]
+        },
+        {
+          "s": 5,
+          "from": 7,
+          "to": 10,
+          "size": "close",
+          "subject": "nikhil",
+          "camera": "three-quarter from the gap side, cut at the collarbones, slightly low, handheld",
+          "action": "he strains against the rope, his look passing right of the lens, level, his voice begins at 7.2s",
+          "actions": [
+            "he strains against the rope, his look passing right of the lens, level, his voice begins at 7.2s"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "nikhil"
+          ]
+        },
+        {
+          "s": 6,
+          "from": 10,
+          "to": 11,
+          "size": "close",
+          "subject": "yash",
+          "camera": "from the front, cut at the collarbones, slightly low, static",
+          "action": "Yash's hands drop from the stalks, his look going right past the lens toward the post",
+          "actions": [
+            "Yash's hands drop from the stalks, his look going right past the lens toward the post"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "yash"
+          ]
+        },
+        {
+          "s": 7,
+          "from": 11,
+          "to": 12.8,
+          "size": "medium",
+          "subject": "yash",
+          "camera": "behind Yash at shoulder height travelling with him",
+          "action": "Yash steps out of the gap into the clearing and takes three steps toward the post; the teenage boy at the post in the middle distance ahead, his face toward Yash",
+          "actions": [
+            "Yash steps out of the gap into the clearing and takes three steps toward the post; the teenage boy at the post in the middle distance ahead, his face toward Yash"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "yash",
+            "nikhil"
+          ]
+        },
+        {
+          "s": 8,
+          "from": 12.8,
+          "to": 14.4,
+          "size": "full",
+          "subject": "yash",
+          "camera": "from behind Yash at the edge of the clearing, standing eye level, static",
+          "action": "the maize behind the post bends away in one wave from left to right across the field, the post and the bound boy at the centre, Yash small in the near foreground",
+          "actions": [
+            "the maize behind the post bends away in one wave from left to right across the field, the post and the bound boy at the centre, Yash small in the near foreground"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "yash",
+            "nikhil"
+          ]
+        },
+        {
+          "s": 9,
+          "from": 14.4,
+          "to": 16,
+          "size": "close",
+          "subject": "yash",
+          "camera": "from the front, cut at the collarbones, slightly low, handheld",
+          "action": "Yash's forearm comes up across his eyes, his hair blown flat by the gust",
+          "actions": [
+            "Yash's forearm comes up across his eyes, his hair blown flat by the gust"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "yash"
+          ]
+        },
+        {
+          "s": 10,
+          "from": 16,
+          "to": 18,
+          "size": "close",
+          "subject": "yash",
+          "camera": "three-quarter from the post side, cut at the collarbones, slightly high, slow push-in",
+          "action": "white light floods in from the right across his raised forearm and face, the picture washing toward white, the maize behind him flattening",
+          "actions": [
+            "white light floods in from the right across his raised forearm and face, the picture washing toward white, the maize behind him flattening"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "yash"
+          ]
+        }
+      ],
+      "extends": null
+    }
+  }
+}

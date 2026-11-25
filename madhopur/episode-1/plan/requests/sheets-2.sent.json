@@ -1,0 +1,17 @@
+{
+  "file": "sheets-2.json",
+  "sha256": "870b1d3e46d3781ccdbea36f0eee9892d16e88ae0add5d8c91dba4f17ebcc2f2",
+  "jobs": [
+    "af4bcfe9-8ac1-4ced-b2e1-8026a961ad71",
+    "5f1b39b6-c85d-4de3-946b-6c6bb1801537",
+    "f947a93a-a190-427f-91eb-9ac0f55ebcea",
+    "f0d3202d-0feb-43e1-9797-aa54d1211533"
+  ],
+  "slots": [
+    "characters.nikhil.sheet",
+    "characters.devendra.sheet",
+    "characters.suman.sheet",
+    "characters.boy.sheet"
+  ],
+  "credits": 10.0
+}

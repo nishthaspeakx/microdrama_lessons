@@ -1,0 +1,93 @@
+{
+ "schema_version": 2,
+ "kinds": [
+  "montage",
+  "screen_text",
+  "subtitles"
+ ],
+ "sources": [
+  {
+   "kind": "scene",
+   "take_id": "clip-1",
+   "start_seconds": 0,
+   "duration_seconds": 12.833
+  },
+  {
+   "kind": "scene",
+   "take_id": "clip-2",
+   "start_seconds": 0,
+   "duration_seconds": 8.875
+  },
+  {
+   "kind": "scene",
+   "take_id": "clip-3",
+   "start_seconds": 0,
+   "duration_seconds": 17.875
+  },
+  {
+   "kind": "scene",
+   "take_id": "clip-4",
+   "start_seconds": 0,
+   "duration_seconds": 14.958
+  },
+  {
+   "kind": "scene",
+   "take_id": "clip-5",
+   "start_seconds": 0,
+   "duration_seconds": 14.75
+  },
+  {
+   "kind": "scene",
+   "take_id": "clip-6",
+   "start_seconds": 0,
+   "duration_seconds": 11.917
+  },
+  {
+   "kind": "scene",
+   "take_id": "clip-7",
+   "start_seconds": 0,
+   "duration_seconds": 12.958
+  }
+ ],
+ "script": "2014\n\nOpening shot. Tight on young Meera as she looks up. Tilt just enough to catch a fireball crossing the sky. By the third second, glass is rattling in the shopfront behind her.\n\nAcross the road, Meera’s mother holds up a paper bag and waves. Her father stands beside her. Meera starts to wave back. An impact sends dust across the street. Keep the camera with Meera as she loses sight of them.\n\nYOUNG MEERA\nमम्मी? … पापा?\n\nYoung Yash pushes through the maize. Through a gap, he sees a teenage boy tied to a wooden post. A red S is painted on the boy’s shirt.\n\nTHE TEENAGE BOY\nरुको! मेरी रस्सी खोल दो!\n\nYash moves toward him. The maize bends in a wave. Yash throws up his arm as a flash wipes out the picture.\n\nDevendra and Suman are driving home. Something streaks low across the road. Devendra hits the brakes. The pickup drops nose-first into a ditch.\n\nHold inside the cab. Suman lifts her head. A small boy peers at her through the cracked window. He looks as startled as she is.\n\nSuman gets out, kneels and offers her hand.\n\nSUMAN\nडरो मत। तुम्हें चोट लगी है?\n\nHe takes her hand. Devendra climbs out behind her.\n\nDevendra looks past the boy. A trail of flattened maize ends at a dark metal craft, half-buried in the earth. The open hatch is low enough for the child to have climbed out.\n\nDEVENDRA\nसुमन…\n\nFinal shots. The spacecraft. Devendra’s face as he takes it in. Suman looks from the hatch to the boy, who wraps both hands around hers. Hold on their faces for two beats. A faint metallic tick comes from the cooling hull.\n",
+ "episode": {
+  "number": 1
+ },
+ "aspect_ratio": "9:16",
+ "input_basis_hash": "5fa24e203e9b9b24b446710ecdd488d9ff4d12d705fc2a26abb72322fbf14b7f",
+ "screen_text": {
+  "cards": [
+   {
+    "id": "meera",
+    "name": "Young Meera",
+    "line": null,
+    "age": null,
+    "look": "girl, black, long, straight, slim, wears powder-blue cotton frock with small white flowers and a round collar, white cotton leggings, red canvas shoes",
+    "clip": "c1"
+   },
+   {
+    "id": "devendra",
+    "name": "Devendra",
+    "line": null,
+    "age": 36,
+    "look": "man, black, short, straight, a short neat black moustache and a day of stubble, broad, wears faded red-and-navy checked cotton shirt with the sleeves rolled to the elbow, dusty khaki cotton trousers, worn brown leather sandals",
+    "clip": "c4"
+   },
+   {
+    "id": "suman",
+    "name": "Suman",
+    "line": null,
+    "age": 32,
+    "look": "woman, black, long, straight, slim, wears sage-green cotton kameez with small white block print, oatmeal cotton salwar, pale sage cotton dupatta",
+    "clip": "c4"
+   }
+  ],
+  "time": [
+   {
+    "clip": "c1",
+    "caption": "2014"
+   }
+  ]
+ },
+ "notes": "Yes: tighter cut, name cards, subtitles (free) (recommended)"
+}

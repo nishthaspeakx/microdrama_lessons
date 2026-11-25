@@ -1,0 +1,303 @@
+{
+  "file": "clips-2.json",
+  "sha256": "0a1db818557f60a91aad39d989b5acae2b211a66640e92b6e39689399a1e3883",
+  "jobs": [
+    "76250727-b3f3-4874-9d1a-b07bbc85ab15",
+    "fc996522-049c-4bba-b35e-efa480d6a597"
+  ],
+  "slots": [
+    "clips.4.job",
+    "clips.6.job"
+  ],
+  "credits": 81.0,
+  "frozen": {
+    "4": {
+      "job": "76250727-b3f3-4874-9d1a-b07bbc85ab15",
+      "shots": [
+        {
+          "s": 1,
+          "from": 0,
+          "to": 1.5,
+          "size": "full",
+          "subject": null,
+          "camera": "from the near end of the road looking down the ruts, standing eye level, static",
+          "action": "the farm road with the ditch on the right, the pickup coming toward the lens along the ruts in the middle distance, dust behind it",
+          "actions": [
+            "the farm road with the ditch on the right, the pickup coming toward the lens along the ruts in the middle distance, dust behind it"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 2,
+          "from": 1.5,
+          "to": 3.5,
+          "size": "close",
+          "subject": "devendra",
+          "camera": "through the windscreen from the bonnet, cut at the collarbones, eye level, static",
+          "action": "Devendra at the wheel with both hands on it, his look passing left of the lens down the road; Suman soft in the passenger seat right of him, her hands in her lap",
+          "actions": [
+            "Devendra at the wheel with both hands on it, his look passing left of the lens down the road; Suman soft in the passenger seat right of him, her hands in her lap"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra",
+            "suman"
+          ]
+        },
+        {
+          "s": 3,
+          "from": 3.5,
+          "to": 4.8,
+          "size": "close",
+          "subject": "suman",
+          "camera": "three-quarter from the driver's side, cut at the collarbones, eye level, handheld",
+          "action": "Suman's hands rest in her lap, her look passing right of the lens through the windscreen",
+          "actions": [
+            "Suman's hands rest in her lap, her look passing right of the lens through the windscreen"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman"
+          ]
+        },
+        {
+          "s": 4,
+          "from": 4.8,
+          "to": 6.3,
+          "size": "full",
+          "subject": null,
+          "camera": "from inside the cab over the dashboard looking down the road, static",
+          "action": "a streak of fire crosses low over the road ahead from upper right to lower left, smoke behind it, the maize tops lighting up; the bonnet at the bottom of the frame",
+          "actions": [
+            "a streak of fire crosses low over the road ahead from upper right to lower left, smoke behind it, the maize tops lighting up; the bonnet at the bottom of the frame"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 5,
+          "from": 6.3,
+          "to": 7.3,
+          "size": "extreme_close",
+          "subject": "devendra",
+          "camera": "brows to lips, from the passenger side, eye level, handheld",
+          "action": "his eyes track the streak off left of the lens, his jaw set",
+          "actions": [
+            "his eyes track the streak off left of the lens, his jaw set"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra"
+          ]
+        },
+        {
+          "s": 6,
+          "from": 7.3,
+          "to": 8.3,
+          "size": "extreme_close",
+          "subject": "devendra",
+          "camera": "insert on the pedals from the footwell, static",
+          "action": "Devendra's sandal stamps the brake pedal to the floor",
+          "actions": [
+            "Devendra's sandal stamps the brake pedal to the floor"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra"
+          ]
+        },
+        {
+          "s": 7,
+          "from": 8.3,
+          "to": 10,
+          "size": "full",
+          "subject": null,
+          "camera": "from the ditch side at road level, static",
+          "action": "the pickup's front wheels lock and slide in the dust, the truck slews toward the ditch, its right front wheel drops over the edge and the nose pitches down into the ditch",
+          "actions": [
+            "the pickup's front wheels lock and slide in the dust, the truck slews toward the ditch, its right front wheel drops over the edge and the nose pitches down into the ditch"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 8,
+          "from": 10,
+          "to": 11.3,
+          "size": "medium",
+          "subject": "suman",
+          "camera": "from behind the seats inside the cab, slightly high, handheld",
+          "action": "both bodies are thrown forward, Devendra's hands braced on the wheel, Suman's forehead going down toward the dashboard, the passenger-side window cracking in a web",
+          "actions": [
+            "both bodies are thrown forward, Devendra's hands braced on the wheel, Suman's forehead going down toward the dashboard, the passenger-side window cracking in a web"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman",
+            "devendra"
+          ]
+        },
+        {
+          "s": 9,
+          "from": 11.3,
+          "to": 12.8,
+          "size": "close",
+          "subject": "devendra",
+          "camera": "three-quarter from the passenger side, cut at the collarbones, slightly high, handheld",
+          "action": "Devendra pushes himself back off the wheel, dust settling inside the cab, his look going right toward Suman's seat",
+          "actions": [
+            "Devendra pushes himself back off the wheel, dust settling inside the cab, his look going right toward Suman's seat"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra"
+          ]
+        },
+        {
+          "s": 10,
+          "from": 12.8,
+          "to": 15,
+          "size": "close",
+          "subject": "suman",
+          "camera": "from the driver's side, cut at the collarbones, slightly high, slow push-in",
+          "action": "Suman lies forward against the dashboard with her eyes closed, her plait fallen over her shoulder, dust drifting in the light; the cracked passenger window behind her",
+          "actions": [
+            "Suman lies forward against the dashboard with her eyes closed, her plait fallen over her shoulder, dust drifting in the light; the cracked passenger window behind her"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "suman"
+          ]
+        }
+      ],
+      "extends": null
+    },
+    "6": {
+      "job": "fc996522-049c-4bba-b35e-efa480d6a597",
+      "shots": [
+        {
+          "s": 1,
+          "from": 0,
+          "to": 1.8,
+          "size": "close",
+          "subject": "devendra",
+          "camera": "three-quarter from the field side, cut at the collarbones, slightly low, slow push-in",
+          "action": "Devendra's eyes lift from the boy and travel past him, his look going off right of the lens and up along the field",
+          "actions": [
+            "Devendra's eyes lift from the boy and travel past him, his look going off right of the lens and up along the field"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra",
+            "suman"
+          ]
+        },
+        {
+          "s": 2,
+          "from": 1.8,
+          "to": 3.6,
+          "size": "medium",
+          "subject": "suman",
+          "camera": "from behind Devendra over his shoulder, slightly high, static",
+          "action": "a trail of flattened maize runs from the boy's back straight into the field; Suman kneeling and the boy standing near centre with their hands joined, Devendra's shoulder soft in the left foreground",
+          "actions": [
+            "a trail of flattened maize runs from the boy's back straight into the field; Suman kneeling and the boy standing near centre with their hands joined, Devendra's shoulder soft in the left foreground"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "suman",
+            "boy",
+            "devendra"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        },
+        {
+          "s": 3,
+          "from": 3.6,
+          "to": 6.6,
+          "size": "full",
+          "subject": null,
+          "camera": "child-eye level from the start of the trail looking along it, locked camera",
+          "action": "the trail of flattened maize leads to the dark metal craft half-buried in the earth thirty steps in, its open hatch facing the lens, fine dust drifting past the opening",
+          "actions": [
+            "the trail of flattened maize leads to the dark metal craft half-buried in the earth thirty steps in, its open hatch facing the lens, fine dust drifting past the opening"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 4,
+          "from": 6.6,
+          "to": 8.6,
+          "size": "close",
+          "subject": "devendra",
+          "camera": "from the front, cut at the collarbones, slightly low, handheld",
+          "action": "Devendra takes one step forward past Suman, his eyes fixed on the craft off right of the lens",
+          "actions": [
+            "Devendra takes one step forward past Suman, his eyes fixed on the craft off right of the lens"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": [
+            "devendra"
+          ]
+        },
+        {
+          "s": 5,
+          "from": 8.6,
+          "to": 10,
+          "size": "extreme_close",
+          "subject": null,
+          "camera": "insert on the open hatch from low in the flattened maize, static",
+          "action": "the open hatch of the craft, the dark opening just big enough for a small child, a thin line of heat shimmer at its edge, earth heaped against the hull",
+          "actions": [
+            "the open hatch of the craft, the dark opening just big enough for a small child, a thin line of heat shimmer at its edge, earth heaped against the hull"
+          ],
+          "touch": "none",
+          "revealing": false,
+          "visible": []
+        },
+        {
+          "s": 6,
+          "from": 10,
+          "to": 12,
+          "size": "close",
+          "subject": "suman",
+          "camera": "three-quarter from Devendra's side, cut at the collarbones, slightly high, slow push-in",
+          "action": "Suman's eyes come up from the boy's hand in hers to Devendra's face off left of the lens, then along the trail",
+          "actions": [
+            "Suman's eyes come up from the boy's hand in hers to Devendra's face off left of the lens, then along the trail"
+          ],
+          "touch": "hand",
+          "revealing": false,
+          "visible": [
+            "suman",
+            "boy"
+          ],
+          "touch_who": [
+            "boy",
+            "suman"
+          ]
+        }
+      ],
+      "extends": null
+    }
+  }
+}

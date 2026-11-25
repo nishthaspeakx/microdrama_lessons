@@ -1,0 +1,17 @@
+{
+  "file": "sheets-1.json",
+  "sha256": "dcfa80f82dd044918f300600270c4e73d40b6031055cbbf8053888d80c851c68",
+  "jobs": [
+    "32dc90ca-b3dc-4355-8e4d-ac57536a2f60",
+    "860462ac-492c-4410-843b-697870d9d7e8",
+    "f83e6134-1cc7-421b-aba9-a2aea9f836e0",
+    "ba178ecf-7107-4421-a14c-d68a64e54e18"
+  ],
+  "slots": [
+    "characters.meera.sheet",
+    "characters.meera_mother.sheet",
+    "characters.meera_father.sheet",
+    "characters.yash.sheet"
+  ],
+  "credits": 10.0
+}
