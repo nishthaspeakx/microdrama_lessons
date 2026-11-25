@@ -35,7 +35,7 @@ export default function App() {
 
   return (
     <div className="stage">
-      <div className={`phone ${['sia', 'practice', 'reward'].includes(state.screen) ? 'light' : 'dark'}`}>
+      <div className={`phone ${['sia', 'practice'].includes(state.screen) ? 'light' : 'dark'}`}>
         <div key={state.screen} className="screen">
           {state.screen === 'start' && <Start ep={ep} coins={state.coins} questionCount={ep.exercises.length} maxCoins={maxCoins} onStart={() => dispatch({ type: 'START' })} />}
           {state.screen === 'episode' && <Player ep={ep} onEnded={() => dispatch({ type: 'EPISODE_ENDED' })} onExit={() => jump('start')} />}
@@ -49,7 +49,7 @@ export default function App() {
               onExit={() => jump('start')} onSkipAll={() => dispatch({ type: 'SKIP_PRACTICE' })} track={track}
             />
           )}
-          {state.screen === 'reward' && <Reward ep={ep} lessonCoins={state.lessonCoins} totalCoins={state.coins} onContinue={() => dispatch({ type: 'CONTINUE_STORY' })} onClose={() => jump('start')} />}
+          {state.screen === 'reward' && <Reward ep={ep} lessonCoins={state.lessonCoins} totalCoins={state.coins} onContinue={() => (ep.next.available ? dispatch({ type: 'CONTINUE_STORY' }) : track('next_episode_tapped', { episode: ep.next.number }))} onClose={() => jump('start')} />}
           {state.screen === 'next' && (
             <Next ep={ep} unlocked={optional || state.practiceDone} onReplay={() => jump('episode')} onPractise={() => jump('sia')} onHome={() => jump('start')} />
           )}

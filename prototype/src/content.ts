@@ -54,7 +54,7 @@ export type Episode = {
   sentencesLearnt: number
   coinsPerCorrect: number
   rewardLine: string
-  next: { number: number; title: string; available: boolean; video?: string }
+  next: { number: number; title: string; titleEnglish: string; thumbnail: string; available: boolean; video?: string }
 }
 
 export const episodes: Episode[] = [
@@ -130,7 +130,7 @@ export const episodes: Episode[] = [
       {
         id: 'q5',
         type: 'blank',
-        image: '/media/stills/suman-kneels.jpg',
+        image: '/media/stills/boy-in-field.jpg',
         before: 'Are you',
         after: '?',
         hindi: 'तुम्हें चोट लगी है?',
@@ -156,6 +156,12 @@ export const episodes: Episode[] = [
     sentencesLearnt: 3,
     coinsPerCorrect: 4,
     rewardLine: 'Great job! अब जानते हैं आगे क्या हुआ।',
-    next: { number: 2, title: 'आज से ये हमारा बेटा है', available: false },
+    next: {
+      number: 2,
+      title: 'आज से ये हमारा बेटा है',
+      titleEnglish: 'From today, he is our son',
+      thumbnail: '/media/art/ep2-thumbnail.jpg',
+      available: false,
+    },
   },
 ]

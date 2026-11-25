@@ -11,7 +11,7 @@ Built with React, TypeScript and Vite. Everything runs in the browser; there is 
 3. **Question card**: the boy with glowing eyes and the chest mark, with a voice-over asking who he is.
 4. **Sia** appears in a lip-synced clip and invites the learner to practise. The learner taps "Let's Practise".
 5. **Six practice questions** in the SpeakX lesson style: multiple choice with a still from the film, fill in the blank, and read-along speaking.
-6. **Reward screen** with sentences learnt and coins earned, then the Episode 2 screen (a placeholder, Episode 2 is not produced yet).
+6. **Reward screen**: "Well done!", coins earned, sentences learnt and the Episode 2 thumbnail marked unlocked. This is the last screen; Episode 2 is not produced yet, so "Watch next episode" shows a short "coming soon" note.
 
 ## Run it
 

@@ -3,7 +3,7 @@ import type { Episode } from '../content'
 export function Next({ ep, unlocked, onReplay, onPractise, onHome }: { ep: Episode; unlocked: boolean; onReplay: () => void; onPractise: () => void; onHome: () => void }) {
   return (
     <div className="story next">
-      <div className="start-art dim" style={{ backgroundImage: `url(${ep.cliffhanger.image})` }} />
+      <div className="start-art dim" style={{ backgroundImage: `url(${ep.next.thumbnail})` }} />
       <div className="cliff-shade" />
       <div className="next-body">
         <div className="kicker center">{ep.series} · Episode {ep.next.number}</div>

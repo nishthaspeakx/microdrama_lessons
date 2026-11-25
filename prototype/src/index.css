@@ -8,7 +8,8 @@ html,body,#root{height:100%}
 body{font-family:Figtree,system-ui,-apple-system,sans-serif;background:#000;color:#fff;overflow:hidden;-webkit-font-smoothing:antialiased}
 button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}
 .stage{height:100dvh;display:flex;align-items:center;justify-content:center;background:radial-gradient(80% 60% at 50% 40%,#1b1c24,#000)}
-.phone{position:relative;width:min(100vw,calc(100dvh*9/19.5),430px);height:min(100dvh,932px);overflow:hidden;background:var(--surface)}
+.phone{position:relative;width:100vw;height:100dvh;overflow:hidden;background:var(--surface)}
+/* On a real phone the app fills the whole screen. On a wider window it sits in a phone-shaped frame. */
 @media (min-width:500px){.phone{border-radius:28px;box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 0 1px #2a2b33;height:min(96dvh,900px);width:min(calc(96dvh*9/19.5),416px)}}
 .phone.light{background:#fff}
 .screen{position:absolute;inset:0;animation:fade .45s ease both}
@@ -50,7 +51,9 @@ button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}
 .perk{display:flex;align-items:center;gap:6px}.sep{width:1px;height:13px;background:#3a3b46}
 
 .player{background:#000}
-.player video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000}
+.player-ambient{position:absolute;inset:-12%;width:124%;height:124%;filter:blur(34px) brightness(.5) saturate(1.15)}
+/* contain: the whole 9:16 picture is always visible (name cards, subtitles, faces); taller phones get soft bars above and below */
+.player video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:transparent}
 .player-chrome{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .25s;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,0) 22%,rgba(0,0,0,0) 78%,rgba(0,0,0,.6))}
 .player-chrome.on{opacity:1}.player-chrome.on>*{pointer-events:auto}
 .player-top{position:absolute;left:12px;right:12px;top:max(12px,env(safe-area-inset-top));display:flex;align-items:center;gap:10px}
@@ -133,8 +136,8 @@ button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}
 .translate small{font-size:9px;margin-left:1px}
 .coins{display:flex;align-items:center;gap:6px;font-weight:800;font-size:15px;min-width:44px}
 .coins .coin{width:26px;height:26px;font-size:13px}
-.lesson-body{flex:1;display:flex;flex-direction:column;padding:8px 18px 18px;min-height:0;animation:rise .35s ease both}
-.scene{border-radius:14px;overflow:hidden;aspect-ratio:16/9;background:#eee;flex:none}
+.lesson-body{flex:1;display:flex;flex-direction:column;padding:8px 18px max(18px,calc(env(safe-area-inset-bottom) + 6px));min-height:0;animation:rise .35s ease both}
+.scene{border-radius:14px;overflow:hidden;aspect-ratio:4/3;max-height:42dvh;background:#eee;flex:none}
 .scene img{width:100%;height:100%;object-fit:cover;display:block}
 .question{display:flex;align-items:flex-start;gap:12px;margin-top:18px}
 .q-text{flex:1}
@@ -206,6 +209,35 @@ button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}
 .coin-stack i{position:absolute;width:34px;height:13px;border-radius:50%;background:linear-gradient(180deg,#FFE08A,#F5B21B);border:1.5px solid #D9940E}
 .coin-stack i:nth-child(1){left:0;bottom:0}.coin-stack i:nth-child(2){left:0;bottom:8px}.coin-stack i:nth-child(3){left:26px;bottom:4px}.coin-stack i:nth-child(4){left:26px;bottom:13px}
 .grow{flex:1}
+
+/* reward: well done + next episode thumbnail (dark, cinematic) */
+.reward2{background:radial-gradient(120% 60% at 50% 0%,#2a1608 0%,#0A0B0F 62%);display:flex;flex-direction:column;padding:max(40px,env(safe-area-inset-top)) 18px max(20px,env(safe-area-inset-bottom))}
+.reward2-confetti{position:absolute;inset:0;pointer-events:none;z-index:3;overflow:hidden}
+.reward2-confetti .bit{animation-iteration-count:1;animation-fill-mode:forwards}
+.reward2-x{position:absolute;right:14px;top:max(14px,env(safe-area-inset-top));width:34px;height:34px;border-radius:50%;color:#fff;font-size:17px;background:rgba(255,255,255,.1);z-index:4}
+.reward2-head{display:flex;flex-direction:column;align-items:center;text-align:center;animation:rise .5s ease both}
+.trophy{filter:drop-shadow(0 6px 18px rgba(255,203,85,.45));animation:pop .6s .1s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
+.reward2-head h2{font-size:25px;font-weight:800;margin-top:8px;letter-spacing:-.2px}
+.reward2-coins{display:flex;align-items:center;gap:8px;margin-top:6px;font-size:21px;font-weight:800;color:var(--coin);font-variant-numeric:tabular-nums}
+.reward2-coins .coin{width:22px;height:22px}
+.reward2-head p{margin-top:4px;font-size:14.5px;font-weight:500;color:var(--text2)}
+.ep-card{position:relative;flex:1;min-height:0;width:100%;margin-top:18px;border-radius:20px;overflow:hidden;display:block;text-align:left;color:#fff;box-shadow:0 18px 44px rgba(0,0,0,.55),0 0 0 1px rgba(255,255,255,.1);animation:rise .6s .2s ease both}
+.ep-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%;animation:drift 14s ease-out both}
+.ep-card-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,15,.28) 0%,rgba(10,11,15,0) 26%,rgba(10,11,15,0) 50%,rgba(10,11,15,.88) 100%)}
+.ep-card-badge{position:absolute;left:12px;top:12px;display:flex;align-items:center;gap:6px;padding:6px 11px;border-radius:999px;background:rgba(10,11,15,.62);backdrop-filter:blur(6px);font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--coin)}
+.ep-card-play{position:absolute;right:14px;bottom:16px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.95);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.5);animation:pulse-w 1.8s ease-out infinite}
+.ep-card-play i{margin-left:4px;border-left:15px solid var(--primary);border-top:9.5px solid transparent;border-bottom:9.5px solid transparent}
+@keyframes pulse-w{0%{box-shadow:0 0 0 0 rgba(255,255,255,.4),0 8px 24px rgba(0,0,0,.5)}100%{box-shadow:0 0 0 16px rgba(255,255,255,0),0 8px 24px rgba(0,0,0,.5)}}
+.ep-card-text{position:absolute;left:16px;right:74px;bottom:14px;display:flex;flex-direction:column;align-items:flex-start}
+.ep-card-text b{font-family:"Rozha One","Kohinoor Devanagari",serif;font-weight:400;font-size:clamp(23px,7.2vw,29px);line-height:1.25;margin-top:8px;text-shadow:0 3px 18px rgba(0,0,0,.8)}
+.ep-card-text em{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:500;font-size:16.5px;color:var(--gold)}
+.toast{position:absolute;left:50%;bottom:max(84px,calc(env(safe-area-inset-bottom) + 84px));transform:translateX(-50%);z-index:5;white-space:nowrap;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.96);color:var(--ink);font-size:13.5px;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.5);animation:toast 2.6s ease both}
+@keyframes toast{0%{opacity:0;transform:translate(-50%,10px)}10%,85%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,0)}}
+.reward2-foot{flex:none;text-align:center;animation:rise .6s .3s ease both}
+.reward2-foot p{margin-top:14px;font-size:16px;font-weight:700}
+.reward2-foot .cta{margin-top:12px}
+
 
 /* ---------- hidden demo panel ---------- */
 .demo-corner{position:absolute;left:0;top:0;width:54px;height:44px;z-index:40;opacity:0}

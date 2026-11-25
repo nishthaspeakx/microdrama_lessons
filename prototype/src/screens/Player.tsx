@@ -11,6 +11,7 @@ export function Player({ ep, onEnded, onExit }: { ep: Episode; onEnded: () => vo
   const [dur, setDur] = useState(0)
   const [chrome, setChrome] = useState(true)
   const hideTimer = useRef<number | undefined>(undefined)
+  const ambient = useRef<HTMLCanvasElement>(null)
 
   const wake = () => {
     setChrome(true)
@@ -27,6 +28,16 @@ export function Player({ ep, onEnded, onExit }: { ep: Episode; onEnded: () => vo
     return () => window.clearTimeout(hideTimer.current)
   }, [])
 
+  // Soft blurred copy of the picture behind the video, so the bars on tall phones are not flat black.
+  useEffect(() => {
+    const id = window.setInterval(() => {
+      const v = ref.current, c = ambient.current
+      if (!v || !c || v.readyState < 2) return
+      try { c.getContext('2d')?.drawImage(v, 0, 0, c.width, c.height) } catch { /* drawing is cosmetic */ }
+    }, 160)
+    return () => window.clearInterval(id)
+  }, [])
+
   const toggle = () => { const v = ref.current; if (!v) return; if (v.paused) void v.play(); else v.pause(); wake() }
   const seek = (e: React.MouseEvent<HTMLDivElement>) => {
     const v = ref.current; if (!v || !dur) return
@@ -36,6 +47,7 @@ export function Player({ ep, onEnded, onExit }: { ep: Episode; onEnded: () => vo
 
   return (
     <div className="story player" onClick={wake}>
+      <canvas ref={ambient} className="player-ambient" width={36} height={64} aria-hidden="true" />
       <video
         ref={ref} src={ep.video} playsInline preload="auto"
         onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}
