@@ -104,6 +104,20 @@ export function StoryPractice({ ep, index, lessonCoins, optional, onAnswered, on
     })
   }
 
+  // Skip: no reaction, the result shows at once with the right answer, and the scene
+  // still plays the line in English behind it so the story keeps going.
+  const skip = () => {
+    if (phase === 'react' || phase === 'reply' || phase === 'done') return
+    track('question_skipped', { id: ex.id })
+    stopAudio.current()
+    cancelAnimationFrame(raf.current)
+    onAnswered(false, 0)
+    setPicked('__skipped__')
+    setPhase('done')
+    setFeedback({ ok: false, title: 'SKIPPED', detail: ex.type === 'speak' ? ex.sentence : ex.answer })
+    playMoment(story.reply, () => {})
+  }
+
   const choose = (o: Option) => {
     if (phase !== 'answer' && phase !== 'ask') return
     setPicked(o.text)
@@ -133,6 +147,9 @@ export function StoryPractice({ ep, index, lessonCoins, optional, onAnswered, on
               </span>
             ))}
           </div>
+          {ex.type !== 'speak' && !picked && (
+            <motion.button className="q-skip" onClick={skip} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.6 }}>Skip</motion.button>
+          )}
           <span className="coins">
             <span className="coin">C</span>
             <motion.b key={lessonCoins} initial={{ scale: 1.5, color: '#FF4D00' }} animate={{ scale: 1, color: '#0A0B0F' }} transition={{ duration: 0.45 }}>{lessonCoins}</motion.b>
@@ -187,8 +204,9 @@ export function StoryPractice({ ep, index, lessonCoins, optional, onAnswered, on
           </AnimatePresence>
 
           <div className="story-answers">
+
             {ex.type === 'speak'
-              ? <SpeakLine ex={ex} active={phase === 'answer' || phase === 'ask'} onDone={(ok, fb) => resolve(ok, fb)} track={track} />
+              ? <SpeakLine ex={ex} active={phase === 'answer' || phase === 'ask'} onDone={(ok, fb) => resolve(ok, fb)} onSkip={skip} track={track} />
               : (
                 <AnimatePresence>
                   {(phase === 'answer' || phase === 'ask' && words >= siaWords.length * 0.6 || phase === 'react' || phase === 'reply' || phase === 'done') && ex.options.map((o, i) => {
@@ -240,9 +258,9 @@ function renderCaption(text: string) {
 }
 
 // "Be the character": the line to say, a mic, and a skip.
-function SpeakLine({ ex, active, onDone, track }: {
+function SpeakLine({ ex, active, onDone, onSkip, track }: {
   ex: Extract<Exercise, { type: 'speak' }>; active: boolean
-  onDone: (ok: boolean, fb: Feedback) => void; track: (name: string, data?: Record<string, unknown>) => void
+  onDone: (ok: boolean, fb: Feedback) => void; onSkip: () => void; track: (name: string, data?: Record<string, unknown>) => void
 }) {
   const [status, setStatus] = useState<'idle' | 'listening' | 'retry'>('idle')
   const [heard, setHeard] = useState<HeardResult | null>(null)
@@ -285,7 +303,7 @@ function SpeakLine({ ex, active, onDone, track }: {
             <MicIcon size={26} color={status === 'listening' ? '#fff' : '#3A3D4A'} />
           </motion.button>
           <span className="mic-hint">{status === 'listening' ? 'Listening… speak now' : status === 'retry' ? 'Tap to try again' : 'Tap and say the line'}</span>
-          <button className="skip" onClick={() => finish(false, { ok: false, title: 'SKIPPED', detail: ex.sentence })}>Skip</button>
+          <button className="skip" onClick={() => { setLocked(true); stopRef.current(); onSkip() }}>Skip</button>
         </div>
       )}
     </motion.div>

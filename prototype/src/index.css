@@ -313,3 +313,5 @@ button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}
 .pill .play{width:18px;height:18px;background:var(--primary)}
 .pill .play:before{border-left:6px solid #fff;border-top:4px solid transparent;border-bottom:4px solid transparent;margin-left:2px}
 .player-x{position:absolute;left:12px;top:max(12px,env(safe-area-inset-top));z-index:3}
+.q-skip{flex:none;padding:5px 10px;border-radius:8px;border:1.5px solid var(--line);border-bottom-width:3px;background:#fff;font-size:12.5px;font-weight:700;color:var(--ink2)}
+@media (max-height:700px){.story-q .scene-card{max-height:47dvh}.story-q .scene-card.small{max-height:40dvh}.sia-ask-bubble p{font-size:14px}}

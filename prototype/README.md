@@ -40,6 +40,7 @@ Each question happens in a moment of the episode:
 3. The answers appear as dialogue bubbles. For a fill-in-the-blank, the blank sits in the character's line on the scene.
 4. On a correct answer, the bubble flies into the scene as the English subtitle and the scene replays with the character saying it in English. On a wrong one, Sia encourages and the scene replays with the right line.
 5. Speaking questions are "Be Suman": the scene pauses on her, you say her line, and she says it in English.
+6. Every question can be skipped (Skip in the top bar, or on the speaking card). The right answer shows at once and the scene still plays the line in English.
 
 The scene clips are in `public/media/scenes/` (cut from the episode without subtitles, Hindi and English versions). Animations use the Motion library. The demo panel can jump straight to any question.
 
