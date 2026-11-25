@@ -36,6 +36,8 @@ export type Exercise =
       hindi: string
     }
 
+export type SiaScene = { poster: string; video?: string; audio?: string; lines: { text: string; at: number }[] }
+
 export type Episode = {
   id: string
   series: string
@@ -50,8 +52,12 @@ export type Episode = {
   poster: string
   // Question card shown right after the episode. `at` = seconds into the voice-over when each line appears.
   cliffhanger: { image: string; audio?: string; lines: { text: string; at: number }[]; holdMs: number }
-  // Sia's bridge into practice. `video` is her lip-synced clip; if it is missing the still + `audio` are used.
-  sia: { face: string; poster: string; video?: string; audio?: string; lines: { text: string; at: number }[]; cta: string }
+  // Sia's bridge into practice (prototype 1). `video` is her lip-synced clip; if it is missing the still + `audio` are used.
+  sia: SiaScene & { face: string; cta: string }
+  // Prototype 2: Sia offers a choice between the episode with English dialogue and practice.
+  siaChoice: SiaScene & { ctaEnglish: string; ctaPractice: string }
+  // The same episode with the dialogue dubbed into English and English subtitles (prototype 2).
+  englishVideo: string
   exercises: Exercise[]
   // Recorded audio for the speaker buttons, keyed by the exact text that is spoken.
   voiceClips: Record<string, string>
@@ -94,6 +100,18 @@ export const episodes: Episode[] = [
       ],
       cta: 'Let’s Practise',
     },
+    siaChoice: {
+      poster: media('sia/sia-choice-poster.jpg'),
+      video: media('sia/sia-choice.mp4'), // lip-synced clip (HeyGen Avatar 6 via ElevenLabs)
+      audio: media('audio/sia-choice.mp3'), // Sia's ElevenLabs voice
+      lines: [
+        { text: 'अगर आप इसी episode को English में देखना चाहते हैं, तो click करिए “Video in English” पर,', at: 0 },
+        { text: 'और अगर आप practice करना चाहते हैं, तो click करिए “Practice” पर!', at: 5.9 },
+      ],
+      ctaEnglish: 'Video in English',
+      ctaPractice: 'Practice',
+    },
+    englishVideo: media('ep1-english.mp4'),
     exercises: [
       {
         id: 'q1',

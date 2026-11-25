@@ -48,7 +48,8 @@ The series is titled **मधोपुर का राज़ (The Secret of Mad
 |---|---|
 | Episode 1 thumbnail, 1080 x 1920, with its HTML source | `madhopur/episode-1/thumbnail/` |
 | "Learn English Through Stories" mobile-web prototype (React, TypeScript, Vite) | `prototype/` |
+| Episode 1 with English dialogue (same voices, dubbed) and English subtitles | `madhopur/episode-1/english/` |
 
-The prototype plays the revised Episode 1, asks who the boy is, hands over to Sia (SpeakX's English coach) in a lip-synced clip, and runs six practice questions before a reward screen. Play it at **https://nishthaspeakx.github.io/microdrama_lessons/**. See [prototype/README.md](prototype/README.md) for how to run it and what is simulated.
+The prototype plays the revised Episode 1, asks who the boy is, hands over to Sia (SpeakX's English coach) in a lip-synced clip, and runs six practice questions before a reward screen. Play it at **https://nishthaspeakx.github.io/microdrama_lessons/** (prototype 1) or **https://nishthaspeakx.github.io/microdrama_lessons/?p=2** (prototype 2, with the English-dialogue episode). See [prototype/README.md](prototype/README.md) for how to run it and what is simulated.
 
 See [LESSONS.md](LESSONS.md) for what was learned along the way.

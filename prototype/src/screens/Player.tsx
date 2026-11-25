@@ -3,7 +3,7 @@ import type { Episode } from '../content'
 
 const fmt = (t: number) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`
 
-export function Player({ ep, onEnded, onExit }: { ep: Episode; onEnded: () => void; onExit: () => void }) {
+export function Player({ ep, src, english, onEnded, onExit }: { ep: Episode; src?: string; english?: boolean; onEnded: () => void; onExit: () => void }) {
   const ref = useRef<HTMLVideoElement>(null)
   const [playing, setPlaying] = useState(false)
   const [muted, setMuted] = useState(false)
@@ -49,7 +49,7 @@ export function Player({ ep, onEnded, onExit }: { ep: Episode; onEnded: () => vo
     <div className="story player" onClick={wake}>
       <canvas ref={ambient} className="player-ambient" width={36} height={64} aria-hidden="true" />
       <video
-        ref={ref} src={ep.video} playsInline preload="auto"
+        ref={ref} src={src ?? ep.video} playsInline preload="auto"
         onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)}
         onTimeUpdate={e => setTime(e.currentTarget.currentTime)}
         onLoadedMetadata={e => setDur(e.currentTarget.duration)}
@@ -59,7 +59,7 @@ export function Player({ ep, onEnded, onExit }: { ep: Episode; onEnded: () => vo
       <div className={`player-chrome ${chrome || !playing ? 'on' : ''}`}>
         <div className="player-top">
           <button className="icon-btn" aria-label="Close" onClick={e => { e.stopPropagation(); onExit() }}>✕</button>
-          <div className="player-title"><b>{ep.series}</b><span>Episode {ep.number} · {ep.title}</span></div>
+          <div className="player-title"><b>{ep.series}</b><span>Episode {ep.number} · {english ? `${ep.titleEnglish} · English` : ep.title}</span></div>
           <button className="icon-btn" aria-label={muted ? 'Unmute' : 'Mute'} onClick={e => { e.stopPropagation(); const v = ref.current; if (v) { v.muted = !v.muted; setMuted(v.muted) } wake() }}>{muted ? '🔇' : '🔊'}</button>
         </div>
         {!playing && <button className="big-play" aria-label="Play" onClick={e => { e.stopPropagation(); toggle() }}><span /></button>}

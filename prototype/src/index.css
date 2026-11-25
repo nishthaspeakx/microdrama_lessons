@@ -114,7 +114,16 @@ button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}
 .sia2-lines p{font-size:18px;line-height:1.45;font-weight:700;color:#C3C6D1;transition:color .35s}
 .sia2-lines p.past{color:#8E92A1}
 .sia2-lines p.on{color:var(--ink)}
-.sia2-sheet .cta{margin-top:12px;flex:none}
+.sia2-actions{display:flex;flex-direction:column;gap:10px;margin-top:12px;flex:none}
+.sia2-actions .cta{margin-top:0}
+.sia2-actions.n2{flex-direction:row}
+.sia2-actions.n2 .cta{flex:1;height:52px;font-size:15.5px;gap:8px;padding:0 10px;white-space:nowrap}
+.sia2-actions.n2 .cta .play{width:22px;height:22px}
+.sia2-actions.n2 .cta .play:before{border-left-width:7px;border-top-width:5px;border-bottom-width:5px;margin-left:2px}
+.cta.alt{background:#fff;color:var(--primary);border:2px solid var(--primary);box-shadow:none}
+.cta.alt .play{background:var(--primary)}
+.cta.alt .play:before{border-left-color:#fff}
+.sia2-lines.compact p{font-size:16.5px}
 .cta.ready{animation:pulse 1.4s ease-out infinite}
 .sia2-foot{display:flex;flex-direction:column;align-items:center;gap:4px;min-height:30px;margin-top:8px}
 .link{font-size:12.5px;font-weight:700;color:var(--ink2);padding:5px 10px}

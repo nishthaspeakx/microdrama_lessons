@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { episodes } from './content'
-import { SCREENS, useJourney, type Screen } from './journey'
+import { PROTOTYPE, SCREENS, useJourney, type Screen } from './journey'
 import { Start } from './screens/Start'
 import { Player } from './screens/Player'
 import { Cliffhanger } from './screens/Cliffhanger'
@@ -40,7 +40,20 @@ export default function App() {
           {state.screen === 'start' && <Start ep={ep} coins={state.coins} questionCount={ep.exercises.length} maxCoins={maxCoins} onStart={() => { unlockAudio(); dispatch({ type: 'START' }) }} />}
           {state.screen === 'episode' && <Player ep={ep} onEnded={() => dispatch({ type: 'EPISODE_ENDED' })} onExit={() => jump('start')} />}
           {state.screen === 'cliffhanger' && <Cliffhanger ep={ep} voiceOn={state.siaVoice} onDone={() => dispatch({ type: 'CLIFFHANGER_DONE' })} />}
-          {state.screen === 'sia' && <Sia ep={ep} voiceOn={state.siaVoice} optional={optional} onDone={() => dispatch({ type: 'SIA_DONE' })} onSkip={() => dispatch({ type: 'SKIP_PRACTICE' })} />}
+          {state.screen === 'sia' && (PROTOTYPE === 2
+            ? <Sia
+                scene={ep.siaChoice} voiceOn={state.siaVoice} autoplay={!state.englishWatched}
+                actions={[
+                  { label: ep.siaChoice.ctaEnglish, icon: 'play', kind: 'secondary', onClick: () => dispatch({ type: 'WATCH_ENGLISH' }) },
+                  { label: ep.siaChoice.ctaPractice, icon: 'mic', onClick: () => dispatch({ type: 'SIA_DONE' }) },
+                ]}
+              />
+            : <Sia
+                scene={ep.sia} voiceOn={state.siaVoice}
+                actions={[{ label: ep.sia.cta, onClick: () => dispatch({ type: 'SIA_DONE' }) }]}
+                footer={optional && <button className="link" onClick={() => dispatch({ type: 'SKIP_PRACTICE' })}>Skip practice · Watch Episode {ep.next.number}</button>}
+              />)}
+          {state.screen === 'episode-en' && <Player ep={ep} src={ep.englishVideo} english onEnded={() => dispatch({ type: 'ENGLISH_ENDED' })} onExit={() => dispatch({ type: 'ENGLISH_ENDED' })} />}
           {state.screen === 'practice' && (
             <Practice
               ep={ep} index={state.exIndex} lessonCoins={state.lessonCoins} optional={optional}
@@ -58,6 +71,10 @@ export default function App() {
         {demo && (
           <aside className="demo">
             <div className="demo-head"><b>Demo settings</b><button onClick={() => setDemo(false)}>Close</button></div>
+            <label>Prototype</label>
+            <div className="demo-row">
+              {([1, 2] as const).map(n => <button key={n} className={n === PROTOTYPE ? 'on' : ''} onClick={() => { location.search = n === 2 ? '?p=2&demo' : '?demo' }}>{n === 1 ? '1 · Practice' : '2 · English video or practice'}</button>)}
+            </div>
             <label>Jump to screen</label>
             <div className="demo-row">{SCREENS.map(s => <button key={s} className={s === state.screen ? 'on' : ''} onClick={() => jump(s)}>{s}</button>)}</div>
             <label>Learning before Episode 2</label>
