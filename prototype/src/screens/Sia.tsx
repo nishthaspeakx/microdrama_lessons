@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import type { SiaScene } from '../content'
 
-export type SiaAction = { label: string; onClick: () => void; kind?: 'primary' | 'secondary'; icon?: 'play' | 'mic' }
+export type SiaAction = { label: string; onClick: () => void; kind?: 'primary' | 'secondary' | 'small'; icon?: 'play' | 'mic' }
 
 // Sia speaks to the learner. She plays her lip-synced clip (or, if the clip is not there, her photo
 // with the recorded voice), the lines light up in time, and the learner moves on with a button.
@@ -60,8 +60,8 @@ export function Sia({ scene, actions, voiceOn, autoplay = true, footer }: { scen
         <div className={`sia2-lines ${actions.length > 1 ? 'compact' : ''}`}>
           {s.lines.map((l, i) => <p key={i} className={ended || i === line ? 'on' : i < line ? 'past' : ''}>{l.text}</p>)}
         </div>
-        <div className={`sia2-actions n${actions.length}`}>
-          {actions.map(a => (
+        <div className={`sia2-actions n${actions.filter(a => a.kind !== 'small').length}`}>
+          {actions.filter(a => a.kind !== 'small').map(a => (
             <button key={a.label} className={`cta ${a.kind === 'secondary' ? 'alt' : ''} ${ended && a.kind !== 'secondary' ? 'ready' : ''}`} onClick={a.onClick}>
               {a.icon === 'play' && <span className="play" />}
               {a.icon === 'mic' && <MicGlyph />}
@@ -69,6 +69,13 @@ export function Sia({ scene, actions, voiceOn, autoplay = true, footer }: { scen
             </button>
           ))}
         </div>
+        {actions.some(a => a.kind === 'small') && (
+          <div className="sia2-small">
+            {actions.filter(a => a.kind === 'small').map(a => (
+              <button key={a.label} className="pill" onClick={a.onClick}>{a.icon === 'play' && <span className="play" />}{a.label}</button>
+            ))}
+          </div>
+        )}
         <div className="sia2-foot">
           {ended && <button className="link" onClick={play}>↻ Sia को फिर से सुनें</button>}
           {footer}

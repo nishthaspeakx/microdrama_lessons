@@ -154,10 +154,10 @@ export function StoryPractice({ ep, index, lessonCoins, optional, onAnswered, on
             <motion.span className="scene-label" initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>{scene.label}</motion.span>
             <AnimatePresence>
               {phase !== 'scene' && phase !== 'reply' && !needTap && (
-                <motion.span className="freeze" aria-label="Paused" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}><i /><i /></motion.span>
+                <motion.span key="freeze" className="freeze" aria-label="Paused" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}><i /><i /></motion.span>
               )}
               {story.role && (phase === 'ask' || phase === 'answer') && (
-                <motion.span className="role-chip" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>🎬 आप हैं {story.role}</motion.span>
+                <motion.span key="role" className="role-chip" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>🎬 आप हैं {story.role}</motion.span>
               )}
             </AnimatePresence>
             <div className="scene-sub">
@@ -176,7 +176,7 @@ export function StoryPractice({ ep, index, lessonCoins, optional, onAnswered, on
 
           <AnimatePresence>
             {phase !== 'scene' && (
-              <motion.div className="sia-ask" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ type: 'spring', stiffness: 300, damping: 28 }}>
+              <motion.div key="sia-ask" className="sia-ask" initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ type: 'spring', stiffness: 300, damping: 28 }}>
                 <motion.div className="sia-ask-face" style={{ backgroundImage: `url(${ep.sia.face})` }} animate={phase === 'ask' ? { scale: [1, 1.06, 1] } : { scale: 1 }} transition={{ repeat: phase === 'ask' ? Infinity : 0, duration: 0.9 }} />
                 <div className="sia-ask-bubble">
                   <p>{siaWords.map((w, i) => <motion.span key={i} initial={false} animate={{ opacity: i < words ? 1 : 0.18 }} transition={{ duration: 0.2 }}>{w} </motion.span>)}</p>
@@ -220,7 +220,7 @@ export function StoryPractice({ ep, index, lessonCoins, optional, onAnswered, on
 
         <AnimatePresence>
           {feedback && (
-            <motion.footer className={`sheet ${feedback.ok ? 'good' : 'bad'}`} initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 380, damping: 34 }} style={{ animation: 'none' }}>
+            <motion.footer key="sheet" className={`sheet ${feedback.ok ? 'good' : 'bad'}`} initial={{ y: '100%' }} animate={{ y: 0 }} exit={{ y: '100%' }} transition={{ type: 'spring', stiffness: 380, damping: 34 }} style={{ animation: 'none' }}>
               <div className="sheet-title"><span className="badge">{feedback.ok ? '✓' : '✕'}</span>{feedback.title}{feedback.ok && <span className="spark">✦</span>}</div>
               {feedback.detail && <div className="sheet-detail"><span>Correct Answer:</span><b>{feedback.detail}</b></div>}
               {feedback.note && <div className="sheet-note">{feedback.note}</div>}

@@ -250,7 +250,6 @@ button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}
 
 
 /* ---------- hidden demo panel ---------- */
-.demo-corner{position:absolute;left:0;top:0;width:54px;height:44px;z-index:40;opacity:0}
 .demo{position:absolute;left:8px;right:8px;bottom:8px;z-index:50;background:rgba(20,21,28,.96);backdrop-filter:blur(10px);border:1px solid #33343f;border-radius:16px;padding:14px;color:#fff;font-size:12px;max-height:72%;overflow:auto;animation:up .25s ease both}
 .demo-head{display:flex;justify-content:space-between;align-items:center;font-size:14px;margin-bottom:6px}
 .demo label{display:block;margin:10px 0 5px;color:#9fa1b3;font-size:10.5px;letter-spacing:.8px;text-transform:uppercase}
@@ -307,3 +306,10 @@ button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}
 .line-mic .mic{grid-column:2;width:60px;height:60px}
 .line-mic .mic-hint{grid-column:1/4;grid-row:2;text-align:center;margin-top:6px}
 .line-mic .skip{position:static;grid-column:3;justify-self:end}
+
+/* prototype 2, back from a video: practice is the main button, the two videos are small */
+.sia2-small{display:flex;gap:8px;justify-content:center;margin-top:10px}
+.pill{display:flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;border:1.5px solid var(--line);background:#fff;color:var(--ink2);font-weight:700;font-size:13px}
+.pill .play{width:18px;height:18px;background:var(--primary)}
+.pill .play:before{border-left:6px solid #fff;border-top:4px solid transparent;border-bottom:4px solid transparent;margin-left:2px}
+.player-x{position:absolute;left:12px;top:max(12px,env(safe-area-inset-top));z-index:3}

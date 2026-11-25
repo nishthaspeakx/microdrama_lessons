@@ -3,7 +3,7 @@ import type { Episode } from '../content'
 
 const fmt = (t: number) => `${Math.floor(t / 60)}:${String(Math.floor(t % 60)).padStart(2, '0')}`
 
-export function Player({ ep, src, english, onEnded, onExit }: { ep: Episode; src?: string; english?: boolean; onEnded: () => void; onExit: () => void }) {
+export function Player({ ep, src, english, rewatch, onEnded, onExit }: { ep: Episode; src?: string; english?: boolean; rewatch?: boolean; onEnded: () => void; onExit: () => void }) {
   const ref = useRef<HTMLVideoElement>(null)
   const [playing, setPlaying] = useState(false)
   const [muted, setMuted] = useState(false)
@@ -26,7 +26,7 @@ export function Player({ ep, src, english, onEnded, onExit }: { ep: Episode; src
     }
     raf = requestAnimationFrame(tick)
     // Warm up the next screen's picture so it is ready at the cut.
-    if (!src) { const img = new Image(); img.src = ep.cliffhanger.image }
+    if (!src && !rewatch) { const img = new Image(); img.src = ep.cliffhanger.image }
     return () => cancelAnimationFrame(raf)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -74,6 +74,9 @@ export function Player({ ep, src, english, onEnded, onExit }: { ep: Episode; src
         onEnded={finish}
         onClick={e => { e.stopPropagation(); toggle() }}
       />
+      {(english || rewatch) && !(chrome || !playing) && (
+        <button className="icon-btn player-x" aria-label="Close video" onClick={e => { e.stopPropagation(); onExit() }}>✕</button>
+      )}
       <div className={`player-chrome ${chrome || !playing ? 'on' : ''}`}>
         <div className="player-top">
           <button className="icon-btn" aria-label="Close" onClick={e => { e.stopPropagation(); onExit() }}>✕</button>

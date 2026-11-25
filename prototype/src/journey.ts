@@ -3,11 +3,11 @@
 // Prototype 2 (?p=2): at Sia the learner chooses "Video in English" (episode-en, then back to Sia) or "Practice".
 import { useEffect, useReducer } from 'react'
 
-export type Screen = 'start' | 'episode' | 'cliffhanger' | 'sia' | 'episode-en' | 'practice' | 'reward' | 'next'
+export type Screen = 'start' | 'episode' | 'cliffhanger' | 'sia' | 'episode-en' | 'episode-hi' | 'practice' | 'reward' | 'next'
 export type Variant = 'mandatory' | 'optional'
 export const PROTOTYPE: 1 | 2 = new URLSearchParams(location.search).get('p') === '2' ? 2 : 1
 export const SCREENS: Screen[] = PROTOTYPE === 2
-  ? ['start', 'episode', 'cliffhanger', 'sia', 'episode-en', 'practice', 'reward', 'next']
+  ? ['start', 'episode', 'cliffhanger', 'sia', 'episode-en', 'episode-hi', 'practice', 'reward', 'next']
   : ['start', 'episode', 'cliffhanger', 'sia', 'practice', 'reward', 'next']
 
 export type TrackedEvent = { name: string; at: string; data?: Record<string, unknown> }
@@ -21,7 +21,7 @@ export type State = {
   practiceDone: boolean
   skippedPractice: boolean
   siaVoice: boolean
-  englishWatched: boolean // prototype 2: back at Sia after the English episode
+  englishWatched: boolean // prototype 2: back at Sia after watching (or closing) a video
   events: TrackedEvent[]
 }
 
@@ -31,7 +31,8 @@ export type Action =
   | { type: 'CLIFFHANGER_DONE' }
   | { type: 'SIA_DONE' }
   | { type: 'WATCH_ENGLISH' }
-  | { type: 'ENGLISH_ENDED' }
+  | { type: 'WATCH_HINDI' }
+  | { type: 'VIDEO_CLOSED'; lang: 'en' | 'hi'; completed: boolean }
   | { type: 'ANSWERED'; correct: boolean; coins: number }
   | { type: 'NEXT_EXERCISE'; total: number }
   | { type: 'SKIP_PRACTICE' }
@@ -62,8 +63,10 @@ function reducer(s: State, a: Action): State {
       return { ...s, screen: 'episode', englishWatched: false, events: ev(s, 'episode_started') }
     case 'WATCH_ENGLISH':
       return { ...s, screen: 'episode-en', events: ev(s, 'english_video_started') }
-    case 'ENGLISH_ENDED':
-      return { ...s, screen: 'sia', englishWatched: true, events: ev(s, 'english_video_completed') }
+    case 'WATCH_HINDI':
+      return { ...s, screen: 'episode-hi', events: ev(s, 'hindi_video_started') }
+    case 'VIDEO_CLOSED':
+      return { ...s, screen: 'sia', englishWatched: true, events: ev(s, a.completed ? `${a.lang === 'en' ? 'english' : 'hindi'}_video_completed` : `${a.lang === 'en' ? 'english' : 'hindi'}_video_closed`) }
     case 'EPISODE_ENDED':
       return { ...s, screen: 'cliffhanger', events: ev(s, 'episode_completed') }
     case 'CLIFFHANGER_DONE':

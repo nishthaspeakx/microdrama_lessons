@@ -26,7 +26,9 @@ Every push to `main` that changes `prototype/` rebuilds the site and publishes i
 
 Same journey, but at Sia's screen she says, in Hindi, that the learner can watch this same episode in English or practise. Two buttons:
 
-- **Video in English** plays Episode 1 with the dialogue dubbed into English (same voices) and English subtitles, then returns to Sia.
+- **Video in English** plays Episode 1 with the dialogue dubbed into English (same voices) and English subtitles. The ✕ stays visible, so it can be closed at any point.
+
+Whenever the learner comes back from a video (finished or closed), Sia says "चलिए, अब questions practice करते हैं… और second episode unlock करते हैं!" with **Practice** as the main button and two small buttons, **Video in English** and **Video in Hindi**.
 - **Practice** starts six questions played inside the story, then the reward screen.
 
 ### Practice inside the story (prototype 2 only)

@@ -77,6 +77,8 @@ export type Episode = {
   sia: SiaScene & { face: string; cta: string }
   // Prototype 2: Sia offers a choice between the episode with English dialogue and practice.
   siaChoice: SiaScene & { ctaEnglish: string; ctaPractice: string }
+  // Prototype 2: what Sia says when the learner comes back from a video, with practice as the main button.
+  siaReturn: SiaScene & { ctaPractice: string; ctaEnglish: string; ctaHindi: string }
   // The same episode with the dialogue dubbed into English and English subtitles (prototype 2).
   englishVideo: string
   exercises: Exercise[]
@@ -134,6 +136,18 @@ export const episodes: Episode[] = [
       ],
       ctaEnglish: 'Video in English',
       ctaPractice: 'Practice',
+    },
+    siaReturn: {
+      poster: media('sia/sia-return-poster.jpg'),
+      video: media('sia/sia-return.mp4'), // lip-synced clip (HeyGen Avatar 6 via ElevenLabs)
+      audio: media('audio/sia-return.mp3'), // Sia's ElevenLabs voice
+      lines: [
+        { text: 'चलिए, अब questions practice करते हैं…', at: 0 },
+        { text: 'और second episode unlock करते हैं!', at: 2.75 },
+      ],
+      ctaPractice: 'Practice',
+      ctaEnglish: 'Video in English',
+      ctaHindi: 'Video in Hindi',
     },
     englishVideo: media('ep1-english.mp4'),
     scenes: {

@@ -27,7 +27,11 @@ export default function App() {
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
   }, [])
-  const cornerTap = () => {
+  // Four quick taps in the top-left corner open the demo panel. Listened for without covering
+  // that corner, so the close buttons there keep working.
+  const cornerTap = (e: React.PointerEvent<HTMLDivElement>) => {
+    const r = e.currentTarget.getBoundingClientRect()
+    if (e.clientX - r.left > 60 || e.clientY - r.top > 60) return
     const now = Date.now()
     taps.current = [...taps.current.filter(t => now - t < 1500), now]
     if (taps.current.length >= 4) { taps.current = []; setDemo(true) }
@@ -36,25 +40,36 @@ export default function App() {
 
   return (
     <div className="stage">
-      <div className={`phone ${['sia', 'practice'].includes(state.screen) ? 'light' : 'dark'}`}>
+      <div onPointerDownCapture={cornerTap} className={`phone ${['sia', 'practice'].includes(state.screen) ? 'light' : 'dark'}`}>
         <div key={state.screen} className={`screen ${state.screen === 'cliffhanger' ? 'cut' : ''}`}>
           {state.screen === 'start' && <Start ep={ep} coins={state.coins} questionCount={ep.exercises.length} maxCoins={maxCoins} onStart={() => { unlockAudio(); dispatch({ type: 'START' }) }} />}
           {state.screen === 'episode' && <Player ep={ep} onEnded={() => dispatch({ type: 'EPISODE_ENDED' })} onExit={() => jump('start')} />}
           {state.screen === 'cliffhanger' && <Cliffhanger ep={ep} voiceOn={state.siaVoice} onDone={() => dispatch({ type: 'CLIFFHANGER_DONE' })} />}
           {state.screen === 'sia' && (PROTOTYPE === 2
-            ? <Sia
-                scene={ep.siaChoice} voiceOn={state.siaVoice} autoplay={!state.englishWatched}
-                actions={[
-                  { label: ep.siaChoice.ctaEnglish, icon: 'play', kind: 'secondary', onClick: () => dispatch({ type: 'WATCH_ENGLISH' }) },
-                  { label: ep.siaChoice.ctaPractice, icon: 'mic', onClick: () => dispatch({ type: 'SIA_DONE' }) },
-                ]}
-              />
+            ? state.englishWatched
+              // Back from a video: Sia invites practice; the videos stay one tap away.
+              ? <Sia
+                  scene={ep.siaReturn} voiceOn={state.siaVoice}
+                  actions={[
+                    { label: ep.siaReturn.ctaPractice, icon: 'mic', onClick: () => dispatch({ type: 'SIA_DONE' }) },
+                    { label: ep.siaReturn.ctaEnglish, icon: 'play', kind: 'small', onClick: () => dispatch({ type: 'WATCH_ENGLISH' }) },
+                    { label: ep.siaReturn.ctaHindi, icon: 'play', kind: 'small', onClick: () => dispatch({ type: 'WATCH_HINDI' }) },
+                  ]}
+                />
+              : <Sia
+                  scene={ep.siaChoice} voiceOn={state.siaVoice}
+                  actions={[
+                    { label: ep.siaChoice.ctaEnglish, icon: 'play', kind: 'secondary', onClick: () => dispatch({ type: 'WATCH_ENGLISH' }) },
+                    { label: ep.siaChoice.ctaPractice, icon: 'mic', onClick: () => dispatch({ type: 'SIA_DONE' }) },
+                  ]}
+                />
             : <Sia
                 scene={ep.sia} voiceOn={state.siaVoice}
                 actions={[{ label: ep.sia.cta, onClick: () => dispatch({ type: 'SIA_DONE' }) }]}
                 footer={optional && <button className="link" onClick={() => dispatch({ type: 'SKIP_PRACTICE' })}>Skip practice · Watch Episode {ep.next.number}</button>}
               />)}
-          {state.screen === 'episode-en' && <Player ep={ep} src={ep.englishVideo} english onEnded={() => dispatch({ type: 'ENGLISH_ENDED' })} onExit={() => dispatch({ type: 'ENGLISH_ENDED' })} />}
+          {state.screen === 'episode-en' && <Player ep={ep} src={ep.englishVideo} english onEnded={() => dispatch({ type: 'VIDEO_CLOSED', lang: 'en', completed: true })} onExit={() => dispatch({ type: 'VIDEO_CLOSED', lang: 'en', completed: false })} />}
+          {state.screen === 'episode-hi' && <Player ep={ep} rewatch onEnded={() => dispatch({ type: 'VIDEO_CLOSED', lang: 'hi', completed: true })} onExit={() => dispatch({ type: 'VIDEO_CLOSED', lang: 'hi', completed: false })} />}
           {state.screen === 'practice' && (() => {
             const props = {
               ep, index: state.exIndex, lessonCoins: state.lessonCoins, optional,
@@ -70,7 +85,6 @@ export default function App() {
             <Next ep={ep} unlocked={optional || state.practiceDone} onReplay={() => jump('episode')} onPractise={() => jump('sia')} onHome={() => jump('start')} />
           )}
         </div>
-        <button className="demo-corner" aria-label="Demo settings" onClick={cornerTap} />
         {demo && (
           <aside className="demo">
             <div className="demo-head"><b>Demo settings</b><button onClick={() => setDemo(false)}>Close</button></div>
