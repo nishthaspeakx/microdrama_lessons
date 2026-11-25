@@ -1,0 +1,10 @@
+- 10:24:50 cards file: 3 name cards, 0 without, 1 time captions
+- 10:24:51 prepare: 7 clips, 95 s of material, order from episode.json; 276 s (transcripts 249, proxies 15, shot cuts 5, contact sheets 2, joins 8, repeated lines 0, air 11, script excerpt 0, cards file 0)
+- wordless clips c1, c3 (crowd shouts only), c4, c6 given empty transcripts from the plan, since speech recognition hung on wordless noise in the first edit
+- story map (revised): c1 bazaar, fireball, mother waves with closed lips, dust wall, Meera in dust. c2 Meera calls, listens, calls again, her eyes. c3 villagers look up, blazing object overhead, old shopkeeper, far fields torn, villagers duck, distant shops crushed, young man stares, the landing felt and the street shaking. c4 pickup crash (unchanged). c5 Suman and the boy (unchanged). c6 Devendra looks up, torn field, slow tilt up the towering craft, Devendra, the low hatch, Suman. c7 the three under the craft, Devendra's line, Suman, both hands, Suman looks down, the boy from the chest up, eyes turning blue, one pulse of light at his collar (the hook), then black.
+- pace: breathing; the user asked for the reveal and the final shot to hold.
+- 10:26:20 edl_check: 0 errors, 6 warnings (6 new, 0 gone, 0 answered), 6.3% trimmed, 90.0 s, cue gap 2.49 s
+- 10:27:09 edl_check: 0 errors, 5 warnings (0 new, 0 gone, 1 answered), 6.3% trimmed, 90.0 s, cue gap 2.49 s
+- 10:27:11 edl_check: 0 errors, 5 warnings (0 new, 0 gone, 1 answered), 6.3% trimmed, 90.0 s, cue gap 2.49 s
+- 10:30:00 render: 90.0 s episode in 170 s; edit_edit.mp4 -14.3 LUFS, -1.9 dBTP
+- 10:30:18 qc_check: PASS, 0 flags, 5 QC pages to view

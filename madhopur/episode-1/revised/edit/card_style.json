@@ -1,0 +1,35 @@
+{
+ "font": "Cormorant Garamond",
+ "weight": 600,
+ "italic": false,
+ "size": 100,
+ "upper": true,
+ "track": 8,
+ "fill": [
+  246,
+  238,
+  220
+ ],
+ "shadow": "soft",
+ "caption_font": "Cormorant Garamond",
+ "caption_weight": 500,
+ "caption_size": 76,
+ "caption_fill": [
+  226,
+  190,
+  120
+ ],
+ "caption_upper": true,
+ "caption_track": 10,
+ "rule": "accent",
+ "rule_width": 0.35,
+ "rule_size": 4,
+ "rule_color": [
+  226,
+  190,
+  120
+ ],
+ "align": "left",
+ "y": 0.74,
+ "shade": 0.25
+}

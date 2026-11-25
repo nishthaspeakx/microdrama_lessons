@@ -1,0 +1,42 @@
+{
+ "requests": [
+  {
+   "index": 0,
+   "params": {
+    "model": "seedance_2_5",
+    "mode": "video_extension",
+    "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the low golden sun behind right, backlighting the maize leaves and rimming the hair, the spaces between the rows in soft shadow; warm natural colour with saturated, believable greens; dust drifting in the air.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Crash site): the Crash site, its flattened maize, its neem trees and the towering craft 100% as in the reference.\nImage reference 2 (character Devendra): Devendra, face, hair, body and clothes 100% as in the reference.\nImage reference 3 (character Suman): Suman, face, hair, body and clothes 100% as in the reference.\nImage reference 4 (character The boy): The boy, face, hair, body and clothes 100% as in the reference; in S6 only, his eye colour brightens from dark to blue.\nContinuity: Devendra is clean and unchanged from the reference, with no stain, mark or damage; Suman is clean and unchanged from the reference, with no stain, mark or damage; The boy is clean and fully dressed in his kurta, buttoned at the neck, as in the reference.\nIn frame only: Devendra, Suman and the boy. The edge of the maize field, the massive craft towering at the end of the flattened swathe, far. Devendra stands one step ahead of Suman toward the field, screen left, middle; Suman kneels at the field's edge, screen centre, near; the boy stands before her at arm's length with his back to the craft. Eyelines never at the camera.\nOpening: Devendra standing one step ahead of Suman with his head tipped back, his eyes high on the craft; Suman kneeling with her eyes on the craft; the boy standing before her with his hand in hers.\nDevendra speaks aloud 1 time between 1.8s and 2.6s and never again; silent before 1.8s and from 2.6s to the end.\nSuman and the boy never speak in this clip.\nDevendra is out to make Suman see the craft; once she looks he holds his ground before it, with resilience.\nSuman is out to take in what Devendra sees; once she has seen it she looks back down to the child, with perseverance.\nThe boy is out to keep hold of Suman; once her eyes come down to him he holds her hand with both of his and looks up at her, with persistence.\nPace: slow and hushed, one beat where his line lands; the last shot pushes in slowly on the child and takes its time.\nS1 0.0-1.6s · full, from low behind the three, slightly low, static · the three small at the bottom of the frame with their backs to the lens, the dark ribbed hull filling the frame above them and the neem trees, dust drifting at its base.\nS2 1.6-4.0s · close, cut at the collarbones, three-quarter from Suman's side, slightly low, slow push-in · Devendra's eyes hold high on the craft off right of the lens, his throat moving as his voice begins at 1.8s and ends at 2.6s, his hands still at his sides; the dark hull soft behind him.\nS3 4.0-5.6s · close, cut at the collarbones, from the front, slightly high, handheld · Suman's eyes come down from the top of the craft off left of the lens to its small open hatch, dust drifting between them; the boy's hair at the bottom edge of the frame, pale maize behind her.\nS4 5.6-7.0s · insert, the hands from above, static · the boy's second hand comes in from the left and closes over Suman's hand so both his small hands wrap around hers; the dry earth below.\nS5 7.0-8.4s · close, cut at the collarbones, three-quarter from the craft side, slightly high, static · Suman's eyes drop from the craft down to the boy below the bottom edge of the frame, her lips closed, her plait over her shoulder; maize soft behind her.\nS6 8.4-13.0s · close, framed from the chest up, from the front at the boy's eye level, slow push-in · the boy in his cream kurta, buttoned at the neck, an ordinary familiar child's face, looks up past the top of the lens at Suman; from 9.6s his dark eyes brighten to a striking clear blue with a faint inner glow; at 11.0s a faint geometric marking of pale light pulses once, softly, through the thin cotton at the centre of his chest and fades; one soft metallic tick from the cooling hull at 12.2s; the dark hull soft behind him.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nS2 (1.8-2.6s) Devendra to Suman, a man's voice of about 36, a dry quiet baritone, a central Indian Hindi accent, steady and low, barely above a whisper: \"सुमन…\"\nNo speech in S1, S3, S4, S5, S6.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- Only diegetic sound: the characters' voices, the wind in the maize, settling dust and one soft metallic tick from the hull.\n- The boy stays fully dressed in his kurta in every shot; the glow in his eyes and the single pulse of light at his chest are faint and understated, so he looks like an ordinary child at first glance.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+    "duration": 13,
+    "aspect_ratio": "9:16",
+    "resolution": "480p",
+    "draft": true,
+    "generate_audio": true,
+    "bitrate_mode": "high",
+    "medias": [
+     {
+      "value": "3d55f715-5afd-4c5e-bbed-7783bb181594",
+      "role": "image_references"
+     },
+     {
+      "value": "5f1b39b6-c85d-4de3-946b-6c6bb1801537",
+      "role": "image_references"
+     },
+     {
+      "value": "f947a93a-a190-427f-91eb-9ac0f55ebcea",
+      "role": "image_references"
+     },
+     {
+      "value": "f0d3202d-0feb-43e1-9797-aa54d1211533",
+      "role": "image_references"
+     },
+     {
+      "value": "22e61a84-992d-4a49-bab2-386e0a9d6bd7",
+      "role": "video_references"
+     }
+    ],
+    "count": 1,
+    "extension_mode": "forward"
+   }
+  }
+ ]
+}

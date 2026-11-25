@@ -1,0 +1,37 @@
+{
+ "requests": [
+  {
+   "index": 0,
+   "params": {
+    "model": "seedance_2_5",
+    "mode": "omni_reference",
+    "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds; no one speaks.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the low golden sun behind right, backlighting the maize leaves and rimming the hair, the spaces between the rows in soft shadow; warm natural colour with saturated, believable greens; dust drifting in the air.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Crash site): the Crash site, its flattened maize, its neem trees and the towering craft 100% as in the reference.\nImage reference 2 (character Devendra): Devendra, face, hair, body and clothes 100% as in the reference.\nImage reference 3 (character Suman): Suman, face, hair, body and clothes 100% as in the reference.\nImage reference 4 (character The boy): The boy, face, hair, body and clothes 100% as in the reference.\nContinuity: Devendra is clean and unchanged from the reference, with no stain, mark or damage; Suman is clean and unchanged from the reference, with no stain, mark or damage; The boy is clean and unchanged from the reference, with no stain, mark or damage.\nIn frame only: Devendra, Suman and the boy. The edge of the maize field. Suman kneels at the field's edge, screen centre, near; the boy stands before her at arm's length with his back to the field, a broad swathe of flattened maize and torn red earth running from behind him into the field; Devendra stands a step behind Suman, screen left, near; the massive craft stands at the end of the swathe sixty steps in, far, towering over the neem trees beside it. Eyelines never at the camera.\nOpening: Suman kneeling with the boy's hand in hers; the boy standing before her; Devendra standing a step behind her, his eyes on the boy.\nNobody speaks in this clip: Devendra, Suman and the boy never speak.\nDevendra is out to understand where the child came from; once he sees the torn field he follows it with his eyes up the whole height of the craft, with resilience.\nSuman is out to keep the child's hand in hers; once Devendra looks up she looks where he looks, with perseverance.\nThe boy is out to stay beside Suman; once she holds his hand he keeps it there, with persistence.\nPace: slow and hushed, one long tilt up the craft that takes its time; every shot opens in motion.\nS1 0.0-1.8s · close, cut at the collarbones, three-quarter from the field side, slightly low, slow push-in · Devendra's eyes lift from the boy and travel past him and upward, his look going off right of the lens and up; Suman's plait and shoulder soft in the right foreground.\nS2 1.8-3.4s · medium, from behind Devendra over his shoulder, slightly high, static · a broad swathe of flattened maize and torn red earth runs from the boy's back into the field; Suman kneeling and the boy standing near centre with their hands joined, Devendra's shoulder soft in the left foreground.\nS3 3.4-9.4s · full, from behind the three at their eye level, one slow continuous tilt up · the three small in the lower third with their backs to the lens, Devendra standing, Suman kneeling, the boy beside her; the tilt climbs past the neem trees and on up the dark ribbed hull of the massive craft towering over them, its top edge entering frame at 8.0s; dust settling around its base, a low wind.\nS4 9.4-11.0s · close, cut at the collarbones, from the front, low, handheld · Devendra's head tips back, his eyes climbing the hull off right of the lens and up, his hands open at his sides; only maize behind him.\nS5 11.0-12.4s · insert, the foot of the craft from low in the flattened maize, static · settling dust rolls around heaped earth at the base of the hull; one small oval hatch stands open low to the ground, dark inside, just big enough for a small child; nobody in frame.\nS6 12.4-14.0s · close, cut at the collarbones, three-quarter from Devendra's side, slightly high, slow push-in · Suman's eyes come up from the boy's hand in hers and climb the hull off right of the lens; the boy's shoulder soft in the right foreground.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nNo speech in S1, S2, S3, S4, S5, S6.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- No added sound effects: no whoosh, no boom, no impact hit, no riser.\n- Only diegetic sound: the characters' voices and the natural sounds of this place.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+    "duration": 14,
+    "aspect_ratio": "9:16",
+    "resolution": "480p",
+    "draft": true,
+    "generate_audio": true,
+    "bitrate_mode": "high",
+    "medias": [
+     {
+      "value": "3d55f715-5afd-4c5e-bbed-7783bb181594",
+      "role": "image_references"
+     },
+     {
+      "value": "5f1b39b6-c85d-4de3-946b-6c6bb1801537",
+      "role": "image_references"
+     },
+     {
+      "value": "f947a93a-a190-427f-91eb-9ac0f55ebcea",
+      "role": "image_references"
+     },
+     {
+      "value": "f0d3202d-0feb-43e1-9797-aa54d1211533",
+      "role": "image_references"
+     }
+    ],
+    "count": 1
+   }
+  }
+ ]
+}

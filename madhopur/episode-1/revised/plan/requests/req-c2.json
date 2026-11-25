@@ -1,0 +1,34 @@
+{
+ "requests": [
+  {
+   "index": 0,
+   "params": {
+    "model": "seedance_2_5",
+    "mode": "video_extension",
+    "prompt": "STRICT RULE: Absolutely no music, only diegetic sounds.\nRealism cinematic, real skin with pores and small marks, natural eyes, people and set lit only by this place's named sources: the afternoon sun high on the left, falling hard across the street and onto the faces, the shopfronts under their awnings in shade; dusty gold highlights, warm natural colour; fine dust hanging in the air.\nFramed on the rule of thirds, with a light anamorphic lens character: softly oval out-of-focus highlights in the background, and a fine 35mm film grain.\nImage reference 1 (location Madhopur bazaar): the Madhopur bazaar 100% as in the reference.\nImage reference 2 (character Young Meera): Young Meera, face, hair, body and clothes 100% as in the reference.\nContinuity: Young Meera is clean and unchanged from the reference, with no stain, mark or damage.\nIn frame only: Young Meera and the market crowd. The street runs away from the lens, the shopfronts on the left, the stalls on the right under thinning dust. Meera stands alone in the open middle of the street, near, the glass shopfront behind her; the stalls stand empty across the road, far. Eyelines never at the camera.\nOpening: Meera standing in the middle of the street in thinning dust, her hand lowered at her side, her eyes on the empty stalls across the road.\nMeera speaks aloud 2 times, between 2.2s and 3.0s and between 5.0s and 6.0s, and never again; silent before 2.2s, from 3.0s to 5.0s while she listens, and from 6.0s to the end.\nThe crowd never speaks in this clip.\nMeera is out to find her mother in the dust; once nothing answers her first call she calls again and keeps looking, with persistence.\nPace: quiet and slow after the noise; every shot opens in motion, a listening beat between her two calls.\nS1 0.0-2.0s · medium_wide, from behind Meera over her shoulder, eye level, slow push-in · Meera's back near centre, her hand down at her side; across the street the dust thins and the stall frames emerge empty, a shop shutter on the left half down and rattling; two shoppers far off stumbling out of the dust.\nS2 2.0-3.4s · close, cut at the collarbones, from the front, slightly high, slow push-in · Meera's voice begins at 2.2s and ends at 3.0s, her look passing right of the lens into the thinning dust, her hands loose at her sides; only pale dust behind her.\nS3 3.4-4.8s · close, cut at the collarbones, three-quarter from the shopfront side, eye level, static · her lips closed, her head tilts a little as her eyes search off left of the lens, only the rattle of a loose shutter in the quiet; the dusty street soft behind her.\nS4 4.8-6.4s · close, cut at the collarbones, from the front, slightly high, handheld · Meera turns her head toward the stalls, her voice begins at 5.0s and ends at 6.0s, her look passing left of the lens; only pale dust behind her.\nS5 6.4-8.0s · medium, from the stalls side, eye level, handheld · Meera takes one slow step forward into the thinning dust, her eyes fixed on the empty stalls off left of the lens; the glass shopfront soft behind her.\nS6 8.0-10.0s · extreme_close, brows to lips, from the front, eye level, slow push-in · her eyes stay on the empty place off left of the lens, her lips closed, dust settling on her plaits; only pale dust behind her.\nAll speech is in Hindi. Only the words inside double quotation marks are ever spoken aloud; every voice direction and every other word of this text stays silent.\nS2 (2.2-3.0s) Meera to her mother, a girl's voice, small, light and uncertain, small and questioning: \"मम्मी?\"\nS4 (5.0-6.0s) Meera to her mother, louder and searching: \"कहाँ हो?\"\nNo speech in S1, S3, S5, S6.\nRestrictions:\n- No music of any kind: no score, no soundtrack, no background music, no melody, no drone, no pad, no sting, no swell.\n- No added sound effects: no whoosh, no boom, no impact hit, no riser.\n- Only diegetic sound: the characters' voices and the natural sounds of this place.\n- Background people never copy the face or hair of any image reference; each referenced character appears once, as themselves.\n- No words but the quoted lines, each only inside its own Audio window; outside them no one on screen speaks, whispers or mouths a word.",
+    "duration": 10,
+    "aspect_ratio": "9:16",
+    "resolution": "480p",
+    "draft": true,
+    "generate_audio": true,
+    "bitrate_mode": "high",
+    "medias": [
+     {
+      "value": "f14c9928-fb0a-4696-90b9-de8b00b203f2",
+      "role": "image_references"
+     },
+     {
+      "value": "32dc90ca-b3dc-4355-8e4d-ac57536a2f60",
+      "role": "image_references"
+     },
+     {
+      "value": "54630280-4474-4115-9ee2-688843f54a81",
+      "role": "video_references"
+     }
+    ],
+    "count": 1,
+    "extension_mode": "forward"
+   }
+  }
+ ]
+}

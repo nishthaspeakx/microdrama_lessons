@@ -26,4 +26,18 @@ Notes on the files:
 - The Higgsfield account id has been removed from stored links.
 - Cost of Episode 1: about 322 Higgsfield credits (pictures 37, draft clips 285 including one remade clip).
 
+### Episode 1, revised cut
+
+A second cut made from a written edit prompt, kept beside the first in `madhopur/episode-1/revised/`. Five clips were remade and two (the crash, Suman and the boy) were reused.
+
+| Change | Clip |
+|---|---|
+| The mother simply waves, nobody speaks | `revised/clips/01-bazaar-fireball.mp4` |
+| The girl calls "मम्मी? … कहाँ हो?" with a listening pause | `revised/clips/02-bazaar-meera-line.mp4` |
+| Villagers watch a blazing object cross the sky and feel it land far away (replaces the maize-field scene) | `revised/clips/03-villagers-and-landing.mp4` |
+| A slow tilt up a massive craft towering over the family | `revised/clips/06-craft-reveal.mp4` |
+| The episode ends on the child: blue eyes with a glow and one pulse of light through his kurta | `revised/clips/07-final-child.mp4` |
+
+The revised film is `revised/final/ep1-revised-edited-subtitled-1080x1920.mp4` (1 min 30 s). It cost about 200 credits on top of the first cut.
+
 See [LESSONS.md](LESSONS.md) for what was learned along the way.

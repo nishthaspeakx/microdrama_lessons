@@ -32,3 +32,13 @@ Made on 25 November 2026 with Claude Code driving the Higgsfield short-drama wor
 ## What could not be checked
 
 - Frames can be inspected one a second, but sound and motion cannot. A person still has to listen for specific cues (here, the metallic tick and the silence after the impact) and watch for jumpy cuts.
+
+## Revising a finished episode
+
+- **A change to one clip also remakes the clip that continues it.** Clips 2 and 7 were continuations, so changing clips 1 and 6 meant remaking them too.
+- **Ask for sound in the prompt and allow it in the restrictions.** The standard restriction line forbids "boom" and "impact hit"; the landing scene needed that line rewritten to name the roar, the shattering glass and the one heavy impact.
+- **A crowd scene needs no character references.** Describing the villagers in words, with the bazaar picture as the only reference, kept the place consistent.
+- **Show scale with a reference picture in the film's own shape.** A 9:16 picture of the craft with trees beside it gave the tilt-up reveal its size.
+- **Keep children clothed and move the effect.** The chest marking was shown as light pulsing through the kurta instead of on bare skin.
+- **"Subtle" is not reliably subtle.** The eye glow came out strong; effects like this may need a second take or softer wording such as "barely visible".
+- **Check series continuity before changing a pilot.** Removing the post scene and enlarging the craft both affect later episodes that call back to them.
