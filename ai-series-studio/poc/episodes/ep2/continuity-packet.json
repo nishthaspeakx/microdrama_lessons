@@ -1,0 +1,779 @@
+{
+  "series": "madhopur",
+  "for_episode": 2,
+  "bible_version": 1,
+  "previous_episode": {
+    "number": 1,
+    "title": "आसमान से क्या गिरा?",
+    "title_en": "What fell from the sky?",
+    "summary": "A blazing object crosses the sky over Madhopur in 2014. In the bazaar young Meera loses sight of her parents in the dust of an impact and calls for her mother. Villagers watch the object tear through distant fields and feel one enormous impact. On the farm road, Devendra and Suman Sharma's pickup drops nose-first into a ditch; a small boy is waiting outside the cracked window. Suman asks if he is hurt and he takes her hand. At the field's edge Devendra sees a massive dark blade-shaped craft, five storeys high, with a small open hatch at its base. He whispers Suman's name. The boy holds Suman's hand with both of his; his eyes glow blue and a pulse of light passes through his kurta.",
+    "end_states": [
+      {
+        "who": "suman",
+        "where": "kneeling at the field's edge",
+        "posture": "kneeling",
+        "scene": "s4",
+        "location": "maize_field"
+      },
+      {
+        "who": "boy",
+        "where": "in front of Suman, both hands around hers",
+        "posture": "standing",
+        "scene": "s4",
+        "location": "maize_field"
+      },
+      {
+        "who": "devendra",
+        "where": "a step behind Suman",
+        "posture": "standing",
+        "scene": "s4",
+        "location": "maize_field"
+      }
+    ],
+    "cliffhanger": "The boy, holding Suman's hand beside the towering craft, looks up with glowing blue eyes.",
+    "key_frames": [
+      {
+        "scene": "s1",
+        "which": "first",
+        "t": 0.15,
+        "asset_id": "70329a01a0530bcdf4df4f12dcf676901bc7e77677a380b644d625c8a1c555d3"
+      },
+      {
+        "scene": "s1",
+        "which": "last",
+        "t": 21.3,
+        "asset_id": "8c30f2c71f503f311d655051d47ae3249f2ba4de7fd433a45dfda7fa1d233109"
+      },
+      {
+        "scene": "s2",
+        "which": "first",
+        "t": 21.65,
+        "asset_id": "4a6fce989aaa07958058a33b01199ac640e885a7b9b8b7cfdf74bebd3c2f8481"
+      },
+      {
+        "scene": "s2",
+        "which": "last",
+        "t": 36.041,
+        "asset_id": "340e49935d96d796b14c0553bb4e3a1fec24d21e273fbfb6e73e8baf14af2046"
+      },
+      {
+        "scene": "s3",
+        "which": "first",
+        "t": 36.391,
+        "asset_id": "c6ef6278b79b85623ee9a9cd8d5ab07a550567bc2a5a27b672d79000b0274b2c"
+      },
+      {
+        "scene": "s3",
+        "which": "last",
+        "t": 64.165,
+        "asset_id": "140682597a347f16541e1fdbeecfaebeba4580879c32985674a9e0f206d17372"
+      },
+      {
+        "scene": "s4",
+        "which": "first",
+        "t": 64.515,
+        "asset_id": "5cbf9ac6883f1b44794053a85daffb36b0147545b6e0c314ab9e8f56a4d1c840"
+      },
+      {
+        "scene": "s4",
+        "which": "last",
+        "t": 88.8,
+        "asset_id": "c576bb368262b193a119ebae841911b363ea25751c154d0b7bff06725a79fb9d"
+      },
+      {
+        "scene": "episode",
+        "which": "final_picture",
+        "t": 88.8,
+        "asset_id": "c576bb368262b193a119ebae841911b363ea25751c154d0b7bff06725a79fb9d"
+      }
+    ]
+  },
+  "facts": [
+    {
+      "id": "a71769cd-4f7f-4595-9e5d-7e932f1caf9e",
+      "series_id": "madhopur",
+      "subject_type": "plotline",
+      "subject_key": "e1_cliffhanger",
+      "kind": "cliffhanger",
+      "statement": "The boy, holding Suman's hand beside the towering craft, looks up with glowing blue eyes.",
+      "data": null,
+      "permanence": "temporary",
+      "valid_from": "e1:end",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "e0b60041-7e80-4562-8921-eff2d1074663",
+      "series_id": "madhopur",
+      "subject_type": "character",
+      "subject_key": "meera",
+      "kind": "emotional_state",
+      "statement": "Meera lost sight of her parents in the dust after the impact; their fate is not shown.",
+      "data": null,
+      "permanence": "temporary",
+      "valid_from": "e1:s1",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "a0187236-f123-4a46-9efa-1c9aae7bdf8e",
+      "series_id": "madhopur",
+      "subject_type": "plotline",
+      "subject_key": "cut_from_e1",
+      "kind": "established_fact",
+      "statement": "The revised Episode 1 removed the maize-field post scene with young Yash and young Nikhil; neither appears in Episode 1.",
+      "data": null,
+      "permanence": "permanent",
+      "valid_from": "e1",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "owner (revised cut)",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "28ba496e-16f9-4b23-b625-e064e33dd22a",
+      "series_id": "madhopur",
+      "subject_type": "character",
+      "subject_key": "suman",
+      "kind": "established_fact",
+      "statement": "Suman is 32 and Devendra is 36 in 2014 (owner-stated).",
+      "data": null,
+      "permanence": "permanent",
+      "valid_from": "e1",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "owner",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "70d4f7ca-f335-4c3d-b13c-d4451bfae806",
+      "series_id": "madhopur",
+      "subject_type": "character",
+      "subject_key": "veer",
+      "kind": "established_fact",
+      "statement": "The boy is unnamed in Episode 1; he will be named Veer.",
+      "data": null,
+      "permanence": "temporary",
+      "valid_from": "e1",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "4c5012d5-7384-4d05-ab91-1069021db4e8",
+      "series_id": "madhopur",
+      "subject_type": "world",
+      "subject_key": "madhopur",
+      "kind": "event",
+      "statement": "Villagers in the bazaar watched a blazing object streak overhead and felt one enormous impact in distant fields.",
+      "data": null,
+      "permanence": "permanent",
+      "valid_from": "e1:s2",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "2848065c-a7aa-4c79-9445-bf3330627d8d",
+      "series_id": "madhopur",
+      "subject_type": "character",
+      "subject_key": "suman",
+      "kind": "knowledge",
+      "statement": "Suman and Devendra have seen the craft and the open hatch, and the boy beside it.",
+      "data": null,
+      "permanence": "permanent",
+      "valid_from": "e1:s4",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "db296950-2ae6-4bb1-9ad7-21e712b0c52c",
+      "series_id": "madhopur",
+      "subject_type": "prop",
+      "subject_key": "crash_site",
+      "kind": "object_state",
+      "statement": "A massive dark blade-shaped craft about five storeys high stands in torn earth at the end of a swathe of flattened maize, small oval hatch open at its base.",
+      "data": null,
+      "permanence": "temporary",
+      "valid_from": "e1:s4",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "f4ac637d-94aa-4870-9f56-9c67c9c429e4",
+      "series_id": "madhopur",
+      "subject_type": "prop",
+      "subject_key": "pickup",
+      "kind": "object_state",
+      "statement": "The pale blue pickup is nose-down in the ditch on the farm road, passenger window cracked in a web.",
+      "data": null,
+      "permanence": "temporary",
+      "valid_from": "e1:s3",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "bd14443e-9851-4ff1-9e68-d7c05637e59b",
+      "series_id": "madhopur",
+      "subject_type": "plotline",
+      "subject_key": "meera_parents",
+      "kind": "open_thread",
+      "statement": "What happened to Meera's parents?",
+      "data": null,
+      "permanence": "temporary",
+      "valid_from": "e1:s1",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "10c149f3-561a-4cd0-8d9a-f4fe4b73b8ac",
+      "series_id": "madhopur",
+      "subject_type": "plotline",
+      "subject_key": "veer_origin",
+      "kind": "open_thread",
+      "statement": "Where did the boy come from, and what is the craft?",
+      "data": null,
+      "permanence": "temporary",
+      "valid_from": "e1:s4",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "3d61c102-f689-497c-9f3e-aa40bcb2fbd4",
+      "series_id": "madhopur",
+      "subject_type": "character",
+      "subject_key": "veer",
+      "kind": "physical_state",
+      "statement": "The boy's eyes glowed blue and a pulse of light passed through his kurta, once, at the end of Episode 1.",
+      "data": null,
+      "permanence": "permanent",
+      "valid_from": "e1:s4",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "27066df5-d215-4057-adc9-6aba58ddf591",
+      "series_id": "madhopur",
+      "subject_type": "character",
+      "subject_key": "devendra",
+      "kind": "position",
+      "statement": "Devendra stands a step behind Suman.",
+      "data": null,
+      "permanence": "temporary",
+      "valid_from": "e1:end",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "de73c8f7-54bf-4cad-ad6e-7a4ef3e9df97",
+      "series_id": "madhopur",
+      "subject_type": "character",
+      "subject_key": "suman",
+      "kind": "position",
+      "statement": "Suman kneels at the maize field's edge holding the boy's hands.",
+      "data": null,
+      "permanence": "temporary",
+      "valid_from": "e1:end",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "62bca104-5ea0-481f-aa58-0634a0be2e4d",
+      "series_id": "madhopur",
+      "subject_type": "character",
+      "subject_key": "devendra",
+      "kind": "wardrobe",
+      "statement": "Devendra wears a faded red-and-navy checked shirt, sleeves rolled, khaki trousers.",
+      "data": null,
+      "permanence": "temporary",
+      "valid_from": "e1:s3",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "a4e1c618-db56-4e21-8863-f3ffcc9b6742",
+      "series_id": "madhopur",
+      "subject_type": "character",
+      "subject_key": "meera",
+      "kind": "wardrobe",
+      "statement": "Young Meera wears a powder-blue flowered frock, two plaits with red ribbons.",
+      "data": null,
+      "permanence": "temporary",
+      "valid_from": "e1:s1",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "547be1f2-9a3e-4406-93e2-060c5655137d",
+      "series_id": "madhopur",
+      "subject_type": "character",
+      "subject_key": "suman",
+      "kind": "wardrobe",
+      "statement": "Suman wears a sage-green block-print kameez, oatmeal salwar, pale sage dupatta, single low plait.",
+      "data": null,
+      "permanence": "temporary",
+      "valid_from": "e1:s3",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "eb930c83-f318-4d41-b780-8bccaaf91081",
+      "series_id": "madhopur",
+      "subject_type": "character",
+      "subject_key": "veer",
+      "kind": "wardrobe",
+      "statement": "The boy wears a pale cream kurta and grey pyjama, brown chappals.",
+      "data": null,
+      "permanence": "temporary",
+      "valid_from": "e1:s3",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    },
+    {
+      "id": "8f6c62a5-aa94-4e64-968a-c3e61b7d2dc2",
+      "series_id": "madhopur",
+      "subject_type": "world",
+      "subject_key": "craft",
+      "kind": "world_rule",
+      "statement": "The craft is cool, neutral dark metal against warm earth; one design and one hatch angle across the series.",
+      "data": null,
+      "permanence": "permanent",
+      "valid_from": "bible:v1",
+      "valid_to": null,
+      "story_time": "2014",
+      "source": "approved_episode:e1v2",
+      "confidence": "stated",
+      "supersedes_id": null
+    }
+  ],
+  "open_threads": [
+    "Where did the boy come from, and what is the craft?",
+    "What happened to Meera's parents?"
+  ],
+  "characters": [
+    {
+      "key": "devendra",
+      "name": "Devendra",
+      "protected": 0,
+      "age_statement": "36",
+      "age_source": "user",
+      "profile": {
+        "sex": "man",
+        "origin": "central Indian",
+        "skin": "warm brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "short",
+        "hair_texture": "straight",
+        "hair_styling": "brushed back from the face with a little grey at the temples",
+        "facial_hair": "a short neat black moustache and a day of stubble",
+        "build": "broad"
+      },
+      "speech_style": "a man's voice of about 36, a dry quiet baritone, a central Indian Hindi accent, steady and low",
+      "locked": 1,
+      "looks": [
+        {
+          "key": "devendra_2014_checked_shirt",
+          "status": "approved",
+          "wardrobe": [
+            "faded red-and-navy checked cotton shirt with the sleeves rolled to the elbow",
+            "dusty khaki cotton trousers",
+            "worn brown leather sandals"
+          ],
+          "refs": [
+            "face",
+            "outfit",
+            "sheet"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "meera",
+      "name": "Young Meera",
+      "protected": 1,
+      "age_statement": null,
+      "age_source": null,
+      "profile": {
+        "sex": "girl",
+        "origin": "central Indian",
+        "skin": "warm brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "long",
+        "hair_texture": "straight",
+        "hair_styling": "two plaits tied with red ribbons",
+        "facial_hair": null,
+        "build": "slim"
+      },
+      "speech_style": "a girl's voice, small, light and uncertain",
+      "locked": 1,
+      "looks": [
+        {
+          "key": "meera_2014",
+          "status": "approved",
+          "wardrobe": [
+            "powder-blue cotton frock with small white flowers and a round collar",
+            "white cotton leggings",
+            "red canvas shoes"
+          ],
+          "refs": [
+            "face",
+            "outfit",
+            "sheet"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "meera_father",
+      "name": "Meera's father",
+      "protected": 0,
+      "age_statement": null,
+      "age_source": "user_adult",
+      "profile": {
+        "sex": "man",
+        "origin": "central Indian",
+        "skin": "medium brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "short",
+        "hair_texture": "straight",
+        "hair_styling": "side-parted and combed flat",
+        "facial_hair": "a thick black moustache",
+        "build": "lean"
+      },
+      "speech_style": "a man's voice, mild and even",
+      "locked": 1,
+      "looks": [
+        {
+          "key": "meera_father_2014",
+          "status": "approved",
+          "wardrobe": [
+            "white cotton kurta",
+            "grey cotton trousers",
+            "brown leather sandals"
+          ],
+          "refs": [
+            "face",
+            "outfit",
+            "sheet"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "meera_mother",
+      "name": "Meera's mother",
+      "protected": 0,
+      "age_statement": null,
+      "age_source": "user_adult",
+      "profile": {
+        "sex": "woman",
+        "origin": "central Indian",
+        "skin": "medium brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "long",
+        "hair_texture": "wavy",
+        "hair_styling": "a low bun at the nape",
+        "facial_hair": null,
+        "build": "average"
+      },
+      "speech_style": "a woman's voice, warm and bright",
+      "locked": 1,
+      "looks": [
+        {
+          "key": "meera_mother_2014",
+          "status": "approved",
+          "wardrobe": [
+            "maroon cotton saree with a thin gold border",
+            "cream cotton blouse with short sleeves",
+            "flat tan leather sandals"
+          ],
+          "refs": [
+            "face",
+            "outfit",
+            "sheet"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "nikhil",
+      "name": "The teenage boy",
+      "protected": 1,
+      "age_statement": null,
+      "age_source": null,
+      "profile": {
+        "sex": "boy",
+        "origin": "central Indian",
+        "skin": "medium brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "short",
+        "hair_texture": "straight",
+        "hair_styling": "a longer fringe falling over the forehead",
+        "facial_hair": null,
+        "build": "lanky"
+      },
+      "speech_style": "a boy's voice, hoarse, strained and urgent",
+      "locked": 0,
+      "looks": [
+        {
+          "key": "nikhil_young_2014_red_s",
+          "status": "approved_unused",
+          "wardrobe": [
+            "off-white cotton shirt with a large red letter S painted across the chest",
+            "dark brown cotton trousers",
+            "black rubber slippers"
+          ],
+          "refs": [
+            "face",
+            "outfit",
+            "sheet"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "suman",
+      "name": "Suman",
+      "protected": 0,
+      "age_statement": "32",
+      "age_source": "user",
+      "profile": {
+        "sex": "woman",
+        "origin": "central Indian",
+        "skin": "warm brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "long",
+        "hair_texture": "straight",
+        "hair_styling": "a single low plait over one shoulder",
+        "facial_hair": null,
+        "build": "slim"
+      },
+      "speech_style": "a woman's voice of about 32, warm and low, a soft central Indian Hindi accent, gentle and steady",
+      "locked": 1,
+      "looks": [
+        {
+          "key": "suman_2014_field",
+          "status": "approved",
+          "wardrobe": [
+            "sage-green cotton kameez with small white block print",
+            "oatmeal cotton salwar",
+            "pale sage cotton dupatta",
+            "flat brown leather sandals"
+          ],
+          "refs": [
+            "face",
+            "outfit",
+            "sheet"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "veer",
+      "name": "Veer",
+      "protected": 1,
+      "age_statement": null,
+      "age_source": null,
+      "profile": {
+        "sex": "boy",
+        "origin": "central Indian",
+        "skin": "light brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "short",
+        "hair_texture": "straight",
+        "hair_styling": "a soft tousled crop",
+        "facial_hair": null,
+        "build": "small and slight"
+      },
+      "speech_style": "a child's voice, small and quiet",
+      "locked": 1,
+      "looks": [
+        {
+          "key": "veer_age5_kurta_2014",
+          "status": "approved",
+          "wardrobe": [
+            "pale cream cotton kurta",
+            "soft grey cotton pyjama trousers",
+            "plain brown rubber chappals"
+          ],
+          "refs": [
+            "face",
+            "outfit",
+            "sheet"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "yash",
+      "name": "Young Yash",
+      "protected": 1,
+      "age_statement": null,
+      "age_source": null,
+      "profile": {
+        "sex": "boy",
+        "origin": "central Indian",
+        "skin": "medium brown",
+        "eyes": "dark brown",
+        "hair_colour": "black",
+        "hair_length": "short",
+        "hair_texture": "wavy",
+        "hair_styling": "cropped close and brushed forward",
+        "facial_hair": null,
+        "build": "slim"
+      },
+      "speech_style": "a boy's voice, quick and breathless",
+      "locked": 0,
+      "looks": [
+        {
+          "key": "yash_young_2014",
+          "status": "approved_unused",
+          "wardrobe": [
+            "faded grey cotton t-shirt with a crew neck",
+            "navy cotton shorts",
+            "dusty white canvas shoes"
+          ],
+          "refs": [
+            "face",
+            "outfit",
+            "sheet"
+          ]
+        }
+      ]
+    }
+  ],
+  "locations": [
+    {
+      "key": "bazaar",
+      "name": "Madhopur bazaar",
+      "description": "a dusty small-town market street in central India in 2014, low concrete shopfronts with hand-painted Hindi signboards and canvas awnings, wooden stalls, a packed-earth road"
+    },
+    {
+      "key": "farm_road",
+      "name": "Farm road",
+      "description": "a straight dirt farm road in central India with two wheel ruts, a dry irrigation ditch along its right side, the edge of a maize field beyond the ditch, neem trees and power poles on the left"
+    },
+    {
+      "key": "maize_field",
+      "name": "Maize field",
+      "description": "a ripe maize field in central India, rows of tall maize two metres high, dry red-brown earth between the rows, a weathered wooden post in a small clearing, open sky"
+    }
+  ],
+  "props": [
+    {
+      "key": "crash_site",
+      "name": "Crash site",
+      "description": "a massive dark blade-shaped craft about five storeys high standing in torn earth at the end of a swathe of flattened maize, neem trees a third of its height beside it, a small low oval hatch open at its base"
+    },
+    {
+      "key": "paper_bag",
+      "name": "Paper bag",
+      "description": "a brown kraft paper grocer's bag with its top folded down twice"
+    },
+    {
+      "key": "pickup",
+      "name": "Pickup",
+      "description": "an old 1990s single-cab pickup truck, pale faded blue, dented steel, a wooden-planked cargo bed with low steel sides"
+    }
+  ],
+  "style": {
+    "style": "live action",
+    "card_style": {
+      "font": "Cormorant Garamond",
+      "weight": 600,
+      "italic": false,
+      "size": 100,
+      "upper": true,
+      "track": 8,
+      "fill": [
+        246,
+        238,
+        220
+      ],
+      "shadow": "soft",
+      "caption_font": "Cormorant Garamond",
+      "caption_weight": 500,
+      "caption_size": 76,
+      "caption_fill": [
+        226,
+        190,
+        120
+      ],
+      "caption_upper": true,
+      "caption_track": 10,
+      "rule": "accent",
+      "rule_width": 0.35,
+      "rule_size": 4,
+      "rule_color": [
+        226,
+        190,
+        120
+      ],
+      "align": "left",
+      "y": 0.74,
+      "shade": 0.25
+    },
+    "rules": [
+      "Keep faces large and eyes readable on a phone; leave top and bottom of frame for app UI.",
+      "Still or gently moving frames for family scenes; abrupt camera only for impacts and emergencies.",
+      "Kitchen: single warm practical light, subdued shadows, straight eye-level singles.",
+      "Spacecraft: cool neutral metal against warm earth; one design, one hatch angle.",
+      "Dialogue in Devanagari; subtitles from the script text."
+    ]
+  }
+}

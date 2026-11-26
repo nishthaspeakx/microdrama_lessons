@@ -42,3 +42,7 @@ Made on 25 November 2026 with Claude Code driving the Higgsfield short-drama wor
 - **Keep children clothed and move the effect.** The chest marking was shown as light pulsing through the kurta instead of on bare skin.
 - **"Subtle" is not reliably subtle.** The eye glow came out strong; effects like this may need a second take or softer wording such as "barely visible".
 - **Check series continuity before changing a pilot.** Removing the post scene and enlarging the craft both affect later episodes that call back to them.
+
+## Seeking frames with FFmpeg
+
+Putting `-ss` before `-i` (fast seek) returned wrong frames from the final Episode 1 master: identical frames for different times and black for a picture frame. Seek after the input when the exact frame matters (key frames, QC samples).

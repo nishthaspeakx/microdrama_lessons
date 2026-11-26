@@ -90,3 +90,16 @@ All of these need the owner's decision and payment details; none can be created 
 ## 7. Integration tests before Phase 2
 
 For each adapter: submit one minimal job, receive the webhook, fetch and store the output, check the probed duration and resolution against the request, record the actual cost against the estimate, and simulate a webhook loss to prove the polling path. Results are written back into the capability matrix and price table.
+
+## 8. Updates from Phase 0 (26 November 2026)
+
+Reading the Higgsfield API documentation in detail changed four things:
+
+1. **Prices can be checked for free.** `POST /estimate/{endpoint_id}` returns the price in USD for exactly the request you would send, without generating. The resolution question is answered with estimate calls, not paid test generations. The adapter estimates every request before the ledger reserves it.
+2. **Higgsfield supports idempotency natively.** An `Idempotency-Key` header returns the original request and makes no new charge when the same parameters are resent. The studio sends its own idempotency key in this header.
+3. **Seedream is not on the Higgsfield API.** The Episode 1 reference images were made with Seedream through the website. For new references the PoC uses Nano Banana 2.1 through the Gemini API. The fallback is Grok Image 2.0 on Higgsfield, which takes up to 10 references.
+4. **Request shapes are confirmed.**
+   - Reference-to-video takes up to 9 `image_urls`, 4 to 15 s, 480p to 4k, `aspect_ratio` and `generate_audio`, which is on by default and must be turned off for units that will be dubbed.
+   - Image-to-video takes `image_url` and an optional `end_image_url`.
+   - Reference images must be public URLs from the upload endpoint.
+   - There is no seed parameter.

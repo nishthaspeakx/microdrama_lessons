@@ -1,0 +1,473 @@
+{
+  "episode": 2,
+  "title": "आज से ये हमारा बेटा है",
+  "title_en": "From today he is our son",
+  "target_seconds": 110,
+  "source": "episodes/ep2/script.md",
+  "produced_by": "Claude Code session acting as the script_parser role (hand-checked reference parse; the API role output will be compared with it)",
+  "scenes": [
+    {
+      "id": "s1",
+      "heading": "INT. SHARMA FARMHOUSE, KITCHEN · NIGHT · 2014",
+      "window": [
+        0,
+        29
+      ],
+      "location": "sharma_kitchen",
+      "hour": "night",
+      "story_time": "2014, the night after Episode 1",
+      "continues_from": "e1:end",
+      "present": [
+        {
+          "who": "veer",
+          "age": "about 5",
+          "look_needed": "veer_age5_checked_shirt"
+        },
+        {
+          "who": "devendra",
+          "look_needed": "devendra_2014_kitchen"
+        },
+        {
+          "who": "suman",
+          "look_needed": "suman_2014_kitchen"
+        }
+      ],
+      "lines": [
+        {
+          "id": "e2_l01",
+          "kind": "action",
+          "who": null,
+          "text": "Match cut: the same little hand that held Suman's in the field reaches for one piece of गुड़. The boy is wrapped in Devendra's checked shirt, sleeves rolled up twice. He offers the piece to Devendra before taking one for himself. Devendra accepts. The boy smiles at him, then at Suman.",
+          "touches": [
+            "veer",
+            "devendra"
+          ]
+        },
+        {
+          "id": "e2_l02",
+          "kind": "action",
+          "who": null,
+          "text": "At the sink, Devendra lowers his voice."
+        },
+        {
+          "id": "e2_l03",
+          "kind": "dialogue",
+          "who": "devendra",
+          "text": "सुबह लोग पूछेंगे, ये बच्चा कहाँ से आया।",
+          "delivery": "low, at the sink, out of the boy's hearing"
+        },
+        {
+          "id": "e2_l04",
+          "kind": "dialogue",
+          "who": "suman",
+          "text": "हम कहेंगे, हमें खेत में मिला।",
+          "delivery": "quiet"
+        },
+        {
+          "id": "e2_l05",
+          "kind": "dialogue",
+          "who": "devendra",
+          "text": "और जो खेत में उसके पीछे था?",
+          "delivery": "low"
+        },
+        {
+          "id": "e2_l06",
+          "kind": "action",
+          "who": null,
+          "text": "Suman looks back. The boy has quietly put a piece of गुड़ beside her plate too."
+        },
+        {
+          "id": "e2_l07",
+          "kind": "dialogue",
+          "who": "suman",
+          "text": "आज से ये हमारा बेटा है, देवेंद्र।",
+          "delivery": "dry, decided; Suman stays on screen for the whole line",
+          "decisive": true
+        },
+        {
+          "id": "e2_l08",
+          "kind": "action",
+          "who": null,
+          "text": "Devendra takes that in. He goes back to the table, tears a roti in half and gives the boy the bigger piece.",
+          "music_cue": "Home enters here"
+        },
+        {
+          "id": "e2_l09",
+          "kind": "dialogue",
+          "who": "devendra",
+          "text": "वीर नाम कैसा रहेगा?"
+        },
+        {
+          "id": "e2_l10",
+          "kind": "action",
+          "who": null,
+          "text": "Suman tries the name out loud. The boy looks up when she says it."
+        },
+        {
+          "id": "e2_l11",
+          "kind": "dialogue",
+          "who": "suman",
+          "text": "वीर।"
+        }
+      ],
+      "sound": [
+        "Fingers on the steel plate under the match cut.",
+        "Keep the adoption line dry.",
+        "Home cue (felt piano, guitar, soft bass, no percussion) enters on the roti."
+      ]
+    },
+    {
+      "id": "s2",
+      "heading": "INT./EXT. SHARMA FARM · GROWING-UP MONTAGE",
+      "window": [
+        29,
+        60
+      ],
+      "location": "sharma_farm (several)",
+      "hour": "day",
+      "story_time": "2017 to 2026",
+      "montage": true,
+      "beats": [
+        {
+          "id": "s2a",
+          "label": "Age eight, kitchen",
+          "location": "sharma_kitchen",
+          "hour": "day",
+          "present": [
+            {
+              "who": "veer",
+              "age": "about 8",
+              "look_needed": "veer_age8"
+            },
+            {
+              "who": "suman",
+              "look_needed": "suman_montage"
+            }
+          ],
+          "lines": [
+            {
+              "id": "e2_l12",
+              "kind": "action",
+              "who": null,
+              "text": "A steel tumbler slips off the table. Veer catches it so fast that Suman is still reaching for it when he places it upright. The water barely spills. He goes back to eating.",
+              "power": "speed"
+            }
+          ]
+        },
+        {
+          "id": "s2b",
+          "label": "Age eleven, field",
+          "location": "sharma_field_pump",
+          "hour": "day",
+          "present": [
+            {
+              "who": "veer",
+              "age": "about 11",
+              "look_needed": "veer_age11"
+            },
+            {
+              "who": "devendra",
+              "look_needed": "devendra_montage"
+            }
+          ],
+          "lines": [
+            {
+              "id": "e2_l13",
+              "kind": "action",
+              "who": null,
+              "text": "An irrigation pump starts rattling. Devendra calls for a spanner. Before he finishes asking, Veer is back from the barn with it. Devendra looks down the full length of the field, then at Veer.",
+              "power": "speed",
+              "note": "Devendra's call has no scripted words; ambiguity"
+            }
+          ]
+        },
+        {
+          "id": "s2c",
+          "label": "Age thirteen, barn",
+          "location": "sharma_barn",
+          "hour": "day",
+          "present": [
+            {
+              "who": "veer",
+              "age": "about 13",
+              "look_needed": "veer_age13"
+            },
+            {
+              "who": "devendra",
+              "look_needed": "devendra_montage"
+            },
+            {
+              "who": "suman",
+              "look_needed": "suman_montage",
+              "where": "doorway"
+            }
+          ],
+          "lines": [
+            {
+              "id": "e2_l14",
+              "kind": "action",
+              "who": null,
+              "text": "Devendra kneels to retrieve a dropped bolt by the tractor. Veer grabs the back of the tractor and lifts it a few inches to help. Devendra freezes. Veer sets it down as gently as he can.",
+              "power": "strength"
+            },
+            {
+              "id": "e2_l15",
+              "kind": "dialogue",
+              "who": "devendra",
+              "text": "वीर। स्कूल में ऐसा कुछ किया है?",
+              "delivery": "quiet, concerned"
+            },
+            {
+              "id": "e2_l16",
+              "kind": "action",
+              "who": null,
+              "text": "Veer shakes his head. Devendra nods once. Suman has seen the whole thing from the doorway."
+            }
+          ]
+        },
+        {
+          "id": "s2d",
+          "label": "Age seventeen, farm road",
+          "location": "sharma_farm_gate_road",
+          "hour": "morning",
+          "present": [
+            {
+              "who": "veer",
+              "age": "17",
+              "look_needed": "veer_age17_school"
+            },
+            {
+              "who": "suman",
+              "look_needed": "suman_2026"
+            }
+          ],
+          "lines": [
+            {
+              "id": "e2_l17",
+              "kind": "action",
+              "who": null,
+              "text": "Suman calls from the same kitchen door. The yellow school bus is already well past the gate."
+            },
+            {
+              "id": "e2_l18",
+              "kind": "dialogue",
+              "who": "suman",
+              "text": "वीर! Bus निकल गई!",
+              "delivery": "called out from the door"
+            },
+            {
+              "id": "e2_l19",
+              "kind": "dialogue",
+              "who": "veer",
+              "text": "मिलते हैं शाम को, माँ।",
+              "delivery": "already moving"
+            },
+            {
+              "id": "e2_l20",
+              "kind": "action",
+              "who": null,
+              "text": "Veer takes off. At the school gate, he smooths his hair down just as the bus pulls in behind him.",
+              "power": "speed"
+            }
+          ]
+        }
+      ],
+      "sound": [
+        "Tumbler, pump rattle and tractor settling mark the montage beats.",
+        "Gentle guitar and drum build (Home cue with light drum pulse)."
+      ],
+      "edit": [
+        "Cut between ages on actions and matching eyelines.",
+        "Stay on the parents long enough to see surprise turn into concern."
+      ]
+    },
+    {
+      "id": "s3",
+      "heading": "EXT. SCHOOL GATE · MORNING",
+      "window": [
+        60,
+        82
+      ],
+      "location": "school_gate",
+      "hour": "morning",
+      "story_time": "2026",
+      "present": [
+        {
+          "who": "veer",
+          "look_needed": "veer_age17_school"
+        },
+        {
+          "who": "meera",
+          "look_needed": "meera_2026_school"
+        },
+        {
+          "who": "raghav",
+          "look_needed": "raghav_2026",
+          "new_character": true
+        }
+      ],
+      "lines": [
+        {
+          "id": "e2_l21",
+          "kind": "action",
+          "who": null,
+          "text": "Meera catches up with Veer. A green stone hangs from her necklace.",
+          "props": [
+            "green_pendant"
+          ]
+        },
+        {
+          "id": "e2_l22",
+          "kind": "dialogue",
+          "who": "meera",
+          "text": "आज भी bus छूट गई?",
+          "delivery": "teasing"
+        },
+        {
+          "id": "e2_l23",
+          "kind": "dialogue",
+          "who": "veer",
+          "text": "हाँ। पहुँच तो गया।"
+        },
+        {
+          "id": "e2_l24",
+          "kind": "action",
+          "who": null,
+          "text": "She leans in to hand him the notebook he left in class. His grip gives out. The notebook drops.",
+          "props": [
+            "notebook",
+            "green_pendant"
+          ],
+          "power": "weakened by the pendant"
+        },
+        {
+          "id": "e2_l25",
+          "kind": "action",
+          "who": null,
+          "text": "Raghav calls her over from the gate. As she moves away, Veer can close his hand again.",
+          "note": "Raghav's call has no scripted words; ambiguity"
+        }
+      ],
+      "sound": [
+        "Pull the build back when the pendant weakens Veer.",
+        "Short low pressure sound under his reaction."
+      ]
+    },
+    {
+      "id": "s4",
+      "heading": "EXT. RIVER BRIDGE · LATE AFTERNOON",
+      "window": [
+        82,
+        110
+      ],
+      "location": "river_bridge",
+      "hour": "late afternoon",
+      "story_time": "2026",
+      "present": [
+        {
+          "who": "veer",
+          "look_needed": "veer_age17_school"
+        },
+        {
+          "who": "yash",
+          "look_needed": "yash_2026_driver"
+        }
+      ],
+      "lines": [
+        {
+          "id": "e2_l26",
+          "kind": "action",
+          "who": null,
+          "text": "Veer pauses at the railing on his way home."
+        },
+        {
+          "id": "e2_l27",
+          "kind": "action",
+          "who": null,
+          "text": "Cut to Yash in a sports car approaching the bridge. A coil of wire lies in his lane. He swerves. The car slides toward Veer.",
+          "props": [
+            "sports_car",
+            "wire_coil"
+          ]
+        },
+        {
+          "id": "e2_l28",
+          "kind": "action",
+          "who": null,
+          "text": "Final shots. Veer turns into the headlights. A hard impact. The railing breaks. The car and Veer go over the edge.",
+          "peril": true
+        },
+        {
+          "id": "e2_l29",
+          "kind": "action",
+          "who": null,
+          "text": "Underwater, the headlights reveal Veer floating motionless as the car sinks past him.",
+          "peril": true,
+          "cliffhanger": true
+        },
+        {
+          "id": "e2_l30",
+          "kind": "action",
+          "who": null,
+          "text": "Cut to black."
+        }
+      ],
+      "sound": [
+        "Intercut car, wire and Veer with progressively shorter shots.",
+        "At impact cut the music.",
+        "One distinct splash, then muffled underwater sound.",
+        "Hold the floating shot through black."
+      ],
+      "edit": [
+        "Establish which direction the car comes from.",
+        "Save the same underwater frame for Episode 3's opening."
+      ]
+    }
+  ],
+  "dialogue_lines": 11,
+  "new_requirements": {
+    "characters": [
+      {
+        "key": "raghav",
+        "note": "New in Episode 2; age not stated; present-day classmate"
+      }
+    ],
+    "looks": [
+      "veer_age5_checked_shirt",
+      "veer_age8",
+      "veer_age11",
+      "veer_age13",
+      "veer_age17_school",
+      "suman_2014_kitchen",
+      "devendra_2014_kitchen",
+      "suman_montage",
+      "devendra_montage",
+      "suman_2026",
+      "meera_2026_school",
+      "raghav_2026",
+      "yash_2026_driver"
+    ],
+    "locations": [
+      "sharma_kitchen (night, day)",
+      "sharma_field_pump",
+      "sharma_barn",
+      "sharma_farm_gate_road",
+      "school_gate",
+      "river_bridge",
+      "underwater"
+    ],
+    "props": [
+      "gur and steel plate",
+      "roti",
+      "steel tumbler",
+      "irrigation pump",
+      "spanner",
+      "tractor",
+      "yellow school bus",
+      "notebook",
+      "green_pendant (series-critical)",
+      "sports_car",
+      "wire_coil"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["episode", "title", "scenes", "new_characters"],
+  "properties": {
+    "episode": {"type": "integer"},
+    "title": {"type": "string"},
+    "new_characters": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["key", "name", "note"],
+      "properties": {"key": {"type": "string"}, "name": {"type": "string"}, "note": {"type": "string"}}}},
+    "scenes": {"type": "array", "items": {"$ref": "#/$defs/scene"}}
+  },
+  "$defs": {
+    "line": {"type": "object", "additionalProperties": false, "required": ["id", "kind", "who", "text", "note", "peril"],
+      "properties": {"id": {"type": "string"}, "kind": {"type": "string", "enum": ["action", "dialogue"]},
+        "who": {"type": ["string", "null"]}, "text": {"type": "string"}, "note": {"type": ["string", "null"]}, "peril": {"type": "boolean"}}},
+    "present": {"type": "object", "additionalProperties": false, "required": ["who", "age"],
+      "properties": {"who": {"type": "string"}, "age": {"type": ["string", "null"]}}},
+    "beat": {"type": "object", "additionalProperties": false, "required": ["id", "label", "location", "hour", "present", "lines"],
+      "properties": {"id": {"type": "string"}, "label": {"type": "string"}, "location": {"type": "string"}, "hour": {"type": "string"},
+        "present": {"type": "array", "items": {"$ref": "#/$defs/present"}}, "lines": {"type": "array", "items": {"$ref": "#/$defs/line"}}}},
+    "scene": {"type": "object", "additionalProperties": false,
+      "required": ["id", "heading", "window", "location", "hour", "present", "lines", "beats", "sound", "edit"],
+      "properties": {"id": {"type": "string"}, "heading": {"type": "string"},
+        "window": {"type": "array", "items": {"type": "number"}}, "location": {"type": "string"}, "hour": {"type": "string"},
+        "present": {"type": "array", "items": {"$ref": "#/$defs/present"}},
+        "lines": {"type": "array", "items": {"$ref": "#/$defs/line"}},
+        "beats": {"type": "array", "items": {"$ref": "#/$defs/beat"}},
+        "sound": {"type": "array", "items": {"type": "string"}}, "edit": {"type": "array", "items": {"type": "string"}}}}
+  }
+}

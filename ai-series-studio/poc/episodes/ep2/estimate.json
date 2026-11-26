@@ -1,0 +1,26 @@
+{
+  "price_table": "2026-11-26",
+  "video": {
+    "model": "higgsfield.seedance-2.0",
+    "per_second_usd": 0.0804,
+    "rate_verified": false,
+    "seconds_one_pass": 134,
+    "retake_factor": 2.5,
+    "test_seconds": 24,
+    "seconds_generated": 359,
+    "usd": 28.86
+  },
+  "images_usd": 5.54,
+  "tts_usd": 0.1,
+  "lipsync_usd": 1.83,
+  "upscale_usd": 2.2,
+  "llm_usd": [
+    15,
+    30
+  ],
+  "total_usd": [
+    53.53,
+    80.08
+  ],
+  "warning": "higgsfield.seedance-2.0 rate is not verified for the target resolution; settle before spending"
+}

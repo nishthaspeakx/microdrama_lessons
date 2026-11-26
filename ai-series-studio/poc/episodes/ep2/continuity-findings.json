@@ -1,0 +1,174 @@
+{
+  "episode": 2,
+  "checked_against": "episodes/ep2/continuity-packet.json (Bible v1)",
+  "produced_by": "Claude Code session acting as the continuity_guardian role (reference output for the role's test set)",
+  "counts": {
+    "critical": 0,
+    "major": 5,
+    "minor": 4,
+    "info": 2
+  },
+  "findings": [
+    {
+      "id": "C1",
+      "severity": "major",
+      "kind": "canon",
+      "lines": [
+        "e2_l03",
+        "e2_l04",
+        "e2_l05"
+      ],
+      "finding": "The cover story assumes the craft is the family's secret, but the revised Episode 1 shows a five-storey craft whose arrival the whole town watched.",
+      "evidence": [
+        "fact: villagers in the bazaar watched the object and felt one enormous impact (e1:s2)",
+        "fact: the craft is about five storeys high (e1:s4)"
+      ],
+      "proposal": "Episode 2's lines still play: the town saw something fall but not the boy. The bigger problem is Episode 3's storm-cellar reveal, which cannot hide a five-storey craft. Decide before Episode 3: the craft sinks into the earth, the authorities fence the site, or the craft is made small again.",
+      "blocks": "Episode 3, not Episode 2"
+    },
+    {
+      "id": "C2",
+      "severity": "major",
+      "kind": "wardrobe",
+      "lines": [
+        "e2_l01"
+      ],
+      "finding": "The boy wears Devendra's checked shirt, so Devendra cannot also wear it in the kitchen.",
+      "evidence": [
+        "fact: Devendra wears the faded red-and-navy checked shirt (from e1:s3, still valid)"
+      ],
+      "proposal": "Close the shirt fact for Devendra at the start of Episode 2 and give him a plain off-white cotton vest with a grey gamchha over one shoulder for the kitchen. Suman keeps her sage-green kameez with the dupatta off.",
+      "blocks": "Kitchen looks"
+    },
+    {
+      "id": "C3",
+      "severity": "major",
+      "kind": "match_cut",
+      "lines": [
+        "e2_l01"
+      ],
+      "finding": "The script matches 'the same little hand that held Suman's', but Episode 1's final picture is the boy's face with glowing eyes, not his hand.",
+      "evidence": [
+        "key frame: episode final_picture shows the boy chest-up, eyes glowing",
+        "key frame: s4 first shows the boy's hand in Suman's"
+      ],
+      "proposal": "Match from Episode 1's hand-hold frame (scene 4) to the hand reaching for गुड़. For the trailer or recap, the cut runs: glowing eyes, hands, kitchen hand.",
+      "blocks": "Unit u01 first frame"
+    },
+    {
+      "id": "C4",
+      "severity": "major",
+      "kind": "safety",
+      "lines": [
+        "e2_l27",
+        "e2_l28",
+        "e2_l29"
+      ],
+      "finding": "The bridge crash puts two protected characters, Veer and Yash, in a violent accident and ends on Veer floating motionless underwater.",
+      "evidence": [
+        "character veer: protected (no adult age stated; 17 in this scene)",
+        "character yash: protected (child in 2014, so about 17 in 2026)"
+      ],
+      "proposal": "Treat it as non-graphic peril: no blood or injury detail, impact implied by the cut and sound, the underwater shot as a silhouette in the headlight beams with clothes intact. Some providers may still refuse it; the plan keeps a fallback of a wide underwater shot with Veer small in frame.",
+      "blocks": "Units u11 to u14; owner approval of the treatment"
+    },
+    {
+      "id": "C5",
+      "severity": "major",
+      "kind": "legal_plausibility",
+      "lines": [
+        "e2_l27"
+      ],
+      "finding": "Yash drives a sports car, but he was a child in 2014 and is therefore about 17 in 2026; India's minimum age for a car licence is 18.",
+      "evidence": [
+        "fact: Yash appears as a child in the 2014 references",
+        "series config: twelve-year jump"
+      ],
+      "proposal": "Either state Yash's age as 18 (and Meera's and Raghav's if they are classmates) or make underage driving part of the story. The owner decides; the plan assumes Yash is stated as 18.",
+      "blocks": "Yash's look and protected flag"
+    },
+    {
+      "id": "C6",
+      "severity": "minor",
+      "kind": "introduction",
+      "lines": [
+        "e2_l27"
+      ],
+      "finding": "Yash's childhood scene was cut from the revised Episode 1, so viewers meet him for the first time behind the wheel.",
+      "evidence": [
+        "fact: the revised Episode 1 removed the post scene with young Yash and young Nikhil"
+      ],
+      "proposal": "Add a name card 'YASH' in the Episode 1 card style on his first shot.",
+      "blocks": "Edit"
+    },
+    {
+      "id": "C7",
+      "severity": "minor",
+      "kind": "new_canon",
+      "lines": [
+        "e2_l21",
+        "e2_l24"
+      ],
+      "finding": "Meera's green-stone pendant weakens Veer. It is series-critical and has no reference yet.",
+      "evidence": [
+        "master document: pendant and roti references to approve; track who wears the pendant"
+      ],
+      "proposal": "Create the pendant as a locked prop with a close reference before any school-gate unit. Add facts: Meera wears it from Episode 2; why it weakens Veer is an open thread.",
+      "blocks": "Prop lock"
+    },
+    {
+      "id": "C8",
+      "severity": "minor",
+      "kind": "missing_dialogue",
+      "lines": [
+        "e2_l13",
+        "e2_l25"
+      ],
+      "finding": "Devendra 'calls for a spanner' and Raghav 'calls her over' with no scripted words.",
+      "evidence": [],
+      "proposal": "Proposed lines for approval: Devendra 'वीर, पाना लाना!' and Raghav 'मीरा!'. Otherwise both stay off-mic as ambience.",
+      "blocks": "Voice lines"
+    },
+    {
+      "id": "C9",
+      "severity": "minor",
+      "kind": "location_design",
+      "lines": [
+        "e2_l17"
+      ],
+      "finding": "Suman calls 'from the same kitchen door' while the bus passes the gate, so the kitchen door must face the yard, gate and road.",
+      "evidence": [],
+      "proposal": "Design the Sharma farmhouse so the kitchen door opens onto the yard with the gate and farm road in view; approve the exterior view with the kitchen views.",
+      "blocks": "Kitchen location lock"
+    },
+    {
+      "id": "C10",
+      "severity": "info",
+      "kind": "timeline",
+      "lines": [],
+      "finding": "Ages check out: 2014 plus twelve years is 2026; Veer goes from about 5 to 17; Suman 32 to 44 and Devendra 36 to 48 allow the subtle aging the master document asks for.",
+      "evidence": [
+        "fact: Suman 32 and Devendra 36 in 2014 (owner-stated)"
+      ],
+      "proposal": "No change.",
+      "blocks": "None"
+    },
+    {
+      "id": "C11",
+      "severity": "info",
+      "kind": "powers",
+      "lines": [
+        "e2_l12",
+        "e2_l13",
+        "e2_l14",
+        "e2_l20"
+      ],
+      "finding": "Episode 1 showed glowing eyes; Episode 2 shows speed and strength with no glow. This is consistent but adds canon.",
+      "evidence": [
+        "fact: the boy's eyes glowed once at the end of Episode 1"
+      ],
+      "proposal": "Add facts at close-out: Veer is fast and strong from childhood; his parents know and hide it; the eye glow has not returned.",
+      "blocks": "Close-out"
+    }
+  ]
+}

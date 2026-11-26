@@ -1,0 +1,4 @@
+anthropic>=0.84
+numpy>=2.0
+opencv-python>=4.10
+requests>=2.32

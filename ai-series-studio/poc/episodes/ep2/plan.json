@@ -1,0 +1,443 @@
+{
+  "episode": 2,
+  "bible_version": 1,
+  "target_seconds": 110,
+  "produced_by": "Claude Code session acting as the planner role (reference output); estimate by studio/estimate.py",
+  "generation": {
+    "model": "higgsfield.seedance-2.0",
+    "fallback": "kling.4.0.720p",
+    "aspect": "9:16",
+    "draft_resolution": "480p",
+    "final_resolution": "decide after the resolution test",
+    "native_audio": "only on the dialogue-path test units",
+    "retake_factor": 2.5,
+    "high_factor": 1.4,
+    "tests": [
+      {
+        "key": "T1",
+        "seconds": 0,
+        "purpose": "Resolution and price test, free: call POST /estimate/bytedance/seedance-2.0/reference-to-video for the same 8 s request at 480p, 720p, 1080p and 4k. No generation needed."
+      },
+      {
+        "key": "T2",
+        "seconds": 12,
+        "purpose": "Dialogue path A: unit u02 with TTS lines, then lip-sync."
+      },
+      {
+        "key": "T3",
+        "seconds": 12,
+        "purpose": "Dialogue path B: unit u02 with native audio, then voice conversion."
+      }
+    ]
+  },
+  "units": [
+    {
+      "key": "u01",
+      "scene": "s1",
+      "seconds": 10,
+      "shots": [
+        "hand reaches for गुड़ (match from E1 hand-hold)",
+        "boy offers piece to Devendra",
+        "Devendra accepts",
+        "boy smiles at Devendra, then Suman"
+      ],
+      "references": [
+        "look:veer_age5_checked_shirt",
+        "look:devendra_2014_kitchen",
+        "look:suman_2014_kitchen",
+        "view:sharma_kitchen:night_wide",
+        "prop:gur_plate"
+      ],
+      "line_ids": [
+        "e2_l01"
+      ],
+      "method": "first_frame",
+      "first_frame": "keyframe: close on the small hand over the steel plate, checked sleeve rolled twice",
+      "notes": "C3: match from E1 scene 4 hand frame"
+    },
+    {
+      "key": "u02",
+      "scene": "s1",
+      "seconds": 12,
+      "shots": [
+        "Devendra at the sink, low",
+        "Suman single",
+        "Devendra single"
+      ],
+      "references": [
+        "look:devendra_2014_kitchen",
+        "look:suman_2014_kitchen",
+        "view:sharma_kitchen:sink_reverse"
+      ],
+      "line_ids": [
+        "e2_l02",
+        "e2_l03",
+        "e2_l04",
+        "e2_l05"
+      ],
+      "method": "reference",
+      "first_frame": null,
+      "notes": "Dialogue-path test unit"
+    },
+    {
+      "key": "u03",
+      "scene": "s1",
+      "seconds": 12,
+      "shots": [
+        "Suman looks back",
+        "insert: गुड़ beside her plate",
+        "Suman close-up, adoption line, held",
+        "Devendra listening"
+      ],
+      "references": [
+        "look:suman_2014_kitchen",
+        "look:devendra_2014_kitchen",
+        "look:veer_age5_checked_shirt",
+        "view:sharma_kitchen:night_wide",
+        "prop:gur_plate"
+      ],
+      "line_ids": [
+        "e2_l06",
+        "e2_l07"
+      ],
+      "method": "reference",
+      "first_frame": null,
+      "notes": "Test B of the master document: must read with the sound off"
+    },
+    {
+      "key": "u04",
+      "scene": "s1",
+      "seconds": 12,
+      "shots": [
+        "Devendra tears roti, bigger half to the boy",
+        "Devendra: वीर नाम कैसा रहेगा?",
+        "Suman: वीर।",
+        "boy looks up"
+      ],
+      "references": [
+        "look:devendra_2014_kitchen",
+        "look:suman_2014_kitchen",
+        "look:veer_age5_checked_shirt",
+        "view:sharma_kitchen:night_wide",
+        "prop:roti"
+      ],
+      "line_ids": [
+        "e2_l08",
+        "e2_l09",
+        "e2_l10",
+        "e2_l11"
+      ],
+      "method": "reference",
+      "first_frame": null,
+      "notes": ""
+    },
+    {
+      "key": "u05",
+      "scene": "s2a",
+      "seconds": 8,
+      "shots": [
+        "tumbler slips",
+        "Veer (8) catches it",
+        "Suman still reaching",
+        "Veer eats"
+      ],
+      "references": [
+        "look:veer_age8",
+        "look:suman_montage",
+        "view:sharma_kitchen:day_wide",
+        "prop:steel_tumbler"
+      ],
+      "line_ids": [
+        "e2_l12"
+      ],
+      "method": "reference",
+      "first_frame": null,
+      "notes": ""
+    },
+    {
+      "key": "u06",
+      "scene": "s2b",
+      "seconds": 8,
+      "shots": [
+        "pump rattles",
+        "Devendra calls",
+        "Veer (11) already back with spanner",
+        "Devendra looks down the field, then at Veer"
+      ],
+      "references": [
+        "look:veer_age11",
+        "look:devendra_montage",
+        "view:sharma_field_pump:wide",
+        "prop:pump",
+        "prop:spanner"
+      ],
+      "line_ids": [
+        "e2_l13"
+      ],
+      "method": "reference",
+      "first_frame": null,
+      "notes": ""
+    },
+    {
+      "key": "u07",
+      "scene": "s2c",
+      "seconds": 10,
+      "shots": [
+        "Devendra kneels by tractor",
+        "low crop: rear wheel lifts a few inches",
+        "Devendra freezes",
+        "line l15",
+        "Suman in the doorway"
+      ],
+      "references": [
+        "look:veer_age13",
+        "look:devendra_montage",
+        "look:suman_montage",
+        "view:sharma_barn:wide",
+        "prop:tractor"
+      ],
+      "line_ids": [
+        "e2_l14",
+        "e2_l15",
+        "e2_l16"
+      ],
+      "method": "reference",
+      "first_frame": null,
+      "notes": ""
+    },
+    {
+      "key": "u08",
+      "scene": "s2d",
+      "seconds": 10,
+      "shots": [
+        "Suman at the kitchen door, bus past the gate",
+        "Veer (17): मिलते हैं शाम को, माँ",
+        "dust at his feet",
+        "school gate: he smooths his hair, bus pulls in behind"
+      ],
+      "references": [
+        "look:suman_2026",
+        "look:veer_age17_school",
+        "view:sharma_farm_gate_road:wide",
+        "view:school_gate:wide",
+        "prop:school_bus"
+      ],
+      "line_ids": [
+        "e2_l17",
+        "e2_l18",
+        "e2_l19",
+        "e2_l20"
+      ],
+      "method": "reference",
+      "first_frame": null,
+      "notes": "May split into two units: farm door and school gate"
+    },
+    {
+      "key": "u09",
+      "scene": "s3",
+      "seconds": 12,
+      "shots": [
+        "Meera catches up",
+        "pendant insert",
+        "Meera: आज भी bus छूट गई?",
+        "Veer: हाँ। पहुँच तो गया।"
+      ],
+      "references": [
+        "look:meera_2026_school",
+        "look:veer_age17_school",
+        "view:school_gate:wide",
+        "prop:green_pendant"
+      ],
+      "line_ids": [
+        "e2_l21",
+        "e2_l22",
+        "e2_l23"
+      ],
+      "method": "reference",
+      "first_frame": null,
+      "notes": ""
+    },
+    {
+      "key": "u10",
+      "scene": "s3",
+      "seconds": 10,
+      "shots": [
+        "she hands the notebook",
+        "his grip fails, notebook drops",
+        "Raghav calls from the gate",
+        "she leaves; Veer closes his hand"
+      ],
+      "references": [
+        "look:meera_2026_school",
+        "look:veer_age17_school",
+        "look:raghav_2026",
+        "view:school_gate:reverse",
+        "prop:green_pendant",
+        "prop:notebook"
+      ],
+      "line_ids": [
+        "e2_l24",
+        "e2_l25"
+      ],
+      "method": "reference",
+      "first_frame": null,
+      "notes": ""
+    },
+    {
+      "key": "u11",
+      "scene": "s4",
+      "seconds": 8,
+      "shots": [
+        "Veer at the railing",
+        "Yash in the car approaching (name card)",
+        "wire coil in the lane"
+      ],
+      "references": [
+        "look:veer_age17_school",
+        "look:yash_2026_driver",
+        "view:river_bridge:wide",
+        "prop:sports_car",
+        "prop:wire_coil"
+      ],
+      "line_ids": [
+        "e2_l26",
+        "e2_l27"
+      ],
+      "method": "reference",
+      "first_frame": null,
+      "notes": ""
+    },
+    {
+      "key": "u12",
+      "scene": "s4",
+      "seconds": 8,
+      "shots": [
+        "Yash swerves",
+        "car slides toward Veer",
+        "Veer turns into the headlights"
+      ],
+      "references": [
+        "look:yash_2026_driver",
+        "look:veer_age17_school",
+        "view:river_bridge:wide",
+        "prop:sports_car"
+      ],
+      "line_ids": [
+        "e2_l27",
+        "e2_l28"
+      ],
+      "method": "reference",
+      "first_frame": null,
+      "notes": "C4: non-graphic treatment"
+    },
+    {
+      "key": "u13",
+      "scene": "s4",
+      "seconds": 6,
+      "shots": [
+        "railing breaks",
+        "car and Veer go over the edge (wide)",
+        "one splash"
+      ],
+      "references": [
+        "view:river_bridge:wide",
+        "prop:sports_car",
+        "look:veer_age17_school"
+      ],
+      "line_ids": [
+        "e2_l28"
+      ],
+      "method": "reference",
+      "first_frame": null,
+      "notes": "C4: impact implied by cut and sound; no injury"
+    },
+    {
+      "key": "u14",
+      "scene": "s4",
+      "seconds": 8,
+      "shots": [
+        "underwater: headlights reveal Veer floating",
+        "car sinks past him"
+      ],
+      "references": [
+        "look:veer_age17_school",
+        "view:underwater:headlights",
+        "prop:sports_car"
+      ],
+      "line_ids": [
+        "e2_l29"
+      ],
+      "method": "reference",
+      "first_frame": null,
+      "notes": "C4: silhouette in the beams; save the final frame for Episode 3's opening"
+    }
+  ],
+  "locks_before_generation": {
+    "looks": [
+      "veer_age5_checked_shirt",
+      "veer_age8",
+      "veer_age11",
+      "veer_age13",
+      "veer_age17_school",
+      "suman_2014_kitchen",
+      "devendra_2014_kitchen",
+      "suman_montage",
+      "devendra_montage",
+      "suman_2026",
+      "meera_2026_school",
+      "raghav_2026",
+      "yash_2026_driver"
+    ],
+    "views": [
+      "sharma_kitchen:night_wide",
+      "sharma_kitchen:sink_reverse",
+      "sharma_kitchen:day_wide",
+      "sharma_field_pump:wide",
+      "sharma_barn:wide",
+      "sharma_farm_gate_road:wide",
+      "school_gate:wide",
+      "school_gate:reverse",
+      "river_bridge:wide",
+      "underwater:headlights"
+    ],
+    "props": [
+      "gur_plate",
+      "roti",
+      "steel_tumbler",
+      "pump",
+      "spanner",
+      "tractor",
+      "school_bus",
+      "green_pendant",
+      "notebook",
+      "sports_car",
+      "wire_coil"
+    ],
+    "owner_decisions": [
+      "C2 Devendra's kitchen wardrobe",
+      "C4 bridge-crash treatment",
+      "C5 Yash's age",
+      "C8 two proposed lines"
+    ]
+  },
+  "images": {
+    "model": "gemini.nano-banana-2.1.2k",
+    "count": 110,
+    "breakdown": "13 looks x 3 references x about 2 candidates (78), 10 location views x 2 candidates (20), 11 props (11); about 14 unit keyframes come from approved references at no extra count",
+    "alternative": "higgsfield.grok-image-2.0 (up to 10 references; price from the estimate endpoint)",
+    "note": "Seedream is not on the Higgsfield API, so the Episode 1 reference model cannot be called from the backend."
+  },
+  "audio": {
+    "tts_chars": 1200,
+    "lipsync_seconds": 22,
+    "lipsync_model": "sync.lipsync-2-pro",
+    "notes": "11 dialogue lines, about 400 characters, 3 takes each; lip-sync only on on-camera lines in the TTS path"
+  },
+  "finish": {
+    "upscale_seconds": 110
+  },
+  "llm_usd": [
+    15,
+    30
+  ]
+}
