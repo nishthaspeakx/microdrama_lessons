@@ -1,9 +1,9 @@
 # AI Series Studio: instructions for Claude Code
 
-This folder holds the plan for a web studio that produces AI-generated episodic series with consistent characters, voices and story. The planning documents are in `docs/`. **No application code exists yet. Do not start building until the owner has approved `docs/MASTER_IMPLEMENTATION_PLAN.md`, and then build one phase at a time.**
+This folder holds the plan for a web studio that produces AI-generated episodic series with consistent characters, voices and story. The planning documents are in `docs/`. **Release 1 is being built in `web/` to `docs/PRODUCT_SPEC_RELEASE_1.md`, one build phase at a time.** The Phase 0 harness is in `poc/`.
 
 ## Read first
-1. `docs/MASTER_IMPLEMENTATION_PLAN.md` for scope, decisions and the proof of concept.
+1. `docs/PRODUCT_SPEC_RELEASE_1.md` for what release 1 must do, then `docs/MASTER_IMPLEMENTATION_PLAN.md` for architecture and later phases.
 2. `docs/IMPLEMENTATION_ROADMAP.md` for the current phase and its exit criteria.
 3. The document for the area you are touching. Names of tables, roles and actions in code must match `docs/DATABASE_AND_DATA_MODELS.md`, `docs/AI_AGENT_ARCHITECTURE.md` and `docs/QUALITY_CONTROL_FRAMEWORK.md`.
 

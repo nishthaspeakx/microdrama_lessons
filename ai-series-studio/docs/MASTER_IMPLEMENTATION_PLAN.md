@@ -1,6 +1,6 @@
 # AI Series Studio: master implementation plan
 
-Status: **draft for owner approval**, 26 November 2026. Nothing is built yet. Building starts only after this plan is approved, one phase at a time.
+Status: **approved 26 November 2026.** Release 1 follows [PRODUCT_SPEC_RELEASE_1.md](PRODUCT_SPEC_RELEASE_1.md), the five-step guided workspace. Where the two differ, that spec wins for release 1. This plan still describes the architecture and the later phases.
 
 ## 1. What this is
 

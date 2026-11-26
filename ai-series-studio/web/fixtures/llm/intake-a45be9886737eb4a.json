@@ -1,0 +1,1276 @@
+{
+ "role": "intake",
+ "inputHash": "a45be9886737eb4af7971d99cf6c07a7ecad1fc92bfd41d036567f22826f5735",
+ "model": "recorded (hand-checked in a Claude Code session)",
+ "data": {
+  "series": {
+   "title": "मधोपुर का राज़",
+   "title_alt": "Madhopur",
+   "logline": "When a meteor shower hits a central Indian farming town in 2014, Suman and Devendra Sharma find a small boy beside a crashed craft and raise him as their son; twelve years later Veer's hidden strength pulls him, his friends and an old victim of that day into danger.",
+   "episode_count": 5,
+   "setting": "Madhopur, a fictional farming town in central India: the bazaar, maize fields, the Sharma farm with its barn and kitchen, the school and a river bridge.",
+   "era": "2014 (the meteor shower), then twelve years later.",
+   "language": "Hinglish",
+   "dialogue_script": "Devanagari, with English words written in Latin script",
+   "tone": "Warm small-town coming-of-age drama with a superpowered mystery; an early Smallville farm-town feel grounded in India, where danger arrives in places that felt safe.",
+   "format": {
+    "aspect_ratio": "9:16",
+    "fps": 24,
+    "episode_length": "about 1:35 to 1:50 per episode"
+   },
+   "sources": [
+    "d1:s1",
+    "d1:s2",
+    "d2:s1",
+    "d3:s1"
+   ]
+  },
+  "episodes": [
+   {
+    "number": 1,
+    "title": "आसमान से क्या गिरा?",
+    "title_en": null,
+    "runtime": "1:35",
+    "summary": "A meteor shower strikes Madhopur. Young Meera loses sight of her parents in the bazaar, young Yash finds a teenager tied to a post in the maize, and Suman and Devendra crash their pickup and meet a small boy who takes Suman's hand. Devendra sees the craft the boy seems to have come from.",
+    "ends_on": "Suman's face as the boy grips her hand beside the craft, a metallic tick from the hull, then black (documents). The typed brief says it ends on the boy's eyes glowing blue.",
+    "script": {
+     "status": "screenplay",
+     "sections": [
+      "d1:s9",
+      "d1:s10",
+      "d1:s11",
+      "d1:s12"
+     ],
+     "note": "The Episode 1 brief (d2) repeats the same screenplay and dialogue in d2:s5 to d2:s8."
+    },
+    "sources": [
+     "d1:s8",
+     "d2:s2",
+     "d2:s4",
+     "d3:s1"
+    ]
+   },
+   {
+    "number": 2,
+    "title": "आज से ये हमारा बेटा है",
+    "title_en": null,
+    "runtime": "1:50",
+    "summary": "That night Suman decides the boy is their son and Devendra names him Veer. A montage shows Veer's speed and strength growing at eight, eleven, thirteen and seventeen. At school Meera's green pendant weakens him, and on the way home Yash's car hits Veer and both go off the river bridge.",
+    "ends_on": "Underwater, the headlights reveal Veer floating motionless as the car sinks past him.",
+    "script": {
+     "status": "screenplay",
+     "sections": [
+      "d1:s17",
+      "d1:s18",
+      "d1:s19",
+      "d1:s20"
+     ],
+     "note": null
+    },
+    "sources": [
+     "d1:s16",
+     "d1:s21",
+     "d1:s22"
+    ]
+   },
+   {
+    "number": 3,
+    "title": "तू उस जहाज़ में था",
+    "title_en": null,
+    "runtime": "1:38",
+    "summary": "Veer wakes underwater, pulls Yash from the car and saves him; Yash remembers the car hitting Veer. At home Veer confronts his parents, and Devendra shows him the craft hidden in the storm cellar beneath the barn.",
+    "ends_on": "Veer asks whether they knew all along and backs toward the cellar stairs before Devendra can answer.",
+    "script": {
+     "status": "screenplay",
+     "sections": [
+      "d1:s24",
+      "d1:s25",
+      "d1:s26",
+      "d1:s27"
+     ],
+     "note": null
+    },
+    "sources": [
+     "d1:s23",
+     "d1:s28",
+     "d1:s29"
+    ]
+   },
+   {
+    "number": 4,
+    "title": "खेत में अकेला",
+    "title_en": null,
+    "runtime": "1:47",
+    "summary": "Veer walks away from Devendra and sits with Meera at her parents' memorial; she promises him a dance at the farewell, but Raghav now wears her pendant. Ananya shows Veer that Nikhil, the boy tied to the post in 2014, was in a coma for twelve years. Raghav uses the pendant to tie Veer to the same post, and Nikhil, now electric, walks toward the farewell.",
+    "ends_on": "Nikhil's sparks jump from the metal gate, the lights over the dance floor flicker and Meera looks up.",
+    "script": {
+     "status": "screenplay",
+     "sections": [
+      "d1:s31",
+      "d1:s32",
+      "d1:s33",
+      "d1:s34",
+      "d1:s35"
+     ],
+     "note": null
+    },
+    "sources": [
+     "d1:s30",
+     "d1:s36",
+     "d1:s37"
+    ]
+   },
+   {
+    "number": 5,
+    "title": "एक Dance बाकी है",
+    "title_en": null,
+    "runtime": "1:48",
+    "summary": "Yash frees Veer from the post and the pendant falls away. Veer stops Nikhil at the school gate, survives his surge and pulls him from a flooded pickup. Meera finds Veer in the barn loft and they dance, until a car horn shows it was imagined. A teaser introduces Kunal.",
+    "ends_on": "Teaser: Kunal's car crashes on the country road, glass tanks break, and insects crawl over his hand as the buzzing swells.",
+    "script": {
+     "status": "screenplay",
+     "sections": [
+      "d1:s39",
+      "d1:s40",
+      "d1:s41",
+      "d1:s42",
+      "d1:s43"
+     ],
+     "note": null
+    },
+    "sources": [
+     "d1:s38",
+     "d1:s44",
+     "d1:s45"
+    ]
+   }
+  ],
+  "characters": [
+   {
+    "key": "veer",
+    "name": "Veer Sharma",
+    "aliases": [
+     "the small boy",
+     "the boy",
+     "वीर"
+    ],
+    "ages": [
+     {
+      "period": "2014",
+      "age": "roughly five",
+      "sources": [
+       "d1:s2"
+      ]
+     },
+     {
+      "period": "growing-up montage",
+      "age": "eight, eleven and thirteen",
+      "sources": [
+       "d1:s18"
+      ]
+     },
+     {
+      "period": "twelve years later",
+      "age": "seventeen",
+      "sources": [
+       "d1:s2",
+       "d1:s18"
+      ]
+     }
+    ],
+    "role": "Lead",
+    "description": "A boy found beside the crashed craft and raised by the Sharmas. Fast and strong from childhood; a green stone weakens him.",
+    "appearance": "Facial structure, eyes, brows and hairline must be preserved across every age. Wears Devendra's checked shirt on his first night.",
+    "speaks": true,
+    "first_episode": 1,
+    "relationships": [
+     {
+      "with": "Suman Sharma",
+      "relation": "Adopted son of"
+     },
+     {
+      "with": "Devendra Sharma",
+      "relation": "Adopted son of"
+     },
+     {
+      "with": "Meera Joshi",
+      "relation": "Close friend of"
+     },
+     {
+      "with": "Yash Rathore",
+      "relation": "Rescuer of"
+     }
+    ],
+    "sources": [
+     "d1:s2",
+     "d1:s3",
+     "d1:s11",
+     "d1:s17",
+     "d1:s18",
+     "d2:s2",
+     "d2:s3"
+    ]
+   },
+   {
+    "key": "suman",
+    "name": "Suman Sharma",
+    "aliases": [
+     "Suman",
+     "माँ"
+    ],
+    "ages": [],
+    "role": "Lead",
+    "description": "Devendra's wife. She finds the boy, decides he is their son and keeps his secret.",
+    "appearance": "Fixed costume per scene; subtle aging after the twelve-year jump, based on her 2014 likeness.",
+    "speaks": true,
+    "first_episode": 1,
+    "relationships": [
+     {
+      "with": "Devendra Sharma",
+      "relation": "Wife of"
+     },
+     {
+      "with": "Veer Sharma",
+      "relation": "Adoptive mother of"
+     }
+    ],
+    "sources": [
+     "d1:s2",
+     "d1:s3",
+     "d1:s11",
+     "d1:s17",
+     "d1:s26"
+    ]
+   },
+   {
+    "key": "devendra",
+    "name": "Devendra Sharma",
+    "aliases": [
+     "Devendra",
+     "देवेंद्र"
+    ],
+    "ages": [],
+    "role": "Lead",
+    "description": "Suman's husband, a farmer. He sees the craft first, names Veer, and hides the craft in the storm cellar.",
+    "appearance": "Checked shirt in Episode 1; subtle aging after the jump.",
+    "speaks": true,
+    "first_episode": 1,
+    "relationships": [
+     {
+      "with": "Suman Sharma",
+      "relation": "Husband of"
+     },
+     {
+      "with": "Veer Sharma",
+      "relation": "Adoptive father of"
+     }
+    ],
+    "sources": [
+     "d1:s2",
+     "d1:s3",
+     "d1:s12",
+     "d1:s17",
+     "d1:s27",
+     "d2:s3"
+    ]
+   },
+   {
+    "key": "meera",
+    "name": "Meera Joshi",
+    "aliases": [
+     "young Meera",
+     "Meera"
+    ],
+    "ages": [
+     {
+      "period": "2014",
+      "age": "young (no number given)",
+      "sources": [
+       "d1:s2",
+       "d1:s9"
+      ]
+     },
+     {
+      "period": "twelve years later",
+      "age": "present day (no number given)",
+      "sources": [
+       "d1:s2"
+      ]
+     }
+    ],
+    "role": "Lead",
+    "description": "Loses sight of her parents in the 2014 impact; later Veer's closest friend. Her green-stone pendant weakens Veer.",
+    "appearance": "Wears a green stone on a necklace in Episode 2; wears her mother's earrings at the farewell.",
+    "speaks": true,
+    "first_episode": 1,
+    "relationships": [
+     {
+      "with": "Veer Sharma",
+      "relation": "Close friend of"
+     },
+     {
+      "with": "Raghav",
+      "relation": "Goes to the farewell with"
+     }
+    ],
+    "sources": [
+     "d1:s2",
+     "d1:s9",
+     "d1:s19",
+     "d1:s32",
+     "d1:s42"
+    ]
+   },
+   {
+    "key": "meera_mother",
+    "name": "Meera's mother",
+    "aliases": [],
+    "ages": [],
+    "role": "Supporting",
+    "description": "Waves at Meera across the bazaar with a paper bag just before the impact. Her name is on a memorial plaque in Episode 4.",
+    "appearance": null,
+    "speaks": false,
+    "first_episode": 1,
+    "relationships": [
+     {
+      "with": "Meera Joshi",
+      "relation": "Mother of"
+     }
+    ],
+    "sources": [
+     "d1:s9",
+     "d1:s32",
+     "d2:s3"
+    ]
+   },
+   {
+    "key": "meera_father",
+    "name": "Meera's father",
+    "aliases": [],
+    "ages": [],
+    "role": "Supporting",
+    "description": "Stands beside Meera's mother in the bazaar. His name is on the second memorial plaque.",
+    "appearance": null,
+    "speaks": false,
+    "first_episode": 1,
+    "relationships": [
+     {
+      "with": "Meera Joshi",
+      "relation": "Father of"
+     }
+    ],
+    "sources": [
+     "d1:s9",
+     "d1:s32",
+     "d2:s3"
+    ]
+   },
+   {
+    "key": "yash",
+    "name": "Yash Rathore",
+    "aliases": [
+     "young Yash",
+     "Yash"
+    ],
+    "ages": [
+     {
+      "period": "2014",
+      "age": "young (no number given)",
+      "sources": [
+       "d1:s2",
+       "d1:s10"
+      ]
+     },
+     {
+      "period": "twelve years later",
+      "age": "present day (no number given)",
+      "sources": [
+       "d1:s2"
+      ]
+     }
+    ],
+    "role": "Supporting",
+    "description": "Finds the teenager tied to the post in 2014. Twelve years later he drives the sports car that hits Veer, is rescued by him, and later frees Veer from the post.",
+    "appearance": null,
+    "speaks": true,
+    "first_episode": 1,
+    "relationships": [
+     {
+      "with": "Veer Sharma",
+      "relation": "Rescued by"
+     }
+    ],
+    "sources": [
+     "d1:s2",
+     "d1:s10",
+     "d1:s20",
+     "d1:s25",
+     "d1:s40"
+    ]
+   },
+   {
+    "key": "nikhil",
+    "name": "Nikhil",
+    "aliases": [
+     "the teenage boy",
+     "BOY",
+     "young Nikhil"
+    ],
+    "ages": [
+     {
+      "period": "2014",
+      "age": "a teenager",
+      "sources": [
+       "d1:s2",
+       "d1:s10"
+      ]
+     },
+     {
+      "period": "twelve years later",
+      "age": "after twelve years in a coma (no number given)",
+      "sources": [
+       "d1:s33"
+      ]
+     }
+    ],
+    "role": "Antagonist",
+    "description": "Tied to a post in the maize with a red S painted on his shirt on the meteor day; wakes from a twelve-year coma with electrical power and targets the farewell.",
+    "appearance": "Needs one clear feature that survives the twelve-year jump and shows in Ananya's photo.",
+    "speaks": true,
+    "first_episode": 1,
+    "relationships": [
+     {
+      "with": "Veer Sharma",
+      "relation": "Rescued by"
+     }
+    ],
+    "sources": [
+     "d1:s2",
+     "d1:s3",
+     "d1:s10",
+     "d1:s33",
+     "d1:s34",
+     "d1:s41"
+    ]
+   },
+   {
+    "key": "raghav",
+    "name": "Raghav",
+    "aliases": [],
+    "ages": [
+     {
+      "period": "twelve years later",
+      "age": "present day (no number given)",
+      "sources": [
+       "d1:s2"
+      ]
+     }
+    ],
+    "role": "Antagonist",
+    "description": "Meera's date for the farewell. He takes her pendant, then uses it to weaken Veer and tie him to the post.",
+    "appearance": "Wears the green pendant in Episode 4.",
+    "speaks": true,
+    "first_episode": 2,
+    "relationships": [
+     {
+      "with": "Meera Joshi",
+      "relation": "Goes to the farewell with"
+     }
+    ],
+    "sources": [
+     "d1:s2",
+     "d1:s19",
+     "d1:s32",
+     "d1:s34"
+    ]
+   },
+   {
+    "key": "ananya",
+    "name": "Ananya",
+    "aliases": [],
+    "ages": [
+     {
+      "period": "twelve years later",
+      "age": "present day (no number given)",
+      "sources": [
+       "d1:s2"
+      ]
+     }
+    ],
+    "role": "Supporting",
+    "description": "A schoolmate who shows Veer archived photos of Nikhil and of the three people who tied him up.",
+    "appearance": null,
+    "speaks": true,
+    "first_episode": 4,
+    "relationships": [],
+    "sources": [
+     "d1:s2",
+     "d1:s33"
+    ]
+   },
+   {
+    "key": "kunal",
+    "name": "Kunal",
+    "aliases": [],
+    "ages": [],
+    "role": "Next-season tease",
+    "description": "Crashes his car on the country road in the Episode 5 teaser; insects escape from glass tanks onto his hand.",
+    "appearance": null,
+    "speaks": false,
+    "first_episode": 5,
+    "relationships": [],
+    "sources": [
+     "d1:s2",
+     "d1:s43"
+    ]
+   }
+  ],
+  "locations": [
+   {
+    "key": "bazaar",
+    "name": "Madhopur bazaar",
+    "description": "Dusty market street in daylight with shopfronts, a glass window and a loose shutter.",
+    "episodes": [
+     1
+    ],
+    "sources": [
+     "d1:s9",
+     "d2:s3",
+     "d2:s5"
+    ]
+   },
+   {
+    "key": "maize_field",
+    "name": "Maize field and wooden post",
+    "description": "Tall maize rows with a weathered wooden post in a gap; the same post angle repeats in Episodes 1 and 4.",
+    "episodes": [
+     1,
+     4,
+     5
+    ],
+    "sources": [
+     "d1:s3",
+     "d1:s10",
+     "d1:s34",
+     "d1:s40"
+    ]
+   },
+   {
+    "key": "farm_road",
+    "name": "Farm road and ditch",
+    "description": "Country road with a roadside ditch where the pickup crashes; Kunal crashes on the same road.",
+    "episodes": [
+     1,
+     5
+    ],
+    "sources": [
+     "d1:s11",
+     "d1:s43",
+     "d2:s3"
+    ]
+   },
+   {
+    "key": "crash_site",
+    "name": "Craft in the field",
+    "description": "A trail of flattened maize ending at the craft with its open hatch.",
+    "episodes": [
+     1
+    ],
+    "sources": [
+     "d1:s12",
+     "d2:s8"
+    ]
+   },
+   {
+    "key": "sharma_kitchen",
+    "name": "Sharma farmhouse kitchen",
+    "description": "Warm kitchen with a single practical light, a sink and a table; its door faces the farm road.",
+    "episodes": [
+     2,
+     3
+    ],
+    "sources": [
+     "d1:s3",
+     "d1:s7",
+     "d1:s17",
+     "d1:s18",
+     "d1:s26"
+    ]
+   },
+   {
+    "key": "sharma_farm",
+    "name": "Sharma farm, field and barn",
+    "description": "Fields with an irrigation pump, a weathered red barn with a tractor, and a gate onto the road.",
+    "episodes": [
+     2,
+     4
+    ],
+    "sources": [
+     "d1:s2",
+     "d1:s18",
+     "d1:s31"
+    ]
+   },
+   {
+    "key": "storm_cellar",
+    "name": "Storm cellar beneath the barn",
+    "description": "Reached by a wooden hatch; the craft is kept here under a canvas cover.",
+    "episodes": [
+     3
+    ],
+    "sources": [
+     "d1:s27"
+    ]
+   },
+   {
+    "key": "barn_loft",
+    "name": "Barn loft",
+    "description": "Loft with a window where Veer sits and imagines the dance.",
+    "episodes": [
+     5
+    ],
+    "sources": [
+     "d1:s42"
+    ]
+   },
+   {
+    "key": "school_gate",
+    "name": "School gate",
+    "description": "Morning drop-off at the school gate with the school bus.",
+    "episodes": [
+     2
+    ],
+    "sources": [
+     "d1:s3",
+     "d1:s19"
+    ]
+   },
+   {
+    "key": "river_bridge",
+    "name": "River bridge and riverbank",
+    "description": "Narrow bridge with a railing over a river; underwater shots and the bank below.",
+    "episodes": [
+     2,
+     3
+    ],
+    "sources": [
+     "d1:s20",
+     "d1:s24",
+     "d1:s25"
+    ]
+   },
+   {
+    "key": "memorial",
+    "name": "Memorial garden and Meera's gate",
+    "description": "Plaques with Meera's parents' names; Meera's house gate and veranda.",
+    "episodes": [
+     4,
+     5
+    ],
+    "sources": [
+     "d1:s32",
+     "d1:s42"
+    ]
+   },
+   {
+    "key": "school_farewell",
+    "name": "School courtyard, lane and farewell gate",
+    "description": "Courtyard under strings of lights for the farewell, the lane outside and a metal gate.",
+    "episodes": [
+     4,
+     5
+    ],
+    "sources": [
+     "d1:s33",
+     "d1:s34",
+     "d1:s35",
+     "d1:s39",
+     "d1:s41"
+    ]
+   }
+  ],
+  "props": [
+   {
+    "key": "craft",
+    "name": "The craft",
+    "description": "One spacecraft design with a fixed silhouette, hatch hinge and opening size across all angles.",
+    "sources": [
+     "d1:s3",
+     "d1:s12",
+     "d1:s27",
+     "d2:s3"
+    ]
+   },
+   {
+    "key": "pickup",
+    "name": "Sharmas' pickup",
+    "description": "Old pickup that drops nose-first into the ditch; cracked passenger window.",
+    "sources": [
+     "d1:s11",
+     "d2:s3"
+    ]
+   },
+   {
+    "key": "paper_bag",
+    "name": "Paper bag",
+    "description": "Held up by Meera's mother as she waves.",
+    "sources": [
+     "d1:s9",
+     "d2:s3"
+    ]
+   },
+   {
+    "key": "post_red_s",
+    "name": "Wooden post and red-S shirt",
+    "description": "The post's height, knots and marks, and a red S painted on a shirt; reused in Episode 4.",
+    "sources": [
+     "d1:s3",
+     "d1:s10",
+     "d1:s34",
+     "d2:s3"
+    ]
+   },
+   {
+    "key": "gur_roti",
+    "name": "गुड़, roti and steel plates",
+    "description": "Jaggery pieces on a steel plate, roti, and a steel tumbler in the Sharma kitchen.",
+    "sources": [
+     "d1:s3",
+     "d1:s17",
+     "d1:s18"
+    ]
+   },
+   {
+    "key": "green_pendant",
+    "name": "Green-stone pendant",
+    "description": "Green stone on a chain that weakens Veer; worn by Meera, then Raghav, then put on Veer.",
+    "sources": [
+     "d1:s3",
+     "d1:s19",
+     "d1:s32",
+     "d1:s34",
+     "d1:s40"
+    ]
+   },
+   {
+    "key": "tractor_pump",
+    "name": "Tractor, irrigation pump and spanner",
+    "description": "Farm equipment in the growing-up montage.",
+    "sources": [
+     "d1:s18"
+    ]
+   },
+   {
+    "key": "school_bus",
+    "name": "Yellow school bus",
+    "description": "Leaves without Veer; arrives at school just after him.",
+    "sources": [
+     "d1:s18"
+    ]
+   },
+   {
+    "key": "sports_car",
+    "name": "Yash's sports car and wire coil",
+    "description": "Swerves on the bridge and goes into the river; its damage must match in Episode 3.",
+    "sources": [
+     "d1:s20",
+     "d1:s24",
+     "d1:s29"
+    ]
+   },
+   {
+    "key": "earrings",
+    "name": "Meera's mother's earrings",
+    "description": "Worn by Meera at the farewell.",
+    "sources": [
+     "d1:s32",
+     "d1:s42"
+    ]
+   },
+   {
+    "key": "delivery_pickup",
+    "name": "Delivery pickup",
+    "description": "Nikhil drives it through a wall into a burst water pipe.",
+    "sources": [
+     "d1:s41"
+    ]
+   },
+   {
+    "key": "kunal_car",
+    "name": "Kunal's car, glass tanks and insects",
+    "description": "Teaser crash with broken tanks and an insect on his hand.",
+    "sources": [
+     "d1:s43",
+     "d1:s45"
+    ]
+   }
+  ],
+  "production_requirements": [
+   {
+    "category": "format",
+    "text": "Vertical 9:16 at 24 fps, five episodes of about 1:35 to 1:50.",
+    "sources": [
+     "d1:s2",
+     "d2:s1"
+    ]
+   },
+   {
+    "category": "delivery",
+    "text": "Export a 1080 × 1920, 24 fps master, plus a clean master and an app-ready captioned version.",
+    "sources": [
+     "d1:s3",
+     "d1:s4",
+     "d2:s12"
+    ]
+   },
+   {
+    "category": "look",
+    "text": "Early Smallville farm-town look grounded in India: big skies, tall maize, red barn, old pickup, warm kitchen, bright ordinary daylight for the meteor shower.",
+    "sources": [
+     "d1:s2",
+     "d2:s3"
+    ]
+   },
+   {
+    "category": "look",
+    "text": "Keep faces large and eyes readable on a phone, and leave room at the top and bottom of the frame for the app UI.",
+    "sources": [
+     "d1:s3",
+     "d2:s3"
+    ]
+   },
+   {
+    "category": "look",
+    "text": "Grade by location: warm dusty daylight outside, amber practical light in the kitchen, cool neutral metal for the ship, cool night exteriors.",
+    "sources": [
+     "d1:s7",
+     "d2:s3"
+    ]
+   },
+   {
+    "category": "references",
+    "text": "Approve references before generation: front and three-quarter views per character, a fixed costume per scene, one wide and one reverse angle per location, and close stills of key props.",
+    "sources": [
+     "d1:s3",
+     "d2:s3"
+    ]
+   },
+   {
+    "category": "references",
+    "text": "Build Veer at five, eight, eleven, thirteen and seventeen from one face, and age Suman and Devendra subtly from their 2014 likeness.",
+    "sources": [
+     "d1:s3"
+    ]
+   },
+   {
+    "category": "references",
+    "text": "Approve one three-quarter view of the ship before any other ship view, and keep its silhouette and hatch identical in every episode.",
+    "sources": [
+     "d1:s3",
+     "d2:s3"
+    ]
+   },
+   {
+    "category": "generation",
+    "text": "Start each shot from an approved 9:16 frame, test short clips first, and turn off generated audio for scenes that will be dubbed.",
+    "sources": [
+     "d1:s3"
+    ]
+   },
+   {
+    "category": "generation",
+    "text": "Generate the meteor, impact flash and dust as separate shots or elements, and add flashes and dust after the take is chosen.",
+    "sources": [
+     "d1:s4",
+     "d1:s14",
+     "d2:s3"
+    ]
+   },
+   {
+    "category": "sound",
+    "text": "Record the dialogue first, then keep dialogue, ambience, Foley, effects and score on separate tracks.",
+    "sources": [
+     "d1:s4",
+     "d2:s12"
+    ]
+   },
+   {
+    "category": "sound",
+    "text": "One voice per character with natural Hinglish timing; lip-sync visible speaking angles, or cut to the listener when sync draws attention.",
+    "sources": [
+     "d1:s4",
+     "d1:s46"
+    ]
+   },
+   {
+    "category": "music",
+    "text": "Use the five-cue music palette (Home, The fall, Veer and Meera, Farewell, Cliffhanger) and end each cliffhanger cleanly on black.",
+    "sources": [
+     "d1:s5",
+     "d1:s6"
+    ]
+   },
+   {
+    "category": "edit",
+    "text": "Cut on physical beats, hold on faces after action, and make each episode's opening readable against the previous ending.",
+    "sources": [
+     "d1:s4",
+     "d1:s46"
+    ]
+   },
+   {
+    "category": "subtitles",
+    "text": "Test subtitles on an in-app preview and check spelling and placement with subtitles on and off.",
+    "sources": [
+     "d1:s3",
+     "d1:s46"
+    ]
+   },
+   {
+    "category": "other",
+    "text": "Run the two test cuts first: Episode 1 into Episode 2, and the Episode 2 kitchen scene played with and without sound.",
+    "sources": [
+     "d1:s3"
+    ]
+   }
+  ],
+  "conflicts": [
+   {
+    "id": "title",
+    "topic": "Series title",
+    "severity": "changes_production",
+    "description": "The documents call the series Madhopur; the typed brief names it मधोपुर का राज़ (The Secret of Madhopur).",
+    "options": [
+     {
+      "value": "मधोपुर का राज़ (The Secret of Madhopur)",
+      "sources": [
+       "d3:s1"
+      ]
+     },
+     {
+      "value": "Madhopur",
+      "sources": [
+       "d1:s1",
+       "d2:s1"
+      ]
+     }
+    ],
+    "recommendation": "Use the typed brief: it is the newest instruction."
+   },
+   {
+    "id": "ep1_ending",
+    "topic": "How Episode 1 ends",
+    "severity": "changes_production",
+    "description": "Both documents end Episode 1 on Suman's face, the hull's metallic tick and black. The typed brief says the made episode ends on the boy's eyes glowing blue.",
+    "options": [
+     {
+      "value": "End on the boy's eyes glowing blue",
+      "sources": [
+       "d3:s1"
+      ]
+     },
+     {
+      "value": "End on Suman's face, the metallic tick, then black",
+      "sources": [
+       "d1:s12",
+       "d1:s13",
+       "d2:s8",
+       "d2:s9"
+      ]
+     }
+    ],
+    "recommendation": "Use the typed brief, since that episode is already made."
+   },
+   {
+    "id": "craft_size",
+    "topic": "Size of the craft",
+    "severity": "changes_production",
+    "description": "The documents describe a half-buried craft with a hatch low enough for a child, later hidden in the storm cellar beneath the barn. The typed brief says it is a massive five-storey ship that villagers watched land, which cannot fit in a cellar.",
+    "options": [
+     {
+      "value": "Massive five-storey ship seen by the village",
+      "sources": [
+       "d3:s1"
+      ]
+     },
+     {
+      "value": "Small half-buried craft, later hidden in the storm cellar",
+      "sources": [
+       "d1:s12",
+       "d1:s27",
+       "d2:s8"
+      ]
+     }
+    ],
+    "recommendation": "Keep the five-storey ship for Episode 1 and decide before Episode 3 how the Sharmas can hide it."
+   },
+   {
+    "id": "post_scene",
+    "topic": "The maize-field post scene in Episode 1",
+    "severity": "changes_production",
+    "description": "The documents include young Yash finding young Nikhil tied to the post, and Episode 4 calls back to that post. The typed brief says the scene was cut from Episode 1.",
+    "options": [
+     {
+      "value": "Cut from Episode 1",
+      "sources": [
+       "d3:s1"
+      ]
+     },
+     {
+      "value": "Keep the post scene",
+      "sources": [
+       "d1:s10",
+       "d1:s34",
+       "d2:s2",
+       "d2:s6"
+      ]
+     }
+    ],
+    "recommendation": "Cut it from Episode 1 as made, and set up the post and Nikhil again before Episode 4's callback."
+   }
+  ],
+  "section_kinds": [
+   {
+    "ref": "d1:s1",
+    "kind": "series_overview"
+   },
+   {
+    "ref": "d1:s2",
+    "kind": "series_overview"
+   },
+   {
+    "ref": "d1:s3",
+    "kind": "reference_guidance"
+   },
+   {
+    "ref": "d1:s4",
+    "kind": "post_production"
+   },
+   {
+    "ref": "d1:s5",
+    "kind": "post_production"
+   },
+   {
+    "ref": "d1:s6",
+    "kind": "sample_prompt"
+   },
+   {
+    "ref": "d1:s7",
+    "kind": "post_production"
+   },
+   {
+    "ref": "d1:s8",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s9",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s10",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s11",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s12",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s13",
+    "kind": "post_production"
+   },
+   {
+    "ref": "d1:s14",
+    "kind": "coverage_table"
+   },
+   {
+    "ref": "d1:s15",
+    "kind": "sample_prompt"
+   },
+   {
+    "ref": "d1:s16",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s17",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s18",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s19",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s20",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s21",
+    "kind": "post_production"
+   },
+   {
+    "ref": "d1:s22",
+    "kind": "coverage_table"
+   },
+   {
+    "ref": "d1:s23",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s24",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s25",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s26",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s27",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s28",
+    "kind": "post_production"
+   },
+   {
+    "ref": "d1:s29",
+    "kind": "coverage_table"
+   },
+   {
+    "ref": "d1:s30",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s31",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s32",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s33",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s34",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s35",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s36",
+    "kind": "post_production"
+   },
+   {
+    "ref": "d1:s37",
+    "kind": "coverage_table"
+   },
+   {
+    "ref": "d1:s38",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s39",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s40",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s41",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s42",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s43",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d1:s44",
+    "kind": "post_production"
+   },
+   {
+    "ref": "d1:s45",
+    "kind": "coverage_table"
+   },
+   {
+    "ref": "d1:s46",
+    "kind": "production_note"
+   },
+   {
+    "ref": "d1:s47",
+    "kind": "other"
+   },
+   {
+    "ref": "d2:s1",
+    "kind": "series_overview"
+   },
+   {
+    "ref": "d2:s2",
+    "kind": "series_overview"
+   },
+   {
+    "ref": "d2:s3",
+    "kind": "reference_guidance"
+   },
+   {
+    "ref": "d2:s4",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d2:s5",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d2:s6",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d2:s7",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d2:s8",
+    "kind": "screenplay"
+   },
+   {
+    "ref": "d2:s9",
+    "kind": "post_production"
+   },
+   {
+    "ref": "d2:s10",
+    "kind": "coverage_table"
+   },
+   {
+    "ref": "d2:s11",
+    "kind": "sample_prompt"
+   },
+   {
+    "ref": "d2:s12",
+    "kind": "production_note"
+   },
+   {
+    "ref": "d3:s1",
+    "kind": "series_overview"
+   }
+  ],
+  "typed_brief_use": "The typed brief set the series name and the audience, and made the existing Episode 1 canon: the massive craft, the cut post scene and the glowing-eyes ending. Each of these disagrees with the documents and is listed as a conflict."
+ }
+}
