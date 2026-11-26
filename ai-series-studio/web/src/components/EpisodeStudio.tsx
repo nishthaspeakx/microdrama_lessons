@@ -161,6 +161,10 @@ export default function EpisodeStudio({ projectId, onReview }: { projectId: stri
   const recorded = scenes.reduce((a, s) => a + s.lines.filter((l) => recs.get(l.id)?.status === "ready").length, 0);
   const providerLabel = d.provider.name === "higgsfield" ? `Higgsfield · ${d.provider.models[ep.settings.model]}`
     : "Placeholder clips (test mode, free): add HIGGSFIELD_API_KEY for real video";
+  const goScene = (n: number) => {
+    setScene(n);
+    setTimeout(() => document.getElementById(`scene-card-${n}`)?.scrollIntoView({ behavior: "smooth", block: "start" }), 50);
+  };
   const patchSettings = (s: Partial<Settings>) => act("settings", () => call(`/api/episodes/${ep.id}`, "PATCH", { settings: s }));
 
   return (
@@ -208,7 +212,7 @@ export default function EpisodeStudio({ projectId, onReview }: { projectId: stri
             <button disabled className="rounded-full bg-accent px-4 py-2 font-semibold text-white opacity-60">Making scene {makingScene.n}… {makingScene.ready}/{makingScene.total} clips</button>
           ) : nextScene ? (
             <button disabled={!!busy} onClick={() => act("next", () => call(`/api/episodes/${ep.id}/generate`, "POST", { scene: nextScene.n, missingOnly: true }),
-              (r) => { setScene(nextScene.n); setMsg({ kind: "info", text: `Making scene ${nextScene.n}, estimated ${usd((r as { estCents: number }).estCents)}. Its clips appear on the right as each one finishes.` }); })}
+              (r) => { goScene(nextScene.n); setMsg({ kind: "info", text: `Making scene ${nextScene.n}, estimated ${usd((r as { estCents: number }).estCents)}. Its clips appear on the right as each one finishes.` }); })}
               className="rounded-full bg-accent px-4 py-2 font-semibold text-white disabled:opacity-40">
               Create scene {nextScene.n}{nextScene.est ? ` · about ${usd(nextScene.est)}` : ""}
             </button>
@@ -235,7 +239,7 @@ export default function EpisodeStudio({ projectId, onReview }: { projectId: stri
           return (
             <li key={x.n} className="flex items-center gap-2">
               {i > 0 && <span className="text-line">→</span>}
-              <button onClick={() => setScene(x.n)}
+              <button onClick={() => goScene(x.n)}
                 className={`flex items-center gap-1.5 rounded-full border px-3 py-1 ${x.n === sel?.n ? "border-accent" : "border-line"} ${state === "ready" ? "bg-emerald-50 text-emerald-900" : state === "making" ? "bg-accent-soft" : "bg-white"}`}>
                 <span className={`h-2 w-2 rounded-full ${state === "ready" ? "bg-emerald-500" : state === "making" ? "animate-pulse bg-accent" : state === "partly" ? "bg-amber-400" : "bg-stone-300"}`} />
                 Scene {x.n}
@@ -296,7 +300,7 @@ export default function EpisodeStudio({ projectId, onReview }: { projectId: stri
             const sc = clips.filter((c) => c.scene_n === s.n);
             const done = sc.filter((c) => c.current_take_id).length;
             return (
-              <div key={s.n} onClick={() => setScene(s.n)}
+              <div key={s.n} id={`scene-card-${s.n}`} onClick={() => setScene(s.n)}
                 className={`cursor-pointer rounded-2xl border bg-white p-4 ${s.n === sel?.n ? "border-accent ring-1 ring-accent" : "border-line hover:border-stone-400"}`}>
                 <div className="flex flex-wrap items-baseline gap-2">
                   <p className="font-semibold">Scene {s.n}</p>
