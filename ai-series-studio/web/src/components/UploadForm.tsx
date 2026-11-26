@@ -42,12 +42,11 @@ export default function UploadForm() {
         onDragOver={(e) => { e.preventDefault(); setDrag(true); }}
         onDragLeave={() => setDrag(false)}
         onDrop={(e) => { e.preventDefault(); setDrag(false); add(e.dataTransfer.files); }}
-        onClick={() => input.current?.click()}
-        className={`cursor-pointer rounded-2xl border-2 border-dashed p-8 text-center transition ${drag ? "border-accent bg-accent-soft" : "border-line bg-white hover:border-stone-400"}`}
+        className={`rounded-xl border border-dashed p-6 text-center transition ${drag ? "border-accent bg-accent-soft" : "border-line bg-white hover:border-stone-400"}`}
       >
         <input ref={input} type="file" multiple accept={ACCEPT} className="hidden" onChange={(e) => add(e.target.files)} data-testid="file-input" />
-        <p className="text-lg font-medium">Upload files</p>
-        <p className="mt-1 text-sm text-muted">Series documents, episode briefs and scripts · Markdown, PDF or plain text</p>
+        <button type="button" onClick={() => input.current?.click()} className="studio-upload-button">Upload files</button>
+        <p className="mt-1 text-sm text-muted">Drop files here or upload Markdown, PDF, or plain text.</p>
       </div>
 
       {files.length > 0 && (
@@ -78,7 +77,7 @@ export default function UploadForm() {
       <button
         onClick={create}
         disabled={busy || (!files.length && !brief.trim())}
-        className="rounded-full bg-accent px-6 py-3 font-semibold text-white disabled:opacity-40"
+        className="studio-primary"
       >
         {busy ? "Creating…" : "Create Microdrama"}
       </button>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import UploadForm from "@/components/UploadForm";
 import { q } from "@/lib/db";
@@ -12,28 +13,42 @@ export default async function Home() {
     "SELECT id, name, step, status, updated_at FROM projects ORDER BY updated_at DESC LIMIT 20",
   );
   return (
-    <main className="mx-auto grid max-w-7xl gap-12 px-6 py-12 lg:grid-cols-[1fr_340px]">
-      <section>
-        <h1 className="text-3xl font-semibold tracking-tight">Upload your idea</h1>
-        <p className="mt-2 max-w-xl text-muted">
-          Add your series documents and a few lines about the show. We read them, show you what we understood, and flag anything that disagrees before any visuals are made.
-        </p>
-        <div className="mt-8 max-w-2xl"><UploadForm /></div>
-      </section>
-      <aside>
-        <h2 className="text-sm font-semibold uppercase tracking-wide text-muted">Your microdramas</h2>
-        {projects.length === 0 && <p className="mt-3 text-sm text-muted">Nothing yet.</p>}
-        <ul className="mt-3 space-y-2">
+    <main className="studio-home">
+      <div className="studio-opening">
+        <section className="studio-intake" aria-labelledby="intake-title">
+          <h1 id="intake-title">Upload your idea</h1>
+          <p className="intake-intro">Start with a series brief, a script, or a few lines about the show you want to make.</p>
+          <UploadForm />
+        </section>
+        <figure className="studio-poster">
+          <div className="poster-frames">
+            <div className="poster-inset">
+              <Image src="/madhopur-meera.jpg" alt="Meera looks up in Madhopur" fill sizes="(max-width: 640px) 24vw, 140px" />
+            </div>
+            <div className="poster-main">
+              <Image src="/madhopur-craft.jpg" alt="The spacecraft reveal in Madhopur" fill sizes="(max-width: 640px) 50vw, 270px" priority />
+            </div>
+          </div>
+          <figcaption>
+            <p className="poster-title">Madhopur</p>
+            <p>Stills from Episode 1</p>
+          </figcaption>
+        </figure>
+      </div>
+      <section className="studio-projects" aria-labelledby="projects-title">
+        <h2 id="projects-title">Your microdramas</h2>
+        {projects.length === 0 && <p className="mt-2 text-sm text-muted">Projects you create will appear here.</p>}
+        <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {projects.map((p) => (
             <li key={p.id}>
-              <Link href={`/projects/${p.id}`} className="block rounded-xl border border-line bg-white p-4 hover:border-stone-400">
+              <Link href={`/projects/${p.id}`} className="studio-project-card">
                 <p className="font-medium deva">{p.name}</p>
                 <p className="mt-1 text-sm text-muted">Step {p.step}: {STEP[p.step]} · {STATUS[p.status] ?? p.status}</p>
               </Link>
             </li>
           ))}
         </ul>
-      </aside>
+      </section>
     </main>
   );
 }

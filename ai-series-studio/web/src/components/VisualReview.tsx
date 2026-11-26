@@ -123,7 +123,8 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-line bg-white p-4">
+      <div className="studio-stage-bar">
+        <h2 className="studio-stage-title">Visual approvals</h2>
         <p className="text-sm"><span className="font-semibold">{approvedCount} of {required.length}</span> required items approved</p>
         <span className="text-line">|</span>
         <p className="text-sm text-muted">Spent {usd(d.spentCents)} of {usd(d.budgetCents)} budget</p>
@@ -149,7 +150,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
       </div>
       {msg && <p className={`rounded-xl p-3 text-sm ${msg.kind === "error" ? "bg-red-50 text-red-800" : "bg-sky-50 text-sky-900"}`}>{msg.text}</p>}
 
-      <div className="grid gap-4 lg:grid-cols-[280px_1fr]">
+      <div className="grid gap-4 lg:grid-cols-[260px_minmax(0,1fr)]">
         <nav aria-label="Items to approve" className="space-y-4 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:self-start lg:overflow-y-auto">
           {GROUPS.map((g) => {
             const list = items.filter((i) => i.category === g.cat);
@@ -177,7 +178,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
         </nav>
 
         {item && (
-          <section className="rounded-2xl border border-line bg-white p-5" aria-label={item.name}>
+          <section className="studio-review-panel" aria-label={item.name}>
             <div className="flex flex-wrap items-start justify-between gap-3">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-wide text-muted">{GROUPS.find((g) => g.cat === item.category)?.label}</p>
@@ -281,7 +282,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
 
             {shown && shown.status === "ready" && (
               <>
-                <div className={`mt-5 grid gap-3 ${imagesOf(shown.id).length > 1 ? "sm:grid-cols-2" : ""}`}>
+                <div className={`studio-contact-sheet grid gap-3 ${imagesOf(shown.id).length > 1 ? "sm:grid-cols-2" : ""}`}>
                   {(shown.provider === "upload" ? [{ view: "reference", label: "Your image", aspect: "3:4", derived: false }] : d.views[item.category]).map((v) => {
                     const im = imagesOf(shown.id).find((x) => x.view === v.view);
                     if (!im) return null;
@@ -292,7 +293,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
                           <img src={img(im.file_sha)} alt={`${item.name}: ${v.label}`}
                             className={`mx-auto max-h-[55vh] w-full rounded-xl bg-stone-100 object-contain ${shown.provider === "upload" ? "" : ASPECT[v.aspect] ?? ""}`} />
                         </a>
-                        <figcaption className="mt-1 text-xs text-muted">{v.label}{v.derived ? " · joined from the front, back and face views" : shown.views.includes(v.view) || shown.provider === "upload" ? "" : " · kept from the previous version"}</figcaption>
+                        <figcaption className="studio-frame-caption">{v.label}{v.derived ? " · joined from the front, back and face views" : shown.views.includes(v.view) || shown.provider === "upload" ? "" : " · kept from the previous version"}</figcaption>
                       </figure>
                     );
                   })}
@@ -306,7 +307,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
                   ) : (
                     <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm text-emerald-800">This version is approved</span>
                   )}
-                  <button onClick={() => setShowChange(!showChange)} className="rounded-full border border-line px-5 py-2 hover:border-stone-400">Change</button>
+                  <button onClick={() => setShowChange(!showChange)} className="rounded-full border border-line px-5 py-2 hover:border-stone-400">Request change</button>
                   <button onClick={() => fileInput.current?.click()} className="rounded-full border border-line px-5 py-2 hover:border-stone-400">Use my image</button>
                   <span className="text-xs text-muted">{shown.provider === "mock" ? "Placeholder image" : shown.provider === "upload" ? "Uploaded" : `Cost ${usd(shown.cost_cents)}`}</span>
                 </div>

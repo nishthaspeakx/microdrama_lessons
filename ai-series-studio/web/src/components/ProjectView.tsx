@@ -43,8 +43,8 @@ export default function ProjectView({ id }: { id: string }) {
 
   return (
     <main className="mx-auto max-w-7xl px-6 py-8">
-      <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
-        <h1 className="deva text-2xl font-semibold">{data.intake?.summary.series.title ?? data.project.name}</h1>
+      <div className="studio-project-header">
+        <h1 className="deva text-3xl font-semibold break-words">{data.intake?.summary.series.title ?? data.project.name}</h1>
         <Stepper current={step} reached={data.project.step >= 2 ? Math.max(data.project.step, 3) : data.project.step} done={data.project.step} onGo={(n) => setView(n)} />
       </div>
 

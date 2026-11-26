@@ -96,7 +96,8 @@ export default function VoiceCasting({ projectId, onFinished }: { projectId: str
 
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center gap-3 rounded-2xl border border-line bg-white p-4">
+      <div className="studio-stage-bar">
+        <h2 className="studio-stage-title">Voice casting</h2>
         <p className="text-sm"><span className="font-semibold">{locked} of {required.length}</span> speaking voices locked</p>
         <span className="text-line">|</span>
         <p className="text-sm text-muted">Spent {usd(d.spentCents)} on this project</p>
@@ -114,7 +115,7 @@ export default function VoiceCasting({ projectId, onFinished }: { projectId: str
       </div>
       {msg && <p className={`rounded-xl p-3 text-sm ${msg.kind === "error" ? "bg-red-50 text-red-800" : "bg-sky-50 text-sky-900"}`}>{msg.text}</p>}
 
-      <div className="grid gap-4 lg:grid-cols-[260px_1fr]">
+      <div className="grid gap-4 lg:grid-cols-[240px_minmax(0,1fr)]">
         <nav aria-label="Speaking parts" className="space-y-4 lg:sticky lg:top-4 lg:self-start">
           <div className="rounded-2xl border border-line bg-white p-3">
             <p className="px-2 pb-2 text-xs font-semibold uppercase tracking-wide text-muted">Speaking parts · {locked}/{required.length}</p>
@@ -160,11 +161,11 @@ export default function VoiceCasting({ projectId, onFinished }: { projectId: str
         </nav>
 
         {role && (
-          <section className="rounded-2xl border border-line bg-white p-5" aria-label={role.name}>
+          <section className="studio-review-panel" aria-label={role.name}>
             <div className="flex flex-wrap items-start gap-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              {portrait ? <img src={file(portrait)} alt={`${role.name}, approved look`} className="h-28 w-24 rounded-xl object-cover" />
-                : <div className="flex h-28 w-24 items-center justify-center rounded-xl bg-stone-100 p-2 text-center text-xs text-muted">Portrait appears once the look is approved</div>}
+              {portrait ? <img src={file(portrait)} alt={`${role.name}, approved look`} className="h-36 w-28 rounded-xl object-cover" />
+                : <div className="flex h-36 w-28 items-center justify-center rounded-xl bg-stone-100 p-2 text-center text-xs text-muted">Portrait appears once the look is approved</div>}
               <div className="min-w-0 flex-1">
                 <h2 className="text-xl font-semibold">{role.name}</h2>
                 <p className="mt-1 text-sm text-muted">{role.required ? "Speaks in an episode to be produced" : "Optional: speaks only in an episode already made"}</p>
