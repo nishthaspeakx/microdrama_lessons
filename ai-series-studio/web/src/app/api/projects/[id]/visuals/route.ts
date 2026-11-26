@@ -14,7 +14,8 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
   const items = await q("SELECT * FROM visual_items WHERE project_id=$1 ORDER BY sort, name", [id]);
   const versions = await q(
     `SELECT v.id, v.item_id, v.n, v.prompt, v.change_request, v.understood, v.views, v.status, v.error, v.provider, v.model,
-            v.est_cents::float AS est_cents, v.cost_cents::float AS cost_cents, v.base_version_id, v.reference_shas, v.created_at
+            v.est_cents::float AS est_cents, v.cost_cents::float AS cost_cents, v.base_version_id, v.reference_shas, v.created_at,
+            v.change_set_id, v.wait_for_version_id, v.new_description
      FROM visual_versions v JOIN visual_items i ON i.id=v.item_id WHERE i.project_id=$1 ORDER BY v.n`, [id]);
   const images = await q(
     `SELECT im.version_id, im.view, im.file_sha FROM visual_images im JOIN visual_versions v ON v.id=im.version_id

@@ -10,6 +10,7 @@ type Version = {
   id: string; item_id: string; n: number; prompt: string; change_request: string | null; understood: string | null;
   views: string[]; status: string; error: string | null; provider: string | null; est_cents: number; cost_cents: number;
   base_version_id: string | null; reference_shas: string[];
+  change_set_id: string | null; wait_for_version_id: string | null; new_description: string | null;
 };
 type Img = { version_id: string; view: string; file_sha: string };
 type Data = {
@@ -49,6 +50,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
   const [msg, setMsg] = useState<{ kind: "error" | "info"; text: string } | null>(null);
   const [changeText, setChangeText] = useState("");
   const [showChange, setShowChange] = useState(false);
+  const [showOptional, setShowOptional] = useState(false);
   const fileInput = useRef<HTMLInputElement>(null);
   const planned = useRef(false);
 
@@ -64,7 +66,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
       post(`/api/projects/${projectId}/visuals/plan`).then(load).catch((e) => setMsg({ kind: "error", text: e.message }));
     }
   }, [d?.status, projectId, load]);
-  const active = !!d && (d.status === "planning" || d.versions.some((v) => v.status === "queued" || v.status === "generating"));
+  const active = !!d && (d.status === "planning" || d.versions.some((v) => ["queued", "generating", "waiting"].includes(v.status)));
   useEffect(() => {
     if (!active) return;
     const t = setInterval(load, 2500);
@@ -111,10 +113,11 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
   const imagesOf = (vid: string) => d.images.filter((i) => i.version_id === vid);
   const required = items.filter((i) => i.required);
   const approvedCount = required.filter((i) => i.status === "approved").length;
-  const todoRequired = required.filter((i) => i.status === "todo" && !versionsOf(i.id).some((v) => ["queued", "generating", "ready"].includes(v.status)));
-  const readyToGen = todoRequired.filter((i) => !i.parent_key || items.find((p) => p.key === i.parent_key)?.status === "approved");
+  const toCreate = required.filter((i) => i.status === "todo" && !versionsOf(i.id).some((v) => ["queued", "generating", "waiting", "ready"].includes(v.status)));
   const paid = (cat: string) => d.views[cat].filter((v) => !v.derived);
-  const estAll = readyToGen.reduce((s, i) => s + paid(i.category).length * d.provider.centsPerImage, 0);
+  const estAll = toCreate.reduce((s, i) => s + paid(i.category).length * d.provider.centsPerImage, 0);
+  const making = d.versions.filter((v) => ["queued", "generating", "waiting"].includes(v.status)).length;
+  const optionalCount = items.filter((i) => !i.required).length;
   const item = items.find((i) => i.id === sel) ?? null;
   const vers = item ? versionsOf(item.id) : [];
   const shown = item ? vers.find((v) => v.id === verSel[item.id]) ?? vers.find((v) => v.status === "draft") ?? vers.find((v) => v.id === item.approved_version_id) ?? vers[0] : undefined;
@@ -131,19 +134,20 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
         <span className="text-line">|</span>
         <p className={`text-sm ${d.provider.name === "none" ? "text-red-700" : "text-muted"}`}>{providerLabel}</p>
         <div className="ml-auto flex flex-wrap gap-2">
+          {making > 0 && <span className="self-center text-sm text-muted"><span className="mr-1 inline-block h-2 w-2 animate-pulse rounded-full bg-accent" />Making {making}…</span>}
           <button
-            disabled={!readyToGen.length || !!busy || d.provider.name === "none"}
+            disabled={!toCreate.length || !!busy || d.provider.name === "none"}
             onClick={() => act("all", () => post(`/api/projects/${projectId}/visuals/generate-all`), (r) => {
-              const res = r as { queued: number; waiting: string[] };
-              setMsg({ kind: "info", text: `Generating ${res.queued} item(s).${res.waiting.length ? ` ${res.waiting.length} wait for their parent look to be approved first.` : ""}` });
+              const res = r as { queued: number };
+              setMsg({ kind: "info", text: `Creating ${res.queued} item(s). Later ages and outfits start by themselves as soon as their parent look is ready, using its new images.` });
             })}
-            className="rounded-full border border-line px-4 py-2 text-sm font-medium hover:border-stone-400 disabled:opacity-40">
-            Generate {readyToGen.length} to-do item{readyToGen.length === 1 ? "" : "s"}{estAll ? ` · about ${usd(estAll)}` : ""}
+            className="studio-primary rounded-full px-4 py-2 text-sm font-semibold disabled:opacity-40">
+            {toCreate.length ? `Create all visuals · ${toCreate.length} items${estAll ? ` · about ${usd(estAll)}` : ""}` : "Everything is created"}
           </button>
           <button
             disabled={approvedCount < required.length || !!busy}
             onClick={() => act("finish", () => post(`/api/projects/${projectId}/visuals/finish`), () => onFinished())}
-            className="rounded-full bg-accent px-4 py-2 text-sm font-semibold text-white disabled:opacity-40">
+            className="rounded-full border border-line px-4 py-2 text-sm font-semibold hover:border-stone-400 disabled:opacity-40">
             Save to series bible and continue
           </button>
         </div>
@@ -153,7 +157,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
       <div className="grid gap-4 lg:grid-cols-[260px_minmax(0,1fr)]">
         <nav aria-label="Items to approve" className="space-y-4 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:self-start lg:overflow-y-auto">
           {GROUPS.map((g) => {
-            const list = items.filter((i) => i.category === g.cat);
+            const list = items.filter((i) => i.category === g.cat && (showOptional || i.required || versionsOf(i.id).length > 0));
             if (!list.length) return null;
             return (
               <div key={g.cat} className="rounded-2xl border border-line bg-white p-3">
@@ -175,6 +179,12 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
               </div>
             );
           })}
+          {optionalCount > 0 && (
+            <label className="flex items-center gap-2 px-2 text-sm text-muted">
+              <input type="checkbox" checked={showOptional} onChange={(e) => setShowOptional(e.target.checked)} className="accent-[var(--color-accent)]" />
+              Show {optionalCount} items only in Episode 1
+            </label>
+          )}
         </nav>
 
         {item && (
@@ -197,21 +207,14 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
 
             {item.status === "flagged" && <p className="mt-3 rounded-xl bg-red-50 p-3 text-sm text-red-800">{item.flag_reason}</p>}
 
-            <label className="mt-4 block">
-              <span className="mb-1 block text-xs font-medium uppercase tracking-wide text-muted">Description</span>
-              <textarea key={item.id} defaultValue={item.description} rows={2}
-                onBlur={(e) => e.target.value !== item.description && act("desc", () => fetch(`/api/visuals/items/${item.id}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ description: e.target.value }) }))}
-                className="w-full resize-none rounded-lg border border-line px-3 py-2 text-sm outline-none [field-sizing:content] focus:border-accent" />
-            </label>
-            {item.reference_hint && <p className="mt-1 text-xs text-muted">Existing reference: {item.reference_hint}. Use “Use my image” to add it.</p>}
-            {item.category === "character" && <ProfileCard item={item} d={d} items={items} />}
+            {!shown && <p className="mt-3 text-sm">{item.description}</p>}
 
             {vers.length > 1 && (
               <div className="mt-4 flex flex-wrap gap-2" role="tablist" aria-label="Versions">
                 {vers.map((v) => (
                   <button key={v.id} role="tab" aria-selected={shown?.id === v.id} onClick={() => setVerSel({ ...verSel, [item.id]: v.id })}
                     className={`rounded-full border px-3 py-1 text-xs ${shown?.id === v.id ? "border-accent bg-accent-soft" : "border-line"}`}>
-                    v{v.n}{v.id === item.approved_version_id ? " ✓" : ""}{v.provider === "upload" ? " · yours" : ""}{v.status === "draft" ? " · draft" : v.status === "failed" ? " · failed" : ["queued", "generating"].includes(v.status) ? " · making" : ""}
+                    v{v.n}{v.id === item.approved_version_id ? " ✓" : ""}{v.provider === "upload" ? " · yours" : ""}{v.status === "draft" ? " · draft" : v.status === "failed" ? " · failed" : ["queued", "generating", "waiting"].includes(v.status) ? " · making" : ""}
                   </button>
                 ))}
               </div>
@@ -222,24 +225,25 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
                 <p className="font-medium">Nothing to review yet</p>
                 <p className="mt-1 text-sm text-muted">
                   The app will make {paid(item.category).map((v) => v.label.toLowerCase()).join(", ")}{item.category === "character" ? ", then join front, back and face into one portfolio sheet" : ""}
-                  {parent ? `, using ${parent.name}'s approved look as the reference` : ""}.
+                  {parent ? `, using ${parent.name}'s newest look as the reference` : ""}.
                 </p>
                 <details className="mt-3 text-sm"><summary className="cursor-pointer text-muted">Image prompt</summary><p className="mt-2 whitespace-pre-wrap">{item.base_prompt}</p></details>
                 <div className="mt-4 flex flex-wrap gap-2">
-                  <button disabled={!!busy || d.provider.name === "none" || (!!parent && parent.status !== "approved")}
+                  <button disabled={!!busy || d.provider.name === "none"}
                     onClick={() => act("gen", () => post(`/api/visuals/items/${item.id}/generate`))}
                     className="rounded-full bg-accent px-5 py-2 font-semibold text-white disabled:opacity-40">
                     Generate · {paid(item.category).length} images{d.provider.centsPerImage ? ` · about ${usd(paid(item.category).length * d.provider.centsPerImage)}` : ""}
                   </button>
                   <button onClick={() => fileInput.current?.click()} className="rounded-full border border-line px-5 py-2 hover:border-stone-400">Use my image</button>
                 </div>
-                {parent && parent.status !== "approved" && <p className="mt-2 text-xs text-muted">Approve {parent.name} first, so this matches it.</p>}
               </div>
             )}
 
-            {shown && (shown.status === "queued" || shown.status === "generating") && (
+            {shown && ["queued", "generating", "waiting"].includes(shown.status) && (
               <div className="mt-5">
-                <p className="flex items-center gap-2 text-sm"><span className="h-2.5 w-2.5 animate-pulse rounded-full bg-accent" />Making version {shown.n}…</p>
+                <p className="flex items-center gap-2 text-sm"><span className="h-2.5 w-2.5 animate-pulse rounded-full bg-accent" />
+                  {shown.status === "waiting" ? `Waiting for ${parent?.name ?? "its parent look"}'s new images; it starts by itself.` : `Making version ${shown.n}: all views at once, usually under a minute…`}
+                </p>
                 <div className="mt-3 grid gap-3 sm:grid-cols-3">
                   {shown.views.map((v) => <div key={v} className="aspect-[3/4] animate-pulse rounded-xl bg-stone-100" />)}
                 </div>
@@ -269,14 +273,34 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
                 <p className="mt-2 text-sm text-muted">
                   Regenerates: {shown.views.map((v) => d.views[item.category].find((x) => x.view === v)?.label ?? v).join(", ")}
                   {shown.base_version_id && shown.views.length < d.views[item.category].length ? ` · other views stay as in version ${d.versions.find((v) => v.id === shown.base_version_id)?.n}` : ""}
-                  {d.provider.centsPerImage ? ` · about ${usd(shown.est_cents)}${d.provider.name === "openai" ? " (estimate; actual cost is recorded)" : ""}` : ""}
                 </p>
-                <div className="mt-3 flex gap-2">
-                  <button disabled={!!busy || d.provider.name === "none"} onClick={() => act("gen", () => post(`/api/visuals/versions/${shown.id}/generate`))}
-                    className="rounded-full bg-accent px-5 py-2 font-semibold text-white disabled:opacity-40">Generate</button>
-                  <button disabled={!!busy} onClick={() => act("discard", () => fetch(`/api/visuals/versions/${shown.id}`, { method: "DELETE" }), () => setVerSel({ ...verSel, [item.id]: "" }))}
-                    className="rounded-full border border-line px-5 py-2 hover:border-stone-400">Discard</button>
-                </div>
+                {(() => {
+                  const set = shown.change_set_id ? d.versions.filter((v) => v.change_set_id === shown.change_set_id && v.id !== shown.id && v.status === "draft") : [];
+                  const total = shown.est_cents + set.reduce((s2, v) => s2 + v.est_cents, 0);
+                  return (
+                    <>
+                      {set.length > 0 && (
+                        <div className="mt-3 rounded-lg bg-white/70 p-3 text-sm">
+                          <p className="font-medium">This change also updates {set.length} related item{set.length === 1 ? "" : "s"}:</p>
+                          <ul className="mt-1 list-disc pl-5">
+                            {set.map((v) => <li key={v.id}><b>{items.find((i) => i.id === v.item_id)?.name}</b>: {v.understood}</li>)}
+                          </ul>
+                          <p className="mt-1 text-xs text-muted">Each one is made from this item's new images. Items never generated were simply updated, at no cost.</p>
+                        </div>
+                      )}
+                      <div className="mt-3 flex flex-wrap items-center gap-2">
+                        <button disabled={!!busy || d.provider.name === "none"}
+                          onClick={() => act("gen", () => shown.change_set_id ? post(`/api/visuals/change-sets/${shown.change_set_id}/generate`) : post(`/api/visuals/versions/${shown.id}/generate`))}
+                          className="studio-primary rounded-full px-5 py-2 font-semibold disabled:opacity-40">
+                          {set.length ? `Update all ${set.length + 1}` : "Generate"}{d.provider.centsPerImage ? ` · about ${usd(total)}` : ""}
+                        </button>
+                        <button disabled={!!busy}
+                          onClick={() => act("discard", () => shown.change_set_id ? fetch(`/api/visuals/change-sets/${shown.change_set_id}`, { method: "DELETE" }) : fetch(`/api/visuals/versions/${shown.id}`, { method: "DELETE" }), () => setVerSel({ ...verSel, [item.id]: "" }))}
+                          className="rounded-full border border-line px-5 py-2 hover:border-stone-400">Discard</button>
+                      </div>
+                    </>
+                  );
+                })()}
               </div>
             )}
 
@@ -307,6 +331,17 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
                   ) : (
                     <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm text-emerald-800">This version is approved</span>
                   )}
+                  {(() => {
+                    const pending = shown.change_set_id ? d.versions.filter((v) => v.change_set_id === shown.change_set_id && v.status === "ready"
+                      && items.find((i) => i.id === v.item_id)?.approved_version_id !== v.id) : [];
+                    const stillMaking = shown.change_set_id ? d.versions.filter((v) => v.change_set_id === shown.change_set_id && ["queued", "generating", "waiting"].includes(v.status)).length : 0;
+                    return pending.length > 1 ? (
+                      <button disabled={!!busy || stillMaking > 0} onClick={() => act("approveset", () => post(`/api/visuals/change-sets/${shown.change_set_id}/approve`))}
+                        className="rounded-full bg-emerald-700 px-5 py-2 font-semibold text-white disabled:opacity-40">
+                        {stillMaking ? `Approve all once ${stillMaking} more finish` : `Approve all ${pending.length} updated items`}
+                      </button>
+                    ) : null;
+                  })()}
                   <button onClick={() => setShowChange(!showChange)} className="rounded-full border border-line px-5 py-2 hover:border-stone-400">Request change</button>
                   <button onClick={() => fileInput.current?.click()} className="rounded-full border border-line px-5 py-2 hover:border-stone-400">Use my image</button>
                   <span className="text-xs text-muted">{shown.provider === "mock" ? "Placeholder image" : shown.provider === "upload" ? "Uploaded" : `Cost ${usd(shown.cost_cents)}`}</span>
@@ -314,6 +349,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
                 {showChange && (
                   <div className="mt-3 rounded-xl border border-line p-3">
                     <label className="block text-sm font-medium" htmlFor="change">What should change?</label>
+                    <p className="mt-1 text-xs text-muted">The change carries through to every later age and outfit built from this look.</p>
                     <textarea id="change" value={changeText} onChange={(e) => setChangeText(e.target.value)} rows={2}
                       placeholder="For example: make the dupatta maroon and keep the same face"
                       className="mt-2 w-full resize-none rounded-lg border border-line px-3 py-2 text-sm outline-none [field-sizing:content] focus:border-accent" />
@@ -324,7 +360,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
                         setChangeText("");
                       })}
                       className="mt-2 rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white disabled:opacity-40">
-                      {busy === "change" ? "Working out the change…" : "Show me the new prompt"}
+                      {busy === "change" ? "Working out the change for this look and everything built from it…" : "Work out the change"}
                     </button>
                   </div>
                 )}
@@ -340,6 +376,18 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
                 </details>
               </>
             )}
+
+            <details className="mt-5 rounded-xl border border-line p-3 text-sm" key={`details-${item.id}`}>
+              <summary className="cursor-pointer font-medium">Details{item.category === "character" ? " and character profile" : ""}</summary>
+              <label className="mt-3 block">
+                <span className="mb-1 block text-xs font-medium uppercase tracking-wide text-muted">Description</span>
+                <textarea key={item.id + item.description} defaultValue={item.description} rows={2}
+                  onBlur={(e) => e.target.value !== item.description && act("desc", () => fetch(`/api/visuals/items/${item.id}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ description: e.target.value }) }))}
+                  className="w-full resize-none rounded-lg border border-line px-3 py-2 text-sm outline-none [field-sizing:content] focus:border-accent" />
+              </label>
+              {item.reference_hint && <p className="mt-1 text-xs text-muted">Existing reference: {item.reference_hint}. Use “Use my image” to add it.</p>}
+              {item.category === "character" && <ProfileCard item={item} d={d} items={items} />}
+            </details>
 
             <input ref={fileInput} type="file" accept="image/png,image/jpeg,image/webp" className="hidden" data-testid="visual-upload"
               onChange={(e) => {

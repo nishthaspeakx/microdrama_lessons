@@ -34,10 +34,44 @@ export function imageProvider(): Provider {
   return { name: "none", label: "", model: "", centsPerImage: () => 0 };
 }
 
-export async function generateImage(req: GenRequest): Promise<GenResult> {
+// At most IMAGE_CONCURRENCY image calls at once across the whole worker, so many
+// views can run in parallel without tripping the provider's rate limits.
+const LIMIT = Number(process.env.IMAGE_CONCURRENCY ?? 8);
+let active = 0;
+const waiting: (() => void)[] = [];
+async function acquire() {
+  if (active < LIMIT) { active++; return; }
+  await new Promise<void>((r) => waiting.push(r));
+  active++;
+}
+function release() {
+  active--;
+  waiting.shift()?.();
+}
+
+async function callProvider(req: GenRequest): Promise<GenResult> {
   const p = imageProvider();
   if (p.name === "mock") return (await import("./mock")).generate(req);
   if (p.name === "openai") return (await import("./openai")).generate(req);
   if (p.name === "gemini") return (await import("./gemini")).generate(req);
   throw new NoImageProvider("Image generation needs OPENAI_API_KEY (or GEMINI_API_KEY) in web/.env.local.");
+}
+
+/** One image, with a concurrency slot and backoff on rate limits or provider hiccups (never on safety blocks). */
+export async function generateImage(req: GenRequest): Promise<GenResult> {
+  await acquire();
+  try {
+    for (let attempt = 1; ; attempt++) {
+      try {
+        return await callProvider(req);
+      } catch (e) {
+        const msg = (e as Error).message;
+        const transient = /\b(429|500|502|503|504)\b|rate limit|timeout|ECONNRESET|fetch failed/i.test(msg) && !/credits remaining|safety filter|moderation/i.test(msg);
+        if (!transient || attempt >= 3) throw e;
+        await new Promise((r) => setTimeout(r, 10000 * attempt));
+      }
+    }
+  } finally {
+    release();
+  }
 }
