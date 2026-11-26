@@ -28,7 +28,12 @@ const VIDEO_BUDGET_CENTS = Number(process.env.PROJECT_VIDEO_BUDGET_USD ?? 40) * 
 export type Line = { id: string; speaker: string; devanagari: string; english: string; roman: string; direction: string };
 export type Scene = { n: number; heading: string; location_key: string; summary: string; duration_s: number; lines: Line[] };
 export type Screenplay = { scenes: Scene[]; notes: string[] };
-export type Settings = { model: VideoModel; resolution: string; aspect_ratio: string; fps: number; width: number; height: number; subtitles: boolean };
+/**
+ * dialogue: "recorded" = our locked-voice recordings, with the clip's own speech silenced under each line
+ * (Seedance re-voices the audio it is given, so keeping both would double every line); "clip" = the video
+ * model's own soundtrack, whose speech matches the mouths exactly but is its re-voicing of our recording.
+ */
+export type Settings = { model: VideoModel; resolution: string; aspect_ratio: string; fps: number; width: number; height: number; subtitles: boolean; dialogue?: "recorded" | "clip" };
 export type Episode = {
   id: string; project_id: string; number: number; title: string; status: string; source: string; screenplay: Screenplay;
   settings: Settings; bible_version: number | null; cut_sha: string | null; cut_srt_sha: string | null; error: string | null;
@@ -124,6 +129,7 @@ Rules:
 - refs: keys of what is visible, most important first, at most 6: for each person their character key and the outfit key they wear in this scene, then the location key, then key props. Use only keys from the list.
 - prompt: English, present tense, photoreal and cinematic, written for the video model. One sentence for the place and light first. Then each shot as "Shot 1 (0–3 s): framing; action; camera." Name people by name and give their age and clothes in a few words so the model matches the references. Say who speaks in each shot and that their lips move with their line. Keep screen direction consistent from clip to clip. No on-screen text, captions or logos. Do not write out the dialogue; it is added from the recordings.
 - Anyone protected (a child or a minor) is fully clothed exactly as in their outfit reference, no injury is shown, and danger comes through reaction and suggestion rather than harm.
+- When a child or minor is in frame, every adult in the same clip wears full upper-body clothing (a shirt or kurta, not a vest or undershirt alone): the video model's safety check blocks those clips. If the story puts an adult in an undershirt, keep the child out of that clip, or flag it in checks.
 - sound: ambience and effects with their seconds. No music unless the sources ask for it.
 - transition: how this clip joins the next: "cut", "match cut: …", "cut to black".
 
@@ -527,12 +533,23 @@ type AsmClip = Clip & {
  * Per clip: trims, the level of its own sound, mutes and added sound effects are applied here, so
  * edits that need no new footage cost nothing. `changed` marks where this cut differs from the one it revises.
  */
-export async function assembleEpisode(episodeId: string, opts: { revisionId?: string; changed?: { clipId: string; label: string }[] } = {}) {
+export async function assembleEpisode(episodeId: string, opts: {
+  revisionId?: string; changed?: { clipId: string; label: string }[];
+  /** Preview one scene: nothing is saved as a version; returns the preview file's sha. */
+  previewScene?: number; dialogue?: "recorded" | "clip";
+} = {}) {
   const e = (await one<Episode>("SELECT * FROM episodes WHERE id=$1", [episodeId]))!;
+  if (opts.dialogue) e.settings.dialogue = opts.dialogue;
+  const preview = opts.previewScene != null;
   try {
     const clips = await q<AsmClip>(
       `SELECT c.*, t.video_sha, t.stem_sha, t.duration_s AS take_seconds, t.line_times FROM episode_clips c
-       JOIN episode_takes t ON t.id=c.current_take_id WHERE c.episode_id=$1 ORDER BY c.n`, [episodeId]);
+       JOIN episode_takes t ON t.id=c.current_take_id WHERE c.episode_id=$1 ${preview ? "AND c.scene_n=$2" : ""} ORDER BY c.n`,
+      preview ? [episodeId, opts.previewScene] : [episodeId]);
+    if (preview) {
+      const all = await one<{ n: number }>("SELECT count(*)::int AS n FROM episode_clips WHERE episode_id=$1 AND scene_n=$2", [episodeId, opts.previewScene]);
+      if (!clips.length || clips.length < all!.n) throw new Error("Every clip in this scene needs a finished take first.");
+    }
     const { width: W, height: H, fps } = e.settings;
     const lines = new Map(allLines(e.screenplay).map((l) => [l.id, l]));
     const result = await withTmp(async (dir) => {
@@ -554,9 +571,10 @@ export async function assembleEpisode(episodeId: string, opts: { revisionId?: st
         let ambIn = "0:a";
         if (!hasAudio) { args.push("-f", "lavfi", "-t", full.toFixed(3), "-i", "anullsrc=r=48000:cl=stereo"); ambIn = `${idx++}:a`; }
         let stemIn: string | null = null;
-        if (c.stem_sha) {
+        const useStem = !!c.stem_sha && e.settings.dialogue !== "clip";
+        if (useStem) {
           const sp = path.join(dir, `s${c.n}.wav`);
-          await writeFile(sp, (await readStored(c.stem_sha)).buf);
+          await writeFile(sp, (await readStored(c.stem_sha!)).buf);
           args.push("-i", sp); stemIn = `${idx++}:a`;
         }
         const fxIn: { input: string; at: number; volume: number }[] = [];
@@ -569,7 +587,9 @@ export async function assembleEpisode(episodeId: string, opts: { revisionId?: st
         const fmt = "aresample=48000,aformat=channel_layouts=stereo";
         // The clip's own sound: kept low under dialogue, full where nobody speaks (scaled from the same setting).
         const ownLevel = stemIn ? Number(c.ambience) : Math.min(1, Number(c.ambience) / 0.3);
-        const mutes = (c.mutes ?? []).map((m) => `,volume=0:enable='between(t,${m.from},${m.to})'`).join("");
+        // With our recordings, silence the clip's own (re-voiced) speech under each line, with room for its timing drift.
+        const lineGaps = useStem ? (c.line_times ?? []).map((l) => ({ from: Math.max(0, l.start - 0.35), to: l.end + 0.35 })) : [];
+        const mutes = [...(c.mutes ?? []), ...lineGaps].map((m) => `,volume=0:enable='between(t,${m.from.toFixed(2)},${m.to.toFixed(2)})'`).join("");
         const parts = [`[${ambIn}]${fmt},volume=${ownLevel.toFixed(3)}${mutes}[amb]`];
         const mixIns = ["[amb]"];
         if (stemIn) { parts.push(`[${stemIn}]${fmt}[dlg]`); mixIns.push("[dlg]"); }
@@ -617,6 +637,7 @@ export async function assembleEpisode(episodeId: string, opts: { revisionId?: st
       return { video: await readFile(final), srt, markers, seconds: t0, clipMap };
     });
     const cut = await storeFile(result.video, "video/mp4", "derived");
+    if (preview) return cut;
     const srt = await storeFile(Buffer.from(result.srt, "utf8"), "application/x-subrip", "derived");
     const changes = (opts.changed ?? []).flatMap((ch) => {
       const m = result.clipMap.find((x) => x.clip_id === ch.clipId);
@@ -632,6 +653,7 @@ export async function assembleEpisode(episodeId: string, opts: { revisionId?: st
     await logEvent(e.project_id, "episode.assembled", { episode: e.number, seconds: result.seconds, version: cutRow!.n });
     return cutRow!.id;
   } catch (err) {
+    if (preview) throw err;
     await q("UPDATE episodes SET status='ready', error=$2, updated_at=now() WHERE id=$1", [episodeId, `Assembly failed: ${(err as Error).message}`.slice(0, 800)]);
     throw Object.assign(err as Error, { retryable: false });
   }
@@ -672,5 +694,6 @@ export async function editSettings(episodeId: string, patch: Partial<Settings>) 
   if (patch.model && patch.model in MODELS) s.model = patch.model;
   if (patch.resolution && ["480p", "720p", "1080p"].includes(patch.resolution)) s.resolution = patch.resolution;
   if (typeof patch.subtitles === "boolean") s.subtitles = patch.subtitles;
+  if (patch.dialogue === "recorded" || patch.dialogue === "clip") s.dialogue = patch.dialogue;
   await q("UPDATE episodes SET settings=$2, updated_at=now() WHERE id=$1", [episodeId, JSON.stringify(s)]);
 }

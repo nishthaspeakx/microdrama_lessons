@@ -121,7 +121,7 @@ export async function clipStatus(requestId: string): Promise<ClipStatus> {
     if (!v.ok) throw new Error(`Higgsfield video download ${v.status}`);
     return { state: "done", video: Buffer.from(await v.arrayBuffer()) };
   }
-  if (j.status === "nsfw") return { state: "failed", error: "Higgsfield's safety check blocked this clip (not charged). Rephrase the action, for example make a struggle less physical." };
+  if (j.status === "nsfw") return { state: "failed", error: "Higgsfield's safety check blocked this clip (not charged). It gives no reason. Common triggers: a child in frame with an adult in an undershirt or other revealing clothes, visible injury, or physical struggle. Change the outfit reference or the action, then generate again." };
   return { state: "failed", error: `Higgsfield: ${j.status}${j.error ? `, ${j.error}` : ""}` };
 }
 

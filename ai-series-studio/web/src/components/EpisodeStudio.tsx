@@ -3,7 +3,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 type Line = { id: string; speaker: string; devanagari: string; english: string; roman: string; direction: string };
 type Scene = { n: number; heading: string; location_key: string; summary: string; duration_s: number; lines: Line[] };
-type Settings = { model: string; resolution: string; aspect_ratio: string; fps: number; width: number; height: number; subtitles: boolean };
+type Settings = { model: string; resolution: string; aspect_ratio: string; fps: number; width: number; height: number; subtitles: boolean; dialogue?: string };
 type Episode = {
   id: string; number: number; title: string; status: string; source: string; screenplay: { scenes: Scene[]; notes: string[] };
   settings: Settings; cut_sha: string | null; cut_srt_sha: string | null; cut_markers: { scene: number; title: string; start: number }[]; error: string | null;
@@ -50,6 +50,7 @@ export default function EpisodeStudio({ projectId, onReview }: { projectId: stri
   const [busy, setBusy] = useState<string | null>(null);
   const [msg, setMsg] = useState<{ kind: "error" | "info"; text: string } | null>(null);
   const [roman, setRoman] = useState(false);
+  const [previews, setPreviews] = useState<Record<string, string>>({});
   const player = useRef<HTMLVideoElement>(null);
 
   const load = useCallback(async () => {
@@ -170,6 +171,11 @@ export default function EpisodeStudio({ projectId, onReview }: { projectId: stri
             <option value="480p">Draft 480p</option><option value="720p">720p</option><option value="1080p">Final 1080p</option>
           </select>
         </label>
+        <label className="flex items-center gap-1" title="The video model re-voices the dialogue it is given; choose which voices the cut uses">Dialogue
+          <select value={ep.settings.dialogue ?? "recorded"} onChange={(e) => patchSettings({ dialogue: e.target.value })} className="rounded-md border border-line px-2 py-1">
+            <option value="recorded">Our locked voices</option><option value="clip">Video model&apos;s voices (exact lip-sync)</option>
+          </select>
+        </label>
         <label className="flex items-center gap-1">
           <input type="checkbox" checked={ep.settings.subtitles} onChange={(e) => patchSettings({ subtitles: e.target.checked })} /> Devanagari subtitles
         </label>
@@ -207,7 +213,7 @@ export default function EpisodeStudio({ projectId, onReview }: { projectId: stri
             <video ref={player} controls preload="metadata" src={file(ep.cut_sha)} className="max-h-[70vh] rounded-xl bg-black" style={{ aspectRatio: `${ep.settings.width}/${ep.settings.height}` }} />
             <div className="min-w-56 flex-1">
               <p className="text-lg font-semibold">The assembled cut</p>
-              <p className="text-sm text-muted">Our recorded dialogue over each clip&apos;s own sound{ep.settings.subtitles ? ", Devanagari subtitles burned in" : ""}. Watch it through: sound, motion and lip-sync need a human check.</p>
+              <p className="text-sm text-muted">{ep.settings.dialogue === "clip" ? "The video model's own soundtrack" : "Our locked voices, with each clip's own sound kept low and its speech removed under our lines"}{ep.settings.subtitles ? ", Devanagari subtitles burned in" : ""}. Watch it through: sound, motion and lip-sync need a human check.</p>
               <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-muted">Scenes</p>
               <ul className="mt-1 space-y-1">
                 {ep.cut_markers.map((m) => (
@@ -294,6 +300,29 @@ export default function EpisodeStudio({ projectId, onReview }: { projectId: stri
                 {sceneClips.some((c) => c.current_take_id) ? "Generate this scene again" : "Test this scene first"}
               </button>
             </div>
+            {sceneClips.length > 0 && sceneClips.every((c) => c.current_take_id) && (
+              <div className="studio-review-panel">
+                <div className="flex flex-wrap items-center gap-2 text-sm">
+                  <p className="font-medium">Hear scene {sel.n} put together</p>
+                  {(["recorded", "clip"] as const).map((dlg) => (
+                    <button key={dlg} disabled={!!busy} onClick={() => act(`prev-${dlg}`, () => call(`/api/episodes/${ep.id}/preview`, "POST", { scene: sel.n, dialogue: dlg }),
+                      (r) => setPreviews((p) => ({ ...p, [`${sel.n}-${dlg}`]: (r as { sha: string }).sha })))}
+                      className="rounded-full border border-line px-3 py-1 hover:border-stone-400 disabled:opacity-40">
+                      {busy === `prev-${dlg}` ? "Putting it together…" : dlg === "recorded" ? "With our locked voices" : "With the video model's voices"}
+                    </button>
+                  ))}
+                </div>
+                <p className="mt-1 text-xs text-muted">The video model re-voices the lines it is given, so its mouths match its own voices exactly and ours only closely. Listen to both, then pick one under Dialogue above. Nothing is saved as a version.</p>
+                <div className="mt-2 flex flex-wrap gap-3">
+                  {(["recorded", "clip"] as const).map((dlg) => previews[`${sel.n}-${dlg}`] ? (
+                    <figure key={dlg} className="text-center">
+                      <video controls preload="metadata" src={file(previews[`${sel.n}-${dlg}`])} className="h-80 rounded-lg bg-black" style={{ aspectRatio: `${ep.settings.width}/${ep.settings.height}` }} />
+                      <figcaption className="text-xs text-muted">{dlg === "recorded" ? "Our locked voices" : "Video model's voices"}</figcaption>
+                    </figure>
+                  ) : null)}
+                </div>
+              </div>
+            )}
             {sceneClips.map((c) => (
               <ClipCard key={c.id} clip={c} takes={takesByClip.get(c.id) ?? []} scene={sel} item={item} items={d.items} roleName={roleName}
                 recs={recs} busy={!!busy} settings={ep.settings}
