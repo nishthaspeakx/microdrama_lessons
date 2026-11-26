@@ -33,14 +33,16 @@ Whenever the learner comes back from a video (finished or closed), Sia says "च
 
 ### Practice inside the story (prototype 2 only)
 
-Each question happens in a moment of the episode:
+The six questions play as one continuous scene that Sia guides. There is no Continue or Next; the learner only answers.
 
-1. The scene plays with the character's Hindi line, then freezes.
-2. Sia asks about the moment in her voice; her words light up as she speaks.
-3. The answers appear as dialogue bubbles. For a fill-in-the-blank, the blank sits in the character's line on the scene.
-4. On a correct answer, the bubble flies into the scene as the English subtitle and the scene replays with the character saying it in English. On a wrong one, Sia encourages and the scene replays with the right line.
+1. The scene plays with the character's Hindi line and freezes. Sia asks about the moment in her voice; her words light up as she speaks.
+2. The answers appear as dialogue bubbles. For a fill-in-the-blank, the blank sits in the character's line on the scene.
+3. Right answer: the bubble flies into the scene as the English subtitle, the character says it in English, and Sia reacts ("Very good! बिल्कुल सही जवाब!", "शाबाश! एकदम सही।" and other variations) and goes straight on to the next question.
+4. Wrong answer or Skip: Sia says "कोई बात नहीं! इसका correct answer है…" (or a variation), the character says the right line, and the next question follows.
 5. Speaking questions are "Be Suman": the scene pauses on her, you say her line, and she says it in English.
-6. Every question can be skipped (Skip in the top bar, or on the speaking card). The right answer shows at once and the scene still plays the line in English.
+6. After the sixth question Sia closes with "आपने Episode 1 की सारी lines English में बोल लीं! चलिए, अब देखते हैं आगे क्या हुआ…" and the Episode 2 screen appears.
+
+The scene card, Sia and the answer area stay on screen throughout; the clips cross-fade and a scene that is already on screen is not replayed.
 
 The scene clips are in `public/media/scenes/` (cut from the episode without subtitles, Hindi and English versions). Animations use the Motion library. The demo panel can jump straight to any question.
 

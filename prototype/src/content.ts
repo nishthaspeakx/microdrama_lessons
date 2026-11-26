@@ -11,14 +11,15 @@ export type Option = { text: string; correct?: boolean }
 // Prototype 2's story practice. A moment is a stretch of a scene clip, in Hindi or English,
 // with the subtitles shown over it (times are seconds within the clip).
 export type Moment = { lang: 'hi' | 'en'; from: number; to: number; hold?: number; subs?: { text: string; from: number; to: number }[] } // hold: the frame shown after it stops
+export type SiaLine = { text: string; audio: string }
 export type StoryBeat = {
   scene: string // key into Episode.scenes
-  intro: Moment // plays first, then holds its last frame
+  intro?: Moment // plays before Sia asks; left out when the scene is already on screen from the last question
   caption?: string // shown on the held frame; ___ becomes a slot
   role?: string // "be the character" for speaking lines
-  sia: { text: string; audio: string } // Sia asks the question in her voice
-  siaCorrect: string
-  siaWrong: string
+  sia: SiaLine // Sia asks the question in her voice
+  praise: SiaLine // said after a right answer, then she goes straight on to the next question
+  wrong: SiaLine // said after a wrong answer or a skip, before the right line plays
   reply: Moment // the character says the line in English
 }
 export type SceneClip = { hi: string; en: string; label: string; focus: string }
@@ -84,6 +85,8 @@ export type Episode = {
   exercises: Exercise[]
   // Prototype 2: the scene clips practice plays (cut from the episode without subtitles).
   scenes: Record<string, SceneClip>
+  // Prototype 2: what Sia says after the last question, before the reward screen.
+  practiceOutro: SiaLine
   // Recorded audio for the speaker buttons, keyed by the exact text that is spoken.
   voiceClips: Record<string, string>
   sentencesLearnt: number
@@ -150,6 +153,7 @@ export const episodes: Episode[] = [
       ctaHindi: 'Video in Hindi',
     },
     englishVideo: media('ep1-english.mp4'),
+    practiceOutro: { text: 'आपने Episode 1 की सारी lines English में बोल लीं! चलिए, अब देखते हैं आगे क्या हुआ…', audio: media('audio/flow/outro.mp3') },
     scenes: {
       meera: { hi: media('scenes/meera-hi.mp4'), en: media('scenes/meera-en.mp4'), label: 'Scene 1 · The bazaar', focus: '50% 30%' },
       suman: { hi: media('scenes/suman-hi.mp4'), en: media('scenes/suman-en.mp4'), label: 'Scene 2 · By the pickup', focus: '50% 42%' },
@@ -167,8 +171,9 @@ export const episodes: Episode[] = [
             scene: 'meera',
             intro: { lang: 'hi', from: 0, to: 7.3, subs: [{ text: 'मम्मी?', from: 1.5, to: 3.3 }, { text: 'कहाँ हो?', from: 5.4, to: 6.9 }] },
             caption: '“मम्मी? … कहाँ हो?”',
-            sia: { text: 'Meera अपनी मम्मी को ढूंढ रही है… “मम्मी, कहाँ हो?” को English में कैसे बोलेगी?', audio: media('audio/q/sia-q1.mp3') },
-            siaCorrect: media('audio/q/sia-correct.mp3'), siaWrong: media('audio/q/sia-wrong.mp3'),
+            sia: { text: 'Meera अपनी मम्मी को ढूंढ रही है… “मम्मी, कहाँ हो?” को English में कैसे बोलेगी?', audio: media('audio/flow/ask-q1.mp3') },
+            praise: { text: 'Very good! बिल्कुल सही जवाब!', audio: media('audio/flow/praise-1.mp3') },
+            wrong: { text: 'कोई बात नहीं! इसका correct answer है…', audio: media('audio/flow/wrong-1.mp3') },
             reply: { lang: 'en', from: 0.8, to: 7.3, subs: [{ text: 'Mummy? … Where are you?', from: 1.3, to: 7.3 }] },
           },
       },
@@ -183,10 +188,10 @@ export const episodes: Episode[] = [
         answer: 'Mummy, where are you?',
         story: {
             scene: 'meera',
-            intro: { lang: 'hi', from: 4.3, to: 7.3, subs: [{ text: 'कहाँ हो?', from: 5.4, to: 6.9 }] },
             caption: 'Mummy, where ___ you?',
-            sia: { text: 'अब Meera की बात पूरी कीजिए… Mummy, where … you? सही word चुनिए।', audio: media('audio/q/sia-q2.mp3') },
-            siaCorrect: media('audio/q/sia-correct.mp3'), siaWrong: media('audio/q/sia-wrong.mp3'),
+            sia: { text: 'अब Meera का यह sentence complete करो… Mummy, where … you?', audio: media('audio/flow/ask-q2.mp3') },
+            praise: { text: 'बहुत खूब! बिल्कुल सही word।', audio: media('audio/flow/praise-5.mp3') },
+            wrong: { text: 'अरे, almost! सही answer है…', audio: media('audio/flow/wrong-2.mp3') },
             reply: { lang: 'en', from: 4.3, to: 7.3, subs: [{ text: 'Mummy, where are you?', from: 4.6, to: 7.3 }] },
           },
       },
@@ -200,8 +205,9 @@ export const episodes: Episode[] = [
             scene: 'suman',
             intro: { lang: 'hi', from: 0, to: 5.15 },
             role: 'Suman',
-            sia: { text: 'अब आप Suman हैं। बच्चा बहुत डरा हुआ है… उससे English में कहिए, “डरो मत।”', audio: media('audio/q/sia-q3.mp3') },
-            siaCorrect: media('audio/q/sia-correct.mp3'), siaWrong: media('audio/q/sia-wrong.mp3'),
+            sia: { text: 'अब आप Suman हैं। बच्चा बहुत डरा हुआ है… उससे English में कहिए, “डरो मत।”', audio: media('audio/flow/ask-q3.mp3') },
+            praise: { text: 'Wow! आप तो बिल्कुल Suman की तरह बोले!', audio: media('audio/flow/praise-3.mp3') },
+            wrong: { text: 'कोई बात नहीं, सुनिए… सही जवाब है…', audio: media('audio/flow/wrong-3.mp3') },
             reply: { lang: 'en', from: 4.9, to: 6.2, subs: [{ text: "Don't be afraid.", from: 5.0, to: 6.2 }] },
           },
       },
@@ -215,10 +221,11 @@ export const episodes: Episode[] = [
         answer: 'Are you hurt?',
         story: {
             scene: 'suman',
-            intro: { lang: 'hi', from: 2.0, to: 7.64, hold: 7.5, subs: [{ text: 'डरो मत। तुम्हें चोट लगी है?', from: 5.2, to: 7.64 }] },
+            intro: { lang: 'hi', from: 4.5, to: 7.64, hold: 7.5, subs: [{ text: 'डरो मत। तुम्हें चोट लगी है?', from: 5.2, to: 7.64 }] },
             caption: '“दर्द हो रहा है?”',
-            sia: { text: 'Suman जानना चाहती है कि बच्चे को चोट तो नहीं लगी… “दर्द हो रहा है?” English में वो कैसे पूछेगी?', audio: media('audio/q/sia-q4.mp3') },
-            siaCorrect: media('audio/q/sia-correct.mp3'), siaWrong: media('audio/q/sia-wrong.mp3'),
+            sia: { text: 'Suman जानना चाहती है कि बच्चे को चोट तो नहीं लगी… “दर्द हो रहा है?” English में वो कैसे पूछेगी?', audio: media('audio/flow/ask-q4.mp3') },
+            praise: { text: 'Perfect! यही सही तरीका है पूछने का।', audio: media('audio/flow/praise-4.mp3') },
+            wrong: { text: 'कोई बात नहीं! इसका correct answer है…', audio: media('audio/flow/wrong-1.mp3') },
             reply: { lang: 'en', from: 4.6, to: 7.6, hold: 7.5, subs: [{ text: "Don't be afraid. Are you hurt?", from: 5.1, to: 7.6 }] },
           },
       },
@@ -234,10 +241,10 @@ export const episodes: Episode[] = [
         answer: 'Are you hurt?',
         story: {
             scene: 'suman',
-            intro: { lang: 'hi', from: 4.4, to: 7.64, hold: 7.5, subs: [{ text: 'डरो मत। तुम्हें चोट लगी है?', from: 5.2, to: 7.64 }] },
             caption: 'Are you ___ ?',
-            sia: { text: 'अब Suman का सवाल पूरा कीजिए… Are you … ? सही word चुनिए।', audio: media('audio/q/sia-q5.mp3') },
-            siaCorrect: media('audio/q/sia-correct.mp3'), siaWrong: media('audio/q/sia-wrong.mp3'),
+            sia: { text: 'और अब Suman का सवाल पूरा करो… Are you … ?', audio: media('audio/flow/ask-q5.mp3') },
+            praise: { text: 'शाबाश! एकदम सही।', audio: media('audio/flow/praise-2.mp3') },
+            wrong: { text: 'अरे, almost! सही answer है…', audio: media('audio/flow/wrong-2.mp3') },
             reply: { lang: 'en', from: 6.2, to: 7.6, hold: 7.5, subs: [{ text: 'Are you hurt?', from: 6.5, to: 7.6 }] },
           },
       },
@@ -251,8 +258,9 @@ export const episodes: Episode[] = [
             scene: 'suman',
             intro: { lang: 'en', from: 4.6, to: 6.4, subs: [{ text: "Don't be afraid.", from: 5.0, to: 6.4 }] },
             role: 'Suman',
-            sia: { text: 'अब Suman बनकर बच्चे से English में पूछिए… “तुम्हें चोट लगी है?”', audio: media('audio/q/sia-q6.mp3') },
-            siaCorrect: media('audio/q/sia-correct.mp3'), siaWrong: media('audio/q/sia-wrong.mp3'),
+            sia: { text: 'अब Suman बनकर बच्चे से English में पूछिए… “तुम्हें चोट लगी है?”', audio: media('audio/flow/ask-q6.mp3') },
+            praise: { text: 'Excellent! बहुत बढ़िया बोला!', audio: media('audio/flow/praise-6.mp3') },
+            wrong: { text: 'कोई बात नहीं, सुनिए… सही जवाब है…', audio: media('audio/flow/wrong-3.mp3') },
             reply: { lang: 'en', from: 6.4, to: 7.6, hold: 7.5, subs: [{ text: 'Are you hurt?', from: 6.5, to: 7.6 }] },
           },
       },
