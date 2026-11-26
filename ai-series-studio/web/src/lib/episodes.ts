@@ -359,6 +359,16 @@ export async function queueTakes(episodeId: string, clipIds: string[]) {
     throw new Error(`This would take video spend to $${((spent + est) / 100).toFixed(2)}, over the project's $${(VIDEO_BUDGET_CENTS / 100).toFixed(0)} video budget (PROJECT_VIDEO_BUDGET_USD).`);
   for (const c of clips) {
     if (c.status === "queued" || c.status === "generating") continue;
+    // If the last attempt reached Higgsfield and failed only on our side (a dropped connection), fetch that
+    // result instead of paying for a new generation.
+    const last = await one<{ id: string; request_id: string | null; status: string; error: string | null }>(
+      "SELECT id, request_id, status, error FROM episode_takes WHERE clip_id=$1 ORDER BY n DESC LIMIT 1", [c.id]);
+    if (last?.status === "failed" && last.request_id && !last.request_id.startsWith("mock") && !/^Higgsfield/.test(last.error ?? "")) {
+      await q("UPDATE episode_takes SET status='submitted', error=NULL, finished_at=NULL WHERE id=$1", [last.id]);
+      await q("UPDATE episode_clips SET status='queued', error=NULL WHERE id=$1", [c.id]);
+      await enqueue("episodes.take", e.project_id, { takeId: last.id });
+      continue;
+    }
     const t = await one<{ id: string }>(
       `INSERT INTO episode_takes (clip_id, n, provider, model, resolution, duration_s, prompt, est_cents)
        VALUES ($1, (SELECT COALESCE(MAX(n),0)+1 FROM episode_takes WHERE clip_id=$1), $2, $3, $4, $5, '', $6) RETURNING id`,
@@ -439,8 +449,21 @@ export async function runTake(takeId: string, lastAttempt = false) {
     }
     // 4. Poll, keeping the job alive so it is not mistaken for a dead worker.
     const deadline = Date.now() + 40 * 60_000;
+    let netErrors = 0;
     while (Date.now() < deadline) {
-      const s = await clipStatus(t.request_id!);
+      let s: Awaited<ReturnType<typeof clipStatus>>;
+      try {
+        s = await clipStatus(t.request_id!);
+        netErrors = 0;
+      } catch (err) {
+        // A dropped connection must not fail a clip Higgsfield is still making (or has already made and billed):
+        // keep polling the same request instead of starting a new one.
+        const retryable = (err as { retryable?: boolean }).retryable !== false;
+        if (!retryable || ++netErrors > 40) throw err;
+        await q("UPDATE jobs SET locked_at=now() WHERE status='running' AND type='episodes.take' AND payload->>'takeId'=$1", [takeId]);
+        await sleep(Math.min(5000 * netErrors, 30000));
+        continue;
+      }
       if (s.state === "done") {
         const cents = Number((await one<{ est_cents: string }>("SELECT est_cents FROM episode_takes WHERE id=$1", [takeId]))!.est_cents);
         return finishTake(takeId, c, e, s.video, cents);
