@@ -20,11 +20,13 @@ export async function runStructured<T>(opts: {
   role: string;
   system: string;
   input: string;
+  /** Sent after the input; lets several calls share one cached input. */
+  instruction?: string;
   schema: object;
   model?: string;
   projectId?: string | null;
 }): Promise<StructuredResult<T>> {
-  const inputHash = sha256(`${opts.role}\n${opts.system}\n${opts.input}`);
+  const inputHash = sha256(`${opts.role}\n${opts.system}\n${opts.input}\n${opts.instruction ?? ""}`);
   const fixture = path.join(FIXTURES, `${opts.role}-${inputHash.slice(0, 16)}.json`);
   const model = opts.model ?? "claude-opus-5-5";
   const started = Date.now();
@@ -36,7 +38,13 @@ export async function runStructured<T>(opts: {
       max_tokens: 32000,
       thinking: { type: "adaptive" },
       system: [{ type: "text", text: opts.system, cache_control: { type: "ephemeral" } }],
-      messages: [{ role: "user", content: opts.input }],
+      messages: [{
+        role: "user",
+        content: [
+          { type: "text", text: opts.input, cache_control: { type: "ephemeral" } },
+          ...(opts.instruction ? [{ type: "text" as const, text: opts.instruction }] : []),
+        ],
+      }],
       output_config: { format: { type: "json_schema", schema: opts.schema } },
     } as Anthropic.MessageStreamParams);
     const msg = await stream.finalMessage();

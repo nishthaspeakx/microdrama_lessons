@@ -1,7 +1,7 @@
 import { q, tx, logEvent } from "./db";
 import { runStructured, NoModelAvailable } from "./llm";
 import { renderForModel, type Section } from "./sources";
-import { intakeSchema, INTAKE_SYSTEM, type Intake } from "./intakeSchema";
+import { INTAKE_PARTS, INTAKE_SYSTEM, normalizeIntake, type Intake } from "./intakeSchema";
 
 type DocRow = { id: string; idx: number; filename: string; kind: string };
 type SecRow = { ref: string; document_id: string; level: number; heading: string; path: string[]; start_line: number; end_line: number; text: string };
@@ -56,16 +56,29 @@ function checkRefs(x: Intake, refs: Set<string>) {
 export async function runIntake(projectId: string) {
   await q("UPDATE projects SET status='extracting', updated_at=now() WHERE id=$1", [projectId]);
   const { input, refs } = await buildIntakeInput(projectId);
-  let res;
+  let res: { data: Record<string, unknown>; backend: "api" | "recorded"; model: string | null; inputHash: string };
   try {
-    res = await runStructured<Intake>({ role: "intake", system: INTAKE_SYSTEM, input, schema: intakeSchema, projectId });
+    const call = (p: (typeof INTAKE_PARTS)[number]) =>
+      runStructured<Record<string, unknown>>({
+        role: `intake.${p.name}`, system: INTAKE_SYSTEM, input, instruction: p.instruction, schema: p.schema, projectId,
+      });
+    // The first call writes the prompt cache; the other two read it.
+    const first = await call(INTAKE_PARTS[0]);
+    const rest = await Promise.all(INTAKE_PARTS.slice(1).map(call));
+    const all = [first, ...rest];
+    res = {
+      data: Object.assign({}, ...all.map((r) => r.data)),
+      backend: all.every((r) => r.backend === "recorded") ? "recorded" : "api",
+      model: first.model,
+      inputHash: first.inputHash,
+    };
   } catch (e) {
     await q("UPDATE projects SET status='intake_failed', updated_at=now() WHERE id=$1", [projectId]);
     await logEvent(projectId, "intake.failed", { error: String(e) });
     throw Object.assign(e as Error, { retryable: !(e instanceof NoModelAvailable) });
   }
   const extraction = res.data;
-  const summary: Intake = JSON.parse(JSON.stringify(extraction));
+  const summary: Intake = normalizeIntake(structuredClone(extraction));
   summary.conflicts.forEach((c) => (c.resolution = null));
   const warnings = checkRefs(summary, refs);
   // PDF text extraction often scrambles Devanagari letter order.

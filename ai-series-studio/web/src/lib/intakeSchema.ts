@@ -17,54 +17,102 @@ export const SECTION_KINDS = [
   "reference_guidance", "post_production", "other",
 ] as const;
 
+/*
+ * Kept to plain types on purpose: the API refused a stricter version (nullable
+ * unions and enums everywhere) as "compiled grammar is too large". Empty strings
+ * and 0 mean "not stated"; normalizeIntake() turns them into null and checks the
+ * allowed values afterwards.
+ */
+const int = { type: "integer" } as const;
+const strs = { type: "array", items: str } as const;
 export const intakeSchema = obj({
   series: obj({
-    title: str, title_alt: nstr, logline: str, episode_count: { type: "integer" },
-    setting: str, era: str, language: str, dialogue_script: str, tone: str,
-    format: obj({ aspect_ratio: nstr, fps: { type: ["integer", "null"] }, episode_length: nstr }),
-    sources: refs,
+    title: str, title_alt: str, logline: str, episode_count: int, setting: str, era: str,
+    language: str, dialogue_script: str, tone: str, aspect_ratio: str, fps: int, episode_length: str, sources: strs,
   }),
-  episodes: {
-    type: "array",
-    items: obj({
-      number: { type: "integer" }, title: str, title_en: nstr, runtime: nstr, summary: str,
-      ends_on: nstr,
-      script: obj({ status: { type: "string", enum: ["screenplay", "outline", "none"] }, sections: refs, note: nstr }),
-      sources: refs,
-    }),
-  },
-  characters: {
-    type: "array",
-    items: obj({
-      key: str, name: str, aliases: { type: "array", items: str },
-      ages: { type: "array", items: obj({ period: str, age: str, sources: refs }) },
-      role: str, description: str, appearance: nstr, speaks: { type: "boolean" },
-      first_episode: { type: ["integer", "null"] },
-      relationships: { type: "array", items: obj({ with: str, relation: str }) },
-      sources: refs,
-    }),
-  },
-  locations: { type: "array", items: obj({ key: str, name: str, description: str, episodes: { type: "array", items: { type: "integer" } }, sources: refs }) },
-  props: { type: "array", items: obj({ key: str, name: str, description: str, sources: refs }) },
-  production_requirements: {
-    type: "array",
-    items: obj({
-      category: { type: "string", enum: ["format", "look", "references", "generation", "sound", "music", "edit", "vfx", "subtitles", "delivery", "other"] },
-      text: str, sources: refs,
-    }),
-  },
-  conflicts: {
-    type: "array",
-    items: obj({
-      id: str, topic: str, severity: { type: "string", enum: ["changes_production", "minor"] },
-      description: str,
-      options: { type: "array", items: obj({ value: str, sources: refs }) },
-      recommendation: nstr,
-    }),
-  },
-  section_kinds: { type: "array", items: obj({ ref: str, kind: { type: "string", enum: [...SECTION_KINDS] } }) },
-  typed_brief_use: nstr,
+  episodes: { type: "array", items: obj({
+    number: int, title: str, title_en: str, runtime: str, summary: str, ends_on: str,
+    script_status: str, script_sections: strs, script_note: str, sources: strs,
+  }) },
+  characters: { type: "array", items: obj({
+    key: str, name: str, aliases: strs,
+    ages: { type: "array", items: obj({ period: str, age: str, sources: strs }) },
+    role: str, description: str, appearance: str, speaks: { type: "boolean" }, first_episode: int,
+    relationships: { type: "array", items: obj({ with: str, relation: str }) }, sources: strs,
+  }) },
+  locations: { type: "array", items: obj({ key: str, name: str, description: str, episodes: { type: "array", items: int }, sources: strs }) },
+  props: { type: "array", items: obj({ key: str, name: str, description: str, sources: strs }) },
+  production_requirements: { type: "array", items: obj({ category: str, text: str, sources: strs }) },
+  conflicts: { type: "array", items: obj({
+    id: str, topic: str, severity: str, description: str,
+    options: { type: "array", items: obj({ value: str, sources: strs }) }, recommendation: str,
+  }) },
+  section_kinds: { type: "array", items: obj({ ref: str, kind: str }) },
+  typed_brief_use: str,
 });
+
+const full = intakeSchema as unknown as { properties: Record<string, unknown> };
+const part = (...keys: string[]) => ({
+  type: "object", additionalProperties: false, required: keys,
+  properties: Object.fromEntries(keys.map((k) => [k, full.properties[k]])),
+});
+
+/**
+ * The full schema is too large for the API to enforce in one call, so the
+ * extraction runs as three calls over the same cached input.
+ */
+export const INTAKE_PARTS = [
+  { name: "story", keys: ["series", "episodes"], instruction: "Return only: series and episodes." },
+  { name: "world", keys: ["characters", "locations", "props"], instruction: "Return only: characters, locations and props." },
+  { name: "notes", keys: ["production_requirements", "conflicts", "section_kinds", "typed_brief_use"],
+    instruction: "Return only: production_requirements, conflicts, section_kinds (every section in the input) and typed_brief_use." },
+].map((p) => ({ ...p, schema: part(...p.keys) }));
+
+export const REQUIREMENT_CATEGORIES = ["format", "look", "references", "generation", "sound", "music", "edit", "vfx", "subtitles", "delivery", "other"];
+
+type Raw = Record<string, any>; // eslint-disable-line @typescript-eslint/no-explicit-any
+const orNull = (v: unknown) => (typeof v === "string" && v.trim() ? v.trim() : null);
+
+/** Model output (plain types) → Intake, with allowed values enforced. */
+export function normalizeIntake(r: Raw): Intake {
+  const se = r.series ?? {};
+  return {
+    series: {
+      title: se.title ?? "", title_alt: orNull(se.title_alt), logline: se.logline ?? "",
+      episode_count: Number(se.episode_count) || 0, setting: se.setting ?? "", era: se.era ?? "",
+      language: se.language ?? "", dialogue_script: se.dialogue_script ?? "", tone: se.tone ?? "",
+      format: { aspect_ratio: orNull(se.aspect_ratio), fps: Number(se.fps) || null, episode_length: orNull(se.episode_length) },
+      sources: se.sources ?? [],
+    },
+    episodes: (r.episodes ?? []).map((e: Raw) => ({
+      number: e.number, title: e.title ?? "", title_en: orNull(e.title_en), runtime: orNull(e.runtime),
+      summary: e.summary ?? "", ends_on: orNull(e.ends_on),
+      script: {
+        status: ["screenplay", "outline", "none"].includes(e.script_status) ? e.script_status : "none",
+        sections: e.script_sections ?? [], note: orNull(e.script_note),
+      },
+      sources: e.sources ?? [],
+    })),
+    characters: (r.characters ?? []).map((c: Raw) => ({
+      key: c.key, name: c.name, aliases: c.aliases ?? [], ages: c.ages ?? [], role: c.role ?? "",
+      description: c.description ?? "", appearance: orNull(c.appearance), speaks: !!c.speaks,
+      first_episode: Number(c.first_episode) || null, relationships: c.relationships ?? [], sources: c.sources ?? [],
+    })),
+    locations: r.locations ?? [],
+    props: r.props ?? [],
+    production_requirements: (r.production_requirements ?? []).map((q: Raw) => ({
+      ...q, category: REQUIREMENT_CATEGORIES.includes(q.category) ? q.category : "other",
+    })),
+    conflicts: (r.conflicts ?? []).map((c: Raw) => ({
+      id: c.id, topic: c.topic, severity: c.severity === "minor" ? "minor" : "changes_production",
+      description: c.description ?? "", options: c.options ?? [], recommendation: orNull(c.recommendation),
+    })),
+    section_kinds: (r.section_kinds ?? []).map((k: Raw) => ({
+      ref: k.ref, kind: (SECTION_KINDS as readonly string[]).includes(k.kind) ? k.kind : "other",
+    })),
+    typed_brief_use: orNull(r.typed_brief_use),
+  };
+}
 
 export type Intake = {
   series: {
@@ -95,7 +143,7 @@ export type Intake = {
   typed_brief_use: string | null;
 };
 
-export const INTAKE_PROMPT_VERSION = "intake v1 (2026-11-26)";
+export const INTAKE_PROMPT_VERSION = "intake v2 (2026-11-26)";
 
 export const INTAKE_SYSTEM = `# ${INTAKE_PROMPT_VERSION}
 
@@ -111,6 +159,12 @@ Extract:
 - production_requirements: format, look, reference, generation, sound, music, edit, VFX, subtitle and delivery requirements, each as one plain sentence.
 - conflicts: places where the sources disagree in a way that would change production — different ages, names, endings, runtimes, wardrobe, episode order, or a typed instruction that contradicts a document. Give each option with its sources and, if one is clearly newer or more specific, a recommendation. Do not report differences of wording.
 - section_kinds: classify every section: series_overview, screenplay (scene text and dialogue), production_note (direction for the team), sample_prompt (ready-made generation prompts), coverage_table (shot or clip lists), reference_guidance (what references to make), post_production (edit, colour, sound, music), other.
+
+Output conventions:
+- Use an empty string for anything not stated, and 0 for an unknown number.
+- script_status is "screenplay", "outline" or "none". severity is "changes_production" or "minor".
+- production requirement category is one of: format, look, references, generation, sound, music, edit, vfx, subtitles, delivery, other.
+- section kind is one of: series_overview, screenplay, production_note, sample_prompt, coverage_table, reference_guidance, post_production, other.
 
 Rules:
 - Cite sections in every "sources" list. Only cite references that exist in the input.

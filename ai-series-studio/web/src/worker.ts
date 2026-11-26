@@ -1,3 +1,6 @@
+/* Load .env.local the same way Next.js does, so the worker sees the same keys. */
+import { loadEnvConfig } from "@next/env";
+loadEnvConfig(process.cwd());
 /** Background worker: runs queued jobs from Postgres. Start with `npm run worker`. */
 import { migrate } from "./lib/db";
 import { claim, complete, fail, type Job } from "./lib/jobs";
