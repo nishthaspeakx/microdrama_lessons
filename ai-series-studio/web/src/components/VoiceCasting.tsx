@@ -216,7 +216,7 @@ export default function VoiceCasting({ projectId, onFinished }: { projectId: str
               <button disabled={!!busy || d.provider.name === "none" || role.status === "generating"}
                 onClick={() => act("suggest", () => call(`/api/voices/roles/${role.id}/suggest`))}
                 className="rounded-full bg-accent px-5 py-2 font-semibold text-white disabled:opacity-40">
-                {role.status === "generating" ? "Designing voices…" : cands.length ? "Suggest 3 more voices" : "Suggest 3 voices"}
+                {role.status === "generating" ? "Getting voices ready…" : cands.length ? "Suggest 3 more voices" : "Suggest 3 voices"}
               </button>
               <span className="text-sm text-muted">or</span>
               <input value={paste} onChange={(e) => setPaste(e.target.value)} placeholder="Paste an ElevenLabs Voice ID"
@@ -226,21 +226,6 @@ export default function VoiceCasting({ projectId, onFinished }: { projectId: str
                 className="rounded-full border border-line px-4 py-2 text-sm hover:border-stone-400 disabled:opacity-40">{busy === "paste" ? "Checking…" : "Try this voice"}</button>
             </div>
             {lastFailure && role.status !== "generating" && <p className="mt-2 rounded-lg bg-red-50 p-2 text-sm text-red-800">Last suggestion failed: {lastFailure.error}</p>}
-
-            <LibraryBrowser roleId={role.id} lib={lib?.roleId === role.id ? lib : null} busy={libBusy || !!busy}
-              tried={new Set(cands.filter((c) => c.provider_voice_id).map((c) => c.provider_voice_id!))}
-              onSearch={async (f) => {
-                setLibBusy(true);
-                try {
-                  const qs = new URLSearchParams(Object.entries(f).filter(([, v]) => v) as [string, string][]);
-                  const r = await fetch(`/api/voices/roles/${role.id}/library?${qs}`, { cache: "no-store" });
-                  const j = await r.json();
-                  if (!r.ok) throw new Error(j.error);
-                  setLib({ roleId: role.id, ...j });
-                } catch (e) { setMsg({ kind: "error", text: (e as Error).message }); }
-                finally { setLibBusy(false); }
-              }}
-              onTry={(v) => act("lib", () => call(`/api/voices/roles/${role.id}/library`, "POST", { voiceId: v.voice_id, publicOwnerId: v.public_owner_id, name: v.name }))} />
 
             <ul className="mt-4 space-y-3">
               {cands.map((c) => {
@@ -269,6 +254,21 @@ export default function VoiceCasting({ projectId, onFinished }: { projectId: str
                 );
               })}
             </ul>
+            <LibraryBrowser roleId={role.id} lib={lib?.roleId === role.id ? lib : null} busy={libBusy || !!busy}
+              tried={new Set(cands.filter((c) => c.provider_voice_id).map((c) => c.provider_voice_id!))}
+              onSearch={async (f) => {
+                setLibBusy(true);
+                try {
+                  const qs = new URLSearchParams(Object.entries(f).filter(([, v]) => v) as [string, string][]);
+                  const r = await fetch(`/api/voices/roles/${role.id}/library?${qs}`, { cache: "no-store" });
+                  const j = await r.json();
+                  if (!r.ok) throw new Error(j.error);
+                  setLib({ roleId: role.id, ...j });
+                } catch (e) { setMsg({ kind: "error", text: (e as Error).message }); }
+                finally { setLibBusy(false); }
+              }}
+              onTry={(v) => act("lib", () => call(`/api/voices/roles/${role.id}/library`, "POST", { voiceId: v.voice_id, publicOwnerId: v.public_owner_id, name: v.name }))} />
+
           </section>
         )}
       </div>
