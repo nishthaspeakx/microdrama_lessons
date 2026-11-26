@@ -178,6 +178,10 @@ export async function queueVersion(versionId: string) {
   }
   await q("UPDATE visual_versions SET status='queued', error=NULL WHERE id=$1", [versionId]);
   await enqueue("visuals.generate", v.project_id, { versionId });
+  // Retrying a parent also brings back the children that failed because of it.
+  const kids = await q<{ id: string; item_id: string }>(
+    "UPDATE visual_versions SET status='waiting', error=NULL WHERE wait_for_version_id=$1 AND status='failed' AND error LIKE 'Its parent look failed%' RETURNING id, item_id", [versionId]);
+  for (const k of kids) await q("UPDATE visual_items SET status='generating', updated_at=now() WHERE id=$1", [k.item_id]);
   return "queued";
 }
 
@@ -265,8 +269,12 @@ export async function runGeneration(versionId: string) {
   } catch (e) {
     await q("UPDATE visual_versions SET status='failed', error=$2 WHERE id=$1", [versionId, String((e as Error).message).slice(0, 1000)]);
     await q("UPDATE visual_items SET status=CASE WHEN approved_version_id IS NULL THEN 'todo' ELSE 'approved' END, updated_at=now() WHERE id=$1", [item.id]);
-    // Children waiting on this version cannot use it.
-    await q("UPDATE visual_versions SET status='failed', error='Its parent look failed; try that first.' WHERE wait_for_version_id=$1 AND status='waiting'", [versionId]);
+    // Children waiting on this version cannot use it; their items go back to what they were.
+    const stuck = await q<{ item_id: string }>(
+      "UPDATE visual_versions SET status='failed', error='Its parent look failed; try that first.' WHERE wait_for_version_id=$1 AND status='waiting' RETURNING item_id", [versionId]);
+    for (const c of stuck) {
+      await q("UPDATE visual_items SET status=CASE WHEN approved_version_id IS NULL THEN 'todo' ELSE 'approved' END, updated_at=now() WHERE id=$1", [c.item_id]);
+    }
     throw Object.assign(e as Error, { retryable: false });
   }
 }

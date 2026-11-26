@@ -79,6 +79,34 @@ export async function speak(voiceId: string, text: string, settings: Record<stri
   return { audio: Buffer.from(await res.arrayBuffer()), mime: "audio/mpeg", cents: cost * CENTS_PER_CHAR };
 }
 
+// ---------- voice library ----------
+
+export type LibraryVoice = {
+  voice_id: string; public_owner_id: string; name: string; gender: string; age: string; accent: string;
+  descriptive: string | null; use_case: string | null; preview_url: string | null; cloned_by_count: number;
+};
+
+/** Search the ElevenLabs voice library (free). */
+export async function searchLibrary(opts: { gender?: string; age?: string; language?: string; search?: string }): Promise<LibraryVoice[]> {
+  const params = new URLSearchParams({ page_size: "60", language: opts.language ?? "hi" });
+  if (opts.gender) params.set("gender", opts.gender);
+  if (opts.age) params.set("age", opts.age);
+  if (opts.search) params.set("search", opts.search);
+  const res = await fetch(`${BASE}/v1/shared-voices?${params}`, { headers: headers() });
+  if (!res.ok) await fail(res, "voice library");
+  const j = (await res.json()) as { voices: LibraryVoice[] };
+  return j.voices.sort((a, b) => (b.cloned_by_count ?? 0) - (a.cloned_by_count ?? 0));
+}
+
+/** Add a library voice to the account so it can speak. Library voices do not use cloned-voice slots. */
+export async function addLibraryVoice(publicOwnerId: string, voiceId: string, name: string): Promise<string> {
+  const res = await fetch(`${BASE}/v1/voices/add/${encodeURIComponent(publicOwnerId)}/${encodeURIComponent(voiceId)}`, {
+    method: "POST", headers: headers(), body: JSON.stringify({ new_name: name.slice(0, 100) }),
+  });
+  if (!res.ok) await fail(res, "add library voice");
+  return ((await res.json()) as { voice_id: string }).voice_id;
+}
+
 // ---------- test mode ----------
 
 /** A short sine tone as WAV, pitch derived from the seed, so candidates sound different. */

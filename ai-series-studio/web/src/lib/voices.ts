@@ -2,7 +2,7 @@ import { q, one, tx, logEvent } from "./db";
 import { enqueue } from "./jobs";
 import { runStructured } from "./llm";
 import { readStored, storeFile } from "./storage";
-import { designVoices, getVoice, saveDesignedVoice, speak, voiceProvider, DESIGN_MODEL, TTS_MODEL } from "./voice/provider";
+import { addLibraryVoice, designVoices, getVoice, saveDesignedVoice, searchLibrary, speak, voiceProvider, DESIGN_MODEL, TTS_MODEL } from "./voice/provider";
 import type { Intake } from "./intakeSchema";
 
 export type Role = {
@@ -234,6 +234,45 @@ export async function lockCandidate(candidateId: string) {
   await q("UPDATE voice_roles SET locked_candidate_id=$2, status='locked', updated_at=now() WHERE id=$1", [c.role_id, candidateId]);
   await logEvent(c.project_id, "voices.locked", { role: c.role_name, voiceId, model: TTS_MODEL });
   return { voiceId };
+}
+
+// ---------- Voice library ----------
+
+/** Gender and library age band from the role's brief, which starts like "Female farming wife, mid-thirties…". */
+export function libraryFilter(role: Role): { gender: string; age: string } {
+  const b = role.voice_brief.toLowerCase();
+  const gender = /^\s*(female|woman|girl|teenage girl)/.test(b) || /\b(she|her)\b/.test(b.slice(0, 120)) ? "female" : "male";
+  const age = /seventeen|sixteen|eighteen|teen|young|twenties|student|boy|girl/.test(b.slice(0, 120)) ? "young"
+    : /sixties|seventies|old man|old woman|elderly|grand/.test(b) ? "old" : "middle_aged";
+  return { gender, age };
+}
+
+export async function libraryFor(roleId: string, override: { gender?: string; age?: string; search?: string } = {}) {
+  requireProvider();
+  const role = await one<Role>("SELECT * FROM voice_roles WHERE id=$1", [roleId]);
+  if (!role) throw new Error("not found");
+  const f = { ...libraryFilter(role), ...Object.fromEntries(Object.entries(override).filter(([, v]) => v)) };
+  const voices = voiceProvider() === "mock" ? [] : await searchLibrary(f);
+  return { filter: f, voices: voices.slice(0, 30) };
+}
+
+/** Add a library voice to the account (no slot needed) and audition it on the role's own text. */
+export async function auditionLibraryVoice(roleId: string, v: { voiceId: string; publicOwnerId: string; name: string }) {
+  requireProvider();
+  const role = await one<Role & { project_name: string }>(
+    "SELECT r.*, p.name AS project_name FROM voice_roles r JOIN projects p ON p.id=r.project_id WHERE r.id=$1", [roleId]);
+  if (!role) throw new Error("not found");
+  let usable = true;
+  try { await getVoice(v.voiceId); } catch { usable = false; }
+  if (!usable) await addLibraryVoice(v.publicOwnerId, v.voiceId, `${role.project_name} audition · ${v.name}`);
+  const n = await nextN(roleId);
+  const c = await one<{ id: string }>(
+    `INSERT INTO voice_candidates (role_id, n, source, label, provider, provider_voice_id, description, model, text, status)
+     VALUES ($1,$2,'library',$3,$4,$5,$6,$7,$8,'queued') RETURNING id`,
+    [roleId, n, v.name, voiceProvider(), v.voiceId, "From the ElevenLabs voice library", TTS_MODEL, role.audition_text]);
+  await q("UPDATE voice_roles SET status=CASE WHEN status='todo' THEN 'generating' ELSE status END, updated_at=now() WHERE id=$1", [roleId]);
+  await enqueue("voices.speak", role.project_id, { candidateId: c!.id });
+  return c!.id;
 }
 
 // ---------- Finish step 3 ----------

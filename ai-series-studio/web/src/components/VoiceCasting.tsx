@@ -34,6 +34,8 @@ export default function VoiceCasting({ projectId, onFinished }: { projectId: str
   const [busy, setBusy] = useState<string | null>(null);
   const [msg, setMsg] = useState<{ kind: "error" | "info"; text: string } | null>(null);
   const [paste, setPaste] = useState("");
+  const [lib, setLib] = useState<{ roleId: string; filter: { gender: string; age: string }; voices: LibVoice[] } | null>(null);
+  const [libBusy, setLibBusy] = useState(false);
   const [newP, setNewP] = useState({ written: "", say_as: "", note: "" });
   const planned = useRef(false);
   const refInput = useRef<HTMLInputElement>(null);
@@ -225,6 +227,21 @@ export default function VoiceCasting({ projectId, onFinished }: { projectId: str
             </div>
             {lastFailure && role.status !== "generating" && <p className="mt-2 rounded-lg bg-red-50 p-2 text-sm text-red-800">Last suggestion failed: {lastFailure.error}</p>}
 
+            <LibraryBrowser roleId={role.id} lib={lib?.roleId === role.id ? lib : null} busy={libBusy || !!busy}
+              tried={new Set(cands.filter((c) => c.provider_voice_id).map((c) => c.provider_voice_id!))}
+              onSearch={async (f) => {
+                setLibBusy(true);
+                try {
+                  const qs = new URLSearchParams(Object.entries(f).filter(([, v]) => v) as [string, string][]);
+                  const r = await fetch(`/api/voices/roles/${role.id}/library?${qs}`, { cache: "no-store" });
+                  const j = await r.json();
+                  if (!r.ok) throw new Error(j.error);
+                  setLib({ roleId: role.id, ...j });
+                } catch (e) { setMsg({ kind: "error", text: (e as Error).message }); }
+                finally { setLibBusy(false); }
+              }}
+              onTry={(v) => act("lib", () => call(`/api/voices/roles/${role.id}/library`, "POST", { voiceId: v.voice_id, publicOwnerId: v.public_owner_id, name: v.name }))} />
+
             <ul className="mt-4 space-y-3">
               {cands.map((c) => {
                 const isLocked = role.locked_candidate_id === c.id;
@@ -232,7 +249,7 @@ export default function VoiceCasting({ projectId, onFinished }: { projectId: str
                   <li key={c.id} className={`rounded-xl border p-3 ${isLocked ? "border-emerald-300 bg-emerald-50/40" : "border-line"}`}>
                     <div className="flex flex-wrap items-center gap-3">
                       <p className="font-medium">{c.label}</p>
-                      <span className="text-xs text-muted">{c.source === "pasted" ? "Your Voice ID" : "Designed"}{c.provider === "mock" ? " · test tone" : ""}{c.provider_voice_id ? ` · ${c.provider_voice_id}` : ""}</span>
+                      <span className="text-xs text-muted">{c.source === "pasted" ? "Your Voice ID" : c.source === "library" ? "ElevenLabs library" : "Designed"}{c.provider === "mock" ? " · test tone" : ""}{c.provider_voice_id ? ` · ${c.provider_voice_id}` : ""}</span>
                       {isLocked && <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs text-emerald-800">Locked</span>}
                     </div>
                     {c.status === "ready" && c.audio_sha && <audio controls preload="none" src={file(c.audio_sha)} className="mt-2 w-full" />}
@@ -256,5 +273,49 @@ export default function VoiceCasting({ projectId, onFinished }: { projectId: str
         )}
       </div>
     </div>
+  );
+}
+
+type LibVoice = {
+  voice_id: string; public_owner_id: string; name: string; gender: string; age: string; accent: string;
+  descriptive: string | null; use_case: string | null; preview_url: string | null; cloned_by_count: number;
+};
+
+/** Hindi voices from the ElevenLabs library that fit the part: play their own sample, then try one on our line. */
+function LibraryBrowser({ roleId, lib, busy, tried, onSearch, onTry }: {
+  roleId: string; lib: { filter: { gender: string; age: string }; voices: LibVoice[] } | null; busy: boolean; tried: Set<string>;
+  onSearch: (f: { gender?: string; age?: string; search?: string }) => void; onTry: (v: LibVoice) => void;
+}) {
+  const [search, setSearch] = useState("");
+  return (
+    <details className="mt-4 rounded-xl border border-line p-3 text-sm" onToggle={(e) => { if ((e.target as HTMLDetailsElement).open && !lib) onSearch({}); }} key={roleId}>
+      <summary className="cursor-pointer font-medium">Browse the ElevenLabs voice library (Hindi)</summary>
+      <div className="mt-3 flex flex-wrap items-center gap-2">
+        <select aria-label="Gender" value={lib?.filter.gender ?? ""} onChange={(e) => onSearch({ gender: e.target.value, age: lib?.filter.age, search })} className="rounded-full border border-line px-3 py-1">
+          <option value="female">Female</option><option value="male">Male</option>
+        </select>
+        <select aria-label="Age" value={lib?.filter.age ?? ""} onChange={(e) => onSearch({ gender: lib?.filter.gender, age: e.target.value, search })} className="rounded-full border border-line px-3 py-1">
+          <option value="young">Young</option><option value="middle_aged">Middle-aged</option><option value="old">Older</option>
+        </select>
+        <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search, e.g. drama, calm, village" className="w-56 rounded-full border border-line px-3 py-1" />
+        <button disabled={busy} onClick={() => onSearch({ gender: lib?.filter.gender, age: lib?.filter.age, search })} className="rounded-full border border-line px-3 py-1 hover:border-stone-400 disabled:opacity-40">Search</button>
+        <span className="text-xs text-muted">Free to browse. Trying one adds it to your account (no voice slot) and reads this part's audition text.</span>
+      </div>
+      {busy && !lib && <p className="mt-3 text-muted">Searching…</p>}
+      <ul className="mt-3 max-h-96 space-y-2 overflow-y-auto pr-1">
+        {lib?.voices.map((v) => (
+          <li key={v.voice_id} className="rounded-lg border border-line p-2">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="font-medium">{v.name}</span>
+              <span className="text-xs text-muted">{[v.descriptive, v.use_case?.replace(/_/g, " "), v.accent !== "standard" ? v.accent : null].filter(Boolean).join(" · ")} · used by {v.cloned_by_count.toLocaleString()}</span>
+              <button disabled={busy || tried.has(v.voice_id)} onClick={() => onTry(v)}
+                className="ml-auto rounded-full bg-accent px-3 py-1 text-xs font-semibold text-white disabled:opacity-40">{tried.has(v.voice_id) ? "Already in the list" : "Try with our line"}</button>
+            </div>
+            {v.preview_url && <audio controls preload="none" src={v.preview_url} className="mt-1 h-8 w-full" />}
+          </li>
+        ))}
+        {lib && !lib.voices.length && <li className="text-muted">No voices match. Try another age or search.</li>}
+      </ul>
+    </details>
   );
 }
