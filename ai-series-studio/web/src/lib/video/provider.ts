@@ -8,7 +8,7 @@
  *   image_urls 1–9, audio_urls ≤3 (2–15 s each, 15 s total), generate_audio} → {request_id, status_url}.
  *   Seedance 2.5: duration 4–30, image_urls ≤30, audio_urls ≤10.
  * - GET /requests/{id}/status → queued | in_progress | completed | failed | nsfw | canceled; video.url when completed.
- * - POST /estimate/{endpoint} with the same body → {usd}.
+ * - POST /estimate/{endpoint} returns the price list as text (per second by resolution), not a total.
  * VIDEO_PROVIDER=mock (or no key) gives labelled placeholder clips made locally with FFmpeg, at no cost.
  */
 import { execFile } from "node:child_process";
@@ -27,11 +27,12 @@ export const MODELS: Record<VideoModel, { maxSeconds: number; maxImages: number;
   "seedance-2.0": { maxSeconds: 15, maxImages: 9, maxAudio: 3, label: "Seedance 2.0" },
   "seedance-2.5": { maxSeconds: 30, maxImages: 30, maxAudio: 10, label: "Seedance 2.5" },
 };
-// Fallback estimate when the estimate endpoint cannot be reached: Higgsfield's API price page, resolution unstated,
-// scaled up for higher resolutions. The real estimate from the API replaces it when a key is set.
-const FALLBACK_USD_PER_S: Record<VideoModel, Record<string, number>> = {
-  "seedance-2.0": { "480p": 0.0804, "720p": 0.16, "1080p": 0.32 },
-  "seedance-2.5": { "480p": 0.1177, "720p": 0.24, "1080p": 0.47 },
+// Higgsfield's self-serve rates per second of output (from POST /estimate, read 2026-11-26), for image and audio
+// references (no video input). The estimate endpoint returns this price list as text, not a total, so the app
+// multiplies by the clip length itself.
+const USD_PER_S: Record<VideoModel, Record<string, number>> = {
+  "seedance-2.0": { "480p": 0.0804, "720p": 0.1735, "1080p": 0.4293 },
+  "seedance-2.5": { "480p": 0.1177, "720p": 0.2647, "1080p": 0.6518 },
 };
 
 export function videoProvider(): "higgsfield" | "mock" {
@@ -94,24 +95,14 @@ async function body(req: ClipRequest) {
 /** Estimated cents for one clip. Asks Higgsfield when a key is set; otherwise uses the price list. */
 export async function estimateCents(model: VideoModel, resolution: string, duration: number): Promise<number> {
   if (videoProvider() === "mock") return 0;
-  return Math.round(100 * (FALLBACK_USD_PER_S[model][resolution] ?? FALLBACK_USD_PER_S[model]["720p"]) * duration * 10) / 10;
-}
-
-/** Ask Higgsfield what this exact request will cost, just before submitting it. */
-async function liveEstimate(model: VideoModel, b: object): Promise<number | null> {
-  try {
-    const res = await fetch(`${BASE}/estimate/bytedance/${model}/reference-to-video`, { method: "POST", headers: auth(), body: JSON.stringify(b) });
-    if (!res.ok) return null;
-    const j = (await res.json()) as { usd?: string | number };
-    return j.usd == null ? null : Number(j.usd) * 100;
-  } catch { return null; }
+  return Math.round(100 * (USD_PER_S[model][resolution] ?? USD_PER_S[model]["720p"]) * duration * 10) / 10;
 }
 
 /** Submit one clip. Returns the provider's request id (mock clips are finished at once). */
 export async function submitClip(req: ClipRequest): Promise<{ requestId: string; cents: number | null; mockVideo?: Buffer }> {
   if (videoProvider() === "mock") return { requestId: `mock-${Date.now()}`, cents: 0, mockVideo: await mockClip(req) };
   const b = await body(req);
-  const cents = await liveEstimate(req.model, b);
+  const cents = await estimateCents(req.model, req.resolution, b.duration);
   const res = await fetch(`${BASE}/bytedance/${req.model}/reference-to-video`, { method: "POST", headers: auth(), body: JSON.stringify(b) });
   if (!res.ok) await fail(res, "submit");
   const j = (await res.json()) as { request_id: string };
