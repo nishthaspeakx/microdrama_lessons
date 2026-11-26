@@ -17,6 +17,10 @@ type Take = {
   id: string; clip_id: string; n: number; provider: string; model: string; resolution: string; duration_s: number; prompt: string;
   status: string; video_sha: string | null; error: string | null; est_cents: number; cost_cents: number;
 };
+type SceneChange = {
+  id: string; scene_n: number; request: string; understood: string; est_cents: number; status: string;
+  plan: { clips: { clip_n: number; why: string; prompt: string; duration_s: number; shots: Shot[] }[]; lines: { line_id: string; new_devanagari: string; new_english: string }[]; cannot: string; remake: number[] };
+};
 type Rec = { line_id: string; role_key: string; status: string; audio_sha: string | null; duration_s: number | null; error: string | null };
 type Data = {
   episodes: { number: number; title: string; runtime: string; summary: string; script: string; note: string | null; started: boolean; suggested: boolean }[];
@@ -26,6 +30,7 @@ type Data = {
   provider: { name: string; models: Record<string, string> };
   episode: Episode | null; clips?: Clip[]; takes?: Take[]; recordings?: Rec[]; lineEstimates?: { id: string; est: number }[];
   estimate?: { remainingCents: number; runtimeS: number }; videoSpentCents?: number; linesJob?: { status: string; error: string | null } | null;
+  sceneChanges?: SceneChange[]; newerThanCut?: number | null;
 };
 
 const shotText = (s: Shot) => (s.framing ? `${s.framing.replace(/\.$/, "")}. ${s.action}` : s.action);
@@ -51,6 +56,7 @@ export default function EpisodeStudio({ projectId, onReview }: { projectId: stri
   const [msg, setMsg] = useState<{ kind: "error" | "info"; text: string } | null>(null);
   const [roman, setRoman] = useState(false);
   const [previews, setPreviews] = useState<Record<string, string>>({});
+  const [changeText, setChangeText] = useState<Record<number, string>>({});
   const player = useRef<HTMLVideoElement>(null);
 
   const load = useCallback(async () => {
@@ -137,6 +143,10 @@ export default function EpisodeStudio({ projectId, onReview }: { projectId: stri
   const sceneClips = clips.filter((c) => c.scene_n === sel?.n);
   const ready = clips.filter((c) => c.current_take_id).length;
   const working = clips.filter((c) => c.status === "queued" || c.status === "generating").length;
+  // Assemble is the next step once every clip has a take and something is newer than the last cut.
+  const assembleNext = clips.length > 0 && ready === clips.length && working === 0 && ep.status !== "assembling" && (!ep.cut_sha || (d.newerThanCut ?? 0) > 0);
+  const pending = (d.sceneChanges ?? []).find((x) => x.scene_n === sel?.n && x.status === "planned");
+  const lastApplied = (d.sceneChanges ?? []).find((x) => x.scene_n === sel?.n && x.status === "applied");
   const roleName = (k: string) => d.roles.find((r) => r.key === k)?.name ?? (k || "Unassigned");
   const item = (k: string) => d.items.find((i) => i.key === k);
   const linesTotal = scenes.reduce((a, s) => a + s.lines.length, 0);
@@ -188,13 +198,14 @@ export default function EpisodeStudio({ projectId, onReview }: { projectId: stri
         <div className="ml-auto flex flex-wrap gap-2">
           <button disabled={!!busy || ready === clips.length || working > 0} onClick={() => act("all", () => call(`/api/episodes/${ep.id}/generate`, "POST", { all: true }),
             (r) => setMsg({ kind: "info", text: `Making ${clips.length - ready} clip(s), estimated ${usd((r as { estCents: number }).estCents)}. Cards update as each one finishes.` }))}
-            className="rounded-full bg-accent px-4 py-2 font-semibold text-white disabled:opacity-40">
+            className={`rounded-full px-4 py-2 font-semibold disabled:opacity-40 ${assembleNext ? "border border-line text-ink" : "bg-accent text-white"}`}>
             Create Episode {ep.number}{d.estimate?.remainingCents ? ` · about ${usd(d.estimate.remainingCents)}` : ""}
           </button>
           <button disabled={!!busy || ready < clips.length || !clips.length || ep.status === "assembling"} onClick={() => act("assemble", () => call(`/api/episodes/${ep.id}/assemble`))}
-            className="rounded-full border border-accent px-4 py-2 font-semibold text-accent disabled:opacity-40">
-            {ep.status === "assembling" ? "Assembling…" : ep.cut_sha ? "Assemble again" : "Assemble the cut"}
+            className={`rounded-full px-4 py-2 font-semibold disabled:opacity-40 ${assembleNext ? "bg-accent text-white shadow-lg ring-4 ring-accent/25" : "border border-accent text-accent"}`}>
+            {ep.status === "assembling" ? "Assembling…" : ep.cut_sha ? (assembleNext ? `Assemble v-next with ${d.newerThanCut} new clip${d.newerThanCut === 1 ? "" : "s"}` : "Assemble again") : "Assemble the cut"}
           </button>
+          {clips.length > 0 && ready < clips.length && <p className="basis-full text-right text-xs text-muted">Assemble needs every clip: {clips.length - ready} not made yet.</p>}
         </div>
       </div>
       {msg && <p className={`rounded-xl p-3 text-sm ${msg.kind === "error" ? "bg-red-50 text-red-800" : "bg-sky-50 text-sky-900"}`}>{msg.text}</p>}
@@ -300,6 +311,51 @@ export default function EpisodeStudio({ projectId, onReview }: { projectId: stri
                 {sceneClips.some((c) => c.current_take_id) ? "Generate this scene again" : "Test this scene first"}
               </button>
             </div>
+            <div className="studio-review-panel">
+              <p className="font-medium">Change this scene</p>
+              <p className="text-xs text-muted">Say it in plain words. You will see what was understood and which clips get a new version, with the cost, before anything is made.</p>
+              {!pending && (
+                <>
+                  <textarea value={changeText[sel.n] ?? ""} onChange={(e) => setChangeText((t) => ({ ...t, [sel.n]: e.target.value }))} rows={2}
+                    placeholder="e.g. Suman and Devendra should look at each other, so it feels like they are talking to each other"
+                    className="mt-2 w-full rounded-lg border border-line px-3 py-2 text-sm outline-none focus:border-accent" aria-label={`Change scene ${sel.n}`} />
+                  <button disabled={!!busy || !(changeText[sel.n] ?? "").trim()}
+                    onClick={() => act("change", () => call(`/api/episodes/${ep.id}/scene-changes`, "POST", { scene: sel.n, request: changeText[sel.n] }),
+                      () => setChangeText((t) => ({ ...t, [sel.n]: "" })))}
+                    className="mt-2 rounded-full bg-accent px-4 py-1.5 text-sm font-semibold text-white disabled:opacity-40">
+                    {busy === "change" ? "Reading your change…" : "Show what will change"}
+                  </button>
+                </>
+              )}
+              {pending && (
+                <div className="mt-2 rounded-xl border border-accent/40 bg-accent-soft/40 p-3 text-sm">
+                  <p className="text-xs text-muted">You asked: {pending.request}</p>
+                  <p className="mt-1 font-medium">{pending.understood}</p>
+                  <ul className="mt-2 space-y-1">
+                    {pending.plan.clips.map((x) => (
+                      <li key={x.clip_n}>
+                        <details><summary className="cursor-pointer"><span className="font-medium">Clip {x.clip_n}</span> · {x.why}{x.duration_s ? ` · ${x.duration_s} s` : ""}</summary>
+                          <ol className="mt-1 space-y-0.5 pl-4 text-xs">{x.shots.map((sh, i) => <li key={i}><span className="tabular-nums text-muted">{sh.t0}–{sh.t1} s</span> {shotText(sh)}</li>)}</ol>
+                          <pre className="mt-1 whitespace-pre-wrap rounded bg-white p-2 text-xs">{x.prompt}</pre>
+                        </details>
+                      </li>
+                    ))}
+                    {pending.plan.lines.map((l) => <li key={l.line_id}><span className="font-medium">{l.line_id}</span> → <span className="deva">{l.new_devanagari}</span> <span className="text-muted">({l.new_english})</span></li>)}
+                  </ul>
+                  {pending.plan.cannot && <p className="mt-2 text-xs text-amber-900">Not done here: {pending.plan.cannot}</p>}
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    <button disabled={!!busy || !pending.plan.remake.length} onClick={() => act("applychange", () => call(`/api/scene-changes/${pending.id}/apply`),
+                      () => setMsg({ kind: "info", text: `Making new versions of clip${pending.plan.remake.length > 1 ? "s" : ""} ${pending.plan.remake.join(", ")}. The earlier versions stay; you can switch back on each clip.` }))}
+                      className="rounded-full bg-accent px-4 py-1.5 font-semibold text-white disabled:opacity-40">
+                      Make new version{pending.plan.remake.length > 1 ? "s" : ""} of clip{pending.plan.remake.length > 1 ? "s" : ""} {pending.plan.remake.join(", ")}{pending.est_cents ? ` · about ${usd(pending.est_cents)}` : ""}
+                    </button>
+                    <button disabled={!!busy} onClick={() => act("discardchange", () => call(`/api/scene-changes/${pending.id}`, "DELETE"))}
+                      className="rounded-full border border-line px-4 py-1.5 hover:border-stone-400">Discard</button>
+                  </div>
+                </div>
+              )}
+              {!pending && lastApplied && <p className="mt-2 text-xs text-muted">Last change applied: “{lastApplied.request}” → new versions of clip{lastApplied.plan.remake.length > 1 ? "s" : ""} {lastApplied.plan.remake.join(", ")}.</p>}
+            </div>
             {sceneClips.length > 0 && sceneClips.every((c) => c.current_take_id) && (
               <div className="studio-review-panel">
                 <div className="flex flex-wrap items-center gap-2 text-sm">
@@ -352,6 +408,7 @@ function ClipCard({ clip: c, takes, scene, item, items, roleName, recs, busy, se
       <div className="flex flex-wrap items-center gap-2">
         <span className={`h-2.5 w-2.5 rounded-full ${DOT[c.status] ?? "bg-stone-300"}`} aria-hidden />
         <p className="font-semibold">Clip {c.n}</p>
+        {current && <span className="rounded-full bg-stone-100 px-2 py-0.5 text-xs">playing v{current.n}</span>}
         <label className="flex items-center gap-1 text-sm text-muted">
           <input key={`dur-${c.duration_s}`} type="number" min={4} max={settings.model === "seedance-2.5" ? 30 : 15} defaultValue={c.duration_s}
             onBlur={(e) => Number(e.target.value) !== c.duration_s && onPatch({ duration_s: Number(e.target.value) })}
@@ -364,7 +421,7 @@ function ClipCard({ clip: c, takes, scene, item, items, roleName, recs, busy, se
         </button>
       </div>
       {c.error && <p className="mt-2 rounded-lg bg-red-50 p-2 text-sm text-red-800">{c.error}</p>}
-      {current && c.changed_since_take && <p className="mt-2 rounded-lg bg-amber-50 p-2 text-sm text-amber-900">Changed since this take. Generate again to apply the change.</p>}
+      {current && c.changed_since_take && !working && <p className="mt-2 rounded-lg bg-amber-50 p-2 text-sm text-amber-900">Changed since this take. Generate again to apply the change.</p>}
 
       <div className="mt-3 flex flex-wrap gap-4">
         {current?.video_sha ? (
@@ -463,10 +520,10 @@ function ClipCard({ clip: c, takes, scene, item, items, roleName, recs, busy, se
 
       {takes.length > 0 && (
         <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
-          <span className="text-muted">Takes:</span>
+          <span className="text-muted">Versions:</span>
           {takes.map((t) => (
             <span key={t.id} className={`rounded-full border px-2 py-0.5 ${t.id === c.current_take_id ? "border-emerald-400 bg-emerald-50" : "border-line"}`}>
-              {t.n} · {t.resolution} · {t.status === "ready" ? (t.cost_cents ? usd(t.cost_cents) : "free") : t.status}
+              v{t.n} · {t.resolution} · {t.status === "ready" ? (t.cost_cents ? usd(t.cost_cents) : "free") : t.status}
               {t.status === "ready" && t.id !== c.current_take_id && <button disabled={busy} onClick={() => onUse(t.id)} className="ml-1 text-accent hover:underline">use</button>}
               {t.status === "failed" && t.error && <span className="ml-1 text-red-700" title={t.error}>ⓘ</span>}
             </span>

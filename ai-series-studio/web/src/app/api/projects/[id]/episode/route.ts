@@ -45,6 +45,11 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
        t.est_cents::float AS est_cents, t.cost_cents::float AS cost_cents, t.line_texts, t.created_at
      FROM episode_takes t JOIN episode_clips c ON c.id=t.clip_id WHERE c.episode_id=$1 ORDER BY t.n DESC`, [ep.id]);
   const linesJob = await one("SELECT status, error FROM jobs WHERE project_id=$1 AND type='episodes.lines' AND payload->>'episodeId'=$2 ORDER BY created_at DESC LIMIT 1", [id, ep.id]);
+  const sceneChanges = await q(
+    "SELECT id, scene_n, request, understood, plan, est_cents::float AS est_cents, status, created_at FROM scene_changes WHERE episode_id=$1 AND status IN ('planned','applied') AND created_at > now() - interval '7 days' ORDER BY created_at DESC", [ep.id]);
+  const cut = ep.cut_sha ? await one<{ created_at: string }>("SELECT created_at FROM episode_cuts WHERE id=(SELECT current_cut_id FROM episodes WHERE id=$1)", [ep.id]) : null;
+  const newerThanCut = cut ? Number((await one<{ n: number }>(
+    "SELECT count(*)::int AS n FROM episode_clips c JOIN episode_takes t ON t.id=c.current_take_id WHERE c.episode_id=$1 AND t.finished_at > $2", [ep.id, cut.created_at]))!.n) : null;
   const recs = await q("SELECT line_id, role_key, status, audio_sha, duration_s::float AS duration_s, error FROM episode_lines WHERE episode_id=$1", [ep.id]);
   let estCents = 0;
   for (const c of clips as { duration_s: number; current_take_id: string | null }[]) {
@@ -52,7 +57,7 @@ export async function GET(req: Request, { params }: { params: Promise<{ id: stri
   }
   const lines = allLines(ep.screenplay).map((l) => ({ id: l.id, est: estSeconds(l.devanagari) }));
   return NextResponse.json({
-    ...base, episode: ep, clips, takes, recordings: recs, linesJob, lineEstimates: lines,
+    ...base, episode: ep, clips, takes, recordings: recs, linesJob, sceneChanges, newerThanCut, lineEstimates: lines,
     estimate: { remainingCents: estCents, runtimeS: (clips as { duration_s: number }[]).reduce((a, c) => a + c.duration_s, 0) },
     videoSpentCents: await videoSpentCents(id),
   });
