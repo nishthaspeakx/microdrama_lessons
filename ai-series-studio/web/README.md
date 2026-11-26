@@ -23,7 +23,15 @@ Step 2, visual approvals, works:
 - **Order and budget.** "Generate to-do items" runs everything whose parent is approved, with a cost estimate. Spending stops at `PROJECT_IMAGE_BUDGET_USD`.
 - **Save to series bible and continue.** This works only when every required item is approved. It freezes the exact approved images and prompts as a bible version and opens step 3.
 
-Images come from Gemini Nano Banana 2.1 when `GEMINI_API_KEY` is set. `IMAGE_PROVIDER=mock` gives labelled placeholder images for testing the flow at no cost. Steps 3 to 5 still show placeholders.
+Where images come from:
+
+| Setting | Model |
+|---|---|
+| `OPENAI_API_KEY` set | OpenAI `gpt-image-2.6-sunburst` (change it with `OPENAI_IMAGE_MODEL`). New images use the generations endpoint; images with references use the edits endpoint, which takes up to 16 references. Sizes are 1152×2048 for 9:16 and 2048×1152 for 16:9. OpenAI bills by tokens, so the cost shown before generating is an estimate (`OPENAI_EST_CENTS_PER_IMAGE`), and the real cost of each image is recorded from the response. |
+| `GEMINI_API_KEY` set and no OpenAI key | Gemini Nano Banana 2.1 |
+| `IMAGE_PROVIDER=mock` | Labelled placeholder images for testing the flow at no cost |
+
+The API key is billed separately from a ChatGPT subscription. OpenAI may ask an organisation to complete API Organization Verification before GPT Image models work. Steps 3 to 5 still show placeholders.
 
 ## Run it
 

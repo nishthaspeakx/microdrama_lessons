@@ -151,7 +151,7 @@ export async function queueVersion(versionId: string) {
     "SELECT v.*, i.project_id FROM visual_versions v JOIN visual_items i ON i.id=v.item_id WHERE v.id=$1", [versionId]);
   if (!v) throw new Error("version not found");
   if (v.status !== "draft" && v.status !== "failed") return v.status;
-  if (imageProvider().name === "none") throw new Error("Image generation needs GEMINI_API_KEY in web/.env.local.");
+  if (imageProvider().name === "none") throw new Error("Image generation needs OPENAI_API_KEY (or GEMINI_API_KEY) in web/.env.local.");
   const pending = await one<{ c: string }>(
     `SELECT COALESCE(SUM(v.est_cents),0) AS c FROM visual_versions v JOIN visual_items i ON i.id=v.item_id
      WHERE i.project_id=$1 AND v.status IN ('queued','generating')`, [v.project_id]);

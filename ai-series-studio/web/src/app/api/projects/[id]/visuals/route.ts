@@ -24,7 +24,7 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
   return NextResponse.json({
     status: p.visuals_status, style: p.visual_style, items, versions, images, planJob: job,
     views: Object.fromEntries(Object.entries(VIEWS).map(([k, v]) => [k, v.map(({ view, label, aspect }) => ({ view, label, aspect }))])),
-    provider: { name: prov.name, model: prov.model, centsPerImage: prov.centsPerImage("2K") },
+    provider: { name: prov.name, label: prov.label, model: prov.model, centsPerImage: prov.centsPerImage("2K") },
     spentCents: await spentCents(id),
     budgetCents: Number(process.env.PROJECT_IMAGE_BUDGET_USD ?? 25) * 100,
   });

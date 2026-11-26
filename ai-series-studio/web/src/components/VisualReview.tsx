@@ -16,7 +16,7 @@ type Data = {
   status: string; style: string | null; items: Item[]; versions: Version[]; images: Img[];
   planJob: { status: string; error: string | null } | null;
   views: Record<string, { view: string; label: string; aspect: string }[]>;
-  provider: { name: string; model: string; centsPerImage: number };
+  provider: { name: string; label: string; model: string; centsPerImage: number };
   spentCents: number; budgetCents: number;
 };
 
@@ -115,7 +115,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
   const vers = item ? versionsOf(item.id) : [];
   const shown = item ? vers.find((v) => v.id === verSel[item.id]) ?? vers.find((v) => v.status === "draft") ?? vers.find((v) => v.id === item.approved_version_id) ?? vers[0] : undefined;
   const parent = item?.parent_key ? items.find((p) => p.key === item.parent_key) : undefined;
-  const providerLabel = d.provider.name === "gemini" ? `Gemini ${d.provider.model}` : d.provider.name === "mock" ? "Placeholder images (test mode)" : "No image model: add GEMINI_API_KEY";
+  const providerLabel = d.provider.name === "none" ? "No image model: add OPENAI_API_KEY to the settings file" : d.provider.name === "mock" ? d.provider.label : `${d.provider.label} ${d.provider.model}`;
 
   return (
     <div className="space-y-4">
@@ -263,7 +263,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
                 <p className="mt-2 text-sm text-muted">
                   Regenerates: {shown.views.map((v) => d.views[item.category].find((x) => x.view === v)?.label ?? v).join(", ")}
                   {shown.base_version_id && shown.views.length < d.views[item.category].length ? ` · other views stay as in version ${d.versions.find((v) => v.id === shown.base_version_id)?.n}` : ""}
-                  {d.provider.centsPerImage ? ` · about ${usd(shown.est_cents)}` : ""}
+                  {d.provider.centsPerImage ? ` · about ${usd(shown.est_cents)}${d.provider.name === "openai" ? " (estimate; actual cost is recorded)" : ""}` : ""}
                 </p>
                 <div className="mt-3 flex gap-2">
                   <button disabled={!!busy || d.provider.name === "none"} onClick={() => act("gen", () => post(`/api/visuals/versions/${shown.id}/generate`))}
