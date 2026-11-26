@@ -29,7 +29,7 @@ type Data = {
   planJob: { status: string; error: string | null } | null; spentCents: number;
   provider: { name: string; models: Record<string, string> };
   episode: Episode | null; clips?: Clip[]; takes?: Take[]; recordings?: Rec[]; lineEstimates?: { id: string; est: number }[];
-  estimate?: { remainingCents: number; runtimeS: number }; videoSpentCents?: number; linesJob?: { status: string; error: string | null } | null;
+  estimate?: { remainingCents: number; byScene?: Record<string, number>; runtimeS: number }; videoSpentCents?: number; linesJob?: { status: string; error: string | null } | null;
   sceneChanges?: SceneChange[]; newerThanCut?: number | null;
 };
 
@@ -145,6 +145,14 @@ export default function EpisodeStudio({ projectId, onReview }: { projectId: stri
   const working = clips.filter((c) => c.status === "queued" || c.status === "generating").length;
   // Assemble is the next step once every clip has a take and something is newer than the last cut.
   const assembleNext = clips.length > 0 && ready === clips.length && working === 0 && ep.status !== "assembling" && (!ep.cut_sha || (d.newerThanCut ?? 0) > 0);
+  // Scene by scene: the next scene to make is the first one with a clip that has no take yet.
+  const sceneState = scenes.map((sc) => {
+    const cs = clips.filter((c) => c.scene_n === sc.n);
+    return { n: sc.n, total: cs.length, ready: cs.filter((c) => c.current_take_id).length,
+      working: cs.filter((c) => c.status === "queued" || c.status === "generating").length, est: d.estimate?.byScene?.[sc.n] ?? 0 };
+  });
+  const makingScene = sceneState.find((x) => x.working > 0) ?? null;
+  const nextScene = sceneState.find((x) => x.total > 0 && x.ready < x.total) ?? null;
   const pending = (d.sceneChanges ?? []).find((x) => x.scene_n === sel?.n && x.status === "planned");
   const lastApplied = (d.sceneChanges ?? []).find((x) => x.scene_n === sel?.n && x.status === "applied");
   const roleName = (k: string) => d.roles.find((r) => r.key === k)?.name ?? (k || "Unassigned");
@@ -196,18 +204,53 @@ export default function EpisodeStudio({ projectId, onReview }: { projectId: stri
           {d.linesJob?.status === "running" || d.linesJob?.status === "queued" ? "Recording lines…" : recorded === linesTotal ? "Re-check recordings" : "Record all lines"}
         </button>
         <div className="ml-auto flex flex-wrap gap-2">
-          <button disabled={!!busy || ready === clips.length || working > 0} onClick={() => act("all", () => call(`/api/episodes/${ep.id}/generate`, "POST", { all: true }),
-            (r) => setMsg({ kind: "info", text: `Making ${clips.length - ready} clip(s), estimated ${usd((r as { estCents: number }).estCents)}. Cards update as each one finishes.` }))}
-            className={`rounded-full px-4 py-2 font-semibold disabled:opacity-40 ${assembleNext ? "border border-line text-ink" : "bg-accent text-white"}`}>
-            Create Episode {ep.number}{d.estimate?.remainingCents ? ` · about ${usd(d.estimate.remainingCents)}` : ""}
-          </button>
+          {makingScene ? (
+            <button disabled className="rounded-full bg-accent px-4 py-2 font-semibold text-white opacity-60">Making scene {makingScene.n}… {makingScene.ready}/{makingScene.total} clips</button>
+          ) : nextScene ? (
+            <button disabled={!!busy} onClick={() => act("next", () => call(`/api/episodes/${ep.id}/generate`, "POST", { scene: nextScene.n, missingOnly: true }),
+              (r) => { setScene(nextScene.n); setMsg({ kind: "info", text: `Making scene ${nextScene.n}, estimated ${usd((r as { estCents: number }).estCents)}. Its clips appear on the right as each one finishes.` }); })}
+              className="rounded-full bg-accent px-4 py-2 font-semibold text-white disabled:opacity-40">
+              Create scene {nextScene.n}{nextScene.est ? ` · about ${usd(nextScene.est)}` : ""}
+            </button>
+          ) : null}
           <button disabled={!!busy || ready < clips.length || !clips.length || ep.status === "assembling"} onClick={() => act("assemble", () => call(`/api/episodes/${ep.id}/assemble`))}
             className={`rounded-full px-4 py-2 font-semibold disabled:opacity-40 ${assembleNext ? "bg-accent text-white shadow-lg ring-4 ring-accent/25" : "border border-accent text-accent"}`}>
             {ep.status === "assembling" ? "Assembling…" : ep.cut_sha ? (assembleNext ? `Assemble v-next with ${d.newerThanCut} new clip${d.newerThanCut === 1 ? "" : "s"}` : "Assemble again") : "Assemble the cut"}
           </button>
-          {clips.length > 0 && ready < clips.length && <p className="basis-full text-right text-xs text-muted">Assemble needs every clip: {clips.length - ready} not made yet.</p>}
+          {clips.length > 0 && ready < clips.length && (
+            <p className="basis-full text-right text-xs text-muted">
+              Assemble needs every scene: {clips.length - ready} clip{clips.length - ready === 1 ? "" : "s"} not made yet.{" "}
+              {!makingScene && sceneState.filter((x) => x.ready < x.total).length > 1 && (
+                <button disabled={!!busy} onClick={() => act("all", () => call(`/api/episodes/${ep.id}/generate`, "POST", { all: true }),
+                  (r) => setMsg({ kind: "info", text: `Making all remaining clips, estimated ${usd((r as { estCents: number }).estCents)}.` }))}
+                  className="text-accent underline disabled:opacity-40">Or make all remaining scenes at once{d.estimate?.remainingCents ? ` · about ${usd(d.estimate.remainingCents)}` : ""}</button>
+              )}
+            </p>
+          )}
         </div>
       </div>
+      <ol className="flex flex-wrap items-center gap-2 text-sm" aria-label="Scenes">
+        {sceneState.map((x, i) => {
+          const state = x.working ? "making" : x.total && x.ready === x.total ? "ready" : x.ready ? "partly" : "todo";
+          return (
+            <li key={x.n} className="flex items-center gap-2">
+              {i > 0 && <span className="text-line">→</span>}
+              <button onClick={() => setScene(x.n)}
+                className={`flex items-center gap-1.5 rounded-full border px-3 py-1 ${x.n === sel?.n ? "border-accent" : "border-line"} ${state === "ready" ? "bg-emerald-50 text-emerald-900" : state === "making" ? "bg-accent-soft" : "bg-white"}`}>
+                <span className={`h-2 w-2 rounded-full ${state === "ready" ? "bg-emerald-500" : state === "making" ? "animate-pulse bg-accent" : state === "partly" ? "bg-amber-400" : "bg-stone-300"}`} />
+                Scene {x.n}
+                <span className="text-xs text-muted">{state === "ready" ? "ready" : state === "making" ? `making ${x.ready}/${x.total}` : state === "partly" ? `${x.ready}/${x.total}` : "not made"}</span>
+              </button>
+            </li>
+          );
+        })}
+        <li className="flex items-center gap-2">
+          <span className="text-line">→</span>
+          <span className={`rounded-full border px-3 py-1 ${assembleNext ? "border-accent bg-accent text-white" : ep.cut_sha ? "border-emerald-300 bg-emerald-50 text-emerald-900" : "border-line text-muted"}`}>
+            {ep.cut_sha && !assembleNext ? "Assembled" : "Assemble"}
+          </span>
+        </li>
+      </ol>
       {msg && <p className={`rounded-xl p-3 text-sm ${msg.kind === "error" ? "bg-red-50 text-red-800" : "bg-sky-50 text-sky-900"}`}>{msg.text}</p>}
       {ep.error && <p className="rounded-xl bg-red-50 p-3 text-sm text-red-800">{ep.error}</p>}
       {d.linesJob?.status === "failed" && d.linesJob.error && <p className="rounded-xl bg-red-50 p-3 text-sm text-red-800">Recording: {d.linesJob.error}</p>}
