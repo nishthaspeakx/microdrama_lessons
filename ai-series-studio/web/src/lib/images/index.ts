@@ -36,7 +36,7 @@ export function imageProvider(): Provider {
 
 // At most IMAGE_CONCURRENCY image calls at once across the whole worker, so many
 // views can run in parallel without tripping the provider's rate limits.
-const LIMIT = Number(process.env.IMAGE_CONCURRENCY ?? 8);
+const LIMIT = Number(process.env.IMAGE_CONCURRENCY ?? 12);
 let active = 0;
 const waiting: (() => void)[] = [];
 async function acquire() {

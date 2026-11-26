@@ -45,7 +45,7 @@ export type Item = {
 type Version = {
   id: string; item_id: string; n: number; prompt: string; views: string[]; status: string; provider: string | null;
   base_version_id: string | null; keep_identity: boolean; reference_shas: string[]; est_cents: string;
-  change_set_id: string | null; wait_for_version_id: string | null; new_description: string | null;
+  change_set_id: string | null; wait_for_version_id: string | null; new_description: string | null; auto_approve: boolean;
 };
 
 // ---------- Planning the list of items ----------
@@ -137,15 +137,15 @@ export function estimateCents(views: number) {
 
 export async function createDraft(item: Item, opts: {
   prompt?: string; views?: string[]; base?: string | null; change?: string; understood?: string; keepIdentity?: boolean;
-  changeSetId?: string | null; waitFor?: string | null; newDescription?: string | null;
+  changeSetId?: string | null; waitFor?: string | null; newDescription?: string | null; autoApprove?: boolean;
 } = {}) {
   const views = (opts.views?.length ? opts.views : VIEWS[item.category].map((v) => v.view)).filter((v) => !VIEWS[item.category].find((x) => x.view === v)?.derived);
   const v = await one<{ id: string }>(
     `INSERT INTO visual_versions (item_id, n, prompt, change_request, understood, views, status, base_version_id, keep_identity, est_cents,
-       change_set_id, wait_for_version_id, new_description)
-     VALUES ($1,$2,$3,$4,$5,$6,'draft',$7,$8,$9,$10,$11,$12) RETURNING id`,
+       change_set_id, wait_for_version_id, new_description, auto_approve)
+     VALUES ($1,$2,$3,$4,$5,$6,'draft',$7,$8,$9,$10,$11,$12,$13) RETURNING id`,
     [item.id, await nextN(item.id), opts.prompt ?? item.base_prompt, opts.change ?? null, opts.understood ?? null, views,
-     opts.base ?? null, opts.keepIdentity ?? true, estimateCents(views.length), opts.changeSetId ?? null, opts.waitFor ?? null, opts.newDescription ?? null],
+     opts.base ?? null, opts.keepIdentity ?? true, estimateCents(views.length), opts.changeSetId ?? null, opts.waitFor ?? null, opts.newDescription ?? null, opts.autoApprove ?? false],
   );
   return v!.id;
 }
@@ -257,6 +257,8 @@ export async function runGeneration(versionId: string) {
     if (item.category === "character") await composePortfolio(versionId);
     await q("UPDATE visual_versions SET status='ready', reference_shas=$2 WHERE id=$1", [versionId, refs.map((r) => r.sha)]);
     await q("UPDATE visual_items SET status=CASE WHEN status='generating' THEN 'review' ELSE status END, updated_at=now() WHERE id=$1", [item.id]);
+    // Locked straight away when made by "Create all" or a change: the user can look later and make v2 or v3.
+    if (v.auto_approve) await approveVersion(versionId);
     // Children that were waiting for this version can start now, using its images.
     const waiting = await q<{ id: string }>("SELECT id FROM visual_versions WHERE wait_for_version_id=$1 AND status='waiting'", [versionId]);
     for (const w of waiting) await queueVersion(w.id).catch(async (e) => q("UPDATE visual_versions SET status='failed', error=$2 WHERE id=$1", [w.id, (e as Error).message]));
@@ -379,7 +381,7 @@ export async function interpretChange(item: Item, baseVersionId: string, request
   const mainId = await createDraft(item, {
     prompt: res.data.item.prompt, views: valid.length ? valid : own.map((v) => v.view), base: base.provider === "upload" ? null : baseVersionId,
     change: request, understood: res.data.understood, keepIdentity: res.data.item.keep_identity,
-    changeSetId: setId, newDescription: res.data.item.description,
+    changeSetId: setId, newDescription: res.data.item.description, autoApprove: true,
   });
   // Children in family order: each waits for its parent's draft in this set, if there is one.
   const draftOf = new Map<string, string>([[item.key, mainId]]);
@@ -395,7 +397,7 @@ export async function interpretChange(item: Item, baseVersionId: string, request
     const waitFor = f.parent_key ? draftOf.get(f.parent_key) ?? null : null;
     const id = await createDraft(f, {
       prompt: plan.prompt, base: latest.id, change: request, understood: plan.understood, keepIdentity: true,
-      changeSetId: setId, waitFor, newDescription: plan.description,
+      changeSetId: setId, waitFor, newDescription: plan.description, autoApprove: true,
     });
     draftOf.set(f.key, id);
   }

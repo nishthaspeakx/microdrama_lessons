@@ -17,7 +17,7 @@ const handlers: Record<string, (job: Job) => Promise<void>> = {
   "voices.speak": async (job) => runSpeak(String(job.payload.candidateId)),
 };
 
-const CONCURRENCY = Number(process.env.WORKER_CONCURRENCY ?? 4);
+const CONCURRENCY = Number(process.env.WORKER_CONCURRENCY ?? 8);
 let stopping = false;
 process.on("SIGINT", () => (stopping = true));
 process.on("SIGTERM", () => (stopping = true));

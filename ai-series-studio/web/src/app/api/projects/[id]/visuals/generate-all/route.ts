@@ -1,4 +1,4 @@
-import { q } from "@/lib/db";
+import { q, one } from "@/lib/db";
 import { guard } from "@/lib/api";
 import { createDraft, queueVersion, type Item } from "@/lib/visuals";
 
@@ -12,6 +12,7 @@ export const runtime = "nodejs";
 export async function POST(_req: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   return guard(async () => {
+    if (!(await one("SELECT 1 FROM projects WHERE id=$1", [id]))) throw new Error("This project was not found. Open it again from the home page.");
     const all = await q<Item>("SELECT * FROM visual_items WHERE project_id=$1 ORDER BY sort", [id]);
     const versions = await q<{ id: string; item_id: string; status: string; n: number }>(
       `SELECT v.id, v.item_id, v.status, v.n FROM visual_versions v JOIN visual_items i ON i.id=v.item_id
@@ -45,7 +46,7 @@ export async function POST(_req: Request, { params }: { params: Promise<{ id: st
       const parent = item.parent_key ? byKey.get(item.parent_key) : undefined;
       let waitFor: string | null = null;
       if (parent && !parent.approved_version_id) waitFor = newVersion.get(parent.key) ?? active(parent)?.id ?? null;
-      const draft = await createDraft(item, { waitFor });
+      const draft = await createDraft(item, { waitFor, autoApprove: true });
       newVersion.set(item.key, draft);
       await queueVersion(draft);
       queued++;

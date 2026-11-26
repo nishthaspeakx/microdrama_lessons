@@ -134,15 +134,20 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
         <span className="text-line">|</span>
         <p className={`text-sm ${d.provider.name === "none" ? "text-red-700" : "text-muted"}`}>{providerLabel}</p>
         <div className="ml-auto flex flex-wrap gap-2">
-          {making > 0 && <span className="self-center text-sm text-muted"><span className="mr-1 inline-block h-2 w-2 animate-pulse rounded-full bg-accent" />Making {making}…</span>}
+          {making > 0 && (
+            <span className="self-center text-sm text-muted" aria-live="polite">
+              <span className="mr-1 inline-block h-2 w-2 animate-pulse rounded-full bg-accent" />
+              {approvedCount} of {required.length} done · making {making}…
+            </span>
+          )}
           <button
             disabled={!toCreate.length || !!busy || d.provider.name === "none"}
             onClick={() => act("all", () => post(`/api/projects/${projectId}/visuals/generate-all`), (r) => {
               const res = r as { queued: number };
-              setMsg({ kind: "info", text: `Creating ${res.queued} item(s). Later ages and outfits start by themselves as soon as their parent look is ready, using its new images.` });
+              setMsg({ kind: "info", text: `Creating ${res.queued} item(s). Each one is approved the moment it is ready and ticked in the list. Later ages and outfits start by themselves from their parent's new images. Open any item later to request a change for a v2 or v3.` });
             })}
             className="studio-primary rounded-full px-4 py-2 text-sm font-semibold disabled:opacity-40">
-            {toCreate.length ? `Create all visuals · ${toCreate.length} items${estAll ? ` · about ${usd(estAll)}` : ""}` : "Everything is created"}
+            {toCreate.length ? `Create and approve all · ${toCreate.length} items${estAll ? ` · about ${usd(estAll)}` : ""}` : "Everything is created"}
           </button>
           <button
             disabled={approvedCount < required.length || !!busy}
@@ -169,7 +174,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
                     <li key={i.id}>
                       <button onClick={() => { setSel(i.id); setShowChange(false); setChangeText(""); }}
                         className={`flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-left text-sm ${sel === i.id ? "bg-accent-soft" : "hover:bg-stone-50"} ${i.required ? "" : "text-muted"}`}>
-                        <span className={`h-2.5 w-2.5 shrink-0 rounded-full ${DOT[i.status] ?? "bg-stone-300"}`} aria-hidden />
+                        <StatusIcon status={i.status} />
                         <span className="flex-1 truncate">{i.name}</span>
                         {!i.required && <span className="text-[10px] uppercase">optional</span>}
                       </button>
@@ -327,9 +332,11 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
                     <button disabled={!!busy} onClick={() => act("approve", () => post(`/api/visuals/versions/${shown.id}/approve`), (r) => {
                       const f = (r as { flagged: string[] }).flagged;
                       if (f.length) setMsg({ kind: "info", text: `Approved. Flagged for a second look because they depend on it: ${f.join(", ")}.` });
-                    })} className="rounded-full bg-emerald-600 px-5 py-2 font-semibold text-white disabled:opacity-40">Approve version {shown.n}</button>
+                    })} className="rounded-full bg-emerald-600 px-5 py-2 font-semibold text-white disabled:opacity-40">
+                      {item.approved_version_id ? `Use version ${shown.n} instead` : `Approve version ${shown.n}`}
+                    </button>
                   ) : (
-                    <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm text-emerald-800">This version is approved</span>
+                    <span className="rounded-full bg-emerald-50 px-4 py-2 text-sm text-emerald-800">✓ Approved. Request a change any time for a new version</span>
                   )}
                   {(() => {
                     const pending = shown.change_set_id ? d.versions.filter((v) => v.change_set_id === shown.change_set_id && v.status === "ready"
@@ -439,4 +446,19 @@ function ProfileCard({ item, d, items }: { item: Item; d: Data; items: Item[] })
       </dl>
     </details>
   );
+}
+
+/** Status in the list: a green tick once approved, a spinner while making. */
+function StatusIcon({ status }: { status: string }) {
+  if (status === "approved") {
+    return (
+      <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-600 text-[10px] font-bold text-white" aria-label="approved">✓</span>
+    );
+  }
+  if (status === "generating") {
+    return <span className="h-4 w-4 shrink-0 animate-spin rounded-full border-2 border-accent border-t-transparent" aria-label="making" />;
+  }
+  if (status === "flagged") return <span className="h-4 w-4 shrink-0 rounded-full bg-red-500" aria-label="needs a look" />;
+  if (status === "review") return <span className="h-4 w-4 shrink-0 rounded-full border-2 border-sky-500" aria-label="ready to review" />;
+  return <span className="h-4 w-4 shrink-0 rounded-full border-2 border-stone-300" aria-label="to do" />;
 }

@@ -22,7 +22,7 @@ export async function POST(_req: Request, { params }: { params: Promise<{ itemId
         waitFor = newest?.id ?? null;
       }
     }
-    const id = await createDraft(item, { waitFor });
+    const id = await createDraft(item, { waitFor, autoApprove: true });
     return { versionId: id, status: await queueVersion(id) };
   });
 }
