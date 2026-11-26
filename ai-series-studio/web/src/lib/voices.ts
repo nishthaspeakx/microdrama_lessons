@@ -222,7 +222,13 @@ export async function lockCandidate(candidateId: string) {
   let voiceId = c.provider_voice_id;
   if (!voiceId) {
     const series = (await one<{ name: string }>("SELECT name FROM projects WHERE id=$1", [c.project_id]))!.name;
-    voiceId = await saveDesignedVoice(c.generated_voice_id!, `${series} · ${c.role_name}`.slice(0, 100), c.voice_brief.slice(0, 500));
+    try {
+      voiceId = await saveDesignedVoice(c.generated_voice_id!, `${series} · ${c.role_name}`.slice(0, 100), c.voice_brief.slice(0, 500));
+    } catch (e) {
+      throw new Error(`ElevenLabs could not save this voice: ${(e as Error).message} ` +
+        "Saving a designed voice needs a free voice slot on your ElevenLabs plan. Delete a voice you no longer use in ElevenLabs " +
+        "(My Voices), then press Lock again, or use \"Paste a Voice ID\" with a voice you already have, which needs no new slot.");
+    }
     await q("UPDATE voice_candidates SET provider_voice_id=$2 WHERE id=$1", [candidateId, voiceId]);
   }
   await q("UPDATE voice_roles SET locked_candidate_id=$2, status='locked', updated_at=now() WHERE id=$1", [c.role_id, candidateId]);
