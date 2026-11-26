@@ -135,3 +135,20 @@ async function mockDesign(text: string) {
     cents: 0,
   };
 }
+
+// ---------- sound effects ----------
+
+/**
+ * A short sound effect from a text description (POST /v1/sound-generation {text, duration_seconds 0.5–30,
+ * prompt_influence}). Used by review edits like "add the clink of a steel plate at 0:06".
+ */
+export async function soundEffect(text: string, seconds: number): Promise<{ audio: Buffer; mime: string; cents: number }> {
+  const dur = Math.min(Math.max(seconds, 0.5), 30);
+  if (voiceProvider() === "mock") return { audio: tone(`sfx-${text}`, dur), mime: "audio/wav", cents: 0 };
+  const res = await fetch(`${BASE}/v1/sound-generation?output_format=mp3_44100_128`, {
+    method: "POST", headers: headers(), body: JSON.stringify({ text, duration_seconds: dur, prompt_influence: 0.5 }),
+  });
+  if (!res.ok) await fail(res, "sound effect");
+  const cost = Number(res.headers.get("character-cost") ?? 0);
+  return { audio: Buffer.from(await res.arrayBuffer()), mime: "audio/mpeg", cents: cost * CENTS_PER_CHAR };
+}

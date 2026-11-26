@@ -5,11 +5,9 @@ import IntakeReview from "./IntakeReview";
 import VisualReview from "./VisualReview";
 import VoiceCasting from "./VoiceCasting";
 import EpisodeStudio from "./EpisodeStudio";
+import EpisodeReview from "./EpisodeReview";
 import type { ProjectData } from "./types";
 
-const NEXT_PHASE: Record<number, { title: string; body: string }> = {
-  5: { title: "Review & export", body: "Timestamped edit notes, the smallest edit that meets each one, versions, MP4 and subtitles. This is build phase 4." },
-};
 
 export default function ProjectView({ id }: { id: string }) {
   const [data, setData] = useState<ProjectData | null>(null);
@@ -77,14 +75,8 @@ export default function ProjectView({ id }: { id: string }) {
 
       {step === 4 && <EpisodeStudio projectId={id} onReview={() => goStep(5)} />}
 
-      {step > 4 && NEXT_PHASE[step] && (
-        <div className="rounded-2xl border border-line bg-white p-8">
-          <p className="text-lg font-semibold">{NEXT_PHASE[step].title}</p>
-          <p className="mt-2 max-w-2xl text-muted">{NEXT_PHASE[step].body}</p>
-          <p className="mt-4 text-sm text-muted">Your summary is saved. You can go back to it at any time.</p>
-          <button onClick={() => setView(1)} className="mt-4 rounded-full border border-line px-5 py-2 hover:border-stone-400">Back to the summary</button>
-        </div>
-      )}
+      {step === 5 && <EpisodeReview projectId={id} onBack={() => setView(4)} />}
+
     </main>
   );
 }

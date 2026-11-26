@@ -8,6 +8,7 @@ import { runIntake } from "./lib/intake";
 import { planVisuals, runGeneration } from "./lib/visuals";
 import { planVoices, runDesign, runSpeak } from "./lib/voices";
 import { planEpisode, runTake, assembleEpisode, recordAllLines } from "./lib/episodes";
+import { planRevision, applyRevision } from "./lib/revisions";
 
 const handlers: Record<string, (job: Job) => Promise<void>> = {
   "intake.extract": async (job) => runIntake(job.project_id!),
@@ -19,7 +20,9 @@ const handlers: Record<string, (job: Job) => Promise<void>> = {
   "episodes.plan": async (job) => planEpisode(String(job.payload.episodeId)),
   "episodes.lines": async (job) => recordAllLines(String(job.payload.episodeId)),
   "episodes.take": async (job) => runTake(String(job.payload.takeId), job.attempts >= job.max_attempts),
-  "episodes.assemble": async (job) => assembleEpisode(String(job.payload.episodeId)),
+  "revisions.plan": async (job) => planRevision(String(job.payload.revisionId)),
+  "revisions.apply": async (job) => applyRevision(String(job.payload.revisionId)),
+  "episodes.assemble": async (job) => { await assembleEpisode(String(job.payload.episodeId)); },
 };
 
 const CONCURRENCY = Number(process.env.WORKER_CONCURRENCY ?? 8);

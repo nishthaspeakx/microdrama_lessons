@@ -513,10 +513,24 @@ export async function queueAssembly(episodeId: string) {
   await enqueue("episodes.assemble", e.project_id, { episodeId });
 }
 
-export async function assembleEpisode(episodeId: string) {
+export type ClipMapEntry = {
+  clip_id: string; take_id: string; n: number; scene: number; start: number; end: number; trim_start: number;
+  lines: { id: string; start: number; end: number }[];
+};
+type AsmClip = Clip & {
+  video_sha: string; stem_sha: string | null; take_seconds: number; line_times: { id: string; start: number; end: number }[];
+  trim_start: string; trim_end: string; ambience: string; sfx: { sha: string; at: number; volume: number; description: string }[]; mutes: { from: number; to: number }[];
+};
+
+/**
+ * Assemble the current takes into a new numbered cut. Earlier cuts are kept.
+ * Per clip: trims, the level of its own sound, mutes and added sound effects are applied here, so
+ * edits that need no new footage cost nothing. `changed` marks where this cut differs from the one it revises.
+ */
+export async function assembleEpisode(episodeId: string, opts: { revisionId?: string; changed?: { clipId: string; label: string }[] } = {}) {
   const e = (await one<Episode>("SELECT * FROM episodes WHERE id=$1", [episodeId]))!;
   try {
-    const clips = await q<Clip & { video_sha: string; stem_sha: string | null; take_seconds: number; line_times: { id: string; start: number; end: number }[] }>(
+    const clips = await q<AsmClip>(
       `SELECT c.*, t.video_sha, t.stem_sha, t.duration_s AS take_seconds, t.line_times FROM episode_clips c
        JOIN episode_takes t ON t.id=c.current_take_id WHERE c.episode_id=$1 ORDER BY c.n`, [episodeId]);
     const { width: W, height: H, fps } = e.settings;
@@ -525,65 +539,98 @@ export async function assembleEpisode(episodeId: string) {
       const segs: string[] = [];
       const subs: { start: number; end: number; text: string }[] = [];
       const markers: { scene: number; title: string; start: number }[] = [];
+      const clipMap: ClipMapEntry[] = [];
       let t0 = 0;
       for (const c of clips) {
         const v = path.join(dir, `c${c.n}.mp4`);
         await writeFile(v, (await readStored(c.video_sha)).buf);
-        const seconds = Math.min(await probeSeconds(v), c.take_seconds || 99);
+        const full = Math.min(await probeSeconds(v), c.take_seconds || 99);
+        const ts = Math.min(Math.max(Number(c.trim_start) || 0, 0), full - 0.5);
+        const te = Math.max(full - Math.max(Number(c.trim_end) || 0, 0), ts + 0.5);
+        const seconds = te - ts;
         const hasAudio = (await run("ffprobe", ["-v", "error", "-select_streams", "a", "-show_entries", "stream=index", "-of", "csv=p=0", v])).stdout.trim() !== "";
         const args = ["-y", "-i", v];
-        const vf = `[0:v]scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=${fps},format=yuv420p,setsar=1[v]`;
-        let af: string;
+        let idx = 1;
+        let ambIn = "0:a";
+        if (!hasAudio) { args.push("-f", "lavfi", "-t", full.toFixed(3), "-i", "anullsrc=r=48000:cl=stereo"); ambIn = `${idx++}:a`; }
+        let stemIn: string | null = null;
         if (c.stem_sha) {
-          const s = path.join(dir, `s${c.n}.wav`);
-          await writeFile(s, (await readStored(c.stem_sha)).buf);
-          args.push("-i", s);
-          // Our recorded dialogue on top; the clip's own sound kept low as ambience.
-          af = hasAudio
-            ? `[0:a]aresample=48000,aformat=channel_layouts=stereo,volume=0.3[amb];[1:a]aresample=48000,aformat=channel_layouts=stereo[dlg];[amb][dlg]amix=inputs=2:duration=longest:normalize=0[a]`
-            : `[1:a]aresample=48000,aformat=channel_layouts=stereo[a]`;
-        } else {
-          if (!hasAudio) args.push("-f", "lavfi", "-i", "anullsrc=r=48000:cl=stereo");
-          af = `[${hasAudio ? 0 : 1}:a]aresample=48000,aformat=channel_layouts=stereo[a]`;
+          const sp = path.join(dir, `s${c.n}.wav`);
+          await writeFile(sp, (await readStored(c.stem_sha)).buf);
+          args.push("-i", sp); stemIn = `${idx++}:a`;
         }
+        const fxIn: { input: string; at: number; volume: number }[] = [];
+        for (const [k, fx] of (c.sfx ?? []).entries()) {
+          const f = await readStored(fx.sha);
+          const fp = path.join(dir, `fx${c.n}_${k}${f.mime === "audio/wav" ? ".wav" : ".mp3"}`);
+          await writeFile(fp, f.buf);
+          args.push("-i", fp); fxIn.push({ input: `${idx++}:a`, at: fx.at, volume: fx.volume ?? 1 });
+        }
+        const fmt = "aresample=48000,aformat=channel_layouts=stereo";
+        // The clip's own sound: kept low under dialogue, full where nobody speaks (scaled from the same setting).
+        const ownLevel = stemIn ? Number(c.ambience) : Math.min(1, Number(c.ambience) / 0.3);
+        const mutes = (c.mutes ?? []).map((m) => `,volume=0:enable='between(t,${m.from},${m.to})'`).join("");
+        const parts = [`[${ambIn}]${fmt},volume=${ownLevel.toFixed(3)}${mutes}[amb]`];
+        const mixIns = ["[amb]"];
+        if (stemIn) { parts.push(`[${stemIn}]${fmt}[dlg]`); mixIns.push("[dlg]"); }
+        fxIn.forEach((f, k) => { parts.push(`[${f.input}]${fmt},adelay=${Math.round(f.at * 1000)}:all=1,volume=${f.volume}[fx${k}]`); mixIns.push(`[fx${k}]`); });
+        parts.push(`${mixIns.join("")}amix=inputs=${mixIns.length}:duration=first:normalize=0,atrim=start=${ts.toFixed(3)}:end=${te.toFixed(3)},asetpts=PTS-STARTPTS[a]`);
+        const vf = `[0:v]trim=start=${ts.toFixed(3)}:end=${te.toFixed(3)},setpts=PTS-STARTPTS,scale=${W}:${H}:force_original_aspect_ratio=increase,crop=${W}:${H},fps=${fps},format=yuv420p,setsar=1[v]`;
         const seg = path.join(dir, `seg${c.n}.mp4`);
-        args.push("-filter_complex", `${vf};${af}`, "-map", "[v]", "-map", "[a]", "-t", seconds.toFixed(3),
+        args.push("-filter_complex", [vf, ...parts].join(";"), "-map", "[v]", "-map", "[a]", "-t", seconds.toFixed(3),
           "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-r", String(fps), "-c:a", "aac", "-b:a", "192k", "-ar", "48000", seg);
         await run("ffmpeg", args, { maxBuffer: 1 << 24 });
         segs.push(seg);
         if (!markers.some((m) => m.scene === c.scene_n)) {
-          markers.push({ scene: c.scene_n, title: e.screenplay.scenes.find((s) => s.n === c.scene_n)?.heading ?? `Scene ${c.scene_n}`, start: t0 });
+          markers.push({ scene: c.scene_n, title: e.screenplay.scenes.find((sc) => sc.n === c.scene_n)?.heading ?? `Scene ${c.scene_n}`, start: t0 });
         }
+        const mapped: ClipMapEntry["lines"] = [];
         for (const lt of c.line_times ?? []) {
+          if (lt.end <= ts || lt.start >= te) continue;
+          const a = t0 + Math.max(lt.start, ts) - ts;
+          const b = t0 + Math.min(lt.end, te) - ts;
+          mapped.push({ id: lt.id, start: a, end: b });
           const l = lines.get(lt.id);
-          if (l) subs.push({ start: t0 + lt.start, end: Math.min(t0 + lt.end + 0.25, t0 + seconds), text: l.devanagari });
+          if (l) subs.push({ start: a, end: Math.min(b + 0.25, t0 + seconds), text: l.devanagari });
         }
+        clipMap.push({ clip_id: c.id, take_id: c.current_take_id!, n: c.n, scene: c.scene_n, start: t0, end: t0 + seconds, trim_start: ts, lines: mapped });
         t0 += seconds;
       }
       const list = path.join(dir, "list.txt");
-      await writeFile(list, segs.map((s) => `file '${s}'`).join("\n"));
+      await writeFile(list, segs.map((x) => `file '${x}'`).join("\n"));
       const joined = path.join(dir, "joined.mp4");
       await run("ffmpeg", ["-y", "-f", "concat", "-safe", "0", "-i", list, "-c", "copy", "-movflags", "+faststart", joined], { maxBuffer: 1 << 24 });
       let final = joined;
+      // A subtitle never runs into the next one.
       subs.sort((a, b) => a.start - b.start);
       for (let i = 0; i + 1 < subs.length; i++) subs[i].end = Math.min(subs[i].end, subs[i + 1].start - 0.05);
       if (e.settings.subtitles && subs.length) {
-        const pngs = await subtitlePngs(dir, subs.map((s) => s.text), W);
+        const pngs = await subtitlePngs(dir, subs.map((x) => x.text), W);
         const y = Math.round(H * 0.74);
-        const inputs = pngs.flatMap((p) => ["-i", p]);
+        const inputs = pngs.flatMap((x) => ["-i", x]);
         const chain = pngs.map((_, i) => `${i === 0 ? "[0:v]" : `[v${i}]`}[${i + 1}:v]overlay=0:${y}:enable='between(t,${subs[i].start.toFixed(2)},${subs[i].end.toFixed(2)})'[v${i + 1}]`).join(";");
         final = path.join(dir, "final.mp4");
         await run("ffmpeg", ["-y", "-i", joined, ...inputs, "-filter_complex", chain, "-map", `[v${pngs.length}]`, "-map", "0:a",
           "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-c:a", "copy", "-movflags", "+faststart", final], { maxBuffer: 1 << 24 });
       }
-      const srt = subs.map((s, i) => `${i + 1}\n${srtTime(s.start)} --> ${srtTime(s.end)}\n${s.text}\n`).join("\n");
-      return { video: await readFile(final), srt, markers, seconds: t0 };
+      const srt = subs.map((x, i) => `${i + 1}\n${srtTime(x.start)} --> ${srtTime(x.end)}\n${x.text}\n`).join("\n");
+      return { video: await readFile(final), srt, markers, seconds: t0, clipMap };
     });
     const cut = await storeFile(result.video, "video/mp4", "derived");
     const srt = await storeFile(Buffer.from(result.srt, "utf8"), "application/x-subrip", "derived");
-    await q("UPDATE episodes SET cut_sha=$2, cut_srt_sha=$3, cut_markers=$4, status='assembled', error=NULL, updated_at=now() WHERE id=$1",
-      [episodeId, cut, srt, JSON.stringify(result.markers)]);
-    await logEvent(e.project_id, "episode.assembled", { episode: e.number, seconds: result.seconds });
+    const changes = (opts.changed ?? []).flatMap((ch) => {
+      const m = result.clipMap.find((x) => x.clip_id === ch.clipId);
+      return m ? [{ start: m.start, end: m.end, label: ch.label }] : [];
+    });
+    const cutRow = await one<{ id: string; n: number }>(
+      `INSERT INTO episode_cuts (episode_id, n, video_sha, srt_sha, seconds, markers, clip_map, revision_id, changes)
+       VALUES ($1, (SELECT COALESCE(MAX(n),0)+1 FROM episode_cuts WHERE episode_id=$1), $2,$3,$4,$5,$6,$7,$8) RETURNING id, n`,
+      [episodeId, cut, srt, result.seconds, JSON.stringify(result.markers), JSON.stringify(result.clipMap), opts.revisionId ?? null, JSON.stringify(changes)]);
+    await q("UPDATE episodes SET cut_sha=$2, cut_srt_sha=$3, cut_markers=$4, current_cut_id=$5, status='assembled', error=NULL, updated_at=now() WHERE id=$1",
+      [episodeId, cut, srt, JSON.stringify(result.markers), cutRow!.id]);
+    await q("UPDATE projects SET step=GREATEST(step,5), updated_at=now() WHERE id=$1", [e.project_id]);
+    await logEvent(e.project_id, "episode.assembled", { episode: e.number, seconds: result.seconds, version: cutRow!.n });
+    return cutRow!.id;
   } catch (err) {
     await q("UPDATE episodes SET status='ready', error=$2, updated_at=now() WHERE id=$1", [episodeId, `Assembly failed: ${(err as Error).message}`.slice(0, 800)]);
     throw Object.assign(err as Error, { retryable: false });
