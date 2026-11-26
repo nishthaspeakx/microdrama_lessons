@@ -15,7 +15,10 @@ type Img = { version_id: string; view: string; file_sha: string };
 type Data = {
   status: string; style: string | null; items: Item[]; versions: Version[]; images: Img[];
   planJob: { status: string; error: string | null } | null;
-  views: Record<string, { view: string; label: string; aspect: string }[]>;
+  views: Record<string, { view: string; label: string; aspect: string; derived: boolean }[]>;
+  characters: { name: string; aliases: string[]; ages: { period: string; age: string }[]; role: string; description: string;
+    appearance: string | null; relationships: { with: string; relation: string }[] }[];
+  voices: { name: string; portrait_item_key: string | null; status: string; provider_voice_id: string | null }[];
   provider: { name: string; label: string; model: string; centsPerImage: number };
   spentCents: number; budgetCents: number;
 };
@@ -110,7 +113,8 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
   const approvedCount = required.filter((i) => i.status === "approved").length;
   const todoRequired = required.filter((i) => i.status === "todo" && !versionsOf(i.id).some((v) => ["queued", "generating", "ready"].includes(v.status)));
   const readyToGen = todoRequired.filter((i) => !i.parent_key || items.find((p) => p.key === i.parent_key)?.status === "approved");
-  const estAll = readyToGen.reduce((s, i) => s + d.views[i.category].length * d.provider.centsPerImage, 0);
+  const paid = (cat: string) => d.views[cat].filter((v) => !v.derived);
+  const estAll = readyToGen.reduce((s, i) => s + paid(i.category).length * d.provider.centsPerImage, 0);
   const item = items.find((i) => i.id === sel) ?? null;
   const vers = item ? versionsOf(item.id) : [];
   const shown = item ? vers.find((v) => v.id === verSel[item.id]) ?? vers.find((v) => v.status === "draft") ?? vers.find((v) => v.id === item.approved_version_id) ?? vers[0] : undefined;
@@ -199,6 +203,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
                 className="w-full resize-none rounded-lg border border-line px-3 py-2 text-sm outline-none [field-sizing:content] focus:border-accent" />
             </label>
             {item.reference_hint && <p className="mt-1 text-xs text-muted">Existing reference: {item.reference_hint}. Use “Use my image” to add it.</p>}
+            {item.category === "character" && <ProfileCard item={item} d={d} items={items} />}
 
             {vers.length > 1 && (
               <div className="mt-4 flex flex-wrap gap-2" role="tablist" aria-label="Versions">
@@ -215,7 +220,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
               <div className="mt-5 rounded-xl border border-dashed border-line p-6">
                 <p className="font-medium">Nothing to review yet</p>
                 <p className="mt-1 text-sm text-muted">
-                  The app will make {d.views[item.category].map((v) => v.label.toLowerCase()).join(", ")}
+                  The app will make {paid(item.category).map((v) => v.label.toLowerCase()).join(", ")}{item.category === "character" ? ", then join front, back and face into one portfolio sheet" : ""}
                   {parent ? `, using ${parent.name}'s approved look as the reference` : ""}.
                 </p>
                 <details className="mt-3 text-sm"><summary className="cursor-pointer text-muted">Image prompt</summary><p className="mt-2 whitespace-pre-wrap">{item.base_prompt}</p></details>
@@ -223,7 +228,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
                   <button disabled={!!busy || d.provider.name === "none" || (!!parent && parent.status !== "approved")}
                     onClick={() => act("gen", () => post(`/api/visuals/items/${item.id}/generate`))}
                     className="rounded-full bg-accent px-5 py-2 font-semibold text-white disabled:opacity-40">
-                    Generate · {d.views[item.category].length} images{d.provider.centsPerImage ? ` · about ${usd(d.views[item.category].length * d.provider.centsPerImage)}` : ""}
+                    Generate · {paid(item.category).length} images{d.provider.centsPerImage ? ` · about ${usd(paid(item.category).length * d.provider.centsPerImage)}` : ""}
                   </button>
                   <button onClick={() => fileInput.current?.click()} className="rounded-full border border-line px-5 py-2 hover:border-stone-400">Use my image</button>
                 </div>
@@ -277,7 +282,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
             {shown && shown.status === "ready" && (
               <>
                 <div className={`mt-5 grid gap-3 ${imagesOf(shown.id).length > 1 ? "sm:grid-cols-2" : ""}`}>
-                  {(shown.provider === "upload" ? [{ view: "reference", label: "Your image", aspect: "3:4" }] : d.views[item.category]).map((v) => {
+                  {(shown.provider === "upload" ? [{ view: "reference", label: "Your image", aspect: "3:4", derived: false }] : d.views[item.category]).map((v) => {
                     const im = imagesOf(shown.id).find((x) => x.view === v.view);
                     if (!im) return null;
                     return (
@@ -287,7 +292,7 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
                           <img src={img(im.file_sha)} alt={`${item.name}: ${v.label}`}
                             className={`mx-auto max-h-[55vh] w-full rounded-xl bg-stone-100 object-contain ${shown.provider === "upload" ? "" : ASPECT[v.aspect] ?? ""}`} />
                         </a>
-                        <figcaption className="mt-1 text-xs text-muted">{v.label}{shown.views.includes(v.view) || shown.provider === "upload" ? "" : " · kept from the previous version"}</figcaption>
+                        <figcaption className="mt-1 text-xs text-muted">{v.label}{v.derived ? " · joined from the front, back and face views" : shown.views.includes(v.view) || shown.provider === "upload" ? "" : " · kept from the previous version"}</figcaption>
                       </figure>
                     );
                   })}
@@ -353,5 +358,36 @@ export default function VisualReview({ projectId, onFinished }: { projectId: str
         )}
       </div>
     </div>
+  );
+}
+
+const STOP = new Set(["young", "the", "at", "in", "of", "and", "as", "a", "small", "girl", "boy", "man", "woman", "teenage"]);
+const tokens = (t: string) => t.toLowerCase().replace(/[^\p{L}\p{N}\s]/gu, " ").split(/\s+/).filter((w) => w.length >= 3 && !STOP.has(w));
+
+/** Everything known about the character behind this look, in one card. */
+function ProfileCard({ item, d, items }: { item: Item; d: Data; items: Item[] }) {
+  const mine = new Set(tokens(item.name));
+  const c = d.characters.find((ch) => [ch.name, ...ch.aliases].some((n) => tokens(n).some((t) => mine.has(t))));
+  const wardrobe = items.filter((i) => i.category === "wardrobe" && i.parent_key === item.key);
+  const voice = d.voices.find((v) => v.portrait_item_key === item.key) ?? d.voices.find((v) => tokens(v.name).some((t) => mine.has(t)));
+  const row = (label: string, value: React.ReactNode) => value ? (
+    <div className="grid grid-cols-[110px_1fr] gap-2 border-t border-line py-1.5 first:border-t-0"><dt className="text-muted">{label}</dt><dd>{value}</dd></div>
+  ) : null;
+  return (
+    <details className="mt-3 rounded-xl border border-line bg-stone-50/60 p-3 text-sm" open>
+      <summary className="cursor-pointer font-medium">Character profile{c ? `: ${c.name}` : ""}</summary>
+      <dl className="mt-2">
+        {row("Role", c?.role)}
+        {row("Age", c?.ages.length ? c.ages.map((a) => `${a.period}: ${a.age}`).join(" · ") : "Not stated in the sources")}
+        {row("This look", item.description)}
+        {row("Appearance", c?.appearance)}
+        {row("Story", c?.description)}
+        {row("Relationships", c?.relationships.length ? c.relationships.map((r) => `${r.with.charAt(0).toUpperCase()}${r.with.slice(1)}: ${r.relation}`).join(" · ") : null)}
+        {row("Wardrobe", wardrobe.length ? wardrobe.map((w) => `${w.name}${w.status === "approved" ? " ✓" : ""}`).join(" · ") : null)}
+        {row("Voice", voice ? `${voice.name}${voice.provider_voice_id ? ` · locked (${voice.provider_voice_id})` : " · not locked yet"}` : "Not cast yet (step 3)")}
+        {row("Episodes", item.episodes.length ? item.episodes.join(", ") : null)}
+        {row("Child safety", item.protected ? "Protected: always fully clothed and age-appropriate" : null)}
+      </dl>
+    </details>
   );
 }

@@ -31,7 +31,17 @@ Where images come from:
 | `GEMINI_API_KEY` set and no OpenAI key | Gemini Nano Banana 2.1 |
 | `IMAGE_PROVIDER=mock` | Labelled placeholder images for testing the flow at no cost |
 
-The API key is billed separately from a ChatGPT subscription. OpenAI may ask an organisation to complete API Organization Verification before GPT Image models work. Steps 3 to 5 still show placeholders.
+The API key is billed separately from a ChatGPT subscription. OpenAI may ask an organisation to complete API Organization Verification before GPT Image models work. 
+
+Step 3, voice casting, works, and can run alongside step 2:
+
+- **Speaking parts.** Claude reads the screenplay for every speaking part: one voice per character across ages, unless the story needs a different one, such as Veer at seventeen. Each part gets a voice brief, audition text of at least 100 characters built from the character's own lines, and where an earlier episode has their voice.
+- **Auditions.** "Suggest 3 voices" uses ElevenLabs Voice Design, and every candidate reads the same audition text. An optional reference recording, such as an Episode 1 clip, steers the design. "Paste an ElevenLabs Voice ID" checks the account can use the voice, then reads the same text.
+- **Lock.** Saves a designed voice as a permanent ElevenLabs voice and records its Voice ID, models and sample.
+- **Pronunciation notes.** These apply project-wide by substitution before every line is spoken. Claude's suggestions start switched off, so nothing rewrites dialogue until you tick it.
+- **Save voices and continue.** This adds the voices and notes to the series bible. Episode 1 opens once visuals are saved too.
+
+`VOICE_PROVIDER=mock` gives labelled test tones instead of real voices.
 
 ## Run it
 

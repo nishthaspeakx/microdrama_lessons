@@ -46,3 +46,15 @@ export async function fail(job: Job, err: unknown, retryable: boolean) {
   );
   return again;
 }
+
+/**
+ * On worker start: jobs still marked running were cut off by a restart of this
+ * worker (one worker per machine in development). Put them back in the queue
+ * now instead of waiting 15 minutes. Set WORKER_SHARED=1 when several workers
+ * share one database, to leave this to the 15-minute rule.
+ */
+export async function requeueOrphans() {
+  if (process.env.WORKER_SHARED === "1") return 0;
+  const r = await q("UPDATE jobs SET status='queued', locked_at=NULL WHERE status='running' RETURNING id");
+  return r.length;
+}

@@ -13,7 +13,7 @@
 | 00:13.9 | Meera | मम्मी? … पापा? | Mummy? … Papa? | Mummy? … Papa? |
 | 00:26.6 | The teenage boy at the post | रुको! मेरी रस्सी खोल दो! | Ruko! Meri rassi khol do! | Wait! Untie my rope! |
 | 00:57.7 | Suman | डरो मत। तुम्हें चोट लगी है? | Daro mat. Tumhe chot lagi hai? | Don't be afraid. Are you hurt? |
-| 01:19.1 | Devendra | सुमन… | Suman… | Suman… |
+| 01:17.5 | Devendra | सुमन… | Suman… | Suman… |
 
 ## Scene 1 · 00:00.00–00:20.04 · EXT. MADHOPUR BAZAAR · DAY · 2014
 
@@ -80,8 +80,8 @@
 | 44 | 01:10.96–01:12.88 | **The hatch:** a round dark opening at the base, its lid raised, low enough for a child. |
 | 45 | 01:12.88–01:14.71 | Suman looks at the craft. |
 | 46 | 01:14.71–01:16.29 | Wide past the curve of the hull: Devendra, Suman and the boy small in the row. |
-| 47 | 01:16.29–01:18.79 | Devendra, about to speak. |
-| 48 | 01:18.79–01:20.08 | Suman. Devendra, off: "सुमन…" |
+| 47 | 01:16.29–01:18.79 | Devendra, close: "सुमन…" |
+| 48 | 01:18.79–01:20.08 | Suman. |
 | 49 | 01:20.08–01:21.92 | **Hands:** the boy's cream cuff, both his hands around Suman's hand. |
 | 50 | 01:21.92–01:23.21 | Suman looks down at him. |
 | 51 | 01:23.21–01:24.75 | **The boy looks up at her**, his hands on hers. |

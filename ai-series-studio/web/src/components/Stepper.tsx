@@ -1,7 +1,7 @@
 const STEPS = ["Upload idea", "Approve visuals", "Lock voices", "Episode 1", "Review & export"];
 
 /** `current` is the step on screen; `reached` is the furthest step the project has unlocked. */
-export default function Stepper({ current, reached, onGo }: { current: number; reached: number; onGo: (n: number) => void }) {
+export default function Stepper({ current, reached, done, onGo }: { current: number; reached: number; done?: number; onGo: (n: number) => void }) {
   return (
     <ol className="flex flex-wrap items-center gap-2 text-sm">
       {STEPS.map((label, i) => {
@@ -19,7 +19,7 @@ export default function Stepper({ current, reached, onGo }: { current: number; r
                 : "border-line bg-white text-muted"}`}
             >
               <span className={`flex h-5 w-5 items-center justify-center rounded-full text-xs ${state === "todo" ? "bg-stone-100" : "bg-accent text-white"}`}>
-                {state === "done" && n < reached ? "✓" : n}
+                {state === "done" && n < (done ?? reached) ? "✓" : n}
               </span>
               {label}
             </button>

@@ -6,14 +6,19 @@ import { generateImage, imageProvider, type RefImage } from "./images";
 import type { Intake } from "./intakeSchema";
 
 export type Category = "character" | "wardrobe" | "location" | "prop";
-type View = { view: string; label: string; aspect: string; instr: string };
+type View = { view: string; label: string; aspect: string; instr: string; derived?: boolean };
 
 /** What the user reviews for each kind of item (release-1 spec, step 2). */
 export const VIEWS: Record<Category, View[]> = {
   character: [
-    { view: "face", label: "Face close-up", aspect: "3:4", instr: "Head-and-shoulders close-up portrait facing the camera, neutral expression, plain soft background, even daylight. Show the face, hair and distinctive features clearly." },
-    { view: "full_body", label: "Full body, front and side", aspect: "16:9", instr: "Character turnaround on a plain light background: the same person full body, front view on the left and side view on the right, standing naturally, same outfit." },
-    { view: "expressions", label: "Expressions", aspect: "16:9", instr: "Expression sheet: the same person's head and shoulders shown four times in a row, calm, worried, frightened and smiling, same lighting and outfit." },
+    // A portfolio like a casting sheet: front, back and face on one grey studio backdrop, plus side, expressions and details.
+    { view: "portfolio", label: "Portfolio sheet", aspect: "16:9", instr: "", derived: true },
+    { view: "full_front", label: "Full body, front", aspect: "9:16", instr: "Full-body front view, standing straight and facing the camera, arms relaxed at the sides, the whole figure from the top of the head to the feet including footwear, on a plain light-grey studio backdrop with soft, even studio light and a soft floor shadow." },
+    { view: "full_back", label: "Full body, back", aspect: "9:16", instr: "Full-body back view of the same person, standing straight facing away from the camera, showing the hair from behind (plait, bun or cut) and the back of every garment, head to feet, on the same plain light-grey studio backdrop and light." },
+    { view: "face", label: "Face close-up", aspect: "3:4", instr: "Face close-up portrait from the shoulders up, facing the camera with a calm natural expression, on the same plain light-grey studio backdrop with soft, even light. Show skin texture, eyes, brows, hairline and any distinctive marks clearly." },
+    { view: "full_side", label: "Full body, side", aspect: "9:16", instr: "Full-body side profile of the same person facing left, standing naturally, head to feet, on the same plain light-grey studio backdrop and light." },
+    { view: "expressions", label: "Expressions", aspect: "16:9", instr: "Expression sheet on the same plain light-grey backdrop: the same person's head and shoulders four times in a row, calm, worried, frightened and smiling, same lighting and outfit." },
+    { view: "details", label: "Hair, hands, footwear and accessories", aspect: "1:1", instr: "A neat grid of close-ups on the same plain light-grey backdrop: the hairstyle from the side and back, the hands, the footwear, and any jewellery, accessories or distinctive features, all matching this person and outfit exactly." },
   ],
   wardrobe: [
     { view: "outfit", label: "Outfit on the character", aspect: "9:16", instr: "Full-body front view of this exact person wearing the outfit on a plain light background, the whole outfit visible from head to toe including footwear." },
@@ -130,7 +135,7 @@ export function estimateCents(views: number) {
 }
 
 export async function createDraft(item: Item, opts: { prompt?: string; views?: string[]; base?: string | null; change?: string; understood?: string; keepIdentity?: boolean } = {}) {
-  const views = opts.views?.length ? opts.views : VIEWS[item.category].map((v) => v.view);
+  const views = (opts.views?.length ? opts.views : VIEWS[item.category].map((v) => v.view)).filter((v) => !VIEWS[item.category].find((x) => x.view === v)?.derived);
   const v = await one<{ id: string }>(
     `INSERT INTO visual_versions (item_id, n, prompt, change_request, understood, views, status, base_version_id, keep_identity, est_cents)
      VALUES ($1,$2,$3,$4,$5,$6,'draft',$7,$8,$9) RETURNING id`,
@@ -181,11 +186,11 @@ async function referencesFor(item: Item, v: Version): Promise<{ sha: string; rol
   // 2. The approved parent look (an outfit's wearer, or the earlier age of a character).
   if (item.parent_key) {
     const parent = await one<{ approved_version_id: string | null }>("SELECT approved_version_id FROM visual_items WHERE project_id=$1 AND key=$2", [item.project_id, item.parent_key]);
-    for (const im of await imagesOf(parent?.approved_version_id ?? null, ["reference", "face", "full_body", "outfit", "establishing"])) out.push({ sha: im.file_sha, role: personal ? "character" : "object" });
+    for (const im of await imagesOf(parent?.approved_version_id ?? null, ["reference", "portfolio", "face", "full_front", "full_body", "outfit", "establishing"])) out.push({ sha: im.file_sha, role: personal ? "character" : "object" });
   }
   // 3. For a change that keeps identity: the version being changed.
   if (v.base_version_id && v.keep_identity) {
-    for (const im of await imagesOf(v.base_version_id)) out.push({ sha: im.file_sha, role: personal ? "character" : "object" });
+    for (const im of await imagesOf(v.base_version_id)) if (im.view !== "portfolio") out.push({ sha: im.file_sha, role: personal ? "character" : "object" });
   }
   const seen = new Set<string>();
   return out.filter((r) => (seen.has(r.sha) ? false : (seen.add(r.sha), true)));
@@ -207,7 +212,7 @@ export async function runGeneration(versionId: string) {
     }
     // Views not regenerated are carried over from the base version unchanged.
     const carry = await imagesOf(v.base_version_id);
-    for (const im of carry.filter((c) => !v.views.includes(c.view))) {
+    for (const im of carry.filter((c) => !v.views.includes(c.view) && c.view !== "portfolio")) {
       await q("INSERT INTO visual_images (version_id, view, file_sha, prompt) VALUES ($1,$2,$3,$4)", [versionId, im.view, im.file_sha, im.prompt]);
     }
     let cents = 0;
@@ -229,6 +234,7 @@ export async function runGeneration(versionId: string) {
       cents += out.cents;
       await q("UPDATE visual_versions SET provider=$2, model=$3, cost_cents=$4 WHERE id=$1", [versionId, out.provider, out.model, cents]);
     }
+    if (item.category === "character") await composePortfolio(versionId);
     await q("UPDATE visual_versions SET status='ready', reference_shas=$2 WHERE id=$1", [versionId, refs.map((r) => r.sha)]);
     await q("UPDATE visual_items SET status=CASE WHEN status='generating' THEN 'review' ELSE status END, updated_at=now() WHERE id=$1", [item.id]);
   } catch (e) {
@@ -296,14 +302,14 @@ If the request would make a child's depiction revealing or unsafe, keep the orig
     input: JSON.stringify({
       item: { category: item.category, name: item.name, description: item.description, protected: item.protected },
       current_prompt: base.prompt,
-      views: views.map((v) => ({ view: v.view, shows: v.label })),
+      views: views.filter((v) => !v.derived).map((v) => ({ view: v.view, shows: v.label })),
       request,
     }),
     schema: CHANGE_SCHEMA,
   });
-  const valid = res.data.views.filter((x) => views.some((v) => v.view === x));
+  const valid = res.data.views.filter((x) => views.some((v) => v.view === x && !v.derived));
   return createDraft(item, {
-    prompt: res.data.prompt, views: valid.length ? valid : views.map((v) => v.view), base: base.provider === "upload" ? null : baseVersionId,
+    prompt: res.data.prompt, views: valid.length ? valid : views.filter((v) => !v.derived).map((v) => v.view), base: base.provider === "upload" ? null : baseVersionId,
     change: request, understood: res.data.understood, keepIdentity: res.data.keep_identity,
   });
 }
@@ -332,4 +338,35 @@ export async function finishVisuals(projectId: string) {
   });
   await logEvent(projectId, "bible.saved", { version: ver, items: snapshot.length });
   return ver;
+}
+
+
+/**
+ * Join front, back and face into one portfolio sheet on white, like a casting
+ * sheet. Free: done locally with FFmpeg. Skipped for placeholder (SVG) images.
+ */
+export async function composePortfolio(versionId: string) {
+  const ims = await imagesOf(versionId, ["full_front", "full_back", "face"]);
+  const order = ["full_front", "full_back", "face"].map((v) => ims.find((i) => i.view === v)).filter(Boolean) as { file_sha: string; prompt: string }[];
+  if (order.length < 3) return;
+  const files = await Promise.all(order.map((i) => readStored(i.file_sha)));
+  if (files.some((f) => f.mime === "image/svg+xml")) return;
+  const { mkdtemp, writeFile, readFile, rm } = await import("node:fs/promises");
+  const { tmpdir } = await import("node:os");
+  const path = await import("node:path");
+  const { execFile } = await import("node:child_process");
+  const dir = await mkdtemp(path.join(tmpdir(), "portfolio-"));
+  try {
+    const inputs = await Promise.all(files.map(async (f, i) => { const p = path.join(dir, `${i}.img`); await writeFile(p, f.buf); return p; }));
+    const out = path.join(dir, "portfolio.jpg");
+    const H = 1536, GAP = 24;
+    const filter = [0, 1, 2].map((i) => `[${i}:v]scale=-2:${H},pad=iw+${i < 2 ? GAP : 0}:ih:0:0:white[v${i}]`).join(";") + ";[v0][v1][v2]hstack=inputs=3[out]";
+    await new Promise<void>((res, rej) => execFile("ffmpeg", ["-v", "error", "-y", ...inputs.flatMap((p) => ["-i", p]), "-filter_complex", filter, "-map", "[out]", "-q:v", "2", out],
+      (err) => (err ? rej(err) : res())));
+    const sha = await storeFile(await readFile(out), "image/jpeg", "derived");
+    await q("DELETE FROM visual_images WHERE version_id=$1 AND view='portfolio'", [versionId]);
+    await q("INSERT INTO visual_images (version_id, view, file_sha, prompt) VALUES ($1,'portfolio',$2,'Front, back and face joined into one sheet')", [versionId, sha]);
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
 }

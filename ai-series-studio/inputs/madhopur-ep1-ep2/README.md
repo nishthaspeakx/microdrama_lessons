@@ -27,3 +27,14 @@ Paste this into **Tell us about your series**, or write your own:
 | 5 · Review & export | The assembled Episode 2 with a timeline and edit notes | It runs about 01:50 and ends on the underwater shot |
 
 `episode-1-stills/` holds 17 frames from the finished Episode 1. Each file name gives its timecode. They are the visual reference for step 2; the app does not take images at step 1.
+
+`episode-1-voice-clips/` holds four short audio clips cut from Episode 1, one per speaking character. Upload them in step 3 as reference recordings, so new voices are designed to sound like the Episode 1 performances:
+
+| Clip | Who and what |
+|---|---|
+| `suman-daro-mat-0m57.7s.mp3` | Suman: डरो मत। तुम्हें चोट लगी है? |
+| `devendra-suman-1m17.5s.mp3` | Devendra: सुमन… (a whisper) |
+| `young-meera-mummy-papa-0m13.9s.mp3` | Young Meera: मम्मी? … पापा? |
+| `teen-boy-ruko-0m26.6s.mp3` | The teenage boy at the post: रुको! मेरी रस्सी खोल दो! |
+
+The clips come from the finished mix, so some carry ambience or music under the voice.

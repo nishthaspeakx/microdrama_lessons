@@ -20,10 +20,17 @@ export async function GET(_req: Request, { params }: { params: Promise<{ id: str
     `SELECT im.version_id, im.view, im.file_sha FROM visual_images im JOIN visual_versions v ON v.id=im.version_id
      JOIN visual_items i ON i.id=v.item_id WHERE i.project_id=$1`, [id]);
   const job = await one("SELECT status, error FROM jobs WHERE project_id=$1 AND type='visuals.plan' ORDER BY created_at DESC LIMIT 1", [id]);
+  // For the profile card: what step 1 knows about each character, and any voice cast for a look.
+  const intake = await one<{ summary: { characters: unknown[] } }>("SELECT summary FROM intake WHERE project_id=$1", [id]);
+  const characters = intake?.summary.characters ?? [];
+  const voices = await q(
+    `SELECT r.name, r.portrait_item_key, r.status, c.provider_voice_id FROM voice_roles r
+     LEFT JOIN voice_candidates c ON c.id=r.locked_candidate_id WHERE r.project_id=$1`, [id]);
   const prov = imageProvider();
   return NextResponse.json({
     status: p.visuals_status, style: p.visual_style, items, versions, images, planJob: job,
-    views: Object.fromEntries(Object.entries(VIEWS).map(([k, v]) => [k, v.map(({ view, label, aspect }) => ({ view, label, aspect }))])),
+    views: Object.fromEntries(Object.entries(VIEWS).map(([k, v]) => [k, v.map(({ view, label, aspect, derived }) => ({ view, label, aspect, derived: !!derived }))])),
+    characters, voices,
     provider: { name: prov.name, label: prov.label, model: prov.model, centsPerImage: prov.centsPerImage("2K") },
     spentCents: await spentCents(id),
     budgetCents: Number(process.env.PROJECT_IMAGE_BUDGET_USD ?? 25) * 100,

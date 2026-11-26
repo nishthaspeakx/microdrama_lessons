@@ -26,7 +26,8 @@ export async function putFile(buf: Buffer, ext: string): Promise<{ key: string; 
 
 /** Store bytes once and register them in the files table. Returns the sha. */
 export async function storeFile(buf: Buffer, mime: string, origin: "upload" | "generated" | "derived"): Promise<string> {
-  const ext = ({ "image/png": ".png", "image/jpeg": ".jpg", "image/webp": ".webp", "image/svg+xml": ".svg" } as Record<string, string>)[mime] ?? "";
+  const ext = ({ "image/png": ".png", "image/jpeg": ".jpg", "image/webp": ".webp", "image/svg+xml": ".svg",
+    "audio/mpeg": ".mp3", "audio/wav": ".wav", "audio/x-wav": ".wav", "audio/mp4": ".m4a", "audio/x-m4a": ".m4a" } as Record<string, string>)[mime] ?? "";
   const { key, sha } = await putFile(buf, ext);
   const { q } = await import("./db");
   await q("INSERT INTO files (sha, storage_key, mime, bytes, origin) VALUES ($1,$2,$3,$4,$5) ON CONFLICT (sha) DO NOTHING",

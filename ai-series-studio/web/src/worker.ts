@@ -3,14 +3,18 @@ import { loadEnvConfig } from "@next/env";
 loadEnvConfig(process.cwd());
 /** Background worker: runs queued jobs from Postgres, several at a time. Start with `npm run worker`. */
 import { migrate } from "./lib/db";
-import { claim, complete, fail, type Job } from "./lib/jobs";
+import { claim, complete, fail, requeueOrphans, type Job } from "./lib/jobs";
 import { runIntake } from "./lib/intake";
 import { planVisuals, runGeneration } from "./lib/visuals";
+import { planVoices, runDesign, runSpeak } from "./lib/voices";
 
 const handlers: Record<string, (job: Job) => Promise<void>> = {
   "intake.extract": async (job) => runIntake(job.project_id!),
   "visuals.plan": async (job) => planVisuals(job.project_id!),
   "visuals.generate": async (job) => runGeneration(String(job.payload.versionId)),
+  "voices.plan": async (job) => planVoices(job.project_id!),
+  "voices.design": async (job) => runDesign(String(job.payload.roleId)),
+  "voices.speak": async (job) => runSpeak(String(job.payload.candidateId)),
 };
 
 const CONCURRENCY = Number(process.env.WORKER_CONCURRENCY ?? 4);
@@ -35,7 +39,8 @@ async function run(job: Job) {
 
 async function main() {
   await migrate();
-  console.log(`worker ready (${CONCURRENCY} at a time)`);
+  const orphans = await requeueOrphans();
+  console.log(`worker ready (${CONCURRENCY} at a time)${orphans ? `; requeued ${orphans} job(s) cut off by a restart` : ""}`);
   const running = new Set<Promise<void>>();
   while (!stopping) {
     if (running.size >= CONCURRENCY) {
