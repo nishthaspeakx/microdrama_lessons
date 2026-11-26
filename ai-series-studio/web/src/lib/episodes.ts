@@ -417,6 +417,8 @@ export async function runTake(takeId: string, lastAttempt = false) {
       const need = Math.ceil(Math.max(0, ...timed.map((x) => x.end + 0.3)));
       const duration = Math.max(c.duration_s, Math.min(need, max));
       if (need > max) throw Object.assign(new Error(`The dialogue in this clip runs ${need} s, longer than ${max} s. Move a line to the next clip.`), { retryable: false });
+      // Keep the clip's length in step with its dialogue, so later estimates and plans use the real length.
+      if (duration > c.duration_s) await q("UPDATE episode_clips SET duration_s=$2 WHERE id=$1", [c.id, duration]);
       const stem = parts.length ? await buildStem(parts, duration) : null;
       // 2. References and prompt.
       const slots = await referenceSlots(e.project_id, c.refs, MODELS[t.model].maxImages);
