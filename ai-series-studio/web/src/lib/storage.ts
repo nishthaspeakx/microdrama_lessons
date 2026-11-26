@@ -23,3 +23,21 @@ export async function putFile(buf: Buffer, ext: string): Promise<{ key: string; 
   await rename(tmp, dest); // never a half-written file
   return { key, sha };
 }
+
+/** Store bytes once and register them in the files table. Returns the sha. */
+export async function storeFile(buf: Buffer, mime: string, origin: "upload" | "generated" | "derived"): Promise<string> {
+  const ext = ({ "image/png": ".png", "image/jpeg": ".jpg", "image/webp": ".webp", "image/svg+xml": ".svg" } as Record<string, string>)[mime] ?? "";
+  const { key, sha } = await putFile(buf, ext);
+  const { q } = await import("./db");
+  await q("INSERT INTO files (sha, storage_key, mime, bytes, origin) VALUES ($1,$2,$3,$4,$5) ON CONFLICT (sha) DO NOTHING",
+    [sha, key, mime, buf.length, origin]);
+  return sha;
+}
+
+export async function readStored(sha: string): Promise<{ buf: Buffer; mime: string }> {
+  const { one } = await import("./db");
+  const row = await one<{ storage_key: string; mime: string }>("SELECT storage_key, mime FROM files WHERE sha=$1", [sha]);
+  if (!row) throw new Error(`file ${sha} not found`);
+  const { readFile } = await import("node:fs/promises");
+  return { buf: await readFile(path.join(STORAGE_ROOT, row.storage_key)), mime: row.mime };
+}

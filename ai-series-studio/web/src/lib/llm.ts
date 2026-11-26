@@ -57,6 +57,11 @@ export async function runStructured<T>(opts: {
       "INSERT INTO llm_calls (project_id, role, backend, model, input_tokens, output_tokens, cache_read_tokens, ms) VALUES ($1,$2,'api',$3,$4,$5,$6,$7)",
       [opts.projectId ?? null, opts.role, model, msg.usage.input_tokens, msg.usage.output_tokens, msg.usage.cache_read_input_tokens ?? 0, Date.now() - started],
     );
+    const PRICE: Record<string, [number, number]> = { "claude-opus-5-5": [4, 20], "claude-sonnet-5-5": [2, 10], "claude-haiku-5-5": [0.1, 0.5] };
+    const [pin, pout] = PRICE[model] ?? [4, 20];
+    const u = msg.usage as Anthropic.Usage;
+    const cents = 100 * (((u.input_tokens + 1.25 * (u.cache_creation_input_tokens ?? 0) + 0.05 * (u.cache_read_input_tokens ?? 0)) * pin + u.output_tokens * pout) / 1e6);
+    await q("INSERT INTO spend (project_id, category, provider, model, cents) VALUES ($1,'llm','anthropic',$2,$3)", [opts.projectId ?? null, model, cents]);
     if (process.env.RECORD_FIXTURES === "1") {
       await mkdir(FIXTURES, { recursive: true });
       await writeFile(fixture, JSON.stringify({ role: opts.role, inputHash, model, data }, null, 2));

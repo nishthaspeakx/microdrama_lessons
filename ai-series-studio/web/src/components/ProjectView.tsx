@@ -2,10 +2,10 @@
 import { useCallback, useEffect, useState } from "react";
 import Stepper from "./Stepper";
 import IntakeReview from "./IntakeReview";
+import VisualReview from "./VisualReview";
 import type { ProjectData } from "./types";
 
 const NEXT_PHASE: Record<number, { title: string; body: string }> = {
-  2: { title: "Approve visuals", body: "Characters, wardrobe and accessories, locations, and props, one item at a time, with Approve and Change. This is build phase 2." },
   3: { title: "Lock voices", body: "ElevenLabs auditions on the same script line for every speaking character, voice locks and pronunciation notes. This is build phase 2." },
   4: { title: "Episode 1", body: "Screenplay and production prompt side by side, then scene-by-scene generation and assembly. This is build phase 3." },
   5: { title: "Review & export", body: "Timestamped edit notes, the smallest edit that meets each one, versions, MP4 and subtitles. This is build phase 4." },
@@ -71,7 +71,9 @@ export default function ProjectView({ id }: { id: string }) {
 
       {step === 1 && data.project.status === "intake_ready" && data.intake && <IntakeReview data={data} onContinue={() => goStep(2)} />}
 
-      {step > 1 && NEXT_PHASE[step] && (
+      {step === 2 && <VisualReview projectId={id} onFinished={() => { setView(3); load(); }} />}
+
+      {step > 2 && NEXT_PHASE[step] && (
         <div className="rounded-2xl border border-line bg-white p-8">
           <p className="text-lg font-semibold">{NEXT_PHASE[step].title}</p>
           <p className="mt-2 max-w-2xl text-muted">{NEXT_PHASE[step].body}</p>
