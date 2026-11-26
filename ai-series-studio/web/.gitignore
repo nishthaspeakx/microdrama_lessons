@@ -42,3 +42,6 @@ next-env.d.ts
 
 # studio data
 .data/
+
+# The template with empty values is safe to share.
+!.env.example
