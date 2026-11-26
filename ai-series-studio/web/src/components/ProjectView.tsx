@@ -4,10 +4,10 @@ import Stepper from "./Stepper";
 import IntakeReview from "./IntakeReview";
 import VisualReview from "./VisualReview";
 import VoiceCasting from "./VoiceCasting";
+import EpisodeStudio from "./EpisodeStudio";
 import type { ProjectData } from "./types";
 
 const NEXT_PHASE: Record<number, { title: string; body: string }> = {
-  4: { title: "Episode 1", body: "Screenplay and production prompt side by side, then scene-by-scene generation and assembly. This is build phase 3." },
   5: { title: "Review & export", body: "Timestamped edit notes, the smallest edit that meets each one, versions, MP4 and subtitles. This is build phase 4." },
 };
 
@@ -75,7 +75,9 @@ export default function ProjectView({ id }: { id: string }) {
 
       {step === 3 && <VoiceCasting projectId={id} onFinished={(toEpisode) => { if (toEpisode) setView(4); load(); }} />}
 
-      {step > 3 && NEXT_PHASE[step] && (
+      {step === 4 && <EpisodeStudio projectId={id} onReview={() => goStep(5)} />}
+
+      {step > 4 && NEXT_PHASE[step] && (
         <div className="rounded-2xl border border-line bg-white p-8">
           <p className="text-lg font-semibold">{NEXT_PHASE[step].title}</p>
           <p className="mt-2 max-w-2xl text-muted">{NEXT_PHASE[step].body}</p>

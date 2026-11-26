@@ -1,4 +1,4 @@
-const STEPS = ["Upload idea", "Approve visuals", "Lock voices", "Episode 1", "Review & export"];
+const STEPS = ["Upload idea", "Approve visuals", "Lock voices", "Create episode", "Review & export"];
 
 /** `current` is the step on screen; `reached` is the furthest step the project has unlocked. */
 export default function Stepper({ current, reached, done, onGo }: { current: number; reached: number; done?: number; onGo: (n: number) => void }) {
