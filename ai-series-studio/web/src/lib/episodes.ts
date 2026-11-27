@@ -340,6 +340,26 @@ async function referenceSlots(projectId: string, keys: string[], maxImages: numb
   return slots.slice(0, maxImages);
 }
 
+/**
+ * A person listed without their outfit would be drawn in whatever their character image wears (Meera came out
+ * in a frock instead of her uniform). Add the outfit that person wears in the other clips of the same scene.
+ */
+async function withSceneOutfits(e: Episode, c: Clip) {
+  const refs = [...c.refs];
+  const items = await q<{ key: string; category: string; parent_key: string | null }>(
+    "SELECT key, category, parent_key FROM visual_items WHERE project_id=$1 AND approved_version_id IS NOT NULL", [e.project_id]);
+  const byKey = new Map(items.map((i) => [i.key, i]));
+  const sceneRefs = (await q<{ refs: string[] }>("SELECT refs FROM episode_clips WHERE episode_id=$1 AND scene_n=$2 AND id<>$3", [e.id, c.scene_n, c.id]))
+    .flatMap((r) => r.refs);
+  for (const k of c.refs) {
+    if (byKey.get(k)?.category !== "character") continue;
+    if (refs.some((r) => byKey.get(r)?.category === "wardrobe" && byKey.get(r)?.parent_key === k)) continue;
+    const worn = sceneRefs.find((r) => byKey.get(r)?.category === "wardrobe" && byKey.get(r)?.parent_key === k);
+    if (worn) refs.splice(refs.indexOf(k) + 1, 0, worn);
+  }
+  return refs;
+}
+
 // ---------- Generating clips ----------
 
 export async function videoSpentCents(projectId: string) {
@@ -431,7 +451,7 @@ export async function runTake(takeId: string, lastAttempt = false) {
       if (duration > c.duration_s) await q("UPDATE episode_clips SET duration_s=$2 WHERE id=$1", [c.id, duration]);
       const stem = parts.length ? await buildStem(parts, duration) : null;
       // 2. References and prompt.
-      const slots = await referenceSlots(e.project_id, c.refs, MODELS[t.model].maxImages);
+      const slots = await referenceSlots(e.project_id, await withSceneOutfits(e, c), MODELS[t.model].maxImages);
       if (!slots.length) throw Object.assign(new Error("This clip has no approved reference images. Add a look, place or prop to it."), { retryable: false });
       const prompt = composePrompt(c, slots, timed, e.settings.aspect_ratio);
       const spent = await videoSpentCents(e.project_id);
